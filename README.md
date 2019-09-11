@@ -4,10 +4,16 @@ Java client for TextMagic API
 
 For detailed documentation, please visit [http://docs.textmagictesting.com/](http://docs.textmagictesting.com/)
 
+## Requirements
+
+1. Java 1.7+
+2. Maven/Gradle
+
 ## Installation
 
-### Maven configuration
+### Maven
 
+Add this dependency to your project's POM:
 ```xml
 <dependencies>
     <dependency>
@@ -16,6 +22,13 @@ For detailed documentation, please visit [http://docs.textmagictesting.com/](htt
         <version>2.0.212</version>
     </dependency>
 </dependencies>
+```
+
+### Gradle
+
+Add this dependency to your project's build file:
+```groovy
+compile "com.textmagic.sdk:textmagic-java-sdk:2.0.212"
 ```
 
 ## Usage Example
