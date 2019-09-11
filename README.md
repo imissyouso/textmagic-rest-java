@@ -8,7 +8,7 @@ For detailed documentation, please visit [http://docs.textmagictesting.com/](htt
 
 ### Maven configuration
 
-```java
+```xml
 <dependencies>
     <dependency>
         <groupId>com.textmagic.sdk</groupId>
