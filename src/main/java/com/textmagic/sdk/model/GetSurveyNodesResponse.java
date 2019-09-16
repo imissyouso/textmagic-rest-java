@@ -20,12 +20,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.textmagic.sdk.model.SurveyNode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * GetSurveyNodesResponse
@@ -33,18 +30,13 @@ import java.util.List;
 
 public class GetSurveyNodesResponse {
   @SerializedName("nodes")
-  private List<SurveyNode> nodes = new ArrayList<SurveyNode>();
+  private Object nodes = null;
 
   @SerializedName("rows")
-  private List<List<Integer>> rows = new ArrayList<List<Integer>>();
+  private Object rows = null;
 
-  public GetSurveyNodesResponse nodes(List<SurveyNode> nodes) {
+  public GetSurveyNodesResponse nodes(Object nodes) {
     this.nodes = nodes;
-    return this;
-  }
-
-  public GetSurveyNodesResponse addNodesItem(SurveyNode nodesItem) {
-    this.nodes.add(nodesItem);
     return this;
   }
 
@@ -53,21 +45,16 @@ public class GetSurveyNodesResponse {
    * @return nodes
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<SurveyNode> getNodes() {
+  public Object getNodes() {
     return nodes;
   }
 
-  public void setNodes(List<SurveyNode> nodes) {
+  public void setNodes(Object nodes) {
     this.nodes = nodes;
   }
 
-  public GetSurveyNodesResponse rows(List<List<Integer>> rows) {
+  public GetSurveyNodesResponse rows(Object rows) {
     this.rows = rows;
-    return this;
-  }
-
-  public GetSurveyNodesResponse addRowsItem(List<Integer> rowsItem) {
-    this.rows.add(rowsItem);
     return this;
   }
 
@@ -76,11 +63,11 @@ public class GetSurveyNodesResponse {
    * @return rows
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<List<Integer>> getRows() {
+  public Object getRows() {
     return rows;
   }
 
-  public void setRows(List<List<Integer>> rows) {
+  public void setRows(Object rows) {
     this.rows = rows;
   }
 
