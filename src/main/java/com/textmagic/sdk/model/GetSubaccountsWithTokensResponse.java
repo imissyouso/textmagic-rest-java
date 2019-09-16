@@ -15,15 +15,12 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.textmagic.sdk.model.SubaccountWithToken;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * GetSubaccountsWithTokensResponse
  */
 
-public class GetSubaccountsWithTokensResponse extends ArrayList<SubaccountWithToken> {
+public class GetSubaccountsWithTokensResponse {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -33,12 +30,12 @@ public class GetSubaccountsWithTokensResponse extends ArrayList<SubaccountWithTo
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
@@ -46,7 +43,7 @@ public class GetSubaccountsWithTokensResponse extends ArrayList<SubaccountWithTo
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubaccountsWithTokensResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
     sb.append("}");
     return sb.toString();
   }

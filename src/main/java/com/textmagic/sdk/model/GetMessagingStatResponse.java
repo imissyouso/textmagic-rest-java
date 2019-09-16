@@ -15,15 +15,12 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.textmagic.sdk.model.MessagingStatItem;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * GetMessagingStatResponse
  */
 
-public class GetMessagingStatResponse extends ArrayList<MessagingStatItem> {
+public class GetMessagingStatResponse {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -33,12 +30,12 @@ public class GetMessagingStatResponse extends ArrayList<MessagingStatItem> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
@@ -46,7 +43,7 @@ public class GetMessagingStatResponse extends ArrayList<MessagingStatItem> {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetMessagingStatResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
     sb.append("}");
     return sb.toString();
   }

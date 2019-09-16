@@ -15,15 +15,12 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.textmagic.sdk.model.PushToken;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * GetPushTokensResponse
  */
 
-public class GetPushTokensResponse extends ArrayList<PushToken> {
+public class GetPushTokensResponse {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -33,12 +30,12 @@ public class GetPushTokensResponse extends ArrayList<PushToken> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
@@ -46,7 +43,7 @@ public class GetPushTokensResponse extends ArrayList<PushToken> {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetPushTokensResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
     sb.append("}");
     return sb.toString();
   }
