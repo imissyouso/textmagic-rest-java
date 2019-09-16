@@ -15,14 +15,12 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * GetListContactsIdsResponse
  */
 
-public class GetListContactsIdsResponse extends ArrayList<Integer> {
+public class GetListContactsIdsResponse {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -32,12 +30,12 @@ public class GetListContactsIdsResponse extends ArrayList<Integer> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash();
   }
 
 
@@ -45,7 +43,7 @@ public class GetListContactsIdsResponse extends ArrayList<Integer> {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetListContactsIdsResponse {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    
     sb.append("}");
     return sb.toString();
   }
