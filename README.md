@@ -53,15 +53,45 @@ public class App {
 
         TextMagicApi apiInstance = new TextMagicApi();
 
+        // Simple ping request example
         try {
-            SendMessageInputObject sendMessageInputObject = new SendMessageInputObject();
-            sendMessageInputObject.setText("I love Textmagic!");
-            sendMessageInputObject.setPhones("+19998887766");
+            PingResponse response = apiInstance.ping();
+            System.out.println(response.getPing());
+        } catch (ApiException e) {
+        System.err.println("Exception when calling ping");
+            e.printStackTrace();
+        }
 
+        // Send a new message request example
+        SendMessageInputObject sendMessageInputObject = new SendMessageInputObject();
+        sendMessageInputObject.setText("I love Textmagic!");
+        sendMessageInputObject.setPhones("+19998887766");
+
+        try {
             SendMessageResponse response = apiInstance.sendMessage(sendMessageInputObject, true);
-            System.out.println(response);
+            System.out.println(response.getId());
         } catch (ApiException e) {
             System.err.println("Exception when calling sendMessage");
+            e.printStackTrace();
+        }
+
+        // Get all outgoing messages request example
+        try {
+            // Put null if you want to use default values
+            GetAllOutboundMessagesResponse response = apiInstance.getAllOutboundMessages(1, 10, null);
+            System.out.println(response.getResources().get(0).getText());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling getAllOutboundMessages");
+            e.printStackTrace();
+        }
+
+        // Upload new avatar for contacts list (group) with Id 3223 example
+        File file = new File("test.jpg");
+        try {
+            ResourceLinkResponse response = apiInstance.uploadListAvatar(file, 3223);
+            System.out.println(response.getId());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling uploadListAvatar");
             e.printStackTrace();
         }
     }
