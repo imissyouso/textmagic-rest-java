@@ -1,10 +1,10 @@
 # TextMagic Java SDK
-This library provides you with an easy solution to send SMS and receive replies by integrating TextMagic SMS Gateway to your Java application.
+This library provides you with an easy way of sending SMS and receiving replies by integrating TextMagic SMS Gateway into your Java application.
 
-## What is TextMagic?
-TextMagic's application programming interface (API) provides the communication link between your application and TextMagic’s SMS Gateway, allowing you to send and receive text messages and to check the delivery status of text messages you’ve already sent.
+## What Is TextMagic?
+TextMagic’s application programming interface (API) provides the communication link between your application and TextMagic’s SMS Gateway, allowing you to send and receive text messages and to check the delivery status of text messages you’ve already sent.
 
-For detailed documentation and more examples, please visit [http://docs.textmagictesting.com/](http://docs.textmagictesting.com/)
+For detailed documentation and more examples, please visit [http://docs.textmagictesting.com/](http://docs.textmagictesting.com/).
 
 ## Requirements
 
@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 
 ### Gradle
 
-Add this dependency to your project's build file:
+Add this dependency to your project’s build file:
 ```groovy
 compile "com.textmagic.sdk:textmagic-java-sdk:2.0.212"
 ```
