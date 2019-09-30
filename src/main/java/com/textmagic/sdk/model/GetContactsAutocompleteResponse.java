@@ -15,300 +15,15 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * GetContactsAutocompleteResponse
  */
 
-public class GetContactsAutocompleteResponse {
-  @SerializedName("entityId")
-  private Integer entityId = null;
-
-  /**
-   * 
-   */
-  @JsonAdapter(EntityTypeEnum.Adapter.class)
-  public enum EntityTypeEnum {
-    LIST("list"),
-    
-    CONTACT("contact"),
-    
-    REPLY("reply");
-
-    private String value;
-
-    EntityTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static EntityTypeEnum fromValue(String text) {
-      for (EntityTypeEnum b : EntityTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<EntityTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EntityTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EntityTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return EntityTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("entityType")
-  private EntityTypeEnum entityType = null;
-
-  @SerializedName("value")
-  private String value = null;
-
-  @SerializedName("label")
-  private String label = null;
-
-  @SerializedName("sharedBy")
-  private String sharedBy = null;
-
-  @SerializedName("avatar")
-  private String avatar = null;
-
-  @SerializedName("favorited")
-  private Boolean favorited = null;
-
-  @SerializedName("userId")
-  private Integer userId = null;
-
-  @SerializedName("countryName")
-  private String countryName = null;
-
-  @SerializedName("qposition")
-  private Integer qposition = null;
-
-  @SerializedName("rposition")
-  private Integer rposition = null;
-
-  public GetContactsAutocompleteResponse entityId(Integer entityId) {
-    this.entityId = entityId;
-    return this;
-  }
-
-   /**
-   * Id of entity. 0 if object is a Reply
-   * @return entityId
-  **/
-  @ApiModelProperty(example = "1", required = true, value = "Id of entity. 0 if object is a Reply")
-  public Integer getEntityId() {
-    return entityId;
-  }
-
-  public void setEntityId(Integer entityId) {
-    this.entityId = entityId;
-  }
-
-  public GetContactsAutocompleteResponse entityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
-    return this;
-  }
-
-   /**
-   * 
-   * @return entityType
-  **/
-  @ApiModelProperty(example = "contact", required = true, value = "")
-  public EntityTypeEnum getEntityType() {
-    return entityType;
-  }
-
-  public void setEntityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
-  }
-
-  public GetContactsAutocompleteResponse value(String value) {
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * Id of contact/list if entityType is contact/list OR phone number if entityType is reply
-   * @return value
-  **/
-  @ApiModelProperty(example = "22", required = true, value = "Id of contact/list if entityType is contact/list OR phone number if entityType is reply")
-  public String getValue() {
-    return value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
-
-  public GetContactsAutocompleteResponse label(String label) {
-    this.label = label;
-    return this;
-  }
-
-   /**
-   * Name of the contact/list if entityType is contact/list OR phone number if entityType is reply
-   * @return label
-  **/
-  @ApiModelProperty(example = "Homer Simpson", required = true, value = "Name of the contact/list if entityType is contact/list OR phone number if entityType is reply")
-  public String getLabel() {
-    return label;
-  }
-
-  public void setLabel(String label) {
-    this.label = label;
-  }
-
-  public GetContactsAutocompleteResponse sharedBy(String sharedBy) {
-    this.sharedBy = sharedBy;
-    return this;
-  }
-
-   /**
-   * If contact or list was shared by another user then name if this user will be shown
-   * @return sharedBy
-  **/
-  @ApiModelProperty(example = "John Doe", required = true, value = "If contact or list was shared by another user then name if this user will be shown")
-  public String getSharedBy() {
-    return sharedBy;
-  }
-
-  public void setSharedBy(String sharedBy) {
-    this.sharedBy = sharedBy;
-  }
-
-  public GetContactsAutocompleteResponse avatar(String avatar) {
-    this.avatar = avatar;
-    return this;
-  }
-
-   /**
-   * Get avatar
-   * @return avatar
-  **/
-  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "")
-  public String getAvatar() {
-    return avatar;
-  }
-
-  public void setAvatar(String avatar) {
-    this.avatar = avatar;
-  }
-
-  public GetContactsAutocompleteResponse favorited(Boolean favorited) {
-    this.favorited = favorited;
-    return this;
-  }
-
-   /**
-   * If contact was marked as favourited
-   * @return favorited
-  **/
-  @ApiModelProperty(example = "true", required = true, value = "If contact was marked as favourited")
-  public Boolean isFavorited() {
-    return favorited;
-  }
-
-  public void setFavorited(Boolean favorited) {
-    this.favorited = favorited;
-  }
-
-  public GetContactsAutocompleteResponse userId(Integer userId) {
-    this.userId = userId;
-    return this;
-  }
-
-   /**
-   * Owner id of the contact/list (if it was shared)
-   * @return userId
-  **/
-  @ApiModelProperty(example = "33", required = true, value = "Owner id of the contact/list (if it was shared)")
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
-
-  public GetContactsAutocompleteResponse countryName(String countryName) {
-    this.countryName = countryName;
-    return this;
-  }
-
-   /**
-   * Get countryName
-   * @return countryName
-  **/
-  @ApiModelProperty(example = "Australia", required = true, value = "")
-  public String getCountryName() {
-    return countryName;
-  }
-
-  public void setCountryName(String countryName) {
-    this.countryName = countryName;
-  }
-
-  public GetContactsAutocompleteResponse qposition(Integer qposition) {
-    this.qposition = qposition;
-    return this;
-  }
-
-   /**
-   * Get qposition
-   * @return qposition
-  **/
-  @ApiModelProperty(example = "Internal field, used for sorting purposes", required = true, value = "")
-  public Integer getQposition() {
-    return qposition;
-  }
-
-  public void setQposition(Integer qposition) {
-    this.qposition = qposition;
-  }
-
-  public GetContactsAutocompleteResponse rposition(Integer rposition) {
-    this.rposition = rposition;
-    return this;
-  }
-
-   /**
-   * Get rposition
-   * @return rposition
-  **/
-  @ApiModelProperty(example = "Internal field, used for sorting purposes", required = true, value = "")
-  public Integer getRposition() {
-    return rposition;
-  }
-
-  public void setRposition(Integer rposition) {
-    this.rposition = rposition;
-  }
-
+public class GetContactsAutocompleteResponse extends ArrayList<GetContactsAutocompleteResponse> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -318,23 +33,12 @@ public class GetContactsAutocompleteResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetContactsAutocompleteResponse getContactsAutocompleteResponse = (GetContactsAutocompleteResponse) o;
-    return Objects.equals(this.entityId, getContactsAutocompleteResponse.entityId) &&
-        Objects.equals(this.entityType, getContactsAutocompleteResponse.entityType) &&
-        Objects.equals(this.value, getContactsAutocompleteResponse.value) &&
-        Objects.equals(this.label, getContactsAutocompleteResponse.label) &&
-        Objects.equals(this.sharedBy, getContactsAutocompleteResponse.sharedBy) &&
-        Objects.equals(this.avatar, getContactsAutocompleteResponse.avatar) &&
-        Objects.equals(this.favorited, getContactsAutocompleteResponse.favorited) &&
-        Objects.equals(this.userId, getContactsAutocompleteResponse.userId) &&
-        Objects.equals(this.countryName, getContactsAutocompleteResponse.countryName) &&
-        Objects.equals(this.qposition, getContactsAutocompleteResponse.qposition) &&
-        Objects.equals(this.rposition, getContactsAutocompleteResponse.rposition);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entityId, entityType, value, label, sharedBy, avatar, favorited, userId, countryName, qposition, rposition);
+    return Objects.hash(super.hashCode());
   }
 
 
@@ -342,18 +46,7 @@ public class GetContactsAutocompleteResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetContactsAutocompleteResponse {\n");
-    
-    sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
-    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    sharedBy: ").append(toIndentedString(sharedBy)).append("\n");
-    sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
-    sb.append("    favorited: ").append(toIndentedString(favorited)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    countryName: ").append(toIndentedString(countryName)).append("\n");
-    sb.append("    qposition: ").append(toIndentedString(qposition)).append("\n");
-    sb.append("    rposition: ").append(toIndentedString(rposition)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
   }

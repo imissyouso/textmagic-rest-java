@@ -26,7 +26,6 @@ import com.textmagic.sdk.model.ClearAndAssignContactsToListInputObject;
 import com.textmagic.sdk.model.CloseChatsBulkInputObject;
 import com.textmagic.sdk.model.Contact;
 import com.textmagic.sdk.model.ContactNote;
-import com.textmagic.sdk.model.Country;
 import com.textmagic.sdk.model.CreateContactInputObject;
 import com.textmagic.sdk.model.CreateContactNoteInputObject;
 import com.textmagic.sdk.model.CreateCustomFieldInputObject;
@@ -52,53 +51,57 @@ import com.textmagic.sdk.model.DoAuthResponse;
 import com.textmagic.sdk.model.DoCarrierLookupResponse;
 import com.textmagic.sdk.model.DoEmailLookupResponse;
 import java.io.File;
-import com.textmagic.sdk.model.GetAllBulkSessionsResponse;
-import com.textmagic.sdk.model.GetAllChatsResponse;
-import com.textmagic.sdk.model.GetAllInboundMessagesResponse;
-import com.textmagic.sdk.model.GetAllMessageSessionsResponse;
-import com.textmagic.sdk.model.GetAllOutboundMessagesResponse;
-import com.textmagic.sdk.model.GetAllScheduledMessagesResponse;
-import com.textmagic.sdk.model.GetAllTemplatesResponse;
+import com.textmagic.sdk.model.GetAllBulkSessionsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllChatsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllInboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllMessageSessionsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllOutboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllScheduledMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.GetAvailableDedicatedNumbersResponse;
 import com.textmagic.sdk.model.GetAvailableSenderSettingOptionsResponse;
 import com.textmagic.sdk.model.GetBalanceNotificationOptionsResponse;
 import com.textmagic.sdk.model.GetBalanceNotificationSettingsResponse;
-import com.textmagic.sdk.model.GetBlockedContactsResponse;
+import com.textmagic.sdk.model.GetBlockedContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCallbackSettingsResponse;
-import com.textmagic.sdk.model.GetChatMessagesResponse;
+import com.textmagic.sdk.model.GetCallsPricesResponse;
+import com.textmagic.sdk.model.GetChatMessagesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactImportSessionProgressResponse;
-import com.textmagic.sdk.model.GetContactNotesResponse;
+import com.textmagic.sdk.model.GetContactNotesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
-import com.textmagic.sdk.model.GetContactsByListIdResponse;
-import com.textmagic.sdk.model.GetContactsResponse;
-import com.textmagic.sdk.model.GetCustomFieldsResponse;
-import com.textmagic.sdk.model.GetFavouritesResponse;
-import com.textmagic.sdk.model.GetForwardedCallsResponse;
+import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
+import com.textmagic.sdk.model.GetContactsPaginatedResponse;
+import com.textmagic.sdk.model.GetCountriesResponse;
+import com.textmagic.sdk.model.GetCustomFieldsPaginatedResponse;
+import com.textmagic.sdk.model.GetDisallowedRulesResponse;
+import com.textmagic.sdk.model.GetFavouritesPaginatedResponse;
+import com.textmagic.sdk.model.GetForwardedCallsPaginatedResponse;
 import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
-import com.textmagic.sdk.model.GetInvoicesResponse;
+import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
-import com.textmagic.sdk.model.GetListsOfContactResponse;
+import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
 import com.textmagic.sdk.model.GetMessagePricesResponse;
 import com.textmagic.sdk.model.GetMessageSessionStatResponse;
-import com.textmagic.sdk.model.GetMessagesBySessionIdResponse;
+import com.textmagic.sdk.model.GetMessagesBySessionIdPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagingCountersResponse;
 import com.textmagic.sdk.model.GetMessagingStatResponse;
-import com.textmagic.sdk.model.GetOutboundMessagesHistoryResponse;
+import com.textmagic.sdk.model.GetOutboundMessagesHistoryPaginatedResponse;
 import com.textmagic.sdk.model.GetPushTokensResponse;
-import com.textmagic.sdk.model.GetSenderIdsResponse;
+import com.textmagic.sdk.model.GetSenderIdsPaginatedResponse;
 import com.textmagic.sdk.model.GetSenderSettingsResponse;
-import com.textmagic.sdk.model.GetSpendingStatResponse;
+import com.textmagic.sdk.model.GetSpendingStatPaginatedResponse;
 import com.textmagic.sdk.model.GetStateResponse;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensInputObject;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensResponse;
 import com.textmagic.sdk.model.GetSurveyNodesResponse;
-import com.textmagic.sdk.model.GetSurveysResponse;
+import com.textmagic.sdk.model.GetSurveysPaginatedResponse;
+import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
-import com.textmagic.sdk.model.GetUnsubscribersResponse;
-import com.textmagic.sdk.model.GetUserDedicatedNumbersResponse;
-import com.textmagic.sdk.model.GetUserListsResponse;
+import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
+import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
+import com.textmagic.sdk.model.GetUserListsPaginatedResponse;
 import com.textmagic.sdk.model.GetVersionsResponse;
 import com.textmagic.sdk.model.Group;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
@@ -118,15 +121,15 @@ import com.textmagic.sdk.model.ReopenChatsBulkInputObject;
 import com.textmagic.sdk.model.RequestNewSubaccountTokenInputObject;
 import com.textmagic.sdk.model.RequestSenderIdInputObject;
 import com.textmagic.sdk.model.ResourceLinkResponse;
-import com.textmagic.sdk.model.SearchChatsByIdsResponse;
-import com.textmagic.sdk.model.SearchChatsByReceipentResponse;
-import com.textmagic.sdk.model.SearchChatsResponse;
-import com.textmagic.sdk.model.SearchContactsResponse;
-import com.textmagic.sdk.model.SearchInboundMessagesResponse;
-import com.textmagic.sdk.model.SearchListsResponse;
-import com.textmagic.sdk.model.SearchOutboundMessagesResponse;
-import com.textmagic.sdk.model.SearchScheduledMessagesResponse;
-import com.textmagic.sdk.model.SearchTemplatesResponse;
+import com.textmagic.sdk.model.SearchChatsByIdsPaginatedResponse;
+import com.textmagic.sdk.model.SearchChatsByReceipentPaginatedResponse;
+import com.textmagic.sdk.model.SearchChatsPaginatedResponse;
+import com.textmagic.sdk.model.SearchContactsPaginatedResponse;
+import com.textmagic.sdk.model.SearchInboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchListsPaginatedResponse;
+import com.textmagic.sdk.model.SearchOutboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchScheduledMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.SendMessageInputObject;
 import com.textmagic.sdk.model.SendMessageResponse;
 import com.textmagic.sdk.model.SenderId;
@@ -1026,7 +1029,7 @@ public class TextMagicApiTest {
     public void getAllBulkSessionsTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetAllBulkSessionsResponse response = api.getAllBulkSessions(page, limit);
+        GetAllBulkSessionsPaginatedResponse response = api.getAllBulkSessions(page, limit);
 
         // TODO: test validations
     }
@@ -1047,7 +1050,7 @@ public class TextMagicApiTest {
         String orderBy = null;
         Integer voice = null;
         Integer flat = null;
-        GetAllChatsResponse response = api.getAllChats(status, page, limit, orderBy, voice, flat);
+        GetAllChatsPaginatedResponse response = api.getAllChats(status, page, limit, orderBy, voice, flat);
 
         // TODO: test validations
     }
@@ -1066,7 +1069,7 @@ public class TextMagicApiTest {
         Integer limit = null;
         String orderBy = null;
         String direction = null;
-        GetAllInboundMessagesResponse response = api.getAllInboundMessages(page, limit, orderBy, direction);
+        GetAllInboundMessagesPaginatedResponse response = api.getAllInboundMessages(page, limit, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1083,7 +1086,7 @@ public class TextMagicApiTest {
     public void getAllMessageSessionsTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetAllMessageSessionsResponse response = api.getAllMessageSessions(page, limit);
+        GetAllMessageSessionsPaginatedResponse response = api.getAllMessageSessions(page, limit);
 
         // TODO: test validations
     }
@@ -1101,7 +1104,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         Integer lastId = null;
-        GetAllOutboundMessagesResponse response = api.getAllOutboundMessages(page, limit, lastId);
+        GetAllOutboundMessagesPaginatedResponse response = api.getAllOutboundMessages(page, limit, lastId);
 
         // TODO: test validations
     }
@@ -1121,7 +1124,7 @@ public class TextMagicApiTest {
         String status = null;
         String orderBy = null;
         String direction = null;
-        GetAllScheduledMessagesResponse response = api.getAllScheduledMessages(page, limit, status, orderBy, direction);
+        GetAllScheduledMessagesPaginatedResponse response = api.getAllScheduledMessages(page, limit, status, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1138,7 +1141,7 @@ public class TextMagicApiTest {
     public void getAllTemplatesTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetAllTemplatesResponse response = api.getAllTemplates(page, limit);
+        GetAllTemplatesPaginatedResponse response = api.getAllTemplates(page, limit);
 
         // TODO: test validations
     }
@@ -1222,7 +1225,7 @@ public class TextMagicApiTest {
         String query = null;
         String orderBy = null;
         String direction = null;
-        GetBlockedContactsResponse response = api.getBlockedContacts(page, limit, query, orderBy, direction);
+        GetBlockedContactsPaginatedResponse response = api.getBlockedContacts(page, limit, query, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1268,7 +1271,7 @@ public class TextMagicApiTest {
      */
     @Test
     public void getCallsPricesTest() throws ApiException {
-        Map<String, Object> response = api.getCallsPrices();
+        GetCallsPricesResponse response = api.getCallsPrices();
 
         // TODO: test validations
     }
@@ -1325,7 +1328,7 @@ public class TextMagicApiTest {
         Integer end = null;
         String direction = null;
         Integer voice = null;
-        GetChatMessagesResponse response = api.getChatMessages(id, page, limit, query, start, end, direction, voice);
+        GetChatMessagesPaginatedResponse response = api.getChatMessages(id, page, limit, query, start, end, direction, voice);
 
         // TODO: test validations
     }
@@ -1423,7 +1426,7 @@ public class TextMagicApiTest {
         Integer id = null;
         Integer page = null;
         Integer limit = null;
-        GetContactNotesResponse response = api.getContactNotes(id, page, limit);
+        GetContactNotesPaginatedResponse response = api.getContactNotes(id, page, limit);
 
         // TODO: test validations
     }
@@ -1443,7 +1446,7 @@ public class TextMagicApiTest {
         Integer shared = null;
         String orderBy = null;
         String direction = null;
-        GetContactsResponse response = api.getContacts(page, limit, shared, orderBy, direction);
+        GetContactsPaginatedResponse response = api.getContacts(page, limit, shared, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1461,7 +1464,7 @@ public class TextMagicApiTest {
         String query = null;
         Integer limit = null;
         Integer lists = null;
-        List<GetContactsAutocompleteResponse> response = api.getContactsAutocomplete(query, limit, lists);
+        GetContactsAutocompleteResponse response = api.getContactsAutocomplete(query, limit, lists);
 
         // TODO: test validations
     }
@@ -1481,7 +1484,7 @@ public class TextMagicApiTest {
         Integer limit = null;
         String orderBy = null;
         String direction = null;
-        GetContactsByListIdResponse response = api.getContactsByListId(id, page, limit, orderBy, direction);
+        GetContactsByListIdPaginatedResponse response = api.getContactsByListId(id, page, limit, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1496,7 +1499,7 @@ public class TextMagicApiTest {
      */
     @Test
     public void getCountriesTest() throws ApiException {
-        List<Country> response = api.getCountries();
+        GetCountriesResponse response = api.getCountries();
 
         // TODO: test validations
     }
@@ -1544,7 +1547,7 @@ public class TextMagicApiTest {
     public void getCustomFieldsTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetCustomFieldsResponse response = api.getCustomFields(page, limit);
+        GetCustomFieldsPaginatedResponse response = api.getCustomFields(page, limit);
 
         // TODO: test validations
     }
@@ -1575,7 +1578,7 @@ public class TextMagicApiTest {
      */
     @Test
     public void getDisallowedRulesTest() throws ApiException {
-        List<String> response = api.getDisallowedRules();
+        GetDisallowedRulesResponse response = api.getDisallowedRules();
 
         // TODO: test validations
     }
@@ -1593,7 +1596,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         String query = null;
-        GetFavouritesResponse response = api.getFavourites(page, limit, query);
+        GetFavouritesPaginatedResponse response = api.getFavourites(page, limit, query);
 
         // TODO: test validations
     }
@@ -1610,7 +1613,7 @@ public class TextMagicApiTest {
     public void getForwardedCallsTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetForwardedCallsResponse response = api.getForwardedCalls(page, limit);
+        GetForwardedCallsPaginatedResponse response = api.getForwardedCalls(page, limit);
 
         // TODO: test validations
     }
@@ -1658,7 +1661,7 @@ public class TextMagicApiTest {
     public void getInvoicesTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetInvoicesResponse response = api.getInvoices(page, limit);
+        GetInvoicesPaginatedResponse response = api.getInvoices(page, limit);
 
         // TODO: test validations
     }
@@ -1708,7 +1711,7 @@ public class TextMagicApiTest {
         Integer id = null;
         Integer page = null;
         Integer limit = null;
-        GetListsOfContactResponse response = api.getListsOfContact(id, page, limit);
+        GetListsOfContactPaginatedResponse response = api.getListsOfContact(id, page, limit);
 
         // TODO: test validations
     }
@@ -1841,7 +1844,7 @@ public class TextMagicApiTest {
         Integer limit = null;
         String statuses = null;
         Integer includeDeleted = null;
-        GetMessagesBySessionIdResponse response = api.getMessagesBySessionId(id, page, limit, statuses, includeDeleted);
+        GetMessagesBySessionIdPaginatedResponse response = api.getMessagesBySessionId(id, page, limit, statuses, includeDeleted);
 
         // TODO: test validations
     }
@@ -1910,7 +1913,7 @@ public class TextMagicApiTest {
         String query = null;
         String orderBy = null;
         String direction = null;
-        GetOutboundMessagesHistoryResponse response = api.getOutboundMessagesHistory(limit, lastId, query, orderBy, direction);
+        GetOutboundMessagesHistoryPaginatedResponse response = api.getOutboundMessagesHistory(limit, lastId, query, orderBy, direction);
 
         // TODO: test validations
     }
@@ -1974,7 +1977,7 @@ public class TextMagicApiTest {
     public void getSenderIdsTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetSenderIdsResponse response = api.getSenderIds(page, limit);
+        GetSenderIdsPaginatedResponse response = api.getSenderIds(page, limit);
 
         // TODO: test validations
     }
@@ -2009,7 +2012,7 @@ public class TextMagicApiTest {
         Integer limit = null;
         Integer start = null;
         Integer end = null;
-        GetSpendingStatResponse response = api.getSpendingStat(page, limit, start, end);
+        GetSpendingStatPaginatedResponse response = api.getSpendingStat(page, limit, start, end);
 
         // TODO: test validations
     }
@@ -2140,7 +2143,7 @@ public class TextMagicApiTest {
     public void getSurveysTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetSurveysResponse response = api.getSurveys(page, limit);
+        GetSurveysPaginatedResponse response = api.getSurveys(page, limit);
 
         // TODO: test validations
     }
@@ -2172,7 +2175,7 @@ public class TextMagicApiTest {
     @Test
     public void getTimezonesTest() throws ApiException {
         Integer full = null;
-        Object response = api.getTimezones(full);
+        GetTimezonesResponse response = api.getTimezones(full);
 
         // TODO: test validations
     }
@@ -2220,7 +2223,7 @@ public class TextMagicApiTest {
     public void getUnsubscribersTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        GetUnsubscribersResponse response = api.getUnsubscribers(page, limit);
+        GetUnsubscribersPaginatedResponse response = api.getUnsubscribers(page, limit);
 
         // TODO: test validations
     }
@@ -2238,7 +2241,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         Integer surveyId = null;
-        GetUserDedicatedNumbersResponse response = api.getUserDedicatedNumbers(page, limit, surveyId);
+        GetUserDedicatedNumbersPaginatedResponse response = api.getUserDedicatedNumbers(page, limit, surveyId);
 
         // TODO: test validations
     }
@@ -2259,7 +2262,7 @@ public class TextMagicApiTest {
         String direction = null;
         Integer favoriteOnly = null;
         Integer onlyMine = null;
-        GetUserListsResponse response = api.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
+        GetUserListsPaginatedResponse response = api.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
 
         // TODO: test validations
     }
@@ -2467,7 +2470,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         String query = null;
-        SearchChatsResponse response = api.searchChats(page, limit, query);
+        SearchChatsPaginatedResponse response = api.searchChats(page, limit, query);
 
         // TODO: test validations
     }
@@ -2485,7 +2488,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         String ids = null;
-        SearchChatsByIdsResponse response = api.searchChatsByIds(page, limit, ids);
+        SearchChatsByIdsPaginatedResponse response = api.searchChatsByIds(page, limit, ids);
 
         // TODO: test validations
     }
@@ -2504,7 +2507,7 @@ public class TextMagicApiTest {
         Integer limit = null;
         String query = null;
         String orderBy = null;
-        SearchChatsByReceipentResponse response = api.searchChatsByReceipent(page, limit, query, orderBy);
+        SearchChatsByReceipentPaginatedResponse response = api.searchChatsByReceipent(page, limit, query, orderBy);
 
         // TODO: test validations
     }
@@ -2530,7 +2533,7 @@ public class TextMagicApiTest {
         String country = null;
         String orderBy = null;
         String direction = null;
-        SearchContactsResponse response = api.searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
+        SearchContactsPaginatedResponse response = api.searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
 
         // TODO: test validations
     }
@@ -2552,7 +2555,7 @@ public class TextMagicApiTest {
         String orderBy = null;
         String direction = null;
         Integer expand = null;
-        SearchInboundMessagesResponse response = api.searchInboundMessages(page, limit, ids, query, orderBy, direction, expand);
+        SearchInboundMessagesPaginatedResponse response = api.searchInboundMessages(page, limit, ids, query, orderBy, direction, expand);
 
         // TODO: test validations
     }
@@ -2575,7 +2578,7 @@ public class TextMagicApiTest {
         Integer onlyDefault = null;
         String orderBy = null;
         String direction = null;
-        SearchListsResponse response = api.searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
+        SearchListsPaginatedResponse response = api.searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
 
         // TODO: test validations
     }
@@ -2598,7 +2601,7 @@ public class TextMagicApiTest {
         String statuses = null;
         Integer includeDeleted = null;
         String query = null;
-        SearchOutboundMessagesResponse response = api.searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
+        SearchOutboundMessagesPaginatedResponse response = api.searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
 
         // TODO: test validations
     }
@@ -2620,7 +2623,7 @@ public class TextMagicApiTest {
         String status = null;
         String orderBy = null;
         String direction = null;
-        SearchScheduledMessagesResponse response = api.searchScheduledMessages(page, limit, query, ids, status, orderBy, direction);
+        SearchScheduledMessagesPaginatedResponse response = api.searchScheduledMessages(page, limit, query, ids, status, orderBy, direction);
 
         // TODO: test validations
     }
@@ -2640,7 +2643,7 @@ public class TextMagicApiTest {
         String ids = null;
         String name = null;
         String content = null;
-        SearchTemplatesResponse response = api.searchTemplates(page, limit, ids, name, content);
+        SearchTemplatesPaginatedResponse response = api.searchTemplates(page, limit, ids, name, content);
 
         // TODO: test validations
     }

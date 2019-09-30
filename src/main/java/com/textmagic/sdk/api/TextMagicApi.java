@@ -39,7 +39,6 @@ import com.textmagic.sdk.model.ClearAndAssignContactsToListInputObject;
 import com.textmagic.sdk.model.CloseChatsBulkInputObject;
 import com.textmagic.sdk.model.Contact;
 import com.textmagic.sdk.model.ContactNote;
-import com.textmagic.sdk.model.Country;
 import com.textmagic.sdk.model.CreateContactInputObject;
 import com.textmagic.sdk.model.CreateContactNoteInputObject;
 import com.textmagic.sdk.model.CreateCustomFieldInputObject;
@@ -65,53 +64,57 @@ import com.textmagic.sdk.model.DoAuthResponse;
 import com.textmagic.sdk.model.DoCarrierLookupResponse;
 import com.textmagic.sdk.model.DoEmailLookupResponse;
 import java.io.File;
-import com.textmagic.sdk.model.GetAllBulkSessionsResponse;
-import com.textmagic.sdk.model.GetAllChatsResponse;
-import com.textmagic.sdk.model.GetAllInboundMessagesResponse;
-import com.textmagic.sdk.model.GetAllMessageSessionsResponse;
-import com.textmagic.sdk.model.GetAllOutboundMessagesResponse;
-import com.textmagic.sdk.model.GetAllScheduledMessagesResponse;
-import com.textmagic.sdk.model.GetAllTemplatesResponse;
+import com.textmagic.sdk.model.GetAllBulkSessionsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllChatsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllInboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllMessageSessionsPaginatedResponse;
+import com.textmagic.sdk.model.GetAllOutboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllScheduledMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetAllTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.GetAvailableDedicatedNumbersResponse;
 import com.textmagic.sdk.model.GetAvailableSenderSettingOptionsResponse;
 import com.textmagic.sdk.model.GetBalanceNotificationOptionsResponse;
 import com.textmagic.sdk.model.GetBalanceNotificationSettingsResponse;
-import com.textmagic.sdk.model.GetBlockedContactsResponse;
+import com.textmagic.sdk.model.GetBlockedContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCallbackSettingsResponse;
-import com.textmagic.sdk.model.GetChatMessagesResponse;
+import com.textmagic.sdk.model.GetCallsPricesResponse;
+import com.textmagic.sdk.model.GetChatMessagesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactImportSessionProgressResponse;
-import com.textmagic.sdk.model.GetContactNotesResponse;
+import com.textmagic.sdk.model.GetContactNotesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
-import com.textmagic.sdk.model.GetContactsByListIdResponse;
-import com.textmagic.sdk.model.GetContactsResponse;
-import com.textmagic.sdk.model.GetCustomFieldsResponse;
-import com.textmagic.sdk.model.GetFavouritesResponse;
-import com.textmagic.sdk.model.GetForwardedCallsResponse;
+import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
+import com.textmagic.sdk.model.GetContactsPaginatedResponse;
+import com.textmagic.sdk.model.GetCountriesResponse;
+import com.textmagic.sdk.model.GetCustomFieldsPaginatedResponse;
+import com.textmagic.sdk.model.GetDisallowedRulesResponse;
+import com.textmagic.sdk.model.GetFavouritesPaginatedResponse;
+import com.textmagic.sdk.model.GetForwardedCallsPaginatedResponse;
 import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
-import com.textmagic.sdk.model.GetInvoicesResponse;
+import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
-import com.textmagic.sdk.model.GetListsOfContactResponse;
+import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
 import com.textmagic.sdk.model.GetMessagePricesResponse;
 import com.textmagic.sdk.model.GetMessageSessionStatResponse;
-import com.textmagic.sdk.model.GetMessagesBySessionIdResponse;
+import com.textmagic.sdk.model.GetMessagesBySessionIdPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagingCountersResponse;
 import com.textmagic.sdk.model.GetMessagingStatResponse;
-import com.textmagic.sdk.model.GetOutboundMessagesHistoryResponse;
+import com.textmagic.sdk.model.GetOutboundMessagesHistoryPaginatedResponse;
 import com.textmagic.sdk.model.GetPushTokensResponse;
-import com.textmagic.sdk.model.GetSenderIdsResponse;
+import com.textmagic.sdk.model.GetSenderIdsPaginatedResponse;
 import com.textmagic.sdk.model.GetSenderSettingsResponse;
-import com.textmagic.sdk.model.GetSpendingStatResponse;
+import com.textmagic.sdk.model.GetSpendingStatPaginatedResponse;
 import com.textmagic.sdk.model.GetStateResponse;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensInputObject;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensResponse;
 import com.textmagic.sdk.model.GetSurveyNodesResponse;
-import com.textmagic.sdk.model.GetSurveysResponse;
+import com.textmagic.sdk.model.GetSurveysPaginatedResponse;
+import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
-import com.textmagic.sdk.model.GetUnsubscribersResponse;
-import com.textmagic.sdk.model.GetUserDedicatedNumbersResponse;
-import com.textmagic.sdk.model.GetUserListsResponse;
+import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
+import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
+import com.textmagic.sdk.model.GetUserListsPaginatedResponse;
 import com.textmagic.sdk.model.GetVersionsResponse;
 import com.textmagic.sdk.model.Group;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
@@ -131,15 +134,15 @@ import com.textmagic.sdk.model.ReopenChatsBulkInputObject;
 import com.textmagic.sdk.model.RequestNewSubaccountTokenInputObject;
 import com.textmagic.sdk.model.RequestSenderIdInputObject;
 import com.textmagic.sdk.model.ResourceLinkResponse;
-import com.textmagic.sdk.model.SearchChatsByIdsResponse;
-import com.textmagic.sdk.model.SearchChatsByReceipentResponse;
-import com.textmagic.sdk.model.SearchChatsResponse;
-import com.textmagic.sdk.model.SearchContactsResponse;
-import com.textmagic.sdk.model.SearchInboundMessagesResponse;
-import com.textmagic.sdk.model.SearchListsResponse;
-import com.textmagic.sdk.model.SearchOutboundMessagesResponse;
-import com.textmagic.sdk.model.SearchScheduledMessagesResponse;
-import com.textmagic.sdk.model.SearchTemplatesResponse;
+import com.textmagic.sdk.model.SearchChatsByIdsPaginatedResponse;
+import com.textmagic.sdk.model.SearchChatsByReceipentPaginatedResponse;
+import com.textmagic.sdk.model.SearchChatsPaginatedResponse;
+import com.textmagic.sdk.model.SearchContactsPaginatedResponse;
+import com.textmagic.sdk.model.SearchInboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchListsPaginatedResponse;
+import com.textmagic.sdk.model.SearchOutboundMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchScheduledMessagesPaginatedResponse;
+import com.textmagic.sdk.model.SearchTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.SendMessageInputObject;
 import com.textmagic.sdk.model.SendMessageResponse;
 import com.textmagic.sdk.model.SenderId;
@@ -6543,11 +6546,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetAllBulkSessionsResponse
+     * @return GetAllBulkSessionsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllBulkSessionsResponse getAllBulkSessions(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetAllBulkSessionsResponse> resp = getAllBulkSessionsWithHttpInfo(page, limit);
+    public GetAllBulkSessionsPaginatedResponse getAllBulkSessions(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetAllBulkSessionsPaginatedResponse> resp = getAllBulkSessionsWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -6556,12 +6559,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetAllBulkSessionsResponse&gt;
+     * @return ApiResponse&lt;GetAllBulkSessionsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllBulkSessionsResponse> getAllBulkSessionsWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetAllBulkSessionsPaginatedResponse> getAllBulkSessionsWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getAllBulkSessionsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetAllBulkSessionsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllBulkSessionsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6574,7 +6577,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllBulkSessionsAsync(Integer page, Integer limit, final ApiCallback<GetAllBulkSessionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllBulkSessionsAsync(Integer page, Integer limit, final ApiCallback<GetAllBulkSessionsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6596,7 +6599,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllBulkSessionsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllBulkSessionsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllBulkSessionsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -6684,11 +6687,11 @@ public class TextMagicApi {
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
-     * @return GetAllChatsResponse
+     * @return GetAllChatsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllChatsResponse getAllChats(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat) throws ApiException {
-        ApiResponse<GetAllChatsResponse> resp = getAllChatsWithHttpInfo(status, page, limit, orderBy, voice, flat);
+    public GetAllChatsPaginatedResponse getAllChats(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat) throws ApiException {
+        ApiResponse<GetAllChatsPaginatedResponse> resp = getAllChatsWithHttpInfo(status, page, limit, orderBy, voice, flat);
         return resp.getData();
     }
 
@@ -6701,12 +6704,12 @@ public class TextMagicApi {
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
-     * @return ApiResponse&lt;GetAllChatsResponse&gt;
+     * @return ApiResponse&lt;GetAllChatsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllChatsResponse> getAllChatsWithHttpInfo(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat) throws ApiException {
+    public ApiResponse<GetAllChatsPaginatedResponse> getAllChatsWithHttpInfo(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat) throws ApiException {
         com.squareup.okhttp.Call call = getAllChatsValidateBeforeCall(status, page, limit, orderBy, voice, flat, null, null);
-        Type localVarReturnType = new TypeToken<GetAllChatsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllChatsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6723,7 +6726,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllChatsAsync(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat, final ApiCallback<GetAllChatsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllChatsAsync(String status, Integer page, Integer limit, String orderBy, Integer voice, Integer flat, final ApiCallback<GetAllChatsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6745,7 +6748,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllChatsValidateBeforeCall(status, page, limit, orderBy, voice, flat, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllChatsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllChatsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -6825,11 +6828,11 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetAllInboundMessagesResponse
+     * @return GetAllInboundMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllInboundMessagesResponse getAllInboundMessages(Integer page, Integer limit, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetAllInboundMessagesResponse> resp = getAllInboundMessagesWithHttpInfo(page, limit, orderBy, direction);
+    public GetAllInboundMessagesPaginatedResponse getAllInboundMessages(Integer page, Integer limit, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetAllInboundMessagesPaginatedResponse> resp = getAllInboundMessagesWithHttpInfo(page, limit, orderBy, direction);
         return resp.getData();
     }
 
@@ -6840,12 +6843,12 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetAllInboundMessagesResponse&gt;
+     * @return ApiResponse&lt;GetAllInboundMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllInboundMessagesResponse> getAllInboundMessagesWithHttpInfo(Integer page, Integer limit, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetAllInboundMessagesPaginatedResponse> getAllInboundMessagesWithHttpInfo(Integer page, Integer limit, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getAllInboundMessagesValidateBeforeCall(page, limit, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetAllInboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllInboundMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6860,7 +6863,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllInboundMessagesAsync(Integer page, Integer limit, String orderBy, String direction, final ApiCallback<GetAllInboundMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllInboundMessagesAsync(Integer page, Integer limit, String orderBy, String direction, final ApiCallback<GetAllInboundMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6882,7 +6885,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllInboundMessagesValidateBeforeCall(page, limit, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllInboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllInboundMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -6954,11 +6957,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetAllMessageSessionsResponse
+     * @return GetAllMessageSessionsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllMessageSessionsResponse getAllMessageSessions(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetAllMessageSessionsResponse> resp = getAllMessageSessionsWithHttpInfo(page, limit);
+    public GetAllMessageSessionsPaginatedResponse getAllMessageSessions(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetAllMessageSessionsPaginatedResponse> resp = getAllMessageSessionsWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -6967,12 +6970,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetAllMessageSessionsResponse&gt;
+     * @return ApiResponse&lt;GetAllMessageSessionsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllMessageSessionsResponse> getAllMessageSessionsWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetAllMessageSessionsPaginatedResponse> getAllMessageSessionsWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getAllMessageSessionsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetAllMessageSessionsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllMessageSessionsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -6985,7 +6988,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllMessageSessionsAsync(Integer page, Integer limit, final ApiCallback<GetAllMessageSessionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllMessageSessionsAsync(Integer page, Integer limit, final ApiCallback<GetAllMessageSessionsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -7007,7 +7010,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllMessageSessionsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllMessageSessionsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllMessageSessionsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -7083,11 +7086,11 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
-     * @return GetAllOutboundMessagesResponse
+     * @return GetAllOutboundMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllOutboundMessagesResponse getAllOutboundMessages(Integer page, Integer limit, Integer lastId) throws ApiException {
-        ApiResponse<GetAllOutboundMessagesResponse> resp = getAllOutboundMessagesWithHttpInfo(page, limit, lastId);
+    public GetAllOutboundMessagesPaginatedResponse getAllOutboundMessages(Integer page, Integer limit, Integer lastId) throws ApiException {
+        ApiResponse<GetAllOutboundMessagesPaginatedResponse> resp = getAllOutboundMessagesWithHttpInfo(page, limit, lastId);
         return resp.getData();
     }
 
@@ -7097,12 +7100,12 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
-     * @return ApiResponse&lt;GetAllOutboundMessagesResponse&gt;
+     * @return ApiResponse&lt;GetAllOutboundMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllOutboundMessagesResponse> getAllOutboundMessagesWithHttpInfo(Integer page, Integer limit, Integer lastId) throws ApiException {
+    public ApiResponse<GetAllOutboundMessagesPaginatedResponse> getAllOutboundMessagesWithHttpInfo(Integer page, Integer limit, Integer lastId) throws ApiException {
         com.squareup.okhttp.Call call = getAllOutboundMessagesValidateBeforeCall(page, limit, lastId, null, null);
-        Type localVarReturnType = new TypeToken<GetAllOutboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllOutboundMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -7116,7 +7119,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllOutboundMessagesAsync(Integer page, Integer limit, Integer lastId, final ApiCallback<GetAllOutboundMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllOutboundMessagesAsync(Integer page, Integer limit, Integer lastId, final ApiCallback<GetAllOutboundMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -7138,7 +7141,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllOutboundMessagesValidateBeforeCall(page, limit, lastId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllOutboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllOutboundMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -7222,11 +7225,11 @@ public class TextMagicApi {
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetAllScheduledMessagesResponse
+     * @return GetAllScheduledMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllScheduledMessagesResponse getAllScheduledMessages(Integer page, Integer limit, String status, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetAllScheduledMessagesResponse> resp = getAllScheduledMessagesWithHttpInfo(page, limit, status, orderBy, direction);
+    public GetAllScheduledMessagesPaginatedResponse getAllScheduledMessages(Integer page, Integer limit, String status, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetAllScheduledMessagesPaginatedResponse> resp = getAllScheduledMessagesWithHttpInfo(page, limit, status, orderBy, direction);
         return resp.getData();
     }
 
@@ -7238,12 +7241,12 @@ public class TextMagicApi {
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetAllScheduledMessagesResponse&gt;
+     * @return ApiResponse&lt;GetAllScheduledMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllScheduledMessagesResponse> getAllScheduledMessagesWithHttpInfo(Integer page, Integer limit, String status, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetAllScheduledMessagesPaginatedResponse> getAllScheduledMessagesWithHttpInfo(Integer page, Integer limit, String status, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getAllScheduledMessagesValidateBeforeCall(page, limit, status, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetAllScheduledMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllScheduledMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -7259,7 +7262,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllScheduledMessagesAsync(Integer page, Integer limit, String status, String orderBy, String direction, final ApiCallback<GetAllScheduledMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllScheduledMessagesAsync(Integer page, Integer limit, String status, String orderBy, String direction, final ApiCallback<GetAllScheduledMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -7281,7 +7284,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllScheduledMessagesValidateBeforeCall(page, limit, status, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllScheduledMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllScheduledMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -7353,11 +7356,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional)
      * @param limit How many results to return (optional)
-     * @return GetAllTemplatesResponse
+     * @return GetAllTemplatesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetAllTemplatesResponse getAllTemplates(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetAllTemplatesResponse> resp = getAllTemplatesWithHttpInfo(page, limit);
+    public GetAllTemplatesPaginatedResponse getAllTemplates(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetAllTemplatesPaginatedResponse> resp = getAllTemplatesWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -7366,12 +7369,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional)
      * @param limit How many results to return (optional)
-     * @return ApiResponse&lt;GetAllTemplatesResponse&gt;
+     * @return ApiResponse&lt;GetAllTemplatesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetAllTemplatesResponse> getAllTemplatesWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetAllTemplatesPaginatedResponse> getAllTemplatesWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getAllTemplatesValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetAllTemplatesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllTemplatesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -7384,7 +7387,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllTemplatesAsync(Integer page, Integer limit, final ApiCallback<GetAllTemplatesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllTemplatesAsync(Integer page, Integer limit, final ApiCallback<GetAllTemplatesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -7406,7 +7409,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getAllTemplatesValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetAllTemplatesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAllTemplatesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -7971,11 +7974,11 @@ public class TextMagicApi {
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetBlockedContactsResponse
+     * @return GetBlockedContactsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetBlockedContactsResponse getBlockedContacts(Integer page, Integer limit, String query, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetBlockedContactsResponse> resp = getBlockedContactsWithHttpInfo(page, limit, query, orderBy, direction);
+    public GetBlockedContactsPaginatedResponse getBlockedContacts(Integer page, Integer limit, String query, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetBlockedContactsPaginatedResponse> resp = getBlockedContactsWithHttpInfo(page, limit, query, orderBy, direction);
         return resp.getData();
     }
 
@@ -7987,12 +7990,12 @@ public class TextMagicApi {
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetBlockedContactsResponse&gt;
+     * @return ApiResponse&lt;GetBlockedContactsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetBlockedContactsResponse> getBlockedContactsWithHttpInfo(Integer page, Integer limit, String query, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetBlockedContactsPaginatedResponse> getBlockedContactsWithHttpInfo(Integer page, Integer limit, String query, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getBlockedContactsValidateBeforeCall(page, limit, query, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetBlockedContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetBlockedContactsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -8008,7 +8011,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getBlockedContactsAsync(Integer page, Integer limit, String query, String orderBy, String direction, final ApiCallback<GetBlockedContactsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getBlockedContactsAsync(Integer page, Integer limit, String query, String orderBy, String direction, final ApiCallback<GetBlockedContactsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -8030,7 +8033,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getBlockedContactsValidateBeforeCall(page, limit, query, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetBlockedContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetBlockedContactsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -8330,23 +8333,23 @@ public class TextMagicApi {
     /**
      * Check pricing for a inbound/outbound call.
      * 
-     * @return Map&lt;String, Object&gt;
+     * @return GetCallsPricesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Map<String, Object> getCallsPrices() throws ApiException {
-        ApiResponse<Map<String, Object>> resp = getCallsPricesWithHttpInfo();
+    public GetCallsPricesResponse getCallsPrices() throws ApiException {
+        ApiResponse<GetCallsPricesResponse> resp = getCallsPricesWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Check pricing for a inbound/outbound call.
      * 
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;GetCallsPricesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Map<String, Object>> getCallsPricesWithHttpInfo() throws ApiException {
+    public ApiResponse<GetCallsPricesResponse> getCallsPricesWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getCallsPricesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCallsPricesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -8357,7 +8360,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCallsPricesAsync(final ApiCallback<Map<String, Object>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCallsPricesAsync(final ApiCallback<GetCallsPricesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -8379,7 +8382,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getCallsPricesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCallsPricesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -8737,11 +8740,11 @@ public class TextMagicApi {
      * @param end Return messages up to specified timestamp only (optional)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param voice Fetch results with voice calls (optional, default to 0)
-     * @return GetChatMessagesResponse
+     * @return GetChatMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetChatMessagesResponse getChatMessages(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice) throws ApiException {
-        ApiResponse<GetChatMessagesResponse> resp = getChatMessagesWithHttpInfo(id, page, limit, query, start, end, direction, voice);
+    public GetChatMessagesPaginatedResponse getChatMessages(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice) throws ApiException {
+        ApiResponse<GetChatMessagesPaginatedResponse> resp = getChatMessagesWithHttpInfo(id, page, limit, query, start, end, direction, voice);
         return resp.getData();
     }
 
@@ -8756,12 +8759,12 @@ public class TextMagicApi {
      * @param end Return messages up to specified timestamp only (optional)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param voice Fetch results with voice calls (optional, default to 0)
-     * @return ApiResponse&lt;GetChatMessagesResponse&gt;
+     * @return ApiResponse&lt;GetChatMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetChatMessagesResponse> getChatMessagesWithHttpInfo(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice) throws ApiException {
+    public ApiResponse<GetChatMessagesPaginatedResponse> getChatMessagesWithHttpInfo(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice) throws ApiException {
         com.squareup.okhttp.Call call = getChatMessagesValidateBeforeCall(id, page, limit, query, start, end, direction, voice, null, null);
-        Type localVarReturnType = new TypeToken<GetChatMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetChatMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -8780,7 +8783,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getChatMessagesAsync(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice, final ApiCallback<GetChatMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getChatMessagesAsync(Integer id, Integer page, Integer limit, String query, Integer start, Integer end, String direction, Integer voice, final ApiCallback<GetChatMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -8802,7 +8805,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getChatMessagesValidateBeforeCall(id, page, limit, query, start, end, direction, voice, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetChatMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetChatMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -9498,11 +9501,11 @@ public class TextMagicApi {
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetContactNotesResponse
+     * @return GetContactNotesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetContactNotesResponse getContactNotes(Integer id, Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetContactNotesResponse> resp = getContactNotesWithHttpInfo(id, page, limit);
+    public GetContactNotesPaginatedResponse getContactNotes(Integer id, Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetContactNotesPaginatedResponse> resp = getContactNotesWithHttpInfo(id, page, limit);
         return resp.getData();
     }
 
@@ -9512,12 +9515,12 @@ public class TextMagicApi {
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetContactNotesResponse&gt;
+     * @return ApiResponse&lt;GetContactNotesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetContactNotesResponse> getContactNotesWithHttpInfo(Integer id, Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetContactNotesPaginatedResponse> getContactNotesWithHttpInfo(Integer id, Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getContactNotesValidateBeforeCall(id, page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetContactNotesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactNotesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -9531,7 +9534,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContactNotesAsync(Integer id, Integer page, Integer limit, final ApiCallback<GetContactNotesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContactNotesAsync(Integer id, Integer page, Integer limit, final ApiCallback<GetContactNotesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9553,7 +9556,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getContactNotesValidateBeforeCall(id, page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetContactNotesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactNotesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -9637,11 +9640,11 @@ public class TextMagicApi {
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetContactsResponse
+     * @return GetContactsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetContactsResponse getContacts(Integer page, Integer limit, Integer shared, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetContactsResponse> resp = getContactsWithHttpInfo(page, limit, shared, orderBy, direction);
+    public GetContactsPaginatedResponse getContacts(Integer page, Integer limit, Integer shared, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetContactsPaginatedResponse> resp = getContactsWithHttpInfo(page, limit, shared, orderBy, direction);
         return resp.getData();
     }
 
@@ -9653,12 +9656,12 @@ public class TextMagicApi {
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetContactsResponse&gt;
+     * @return ApiResponse&lt;GetContactsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetContactsResponse> getContactsWithHttpInfo(Integer page, Integer limit, Integer shared, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetContactsPaginatedResponse> getContactsWithHttpInfo(Integer page, Integer limit, Integer shared, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getContactsValidateBeforeCall(page, limit, shared, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -9674,7 +9677,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContactsAsync(Integer page, Integer limit, Integer shared, String orderBy, String direction, final ApiCallback<GetContactsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContactsAsync(Integer page, Integer limit, Integer shared, String orderBy, String direction, final ApiCallback<GetContactsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9696,7 +9699,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getContactsValidateBeforeCall(page, limit, shared, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -9777,11 +9780,11 @@ public class TextMagicApi {
      * @param query Find recipients by specified search query (required)
      * @param limit How many results to return (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
-     * @return List&lt;GetContactsAutocompleteResponse&gt;
+     * @return GetContactsAutocompleteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<GetContactsAutocompleteResponse> getContactsAutocomplete(String query, Integer limit, Integer lists) throws ApiException {
-        ApiResponse<List<GetContactsAutocompleteResponse>> resp = getContactsAutocompleteWithHttpInfo(query, limit, lists);
+    public GetContactsAutocompleteResponse getContactsAutocomplete(String query, Integer limit, Integer lists) throws ApiException {
+        ApiResponse<GetContactsAutocompleteResponse> resp = getContactsAutocompleteWithHttpInfo(query, limit, lists);
         return resp.getData();
     }
 
@@ -9791,12 +9794,12 @@ public class TextMagicApi {
      * @param query Find recipients by specified search query (required)
      * @param limit How many results to return (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
-     * @return ApiResponse&lt;List&lt;GetContactsAutocompleteResponse&gt;&gt;
+     * @return ApiResponse&lt;GetContactsAutocompleteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<GetContactsAutocompleteResponse>> getContactsAutocompleteWithHttpInfo(String query, Integer limit, Integer lists) throws ApiException {
+    public ApiResponse<GetContactsAutocompleteResponse> getContactsAutocompleteWithHttpInfo(String query, Integer limit, Integer lists) throws ApiException {
         com.squareup.okhttp.Call call = getContactsAutocompleteValidateBeforeCall(query, limit, lists, null, null);
-        Type localVarReturnType = new TypeToken<List<GetContactsAutocompleteResponse>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsAutocompleteResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -9810,7 +9813,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContactsAutocompleteAsync(String query, Integer limit, Integer lists, final ApiCallback<List<GetContactsAutocompleteResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContactsAutocompleteAsync(String query, Integer limit, Integer lists, final ApiCallback<GetContactsAutocompleteResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9832,7 +9835,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getContactsAutocompleteValidateBeforeCall(query, limit, lists, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<GetContactsAutocompleteResponse>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsAutocompleteResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -9920,11 +9923,11 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetContactsByListIdResponse
+     * @return GetContactsByListIdPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetContactsByListIdResponse getContactsByListId(Integer id, Integer page, Integer limit, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetContactsByListIdResponse> resp = getContactsByListIdWithHttpInfo(id, page, limit, orderBy, direction);
+    public GetContactsByListIdPaginatedResponse getContactsByListId(Integer id, Integer page, Integer limit, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetContactsByListIdPaginatedResponse> resp = getContactsByListIdWithHttpInfo(id, page, limit, orderBy, direction);
         return resp.getData();
     }
 
@@ -9936,12 +9939,12 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetContactsByListIdResponse&gt;
+     * @return ApiResponse&lt;GetContactsByListIdPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetContactsByListIdResponse> getContactsByListIdWithHttpInfo(Integer id, Integer page, Integer limit, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetContactsByListIdPaginatedResponse> getContactsByListIdWithHttpInfo(Integer id, Integer page, Integer limit, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getContactsByListIdValidateBeforeCall(id, page, limit, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetContactsByListIdResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsByListIdPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -9957,7 +9960,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getContactsByListIdAsync(Integer id, Integer page, Integer limit, String orderBy, String direction, final ApiCallback<GetContactsByListIdResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getContactsByListIdAsync(Integer id, Integer page, Integer limit, String orderBy, String direction, final ApiCallback<GetContactsByListIdPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -9979,7 +9982,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getContactsByListIdValidateBeforeCall(id, page, limit, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetContactsByListIdResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetContactsByListIdPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10043,23 +10046,23 @@ public class TextMagicApi {
     /**
      * Return list of countries.
      * 
-     * @return List&lt;Country&gt;
+     * @return GetCountriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Country> getCountries() throws ApiException {
-        ApiResponse<List<Country>> resp = getCountriesWithHttpInfo();
+    public GetCountriesResponse getCountries() throws ApiException {
+        ApiResponse<GetCountriesResponse> resp = getCountriesWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Return list of countries.
      * 
-     * @return ApiResponse&lt;List&lt;Country&gt;&gt;
+     * @return ApiResponse&lt;GetCountriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Country>> getCountriesWithHttpInfo() throws ApiException {
+    public ApiResponse<GetCountriesResponse> getCountriesWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getCountriesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<Country>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCountriesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10070,7 +10073,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCountriesAsync(final ApiCallback<List<Country>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCountriesAsync(final ApiCallback<GetCountriesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10092,7 +10095,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getCountriesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<Country>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCountriesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10400,11 +10403,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetCustomFieldsResponse
+     * @return GetCustomFieldsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetCustomFieldsResponse getCustomFields(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetCustomFieldsResponse> resp = getCustomFieldsWithHttpInfo(page, limit);
+    public GetCustomFieldsPaginatedResponse getCustomFields(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetCustomFieldsPaginatedResponse> resp = getCustomFieldsWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -10413,12 +10416,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetCustomFieldsResponse&gt;
+     * @return ApiResponse&lt;GetCustomFieldsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetCustomFieldsResponse> getCustomFieldsWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetCustomFieldsPaginatedResponse> getCustomFieldsWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getCustomFieldsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetCustomFieldsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCustomFieldsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10431,7 +10434,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCustomFieldsAsync(Integer page, Integer limit, final ApiCallback<GetCustomFieldsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCustomFieldsAsync(Integer page, Integer limit, final ApiCallback<GetCustomFieldsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10453,7 +10456,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getCustomFieldsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetCustomFieldsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetCustomFieldsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10640,23 +10643,23 @@ public class TextMagicApi {
     /**
      * Get an array of all rules that are disallowed to the current account.
      * 
-     * @return List&lt;String&gt;
+     * @return GetDisallowedRulesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<String> getDisallowedRules() throws ApiException {
-        ApiResponse<List<String>> resp = getDisallowedRulesWithHttpInfo();
+    public GetDisallowedRulesResponse getDisallowedRules() throws ApiException {
+        ApiResponse<GetDisallowedRulesResponse> resp = getDisallowedRulesWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Get an array of all rules that are disallowed to the current account.
      * 
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;GetDisallowedRulesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<String>> getDisallowedRulesWithHttpInfo() throws ApiException {
+    public ApiResponse<GetDisallowedRulesResponse> getDisallowedRulesWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getDisallowedRulesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDisallowedRulesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10667,7 +10670,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getDisallowedRulesAsync(final ApiCallback<List<String>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getDisallowedRulesAsync(final ApiCallback<GetDisallowedRulesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10689,7 +10692,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getDisallowedRulesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetDisallowedRulesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10765,11 +10768,11 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
-     * @return GetFavouritesResponse
+     * @return GetFavouritesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetFavouritesResponse getFavourites(Integer page, Integer limit, String query) throws ApiException {
-        ApiResponse<GetFavouritesResponse> resp = getFavouritesWithHttpInfo(page, limit, query);
+    public GetFavouritesPaginatedResponse getFavourites(Integer page, Integer limit, String query) throws ApiException {
+        ApiResponse<GetFavouritesPaginatedResponse> resp = getFavouritesWithHttpInfo(page, limit, query);
         return resp.getData();
     }
 
@@ -10779,12 +10782,12 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
-     * @return ApiResponse&lt;GetFavouritesResponse&gt;
+     * @return ApiResponse&lt;GetFavouritesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetFavouritesResponse> getFavouritesWithHttpInfo(Integer page, Integer limit, String query) throws ApiException {
+    public ApiResponse<GetFavouritesPaginatedResponse> getFavouritesWithHttpInfo(Integer page, Integer limit, String query) throws ApiException {
         com.squareup.okhttp.Call call = getFavouritesValidateBeforeCall(page, limit, query, null, null);
-        Type localVarReturnType = new TypeToken<GetFavouritesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetFavouritesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10798,7 +10801,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getFavouritesAsync(Integer page, Integer limit, String query, final ApiCallback<GetFavouritesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getFavouritesAsync(Integer page, Integer limit, String query, final ApiCallback<GetFavouritesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10820,7 +10823,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getFavouritesValidateBeforeCall(page, limit, query, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetFavouritesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetFavouritesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -10892,11 +10895,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetForwardedCallsResponse
+     * @return GetForwardedCallsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetForwardedCallsResponse getForwardedCalls(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetForwardedCallsResponse> resp = getForwardedCallsWithHttpInfo(page, limit);
+    public GetForwardedCallsPaginatedResponse getForwardedCalls(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetForwardedCallsPaginatedResponse> resp = getForwardedCallsWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -10905,12 +10908,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetForwardedCallsResponse&gt;
+     * @return ApiResponse&lt;GetForwardedCallsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetForwardedCallsResponse> getForwardedCallsWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetForwardedCallsPaginatedResponse> getForwardedCallsWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getForwardedCallsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetForwardedCallsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetForwardedCallsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -10923,7 +10926,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getForwardedCallsAsync(Integer page, Integer limit, final ApiCallback<GetForwardedCallsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getForwardedCallsAsync(Integer page, Integer limit, final ApiCallback<GetForwardedCallsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -10945,7 +10948,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getForwardedCallsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetForwardedCallsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetForwardedCallsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -11253,11 +11256,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetInvoicesResponse
+     * @return GetInvoicesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetInvoicesResponse getInvoices(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetInvoicesResponse> resp = getInvoicesWithHttpInfo(page, limit);
+    public GetInvoicesPaginatedResponse getInvoices(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetInvoicesPaginatedResponse> resp = getInvoicesWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -11266,12 +11269,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetInvoicesResponse&gt;
+     * @return ApiResponse&lt;GetInvoicesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetInvoicesResponse> getInvoicesWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetInvoicesPaginatedResponse> getInvoicesWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getInvoicesValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetInvoicesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetInvoicesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -11284,7 +11287,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getInvoicesAsync(Integer page, Integer limit, final ApiCallback<GetInvoicesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getInvoicesAsync(Integer page, Integer limit, final ApiCallback<GetInvoicesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -11306,7 +11309,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getInvoicesValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetInvoicesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetInvoicesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -11632,11 +11635,11 @@ public class TextMagicApi {
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetListsOfContactResponse
+     * @return GetListsOfContactPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetListsOfContactResponse getListsOfContact(Integer id, Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetListsOfContactResponse> resp = getListsOfContactWithHttpInfo(id, page, limit);
+    public GetListsOfContactPaginatedResponse getListsOfContact(Integer id, Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetListsOfContactPaginatedResponse> resp = getListsOfContactWithHttpInfo(id, page, limit);
         return resp.getData();
     }
 
@@ -11646,12 +11649,12 @@ public class TextMagicApi {
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetListsOfContactResponse&gt;
+     * @return ApiResponse&lt;GetListsOfContactPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetListsOfContactResponse> getListsOfContactWithHttpInfo(Integer id, Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetListsOfContactPaginatedResponse> getListsOfContactWithHttpInfo(Integer id, Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getListsOfContactValidateBeforeCall(id, page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetListsOfContactResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetListsOfContactPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -11665,7 +11668,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getListsOfContactAsync(Integer id, Integer page, Integer limit, final ApiCallback<GetListsOfContactResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getListsOfContactAsync(Integer id, Integer page, Integer limit, final ApiCallback<GetListsOfContactPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -11687,7 +11690,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getListsOfContactValidateBeforeCall(id, page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetListsOfContactResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetListsOfContactPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -12576,11 +12579,11 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
-     * @return GetMessagesBySessionIdResponse
+     * @return GetMessagesBySessionIdPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetMessagesBySessionIdResponse getMessagesBySessionId(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted) throws ApiException {
-        ApiResponse<GetMessagesBySessionIdResponse> resp = getMessagesBySessionIdWithHttpInfo(id, page, limit, statuses, includeDeleted);
+    public GetMessagesBySessionIdPaginatedResponse getMessagesBySessionId(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted) throws ApiException {
+        ApiResponse<GetMessagesBySessionIdPaginatedResponse> resp = getMessagesBySessionIdWithHttpInfo(id, page, limit, statuses, includeDeleted);
         return resp.getData();
     }
 
@@ -12592,12 +12595,12 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
-     * @return ApiResponse&lt;GetMessagesBySessionIdResponse&gt;
+     * @return ApiResponse&lt;GetMessagesBySessionIdPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetMessagesBySessionIdResponse> getMessagesBySessionIdWithHttpInfo(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted) throws ApiException {
+    public ApiResponse<GetMessagesBySessionIdPaginatedResponse> getMessagesBySessionIdWithHttpInfo(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted) throws ApiException {
         com.squareup.okhttp.Call call = getMessagesBySessionIdValidateBeforeCall(id, page, limit, statuses, includeDeleted, null, null);
-        Type localVarReturnType = new TypeToken<GetMessagesBySessionIdResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetMessagesBySessionIdPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -12613,7 +12616,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMessagesBySessionIdAsync(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted, final ApiCallback<GetMessagesBySessionIdResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getMessagesBySessionIdAsync(Integer id, Integer page, Integer limit, String statuses, Integer includeDeleted, final ApiCallback<GetMessagesBySessionIdPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -12635,7 +12638,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getMessagesBySessionIdValidateBeforeCall(id, page, limit, statuses, includeDeleted, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetMessagesBySessionIdResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetMessagesBySessionIdPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -13086,11 +13089,11 @@ public class TextMagicApi {
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return GetOutboundMessagesHistoryResponse
+     * @return GetOutboundMessagesHistoryPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetOutboundMessagesHistoryResponse getOutboundMessagesHistory(Integer limit, Integer lastId, String query, String orderBy, String direction) throws ApiException {
-        ApiResponse<GetOutboundMessagesHistoryResponse> resp = getOutboundMessagesHistoryWithHttpInfo(limit, lastId, query, orderBy, direction);
+    public GetOutboundMessagesHistoryPaginatedResponse getOutboundMessagesHistory(Integer limit, Integer lastId, String query, String orderBy, String direction) throws ApiException {
+        ApiResponse<GetOutboundMessagesHistoryPaginatedResponse> resp = getOutboundMessagesHistoryWithHttpInfo(limit, lastId, query, orderBy, direction);
         return resp.getData();
     }
 
@@ -13102,12 +13105,12 @@ public class TextMagicApi {
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;GetOutboundMessagesHistoryResponse&gt;
+     * @return ApiResponse&lt;GetOutboundMessagesHistoryPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetOutboundMessagesHistoryResponse> getOutboundMessagesHistoryWithHttpInfo(Integer limit, Integer lastId, String query, String orderBy, String direction) throws ApiException {
+    public ApiResponse<GetOutboundMessagesHistoryPaginatedResponse> getOutboundMessagesHistoryWithHttpInfo(Integer limit, Integer lastId, String query, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = getOutboundMessagesHistoryValidateBeforeCall(limit, lastId, query, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<GetOutboundMessagesHistoryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetOutboundMessagesHistoryPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -13123,7 +13126,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOutboundMessagesHistoryAsync(Integer limit, Integer lastId, String query, String orderBy, String direction, final ApiCallback<GetOutboundMessagesHistoryResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOutboundMessagesHistoryAsync(Integer limit, Integer lastId, String query, String orderBy, String direction, final ApiCallback<GetOutboundMessagesHistoryPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13145,7 +13148,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getOutboundMessagesHistoryValidateBeforeCall(limit, lastId, query, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetOutboundMessagesHistoryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetOutboundMessagesHistoryPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -13576,11 +13579,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetSenderIdsResponse
+     * @return GetSenderIdsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSenderIdsResponse getSenderIds(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetSenderIdsResponse> resp = getSenderIdsWithHttpInfo(page, limit);
+    public GetSenderIdsPaginatedResponse getSenderIds(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetSenderIdsPaginatedResponse> resp = getSenderIdsWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -13589,12 +13592,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetSenderIdsResponse&gt;
+     * @return ApiResponse&lt;GetSenderIdsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSenderIdsResponse> getSenderIdsWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetSenderIdsPaginatedResponse> getSenderIdsWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getSenderIdsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetSenderIdsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSenderIdsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -13607,7 +13610,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSenderIdsAsync(Integer page, Integer limit, final ApiCallback<GetSenderIdsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSenderIdsAsync(Integer page, Integer limit, final ApiCallback<GetSenderIdsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13629,7 +13632,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getSenderIdsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetSenderIdsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSenderIdsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -13828,11 +13831,11 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
-     * @return GetSpendingStatResponse
+     * @return GetSpendingStatPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSpendingStatResponse getSpendingStat(Integer page, Integer limit, Integer start, Integer end) throws ApiException {
-        ApiResponse<GetSpendingStatResponse> resp = getSpendingStatWithHttpInfo(page, limit, start, end);
+    public GetSpendingStatPaginatedResponse getSpendingStat(Integer page, Integer limit, Integer start, Integer end) throws ApiException {
+        ApiResponse<GetSpendingStatPaginatedResponse> resp = getSpendingStatWithHttpInfo(page, limit, start, end);
         return resp.getData();
     }
 
@@ -13843,12 +13846,12 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
-     * @return ApiResponse&lt;GetSpendingStatResponse&gt;
+     * @return ApiResponse&lt;GetSpendingStatPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSpendingStatResponse> getSpendingStatWithHttpInfo(Integer page, Integer limit, Integer start, Integer end) throws ApiException {
+    public ApiResponse<GetSpendingStatPaginatedResponse> getSpendingStatWithHttpInfo(Integer page, Integer limit, Integer start, Integer end) throws ApiException {
         com.squareup.okhttp.Call call = getSpendingStatValidateBeforeCall(page, limit, start, end, null, null);
-        Type localVarReturnType = new TypeToken<GetSpendingStatResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSpendingStatPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -13863,7 +13866,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSpendingStatAsync(Integer page, Integer limit, Integer start, Integer end, final ApiCallback<GetSpendingStatResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSpendingStatAsync(Integer page, Integer limit, Integer start, Integer end, final ApiCallback<GetSpendingStatPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13885,7 +13888,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getSpendingStatValidateBeforeCall(page, limit, start, end, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetSpendingStatResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSpendingStatPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -14821,11 +14824,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetSurveysResponse
+     * @return GetSurveysPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSurveysResponse getSurveys(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetSurveysResponse> resp = getSurveysWithHttpInfo(page, limit);
+    public GetSurveysPaginatedResponse getSurveys(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetSurveysPaginatedResponse> resp = getSurveysWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -14834,12 +14837,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetSurveysResponse&gt;
+     * @return ApiResponse&lt;GetSurveysPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSurveysResponse> getSurveysWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetSurveysPaginatedResponse> getSurveysWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getSurveysValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetSurveysResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSurveysPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -14852,7 +14855,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSurveysAsync(Integer page, Integer limit, final ApiCallback<GetSurveysResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSurveysAsync(Integer page, Integer limit, final ApiCallback<GetSurveysPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -14874,7 +14877,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getSurveysValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetSurveysResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetSurveysPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15065,11 +15068,11 @@ public class TextMagicApi {
      * Return all available timezone IDs.
      * 
      * @param full Return full info about timezones in array (0 or 1). Default is 0 (optional, default to 0)
-     * @return Object
+     * @return GetTimezonesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object getTimezones(Integer full) throws ApiException {
-        ApiResponse<Object> resp = getTimezonesWithHttpInfo(full);
+    public GetTimezonesResponse getTimezones(Integer full) throws ApiException {
+        ApiResponse<GetTimezonesResponse> resp = getTimezonesWithHttpInfo(full);
         return resp.getData();
     }
 
@@ -15077,12 +15080,12 @@ public class TextMagicApi {
      * Return all available timezone IDs.
      * 
      * @param full Return full info about timezones in array (0 or 1). Default is 0 (optional, default to 0)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;GetTimezonesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> getTimezonesWithHttpInfo(Integer full) throws ApiException {
+    public ApiResponse<GetTimezonesResponse> getTimezonesWithHttpInfo(Integer full) throws ApiException {
         com.squareup.okhttp.Call call = getTimezonesValidateBeforeCall(full, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTimezonesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -15094,7 +15097,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTimezonesAsync(Integer full, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTimezonesAsync(Integer full, final ApiCallback<GetTimezonesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15116,7 +15119,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getTimezonesValidateBeforeCall(full, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetTimezonesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15424,11 +15427,11 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return GetUnsubscribersResponse
+     * @return GetUnsubscribersPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetUnsubscribersResponse getUnsubscribers(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetUnsubscribersResponse> resp = getUnsubscribersWithHttpInfo(page, limit);
+    public GetUnsubscribersPaginatedResponse getUnsubscribers(Integer page, Integer limit) throws ApiException {
+        ApiResponse<GetUnsubscribersPaginatedResponse> resp = getUnsubscribersWithHttpInfo(page, limit);
         return resp.getData();
     }
 
@@ -15437,12 +15440,12 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetUnsubscribersResponse&gt;
+     * @return ApiResponse&lt;GetUnsubscribersPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetUnsubscribersResponse> getUnsubscribersWithHttpInfo(Integer page, Integer limit) throws ApiException {
+    public ApiResponse<GetUnsubscribersPaginatedResponse> getUnsubscribersWithHttpInfo(Integer page, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getUnsubscribersValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetUnsubscribersResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUnsubscribersPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -15455,7 +15458,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUnsubscribersAsync(Integer page, Integer limit, final ApiCallback<GetUnsubscribersResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUnsubscribersAsync(Integer page, Integer limit, final ApiCallback<GetUnsubscribersPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15477,7 +15480,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getUnsubscribersValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetUnsubscribersResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUnsubscribersPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15553,11 +15556,11 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
-     * @return GetUserDedicatedNumbersResponse
+     * @return GetUserDedicatedNumbersPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetUserDedicatedNumbersResponse getUserDedicatedNumbers(Integer page, Integer limit, Integer surveyId) throws ApiException {
-        ApiResponse<GetUserDedicatedNumbersResponse> resp = getUserDedicatedNumbersWithHttpInfo(page, limit, surveyId);
+    public GetUserDedicatedNumbersPaginatedResponse getUserDedicatedNumbers(Integer page, Integer limit, Integer surveyId) throws ApiException {
+        ApiResponse<GetUserDedicatedNumbersPaginatedResponse> resp = getUserDedicatedNumbersWithHttpInfo(page, limit, surveyId);
         return resp.getData();
     }
 
@@ -15567,12 +15570,12 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
-     * @return ApiResponse&lt;GetUserDedicatedNumbersResponse&gt;
+     * @return ApiResponse&lt;GetUserDedicatedNumbersPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetUserDedicatedNumbersResponse> getUserDedicatedNumbersWithHttpInfo(Integer page, Integer limit, Integer surveyId) throws ApiException {
+    public ApiResponse<GetUserDedicatedNumbersPaginatedResponse> getUserDedicatedNumbersWithHttpInfo(Integer page, Integer limit, Integer surveyId) throws ApiException {
         com.squareup.okhttp.Call call = getUserDedicatedNumbersValidateBeforeCall(page, limit, surveyId, null, null);
-        Type localVarReturnType = new TypeToken<GetUserDedicatedNumbersResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUserDedicatedNumbersPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -15586,7 +15589,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserDedicatedNumbersAsync(Integer page, Integer limit, Integer surveyId, final ApiCallback<GetUserDedicatedNumbersResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserDedicatedNumbersAsync(Integer page, Integer limit, Integer surveyId, final ApiCallback<GetUserDedicatedNumbersPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15608,7 +15611,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getUserDedicatedNumbersValidateBeforeCall(page, limit, surveyId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetUserDedicatedNumbersResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUserDedicatedNumbersPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15696,11 +15699,11 @@ public class TextMagicApi {
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
      * @param onlyMine Return only current user lists (optional, default to 0)
-     * @return GetUserListsResponse
+     * @return GetUserListsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetUserListsResponse getUserLists(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
-        ApiResponse<GetUserListsResponse> resp = getUserListsWithHttpInfo(page, limit, orderBy, direction, favoriteOnly, onlyMine);
+    public GetUserListsPaginatedResponse getUserLists(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
+        ApiResponse<GetUserListsPaginatedResponse> resp = getUserListsWithHttpInfo(page, limit, orderBy, direction, favoriteOnly, onlyMine);
         return resp.getData();
     }
 
@@ -15713,12 +15716,12 @@ public class TextMagicApi {
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
      * @param onlyMine Return only current user lists (optional, default to 0)
-     * @return ApiResponse&lt;GetUserListsResponse&gt;
+     * @return ApiResponse&lt;GetUserListsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetUserListsResponse> getUserListsWithHttpInfo(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
+    public ApiResponse<GetUserListsPaginatedResponse> getUserListsWithHttpInfo(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
         com.squareup.okhttp.Call call = getUserListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, null, null);
-        Type localVarReturnType = new TypeToken<GetUserListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUserListsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -15735,7 +15738,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserListsAsync(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ApiCallback<GetUserListsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserListsAsync(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ApiCallback<GetUserListsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -15757,7 +15760,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getUserListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetUserListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetUserListsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -17265,11 +17268,11 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param query Find chats by specified search query (optional)
-     * @return SearchChatsResponse
+     * @return SearchChatsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchChatsResponse searchChats(Integer page, Integer limit, String query) throws ApiException {
-        ApiResponse<SearchChatsResponse> resp = searchChatsWithHttpInfo(page, limit, query);
+    public SearchChatsPaginatedResponse searchChats(Integer page, Integer limit, String query) throws ApiException {
+        ApiResponse<SearchChatsPaginatedResponse> resp = searchChatsWithHttpInfo(page, limit, query);
         return resp.getData();
     }
 
@@ -17279,12 +17282,12 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param query Find chats by specified search query (optional)
-     * @return ApiResponse&lt;SearchChatsResponse&gt;
+     * @return ApiResponse&lt;SearchChatsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchChatsResponse> searchChatsWithHttpInfo(Integer page, Integer limit, String query) throws ApiException {
+    public ApiResponse<SearchChatsPaginatedResponse> searchChatsWithHttpInfo(Integer page, Integer limit, String query) throws ApiException {
         com.squareup.okhttp.Call call = searchChatsValidateBeforeCall(page, limit, query, null, null);
-        Type localVarReturnType = new TypeToken<SearchChatsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -17298,7 +17301,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchChatsAsync(Integer page, Integer limit, String query, final ApiCallback<SearchChatsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchChatsAsync(Integer page, Integer limit, String query, final ApiCallback<SearchChatsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17320,7 +17323,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchChatsValidateBeforeCall(page, limit, query, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchChatsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -17396,11 +17399,11 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
-     * @return SearchChatsByIdsResponse
+     * @return SearchChatsByIdsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchChatsByIdsResponse searchChatsByIds(Integer page, Integer limit, String ids) throws ApiException {
-        ApiResponse<SearchChatsByIdsResponse> resp = searchChatsByIdsWithHttpInfo(page, limit, ids);
+    public SearchChatsByIdsPaginatedResponse searchChatsByIds(Integer page, Integer limit, String ids) throws ApiException {
+        ApiResponse<SearchChatsByIdsPaginatedResponse> resp = searchChatsByIdsWithHttpInfo(page, limit, ids);
         return resp.getData();
     }
 
@@ -17410,12 +17413,12 @@ public class TextMagicApi {
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
-     * @return ApiResponse&lt;SearchChatsByIdsResponse&gt;
+     * @return ApiResponse&lt;SearchChatsByIdsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchChatsByIdsResponse> searchChatsByIdsWithHttpInfo(Integer page, Integer limit, String ids) throws ApiException {
+    public ApiResponse<SearchChatsByIdsPaginatedResponse> searchChatsByIdsWithHttpInfo(Integer page, Integer limit, String ids) throws ApiException {
         com.squareup.okhttp.Call call = searchChatsByIdsValidateBeforeCall(page, limit, ids, null, null);
-        Type localVarReturnType = new TypeToken<SearchChatsByIdsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsByIdsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -17429,7 +17432,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchChatsByIdsAsync(Integer page, Integer limit, String ids, final ApiCallback<SearchChatsByIdsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchChatsByIdsAsync(Integer page, Integer limit, String ids, final ApiCallback<SearchChatsByIdsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17451,7 +17454,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchChatsByIdsValidateBeforeCall(page, limit, ids, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchChatsByIdsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsByIdsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -17531,11 +17534,11 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @return SearchChatsByReceipentResponse
+     * @return SearchChatsByReceipentPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchChatsByReceipentResponse searchChatsByReceipent(Integer page, Integer limit, String query, String orderBy) throws ApiException {
-        ApiResponse<SearchChatsByReceipentResponse> resp = searchChatsByReceipentWithHttpInfo(page, limit, query, orderBy);
+    public SearchChatsByReceipentPaginatedResponse searchChatsByReceipent(Integer page, Integer limit, String query, String orderBy) throws ApiException {
+        ApiResponse<SearchChatsByReceipentPaginatedResponse> resp = searchChatsByReceipentWithHttpInfo(page, limit, query, orderBy);
         return resp.getData();
     }
 
@@ -17546,12 +17549,12 @@ public class TextMagicApi {
      * @param limit How many results to return (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @return ApiResponse&lt;SearchChatsByReceipentResponse&gt;
+     * @return ApiResponse&lt;SearchChatsByReceipentPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchChatsByReceipentResponse> searchChatsByReceipentWithHttpInfo(Integer page, Integer limit, String query, String orderBy) throws ApiException {
+    public ApiResponse<SearchChatsByReceipentPaginatedResponse> searchChatsByReceipentWithHttpInfo(Integer page, Integer limit, String query, String orderBy) throws ApiException {
         com.squareup.okhttp.Call call = searchChatsByReceipentValidateBeforeCall(page, limit, query, orderBy, null, null);
-        Type localVarReturnType = new TypeToken<SearchChatsByReceipentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsByReceipentPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -17566,7 +17569,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchChatsByReceipentAsync(Integer page, Integer limit, String query, String orderBy, final ApiCallback<SearchChatsByReceipentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchChatsByReceipentAsync(Integer page, Integer limit, String query, String orderBy, final ApiCallback<SearchChatsByReceipentPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17588,7 +17591,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchChatsByReceipentValidateBeforeCall(page, limit, query, orderBy, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchChatsByReceipentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchChatsByReceipentPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -17696,11 +17699,11 @@ public class TextMagicApi {
      * @param country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return SearchContactsResponse
+     * @return SearchContactsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchContactsResponse searchContacts(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction) throws ApiException {
-        ApiResponse<SearchContactsResponse> resp = searchContactsWithHttpInfo(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
+    public SearchContactsPaginatedResponse searchContacts(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction) throws ApiException {
+        ApiResponse<SearchContactsPaginatedResponse> resp = searchContactsWithHttpInfo(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
         return resp.getData();
     }
 
@@ -17718,12 +17721,12 @@ public class TextMagicApi {
      * @param country 2-letter ISO country code for local phone numbers, used when &#39;local&#39; is set to true. Default is account country (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;SearchContactsResponse&gt;
+     * @return ApiResponse&lt;SearchContactsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchContactsResponse> searchContactsWithHttpInfo(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction) throws ApiException {
+    public ApiResponse<SearchContactsPaginatedResponse> searchContactsWithHttpInfo(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = searchContactsValidateBeforeCall(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<SearchContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchContactsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -17745,7 +17748,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchContactsAsync(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction, final ApiCallback<SearchContactsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchContactsAsync(Integer page, Integer limit, Integer shared, String ids, Integer listId, Integer includeBlocked, String query, Integer local, String country, String orderBy, String direction, final ApiCallback<SearchContactsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17767,7 +17770,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchContactsValidateBeforeCall(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchContactsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchContactsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -17859,11 +17862,11 @@ public class TextMagicApi {
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param expand Expand by adding firstName, lastName and contactId (optional, default to 0)
-     * @return SearchInboundMessagesResponse
+     * @return SearchInboundMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchInboundMessagesResponse searchInboundMessages(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand) throws ApiException {
-        ApiResponse<SearchInboundMessagesResponse> resp = searchInboundMessagesWithHttpInfo(page, limit, ids, query, orderBy, direction, expand);
+    public SearchInboundMessagesPaginatedResponse searchInboundMessages(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand) throws ApiException {
+        ApiResponse<SearchInboundMessagesPaginatedResponse> resp = searchInboundMessagesWithHttpInfo(page, limit, ids, query, orderBy, direction, expand);
         return resp.getData();
     }
 
@@ -17877,12 +17880,12 @@ public class TextMagicApi {
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param expand Expand by adding firstName, lastName and contactId (optional, default to 0)
-     * @return ApiResponse&lt;SearchInboundMessagesResponse&gt;
+     * @return ApiResponse&lt;SearchInboundMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchInboundMessagesResponse> searchInboundMessagesWithHttpInfo(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand) throws ApiException {
+    public ApiResponse<SearchInboundMessagesPaginatedResponse> searchInboundMessagesWithHttpInfo(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand) throws ApiException {
         com.squareup.okhttp.Call call = searchInboundMessagesValidateBeforeCall(page, limit, ids, query, orderBy, direction, expand, null, null);
-        Type localVarReturnType = new TypeToken<SearchInboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchInboundMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -17900,7 +17903,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchInboundMessagesAsync(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand, final ApiCallback<SearchInboundMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchInboundMessagesAsync(Integer page, Integer limit, String ids, String query, String orderBy, String direction, Integer expand, final ApiCallback<SearchInboundMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17922,7 +17925,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchInboundMessagesValidateBeforeCall(page, limit, ids, query, orderBy, direction, expand, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchInboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchInboundMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -18018,11 +18021,11 @@ public class TextMagicApi {
      * @param onlyDefault Return only default lists (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return SearchListsResponse
+     * @return SearchListsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchListsResponse searchLists(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction) throws ApiException {
-        ApiResponse<SearchListsResponse> resp = searchListsWithHttpInfo(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
+    public SearchListsPaginatedResponse searchLists(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction) throws ApiException {
+        ApiResponse<SearchListsPaginatedResponse> resp = searchListsWithHttpInfo(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
         return resp.getData();
     }
 
@@ -18037,12 +18040,12 @@ public class TextMagicApi {
      * @param onlyDefault Return only default lists (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;SearchListsResponse&gt;
+     * @return ApiResponse&lt;SearchListsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchListsResponse> searchListsWithHttpInfo(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction) throws ApiException {
+    public ApiResponse<SearchListsPaginatedResponse> searchListsWithHttpInfo(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = searchListsValidateBeforeCall(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<SearchListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchListsPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -18061,7 +18064,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchListsAsync(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction, final ApiCallback<SearchListsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchListsAsync(Integer page, Integer limit, String ids, String query, Integer onlyMine, Integer onlyDefault, String orderBy, String direction, final ApiCallback<SearchListsPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -18083,7 +18086,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchListsValidateBeforeCall(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchListsResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchListsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -18179,11 +18182,11 @@ public class TextMagicApi {
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @param query Find messages by specified search query (optional)
-     * @return SearchOutboundMessagesResponse
+     * @return SearchOutboundMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchOutboundMessagesResponse searchOutboundMessages(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query) throws ApiException {
-        ApiResponse<SearchOutboundMessagesResponse> resp = searchOutboundMessagesWithHttpInfo(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
+    public SearchOutboundMessagesPaginatedResponse searchOutboundMessages(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query) throws ApiException {
+        ApiResponse<SearchOutboundMessagesPaginatedResponse> resp = searchOutboundMessagesWithHttpInfo(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
         return resp.getData();
     }
 
@@ -18198,12 +18201,12 @@ public class TextMagicApi {
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @param query Find messages by specified search query (optional)
-     * @return ApiResponse&lt;SearchOutboundMessagesResponse&gt;
+     * @return ApiResponse&lt;SearchOutboundMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchOutboundMessagesResponse> searchOutboundMessagesWithHttpInfo(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query) throws ApiException {
+    public ApiResponse<SearchOutboundMessagesPaginatedResponse> searchOutboundMessagesWithHttpInfo(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query) throws ApiException {
         com.squareup.okhttp.Call call = searchOutboundMessagesValidateBeforeCall(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query, null, null);
-        Type localVarReturnType = new TypeToken<SearchOutboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchOutboundMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -18222,7 +18225,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchOutboundMessagesAsync(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query, final ApiCallback<SearchOutboundMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchOutboundMessagesAsync(Integer page, Integer limit, Integer lastId, String ids, Integer sessionId, String statuses, Integer includeDeleted, String query, final ApiCallback<SearchOutboundMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -18244,7 +18247,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchOutboundMessagesValidateBeforeCall(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchOutboundMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchOutboundMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -18336,11 +18339,11 @@ public class TextMagicApi {
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return SearchScheduledMessagesResponse
+     * @return SearchScheduledMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchScheduledMessagesResponse searchScheduledMessages(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction) throws ApiException {
-        ApiResponse<SearchScheduledMessagesResponse> resp = searchScheduledMessagesWithHttpInfo(page, limit, query, ids, status, orderBy, direction);
+    public SearchScheduledMessagesPaginatedResponse searchScheduledMessages(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction) throws ApiException {
+        ApiResponse<SearchScheduledMessagesPaginatedResponse> resp = searchScheduledMessagesWithHttpInfo(page, limit, query, ids, status, orderBy, direction);
         return resp.getData();
     }
 
@@ -18354,12 +18357,12 @@ public class TextMagicApi {
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
-     * @return ApiResponse&lt;SearchScheduledMessagesResponse&gt;
+     * @return ApiResponse&lt;SearchScheduledMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchScheduledMessagesResponse> searchScheduledMessagesWithHttpInfo(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction) throws ApiException {
+    public ApiResponse<SearchScheduledMessagesPaginatedResponse> searchScheduledMessagesWithHttpInfo(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction) throws ApiException {
         com.squareup.okhttp.Call call = searchScheduledMessagesValidateBeforeCall(page, limit, query, ids, status, orderBy, direction, null, null);
-        Type localVarReturnType = new TypeToken<SearchScheduledMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchScheduledMessagesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -18377,7 +18380,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchScheduledMessagesAsync(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction, final ApiCallback<SearchScheduledMessagesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchScheduledMessagesAsync(Integer page, Integer limit, String query, String ids, String status, String orderBy, String direction, final ApiCallback<SearchScheduledMessagesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -18399,7 +18402,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchScheduledMessagesValidateBeforeCall(page, limit, query, ids, status, orderBy, direction, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchScheduledMessagesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchScheduledMessagesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -18483,11 +18486,11 @@ public class TextMagicApi {
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
-     * @return SearchTemplatesResponse
+     * @return SearchTemplatesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchTemplatesResponse searchTemplates(Integer page, Integer limit, String ids, String name, String content) throws ApiException {
-        ApiResponse<SearchTemplatesResponse> resp = searchTemplatesWithHttpInfo(page, limit, ids, name, content);
+    public SearchTemplatesPaginatedResponse searchTemplates(Integer page, Integer limit, String ids, String name, String content) throws ApiException {
+        ApiResponse<SearchTemplatesPaginatedResponse> resp = searchTemplatesWithHttpInfo(page, limit, ids, name, content);
         return resp.getData();
     }
 
@@ -18499,12 +18502,12 @@ public class TextMagicApi {
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
-     * @return ApiResponse&lt;SearchTemplatesResponse&gt;
+     * @return ApiResponse&lt;SearchTemplatesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchTemplatesResponse> searchTemplatesWithHttpInfo(Integer page, Integer limit, String ids, String name, String content) throws ApiException {
+    public ApiResponse<SearchTemplatesPaginatedResponse> searchTemplatesWithHttpInfo(Integer page, Integer limit, String ids, String name, String content) throws ApiException {
         com.squareup.okhttp.Call call = searchTemplatesValidateBeforeCall(page, limit, ids, name, content, null, null);
-        Type localVarReturnType = new TypeToken<SearchTemplatesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchTemplatesPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -18520,7 +18523,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchTemplatesAsync(Integer page, Integer limit, String ids, String name, String content, final ApiCallback<SearchTemplatesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchTemplatesAsync(Integer page, Integer limit, String ids, String name, String content, final ApiCallback<SearchTemplatesPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -18542,7 +18545,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = searchTemplatesValidateBeforeCall(page, limit, ids, name, content, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<SearchTemplatesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<SearchTemplatesPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

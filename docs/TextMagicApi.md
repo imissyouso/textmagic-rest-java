@@ -2851,7 +2851,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllBulkSessions"></a>
 # **getAllBulkSessions**
-> GetAllBulkSessionsResponse getAllBulkSessions(page, limit)
+> GetAllBulkSessionsPaginatedResponse getAllBulkSessions(page, limit)
 
 Get all bulk sending sessions.
 
@@ -2875,7 +2875,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetAllBulkSessionsResponse result = apiInstance.getAllBulkSessions(page, limit);
+    GetAllBulkSessionsPaginatedResponse result = apiInstance.getAllBulkSessions(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllBulkSessions");
@@ -2892,7 +2892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllBulkSessionsResponse**](GetAllBulkSessionsResponse.md)
+[**GetAllBulkSessionsPaginatedResponse**](GetAllBulkSessionsPaginatedResponse.md)
 
 ### Authorization
 
@@ -2905,7 +2905,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllChats"></a>
 # **getAllChats**
-> GetAllChatsResponse getAllChats(status, page, limit, orderBy, voice, flat)
+> GetAllChatsPaginatedResponse getAllChats(status, page, limit, orderBy, voice, flat)
 
 Get all user chats.
 
@@ -2933,7 +2933,7 @@ String orderBy = "id"; // String | Order results by some field. Default is id
 Integer voice = 0; // Integer | Fetch results with voice calls
 Integer flat = 0; // Integer | Should additional contact info be included
 try {
-    GetAllChatsResponse result = apiInstance.getAllChats(status, page, limit, orderBy, voice, flat);
+    GetAllChatsPaginatedResponse result = apiInstance.getAllChats(status, page, limit, orderBy, voice, flat);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllChats");
@@ -2954,7 +2954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllChatsResponse**](GetAllChatsResponse.md)
+[**GetAllChatsPaginatedResponse**](GetAllChatsPaginatedResponse.md)
 
 ### Authorization
 
@@ -2967,7 +2967,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllInboundMessages"></a>
 # **getAllInboundMessages**
-> GetAllInboundMessagesResponse getAllInboundMessages(page, limit, orderBy, direction)
+> GetAllInboundMessagesPaginatedResponse getAllInboundMessages(page, limit, orderBy, direction)
 
 Get all inbox messages.
 
@@ -2993,7 +2993,7 @@ Integer limit = 10; // Integer | How many results to return
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetAllInboundMessagesResponse result = apiInstance.getAllInboundMessages(page, limit, orderBy, direction);
+    GetAllInboundMessagesPaginatedResponse result = apiInstance.getAllInboundMessages(page, limit, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllInboundMessages");
@@ -3012,7 +3012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllInboundMessagesResponse**](GetAllInboundMessagesResponse.md)
+[**GetAllInboundMessagesPaginatedResponse**](GetAllInboundMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -3025,7 +3025,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllMessageSessions"></a>
 # **getAllMessageSessions**
-> GetAllMessageSessionsResponse getAllMessageSessions(page, limit)
+> GetAllMessageSessionsPaginatedResponse getAllMessageSessions(page, limit)
 
 Get all message sending sessions.
 
@@ -3049,7 +3049,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetAllMessageSessionsResponse result = apiInstance.getAllMessageSessions(page, limit);
+    GetAllMessageSessionsPaginatedResponse result = apiInstance.getAllMessageSessions(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllMessageSessions");
@@ -3066,7 +3066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllMessageSessionsResponse**](GetAllMessageSessionsResponse.md)
+[**GetAllMessageSessionsPaginatedResponse**](GetAllMessageSessionsPaginatedResponse.md)
 
 ### Authorization
 
@@ -3079,7 +3079,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllOutboundMessages"></a>
 # **getAllOutboundMessages**
-> GetAllOutboundMessagesResponse getAllOutboundMessages(page, limit, lastId)
+> GetAllOutboundMessagesPaginatedResponse getAllOutboundMessages(page, limit, lastId)
 
 Get all messages
 
@@ -3106,7 +3106,7 @@ Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 Integer lastId = 56; // Integer | Filter results by ID, selecting all values lesser than the specified ID. Note that \\'page\\' parameter is ignored when \\'lastId\\' is specified
 try {
-    GetAllOutboundMessagesResponse result = apiInstance.getAllOutboundMessages(page, limit, lastId);
+    GetAllOutboundMessagesPaginatedResponse result = apiInstance.getAllOutboundMessages(page, limit, lastId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllOutboundMessages");
@@ -3124,7 +3124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllOutboundMessagesResponse**](GetAllOutboundMessagesResponse.md)
+[**GetAllOutboundMessagesPaginatedResponse**](GetAllOutboundMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -3137,7 +3137,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllScheduledMessages"></a>
 # **getAllScheduledMessages**
-> GetAllScheduledMessagesResponse getAllScheduledMessages(page, limit, status, orderBy, direction)
+> GetAllScheduledMessagesPaginatedResponse getAllScheduledMessages(page, limit, status, orderBy, direction)
 
 Get all scheduled messages.
 
@@ -3164,7 +3164,7 @@ String status = "x"; // String | Fetch schedules with the specific status: a - a
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetAllScheduledMessagesResponse result = apiInstance.getAllScheduledMessages(page, limit, status, orderBy, direction);
+    GetAllScheduledMessagesPaginatedResponse result = apiInstance.getAllScheduledMessages(page, limit, status, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllScheduledMessages");
@@ -3184,7 +3184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllScheduledMessagesResponse**](GetAllScheduledMessagesResponse.md)
+[**GetAllScheduledMessagesPaginatedResponse**](GetAllScheduledMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -3197,7 +3197,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllTemplates"></a>
 # **getAllTemplates**
-> GetAllTemplatesResponse getAllTemplates(page, limit)
+> GetAllTemplatesPaginatedResponse getAllTemplates(page, limit)
 
 Get all user templates.
 
@@ -3221,7 +3221,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetAllTemplatesResponse result = apiInstance.getAllTemplates(page, limit);
+    GetAllTemplatesPaginatedResponse result = apiInstance.getAllTemplates(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getAllTemplates");
@@ -3238,7 +3238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllTemplatesResponse**](GetAllTemplatesResponse.md)
+[**GetAllTemplatesPaginatedResponse**](GetAllTemplatesPaginatedResponse.md)
 
 ### Authorization
 
@@ -3455,7 +3455,7 @@ This endpoint does not need any parameter.
 
 <a name="getBlockedContacts"></a>
 # **getBlockedContacts**
-> GetBlockedContactsResponse getBlockedContacts(page, limit, query, orderBy, direction)
+> GetBlockedContactsPaginatedResponse getBlockedContacts(page, limit, query, orderBy, direction)
 
 Get blocked contacts.
 
@@ -3482,7 +3482,7 @@ String query = "query_example"; // String | Find blocked contacts by specified s
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetBlockedContactsResponse result = apiInstance.getBlockedContacts(page, limit, query, orderBy, direction);
+    GetBlockedContactsPaginatedResponse result = apiInstance.getBlockedContacts(page, limit, query, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getBlockedContacts");
@@ -3502,7 +3502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetBlockedContactsResponse**](GetBlockedContactsResponse.md)
+[**GetBlockedContactsPaginatedResponse**](GetBlockedContactsPaginatedResponse.md)
 
 ### Authorization
 
@@ -3615,7 +3615,7 @@ This endpoint does not need any parameter.
 
 <a name="getCallsPrices"></a>
 # **getCallsPrices**
-> Map&lt;String, Object&gt; getCallsPrices()
+> GetCallsPricesResponse getCallsPrices()
 
 Check pricing for a inbound/outbound call.
 
@@ -3637,7 +3637,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 try {
-    Map<String, Object> result = apiInstance.getCallsPrices();
+    GetCallsPricesResponse result = apiInstance.getCallsPrices();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getCallsPrices");
@@ -3650,7 +3650,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+[**GetCallsPricesResponse**](GetCallsPricesResponse.md)
 
 ### Authorization
 
@@ -3771,7 +3771,7 @@ Name | Type | Description  | Notes
 
 <a name="getChatMessages"></a>
 # **getChatMessages**
-> GetChatMessagesResponse getChatMessages(id, page, limit, query, start, end, direction, voice)
+> GetChatMessagesPaginatedResponse getChatMessages(id, page, limit, query, start, end, direction, voice)
 
 Fetch messages from chat with specified chat id.
 
@@ -3801,7 +3801,7 @@ Integer end = 56; // Integer | Return messages up to specified timestamp only
 String direction = "desc"; // String | Order direction. Default is desc
 Integer voice = 0; // Integer | Fetch results with voice calls
 try {
-    GetChatMessagesResponse result = apiInstance.getChatMessages(id, page, limit, query, start, end, direction, voice);
+    GetChatMessagesPaginatedResponse result = apiInstance.getChatMessages(id, page, limit, query, start, end, direction, voice);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getChatMessages");
@@ -3824,7 +3824,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetChatMessagesResponse**](GetChatMessagesResponse.md)
+[**GetChatMessagesPaginatedResponse**](GetChatMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -4097,7 +4097,7 @@ Name | Type | Description  | Notes
 
 <a name="getContactNotes"></a>
 # **getContactNotes**
-> GetContactNotesResponse getContactNotes(id, page, limit)
+> GetContactNotesPaginatedResponse getContactNotes(id, page, limit)
 
 Fetch notes assigned to the given contact.
 
@@ -4122,7 +4122,7 @@ Integer id = 1; // Integer |
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetContactNotesResponse result = apiInstance.getContactNotes(id, page, limit);
+    GetContactNotesPaginatedResponse result = apiInstance.getContactNotes(id, page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getContactNotes");
@@ -4140,7 +4140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetContactNotesResponse**](GetContactNotesResponse.md)
+[**GetContactNotesPaginatedResponse**](GetContactNotesPaginatedResponse.md)
 
 ### Authorization
 
@@ -4153,7 +4153,7 @@ Name | Type | Description  | Notes
 
 <a name="getContacts"></a>
 # **getContacts**
-> GetContactsResponse getContacts(page, limit, shared, orderBy, direction)
+> GetContactsPaginatedResponse getContacts(page, limit, shared, orderBy, direction)
 
 Get all user contacts.
 
@@ -4180,7 +4180,7 @@ Integer shared = 0; // Integer | Should shared contacts to be included
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetContactsResponse result = apiInstance.getContacts(page, limit, shared, orderBy, direction);
+    GetContactsPaginatedResponse result = apiInstance.getContacts(page, limit, shared, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getContacts");
@@ -4200,7 +4200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetContactsResponse**](GetContactsResponse.md)
+[**GetContactsPaginatedResponse**](GetContactsPaginatedResponse.md)
 
 ### Authorization
 
@@ -4213,7 +4213,7 @@ Name | Type | Description  | Notes
 
 <a name="getContactsAutocomplete"></a>
 # **getContactsAutocomplete**
-> List&lt;GetContactsAutocompleteResponse&gt; getContactsAutocomplete(query, limit, lists)
+> GetContactsAutocompleteResponse getContactsAutocomplete(query, limit, lists)
 
 Get contacts autocomplete suggestions by given search term.
 
@@ -4238,7 +4238,7 @@ String query = "\"A\""; // String | Find recipients by specified search query
 Integer limit = 10; // Integer | How many results to return
 Integer lists = 0; // Integer | Should lists be returned or not
 try {
-    List<GetContactsAutocompleteResponse> result = apiInstance.getContactsAutocomplete(query, limit, lists);
+    GetContactsAutocompleteResponse result = apiInstance.getContactsAutocomplete(query, limit, lists);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getContactsAutocomplete");
@@ -4256,7 +4256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;GetContactsAutocompleteResponse&gt;**](GetContactsAutocompleteResponse.md)
+[**GetContactsAutocompleteResponse**](GetContactsAutocompleteResponse.md)
 
 ### Authorization
 
@@ -4269,7 +4269,7 @@ Name | Type | Description  | Notes
 
 <a name="getContactsByListId"></a>
 # **getContactsByListId**
-> GetContactsByListIdResponse getContactsByListId(id, page, limit, orderBy, direction)
+> GetContactsByListIdPaginatedResponse getContactsByListId(id, page, limit, orderBy, direction)
 
 Fetch user contacts by given group id.
 
@@ -4298,7 +4298,7 @@ Integer limit = 10; // Integer | How many results to return
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetContactsByListIdResponse result = apiInstance.getContactsByListId(id, page, limit, orderBy, direction);
+    GetContactsByListIdPaginatedResponse result = apiInstance.getContactsByListId(id, page, limit, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getContactsByListId");
@@ -4318,7 +4318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetContactsByListIdResponse**](GetContactsByListIdResponse.md)
+[**GetContactsByListIdPaginatedResponse**](GetContactsByListIdPaginatedResponse.md)
 
 ### Authorization
 
@@ -4331,7 +4331,7 @@ Name | Type | Description  | Notes
 
 <a name="getCountries"></a>
 # **getCountries**
-> List&lt;Country&gt; getCountries()
+> GetCountriesResponse getCountries()
 
 Return list of countries.
 
@@ -4353,7 +4353,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 try {
-    List<Country> result = apiInstance.getCountries();
+    GetCountriesResponse result = apiInstance.getCountries();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getCountries");
@@ -4366,7 +4366,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;Country&gt;**](Country.md)
+[**GetCountriesResponse**](GetCountriesResponse.md)
 
 ### Authorization
 
@@ -4479,7 +4479,7 @@ Name | Type | Description  | Notes
 
 <a name="getCustomFields"></a>
 # **getCustomFields**
-> GetCustomFieldsResponse getCustomFields(page, limit)
+> GetCustomFieldsPaginatedResponse getCustomFields(page, limit)
 
 Get all contact custom fields.
 
@@ -4503,7 +4503,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetCustomFieldsResponse result = apiInstance.getCustomFields(page, limit);
+    GetCustomFieldsPaginatedResponse result = apiInstance.getCustomFields(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getCustomFields");
@@ -4520,7 +4520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCustomFieldsResponse**](GetCustomFieldsResponse.md)
+[**GetCustomFieldsPaginatedResponse**](GetCustomFieldsPaginatedResponse.md)
 
 ### Authorization
 
@@ -4585,7 +4585,7 @@ Name | Type | Description  | Notes
 
 <a name="getDisallowedRules"></a>
 # **getDisallowedRules**
-> List&lt;String&gt; getDisallowedRules()
+> GetDisallowedRulesResponse getDisallowedRules()
 
 Get an array of all rules that are disallowed to the current account.
 
@@ -4607,7 +4607,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 try {
-    List<String> result = apiInstance.getDisallowedRules();
+    GetDisallowedRulesResponse result = apiInstance.getDisallowedRules();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getDisallowedRules");
@@ -4620,7 +4620,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**List&lt;String&gt;**
+[**GetDisallowedRulesResponse**](GetDisallowedRulesResponse.md)
 
 ### Authorization
 
@@ -4633,7 +4633,7 @@ This endpoint does not need any parameter.
 
 <a name="getFavourites"></a>
 # **getFavourites**
-> GetFavouritesResponse getFavourites(page, limit, query)
+> GetFavouritesPaginatedResponse getFavourites(page, limit, query)
 
 Get favorite contacts and lists.
 
@@ -4658,7 +4658,7 @@ Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 String query = "A"; // String | Find contacts or lists by specified search query
 try {
-    GetFavouritesResponse result = apiInstance.getFavourites(page, limit, query);
+    GetFavouritesPaginatedResponse result = apiInstance.getFavourites(page, limit, query);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getFavourites");
@@ -4676,7 +4676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFavouritesResponse**](GetFavouritesResponse.md)
+[**GetFavouritesPaginatedResponse**](GetFavouritesPaginatedResponse.md)
 
 ### Authorization
 
@@ -4689,7 +4689,7 @@ Name | Type | Description  | Notes
 
 <a name="getForwardedCalls"></a>
 # **getForwardedCalls**
-> GetForwardedCallsResponse getForwardedCalls(page, limit)
+> GetForwardedCallsPaginatedResponse getForwardedCalls(page, limit)
 
 Get all forwarded calls.
 
@@ -4713,7 +4713,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetForwardedCallsResponse result = apiInstance.getForwardedCalls(page, limit);
+    GetForwardedCallsPaginatedResponse result = apiInstance.getForwardedCalls(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getForwardedCalls");
@@ -4730,7 +4730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetForwardedCallsResponse**](GetForwardedCallsResponse.md)
+[**GetForwardedCallsPaginatedResponse**](GetForwardedCallsPaginatedResponse.md)
 
 ### Authorization
 
@@ -4843,7 +4843,7 @@ This endpoint does not need any parameter.
 
 <a name="getInvoices"></a>
 # **getInvoices**
-> GetInvoicesResponse getInvoices(page, limit)
+> GetInvoicesPaginatedResponse getInvoices(page, limit)
 
 Return account invoices.
 
@@ -4867,7 +4867,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetInvoicesResponse result = apiInstance.getInvoices(page, limit);
+    GetInvoicesPaginatedResponse result = apiInstance.getInvoices(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getInvoices");
@@ -4884,7 +4884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetInvoicesResponse**](GetInvoicesResponse.md)
+[**GetInvoicesPaginatedResponse**](GetInvoicesPaginatedResponse.md)
 
 ### Authorization
 
@@ -5001,7 +5001,7 @@ Name | Type | Description  | Notes
 
 <a name="getListsOfContact"></a>
 # **getListsOfContact**
-> GetListsOfContactResponse getListsOfContact(id, page, limit)
+> GetListsOfContactPaginatedResponse getListsOfContact(id, page, limit)
 
 Return lists which contact belongs to.
 
@@ -5026,7 +5026,7 @@ Integer id = 1; // Integer |
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetListsOfContactResponse result = apiInstance.getListsOfContact(id, page, limit);
+    GetListsOfContactPaginatedResponse result = apiInstance.getListsOfContact(id, page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getListsOfContact");
@@ -5044,7 +5044,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetListsOfContactResponse**](GetListsOfContactResponse.md)
+[**GetListsOfContactPaginatedResponse**](GetListsOfContactPaginatedResponse.md)
 
 ### Authorization
 
@@ -5387,7 +5387,7 @@ Name | Type | Description  | Notes
 
 <a name="getMessagesBySessionId"></a>
 # **getMessagesBySessionId**
-> GetMessagesBySessionIdResponse getMessagesBySessionId(id, page, limit, statuses, includeDeleted)
+> GetMessagesBySessionIdPaginatedResponse getMessagesBySessionId(id, page, limit, statuses, includeDeleted)
 
 Fetch messages by given session id.
 
@@ -5416,7 +5416,7 @@ Integer limit = 10; // Integer | How many results to return
 String statuses = "statuses_example"; // String | Find messages by status
 Integer includeDeleted = 0; // Integer | Search also in deleted messages
 try {
-    GetMessagesBySessionIdResponse result = apiInstance.getMessagesBySessionId(id, page, limit, statuses, includeDeleted);
+    GetMessagesBySessionIdPaginatedResponse result = apiInstance.getMessagesBySessionId(id, page, limit, statuses, includeDeleted);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getMessagesBySessionId");
@@ -5436,7 +5436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetMessagesBySessionIdResponse**](GetMessagesBySessionIdResponse.md)
+[**GetMessagesBySessionIdPaginatedResponse**](GetMessagesBySessionIdPaginatedResponse.md)
 
 ### Authorization
 
@@ -5607,7 +5607,7 @@ Name | Type | Description  | Notes
 
 <a name="getOutboundMessagesHistory"></a>
 # **getOutboundMessagesHistory**
-> GetOutboundMessagesHistoryResponse getOutboundMessagesHistory(limit, lastId, query, orderBy, direction)
+> GetOutboundMessagesHistoryPaginatedResponse getOutboundMessagesHistory(limit, lastId, query, orderBy, direction)
 
 Get history
 
@@ -5636,7 +5636,7 @@ String query = "query_example"; // String | Find message by specified search que
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    GetOutboundMessagesHistoryResponse result = apiInstance.getOutboundMessagesHistory(limit, lastId, query, orderBy, direction);
+    GetOutboundMessagesHistoryPaginatedResponse result = apiInstance.getOutboundMessagesHistory(limit, lastId, query, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getOutboundMessagesHistory");
@@ -5656,7 +5656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetOutboundMessagesHistoryResponse**](GetOutboundMessagesHistoryResponse.md)
+[**GetOutboundMessagesHistoryPaginatedResponse**](GetOutboundMessagesHistoryPaginatedResponse.md)
 
 ### Authorization
 
@@ -5821,7 +5821,7 @@ Name | Type | Description  | Notes
 
 <a name="getSenderIds"></a>
 # **getSenderIds**
-> GetSenderIdsResponse getSenderIds(page, limit)
+> GetSenderIdsPaginatedResponse getSenderIds(page, limit)
 
 Get all sender IDs of current user.
 
@@ -5845,7 +5845,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetSenderIdsResponse result = apiInstance.getSenderIds(page, limit);
+    GetSenderIdsPaginatedResponse result = apiInstance.getSenderIds(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getSenderIds");
@@ -5862,7 +5862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSenderIdsResponse**](GetSenderIdsResponse.md)
+[**GetSenderIdsPaginatedResponse**](GetSenderIdsPaginatedResponse.md)
 
 ### Authorization
 
@@ -5927,7 +5927,7 @@ Name | Type | Description  | Notes
 
 <a name="getSpendingStat"></a>
 # **getSpendingStat**
-> GetSpendingStatResponse getSpendingStat(page, limit, start, end)
+> GetSpendingStatPaginatedResponse getSpendingStat(page, limit, start, end)
 
 Return account spending statistics.
 
@@ -5953,7 +5953,7 @@ Integer limit = 10; // Integer | How many results to return
 Integer start = 56; // Integer | Optional. Start date in unix timestamp format. Default is 7 days ago
 Integer end = 56; // Integer | Optional. End date in unix timestamp format. Default is now
 try {
-    GetSpendingStatResponse result = apiInstance.getSpendingStat(page, limit, start, end);
+    GetSpendingStatPaginatedResponse result = apiInstance.getSpendingStat(page, limit, start, end);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getSpendingStat");
@@ -5972,7 +5972,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSpendingStatResponse**](GetSpendingStatResponse.md)
+[**GetSpendingStatPaginatedResponse**](GetSpendingStatPaginatedResponse.md)
 
 ### Authorization
 
@@ -6353,7 +6353,7 @@ Name | Type | Description  | Notes
 
 <a name="getSurveys"></a>
 # **getSurveys**
-> GetSurveysResponse getSurveys(page, limit)
+> GetSurveysPaginatedResponse getSurveys(page, limit)
 
 Get all user surveys.
 
@@ -6377,7 +6377,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetSurveysResponse result = apiInstance.getSurveys(page, limit);
+    GetSurveysPaginatedResponse result = apiInstance.getSurveys(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getSurveys");
@@ -6394,7 +6394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSurveysResponse**](GetSurveysResponse.md)
+[**GetSurveysPaginatedResponse**](GetSurveysPaginatedResponse.md)
 
 ### Authorization
 
@@ -6459,7 +6459,7 @@ Name | Type | Description  | Notes
 
 <a name="getTimezones"></a>
 # **getTimezones**
-> Object getTimezones(full)
+> GetTimezonesResponse getTimezones(full)
 
 Return all available timezone IDs.
 
@@ -6482,7 +6482,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer full = 0; // Integer | Return full info about timezones in array (0 or 1). Default is 0
 try {
-    Object result = apiInstance.getTimezones(full);
+    GetTimezonesResponse result = apiInstance.getTimezones(full);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getTimezones");
@@ -6498,7 +6498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**GetTimezonesResponse**](GetTimezonesResponse.md)
 
 ### Authorization
 
@@ -6611,7 +6611,7 @@ Name | Type | Description  | Notes
 
 <a name="getUnsubscribers"></a>
 # **getUnsubscribers**
-> GetUnsubscribersResponse getUnsubscribers(page, limit)
+> GetUnsubscribersPaginatedResponse getUnsubscribers(page, limit)
 
 Get all contact have unsubscribed from your communication.
 
@@ -6635,7 +6635,7 @@ TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 try {
-    GetUnsubscribersResponse result = apiInstance.getUnsubscribers(page, limit);
+    GetUnsubscribersPaginatedResponse result = apiInstance.getUnsubscribers(page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getUnsubscribers");
@@ -6652,7 +6652,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUnsubscribersResponse**](GetUnsubscribersResponse.md)
+[**GetUnsubscribersPaginatedResponse**](GetUnsubscribersPaginatedResponse.md)
 
 ### Authorization
 
@@ -6665,7 +6665,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserDedicatedNumbers"></a>
 # **getUserDedicatedNumbers**
-> GetUserDedicatedNumbersResponse getUserDedicatedNumbers(page, limit, surveyId)
+> GetUserDedicatedNumbersPaginatedResponse getUserDedicatedNumbers(page, limit, surveyId)
 
 Get user&#39;s dedicated numbers.
 
@@ -6690,7 +6690,7 @@ Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 Integer surveyId = 56; // Integer | Fetch only that numbers which are ready for the survey
 try {
-    GetUserDedicatedNumbersResponse result = apiInstance.getUserDedicatedNumbers(page, limit, surveyId);
+    GetUserDedicatedNumbersPaginatedResponse result = apiInstance.getUserDedicatedNumbers(page, limit, surveyId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getUserDedicatedNumbers");
@@ -6708,7 +6708,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserDedicatedNumbersResponse**](GetUserDedicatedNumbersResponse.md)
+[**GetUserDedicatedNumbersPaginatedResponse**](GetUserDedicatedNumbersPaginatedResponse.md)
 
 ### Authorization
 
@@ -6721,7 +6721,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserLists"></a>
 # **getUserLists**
-> GetUserListsResponse getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine)
+> GetUserListsPaginatedResponse getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine)
 
 Get all user lists.
 
@@ -6749,7 +6749,7 @@ String direction = "desc"; // String | Order direction. Default is desc
 Integer favoriteOnly = 0; // Integer | Return only favorite lists
 Integer onlyMine = 0; // Integer | Return only current user lists
 try {
-    GetUserListsResponse result = apiInstance.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
+    GetUserListsPaginatedResponse result = apiInstance.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getUserLists");
@@ -6770,7 +6770,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserListsResponse**](GetUserListsResponse.md)
+[**GetUserListsPaginatedResponse**](GetUserListsPaginatedResponse.md)
 
 ### Authorization
 
@@ -7395,7 +7395,7 @@ Name | Type | Description  | Notes
 
 <a name="searchChats"></a>
 # **searchChats**
-> SearchChatsResponse searchChats(page, limit, query)
+> SearchChatsPaginatedResponse searchChats(page, limit, query)
 
 Find chats by inbound or outbound messages text.
 
@@ -7420,7 +7420,7 @@ Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 String query = "query_example"; // String | Find chats by specified search query
 try {
-    SearchChatsResponse result = apiInstance.searchChats(page, limit, query);
+    SearchChatsPaginatedResponse result = apiInstance.searchChats(page, limit, query);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchChats");
@@ -7438,7 +7438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchChatsResponse**](SearchChatsResponse.md)
+[**SearchChatsPaginatedResponse**](SearchChatsPaginatedResponse.md)
 
 ### Authorization
 
@@ -7451,7 +7451,7 @@ Name | Type | Description  | Notes
 
 <a name="searchChatsByIds"></a>
 # **searchChatsByIds**
-> SearchChatsByIdsResponse searchChatsByIds(page, limit, ids)
+> SearchChatsByIdsPaginatedResponse searchChatsByIds(page, limit, ids)
 
 Find chats by IDs.
 
@@ -7476,7 +7476,7 @@ Integer page = 1; // Integer | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
 String ids = "ids_example"; // String | Find chats by ID(s)
 try {
-    SearchChatsByIdsResponse result = apiInstance.searchChatsByIds(page, limit, ids);
+    SearchChatsByIdsPaginatedResponse result = apiInstance.searchChatsByIds(page, limit, ids);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchChatsByIds");
@@ -7494,7 +7494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchChatsByIdsResponse**](SearchChatsByIdsResponse.md)
+[**SearchChatsByIdsPaginatedResponse**](SearchChatsByIdsPaginatedResponse.md)
 
 ### Authorization
 
@@ -7507,7 +7507,7 @@ Name | Type | Description  | Notes
 
 <a name="searchChatsByReceipent"></a>
 # **searchChatsByReceipent**
-> SearchChatsByReceipentResponse searchChatsByReceipent(page, limit, query, orderBy)
+> SearchChatsByReceipentPaginatedResponse searchChatsByReceipent(page, limit, query, orderBy)
 
 Find chats by recipient (contact, list name or phone number).
 
@@ -7533,7 +7533,7 @@ Integer limit = 10; // Integer | How many results to return
 String query = "query_example"; // String | Find chats by specified search query
 String orderBy = "id"; // String | Order results by some field. Default is id
 try {
-    SearchChatsByReceipentResponse result = apiInstance.searchChatsByReceipent(page, limit, query, orderBy);
+    SearchChatsByReceipentPaginatedResponse result = apiInstance.searchChatsByReceipent(page, limit, query, orderBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchChatsByReceipent");
@@ -7552,7 +7552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchChatsByReceipentResponse**](SearchChatsByReceipentResponse.md)
+[**SearchChatsByReceipentPaginatedResponse**](SearchChatsByReceipentPaginatedResponse.md)
 
 ### Authorization
 
@@ -7565,7 +7565,7 @@ Name | Type | Description  | Notes
 
 <a name="searchContacts"></a>
 # **searchContacts**
-> SearchContactsResponse searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction)
+> SearchContactsPaginatedResponse searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction)
 
 Find user contacts by given parameters.
 
@@ -7598,7 +7598,7 @@ String country = "country_example"; // String | 2-letter ISO country code for lo
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    SearchContactsResponse result = apiInstance.searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
+    SearchContactsPaginatedResponse result = apiInstance.searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchContacts");
@@ -7624,7 +7624,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchContactsResponse**](SearchContactsResponse.md)
+[**SearchContactsPaginatedResponse**](SearchContactsPaginatedResponse.md)
 
 ### Authorization
 
@@ -7637,7 +7637,7 @@ Name | Type | Description  | Notes
 
 <a name="searchInboundMessages"></a>
 # **searchInboundMessages**
-> SearchInboundMessagesResponse searchInboundMessages(page, limit, ids, query, orderBy, direction, expand)
+> SearchInboundMessagesPaginatedResponse searchInboundMessages(page, limit, ids, query, orderBy, direction, expand)
 
 Find inbound messages by given parameters.
 
@@ -7666,7 +7666,7 @@ String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 Integer expand = 0; // Integer | Expand by adding firstName, lastName and contactId
 try {
-    SearchInboundMessagesResponse result = apiInstance.searchInboundMessages(page, limit, ids, query, orderBy, direction, expand);
+    SearchInboundMessagesPaginatedResponse result = apiInstance.searchInboundMessages(page, limit, ids, query, orderBy, direction, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchInboundMessages");
@@ -7688,7 +7688,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchInboundMessagesResponse**](SearchInboundMessagesResponse.md)
+[**SearchInboundMessagesPaginatedResponse**](SearchInboundMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -7701,7 +7701,7 @@ Name | Type | Description  | Notes
 
 <a name="searchLists"></a>
 # **searchLists**
-> SearchListsResponse searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction)
+> SearchListsPaginatedResponse searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction)
 
 Find contact lists by given parameters.
 
@@ -7731,7 +7731,7 @@ Integer onlyDefault = 0; // Integer | Return only default lists
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    SearchListsResponse result = apiInstance.searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
+    SearchListsPaginatedResponse result = apiInstance.searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchLists");
@@ -7754,7 +7754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchListsResponse**](SearchListsResponse.md)
+[**SearchListsPaginatedResponse**](SearchListsPaginatedResponse.md)
 
 ### Authorization
 
@@ -7767,7 +7767,7 @@ Name | Type | Description  | Notes
 
 <a name="searchOutboundMessages"></a>
 # **searchOutboundMessages**
-> SearchOutboundMessagesResponse searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query)
+> SearchOutboundMessagesPaginatedResponse searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query)
 
 Find messages
 
@@ -7799,7 +7799,7 @@ String statuses = "\"q\""; // String | Find messages by status
 Integer includeDeleted = 0; // Integer | Search also in deleted messages
 String query = "query_example"; // String | Find messages by specified search query
 try {
-    SearchOutboundMessagesResponse result = apiInstance.searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
+    SearchOutboundMessagesPaginatedResponse result = apiInstance.searchOutboundMessages(page, limit, lastId, ids, sessionId, statuses, includeDeleted, query);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchOutboundMessages");
@@ -7822,7 +7822,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchOutboundMessagesResponse**](SearchOutboundMessagesResponse.md)
+[**SearchOutboundMessagesPaginatedResponse**](SearchOutboundMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -7835,7 +7835,7 @@ Name | Type | Description  | Notes
 
 <a name="searchScheduledMessages"></a>
 # **searchScheduledMessages**
-> SearchScheduledMessagesResponse searchScheduledMessages(page, limit, query, ids, status, orderBy, direction)
+> SearchScheduledMessagesPaginatedResponse searchScheduledMessages(page, limit, query, ids, status, orderBy, direction)
 
 Find scheduled messages by given parameters.
 
@@ -7864,7 +7864,7 @@ String status = "x"; // String | Fetch schedules with the specific status: a - a
 String orderBy = "id"; // String | Order results by some field. Default is id
 String direction = "desc"; // String | Order direction. Default is desc
 try {
-    SearchScheduledMessagesResponse result = apiInstance.searchScheduledMessages(page, limit, query, ids, status, orderBy, direction);
+    SearchScheduledMessagesPaginatedResponse result = apiInstance.searchScheduledMessages(page, limit, query, ids, status, orderBy, direction);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchScheduledMessages");
@@ -7886,7 +7886,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchScheduledMessagesResponse**](SearchScheduledMessagesResponse.md)
+[**SearchScheduledMessagesPaginatedResponse**](SearchScheduledMessagesPaginatedResponse.md)
 
 ### Authorization
 
@@ -7899,7 +7899,7 @@ Name | Type | Description  | Notes
 
 <a name="searchTemplates"></a>
 # **searchTemplates**
-> SearchTemplatesResponse searchTemplates(page, limit, ids, name, content)
+> SearchTemplatesPaginatedResponse searchTemplates(page, limit, ids, name, content)
 
 Find user templates by given parameters.
 
@@ -7926,7 +7926,7 @@ String ids = "ids_example"; // String | Find template by ID(s)
 String name = "name_example"; // String | Find template by name
 String content = "content_example"; // String | Find template by content
 try {
-    SearchTemplatesResponse result = apiInstance.searchTemplates(page, limit, ids, name, content);
+    SearchTemplatesPaginatedResponse result = apiInstance.searchTemplates(page, limit, ids, name, content);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#searchTemplates");
@@ -7946,7 +7946,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchTemplatesResponse**](SearchTemplatesResponse.md)
+[**SearchTemplatesPaginatedResponse**](SearchTemplatesPaginatedResponse.md)
 
 ### Authorization
 
