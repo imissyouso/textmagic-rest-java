@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 <a name="blockContact"></a>
 # **blockContact**
-> ResourceLinkResponse blockContact(blockContactInputObject, xIgnoreNullValues)
+> ResourceLinkResponse blockContact(blockContactInputObject)
 
 Block contact from inbound and outbound communication by phone number.
 
@@ -257,9 +257,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 BlockContactInputObject blockContactInputObject = new BlockContactInputObject(); // BlockContactInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.blockContact(blockContactInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.blockContact(blockContactInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#blockContact");
@@ -272,7 +271,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blockContactInputObject** | [**BlockContactInputObject**](BlockContactInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -289,7 +287,7 @@ Name | Type | Description  | Notes
 
 <a name="buyDedicatedNumber"></a>
 # **buyDedicatedNumber**
-> buyDedicatedNumber(buyDedicatedNumberInputObject, xIgnoreNullValues)
+> buyDedicatedNumber(buyDedicatedNumberInputObject)
 
 Buy a dedicated number and assign it to the specified account.
 
@@ -311,9 +309,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 BuyDedicatedNumberInputObject buyDedicatedNumberInputObject = new BuyDedicatedNumberInputObject(); // BuyDedicatedNumberInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.buyDedicatedNumber(buyDedicatedNumberInputObject, xIgnoreNullValues);
+    apiInstance.buyDedicatedNumber(buyDedicatedNumberInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#buyDedicatedNumber");
     e.printStackTrace();
@@ -325,7 +322,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **buyDedicatedNumberInputObject** | [**BuyDedicatedNumberInputObject**](BuyDedicatedNumberInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -394,7 +390,7 @@ Name | Type | Description  | Notes
 
 <a name="checkPhoneVerificationCode"></a>
 # **checkPhoneVerificationCode**
-> checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject, xIgnoreNullValues)
+> checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject)
 
 Check user phone verification code
 
@@ -416,9 +412,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = new CheckPhoneVerificationCodeInputObject(); // CheckPhoneVerificationCodeInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject, xIgnoreNullValues);
+    apiInstance.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#checkPhoneVerificationCode");
     e.printStackTrace();
@@ -430,7 +425,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **checkPhoneVerificationCodeInputObject** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -501,7 +495,7 @@ Name | Type | Description  | Notes
 
 <a name="closeChatsBulk"></a>
 # **closeChatsBulk**
-> closeChatsBulk(closeChatsBulkInputObject, xIgnoreNullValues)
+> closeChatsBulk(closeChatsBulkInputObject)
 
 Close chats by chat ids or close all chats
 
@@ -523,9 +517,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CloseChatsBulkInputObject closeChatsBulkInputObject = new CloseChatsBulkInputObject(); // CloseChatsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.closeChatsBulk(closeChatsBulkInputObject, xIgnoreNullValues);
+    apiInstance.closeChatsBulk(closeChatsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#closeChatsBulk");
     e.printStackTrace();
@@ -537,7 +530,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **closeChatsBulkInputObject** | [**CloseChatsBulkInputObject**](CloseChatsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -652,7 +644,7 @@ null (empty response body)
 
 <a name="createContact"></a>
 # **createContact**
-> ResourceLinkResponse createContact(createContactInputObject, xIgnoreNullValues)
+> ResourceLinkResponse createContact(createContactInputObject)
 
 Create a new contact from the submitted data.
 
@@ -674,9 +666,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateContactInputObject createContactInputObject = new CreateContactInputObject(); // CreateContactInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createContact(createContactInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createContact(createContactInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createContact");
@@ -689,7 +680,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createContactInputObject** | [**CreateContactInputObject**](CreateContactInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -706,7 +696,7 @@ Name | Type | Description  | Notes
 
 <a name="createContactNote"></a>
 # **createContactNote**
-> ResourceLinkResponse createContactNote(createContactNoteInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse createContactNote(createContactNoteInputObject, id)
 
 Create a new contact note.
 
@@ -729,9 +719,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 CreateContactNoteInputObject createContactNoteInputObject = new CreateContactNoteInputObject(); // CreateContactNoteInputObject | 
 Integer id = 56; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createContactNote(createContactNoteInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createContactNote(createContactNoteInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createContactNote");
@@ -745,7 +734,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createContactNoteInputObject** | [**CreateContactNoteInputObject**](CreateContactNoteInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -762,7 +750,7 @@ Name | Type | Description  | Notes
 
 <a name="createCustomField"></a>
 # **createCustomField**
-> ResourceLinkResponse createCustomField(createCustomFieldInputObject, xIgnoreNullValues)
+> ResourceLinkResponse createCustomField(createCustomFieldInputObject)
 
 Create a new custom field from the submitted data.
 
@@ -784,9 +772,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateCustomFieldInputObject createCustomFieldInputObject = new CreateCustomFieldInputObject(); // CreateCustomFieldInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createCustomField(createCustomFieldInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createCustomField(createCustomFieldInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createCustomField");
@@ -799,7 +786,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createCustomFieldInputObject** | [**CreateCustomFieldInputObject**](CreateCustomFieldInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -816,7 +802,7 @@ Name | Type | Description  | Notes
 
 <a name="createList"></a>
 # **createList**
-> ResourceLinkResponse createList(createListInputObject, xIgnoreNullValues)
+> ResourceLinkResponse createList(createListInputObject)
 
 Create a new list from the submitted data.
 
@@ -838,9 +824,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateListInputObject createListInputObject = new CreateListInputObject(); // CreateListInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createList(createListInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createList(createListInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createList");
@@ -853,7 +838,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createListInputObject** | [**CreateListInputObject**](CreateListInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -870,7 +854,7 @@ Name | Type | Description  | Notes
 
 <a name="createPushToken"></a>
 # **createPushToken**
-> createPushToken(createPushTokenInputObject, xIgnoreNullValues)
+> createPushToken(createPushTokenInputObject)
 
 Add or update a device token.
 
@@ -892,9 +876,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreatePushTokenInputObject createPushTokenInputObject = new CreatePushTokenInputObject(); // CreatePushTokenInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.createPushToken(createPushTokenInputObject, xIgnoreNullValues);
+    apiInstance.createPushToken(createPushTokenInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createPushToken");
     e.printStackTrace();
@@ -906,7 +889,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createPushTokenInputObject** | [**CreatePushTokenInputObject**](CreatePushTokenInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -923,7 +905,7 @@ null (empty response body)
 
 <a name="createSurvey"></a>
 # **createSurvey**
-> ResourceLinkResponse createSurvey(createSurveyInputObject, xIgnoreNullValues)
+> ResourceLinkResponse createSurvey(createSurveyInputObject)
 
 Create a new survey from the submitted data.
 
@@ -945,9 +927,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateSurveyInputObject createSurveyInputObject = new CreateSurveyInputObject(); // CreateSurveyInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createSurvey(createSurveyInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createSurvey(createSurveyInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createSurvey");
@@ -960,7 +941,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createSurveyInputObject** | [**CreateSurveyInputObject**](CreateSurveyInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -977,7 +957,7 @@ Name | Type | Description  | Notes
 
 <a name="createSurveyNode"></a>
 # **createSurveyNode**
-> ResourceLinkResponse createSurveyNode(createSurveyNodeInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse createSurveyNode(createSurveyNodeInputObject, id)
 
 Create a new node from the submitted data.
 
@@ -1000,9 +980,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 CreateSurveyNodeInputObject createSurveyNodeInputObject = new CreateSurveyNodeInputObject(); // CreateSurveyNodeInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createSurveyNode(createSurveyNodeInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createSurveyNode(createSurveyNodeInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createSurveyNode");
@@ -1016,7 +995,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createSurveyNodeInputObject** | [**CreateSurveyNodeInputObject**](CreateSurveyNodeInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1033,7 +1011,7 @@ Name | Type | Description  | Notes
 
 <a name="createTemplate"></a>
 # **createTemplate**
-> ResourceLinkResponse createTemplate(createTemplateInputObject, xIgnoreNullValues)
+> ResourceLinkResponse createTemplate(createTemplateInputObject)
 
 Create a new template from the submitted data.
 
@@ -1055,9 +1033,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateTemplateInputObject createTemplateInputObject = new CreateTemplateInputObject(); // CreateTemplateInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.createTemplate(createTemplateInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.createTemplate(createTemplateInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#createTemplate");
@@ -1070,7 +1047,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createTemplateInputObject** | [**CreateTemplateInputObject**](CreateTemplateInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1230,7 +1206,7 @@ null (empty response body)
 
 <a name="deleteChatMessages"></a>
 # **deleteChatMessages**
-> deleteChatMessages(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues)
+> deleteChatMessages(deleteChatMessagesBulkInputObject, id)
 
 Delete messages from chat by given messages ID(s).
 
@@ -1253,9 +1229,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject = new DeleteChatMessagesBulkInputObject(); // DeleteChatMessagesBulkInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteChatMessages(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues);
+    apiInstance.deleteChatMessages(deleteChatMessagesBulkInputObject, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteChatMessages");
     e.printStackTrace();
@@ -1268,7 +1243,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteChatMessagesBulkInputObject** | [**DeleteChatMessagesBulkInputObject**](DeleteChatMessagesBulkInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1285,7 +1259,7 @@ null (empty response body)
 
 <a name="deleteChatsBulk"></a>
 # **deleteChatsBulk**
-> deleteChatsBulk(deleteChatsBulkInputObject, xIgnoreNullValues)
+> deleteChatsBulk(deleteChatsBulkInputObject)
 
 Delete chats by given ID(s) or delete all chats.
 
@@ -1307,9 +1281,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteChatsBulkInputObject deleteChatsBulkInputObject = new DeleteChatsBulkInputObject(); // DeleteChatsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteChatsBulk(deleteChatsBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteChatsBulk(deleteChatsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteChatsBulk");
     e.printStackTrace();
@@ -1321,7 +1294,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteChatsBulkInputObject** | [**DeleteChatsBulkInputObject**](DeleteChatsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1491,7 +1463,7 @@ null (empty response body)
 
 <a name="deleteContactNotesBulk"></a>
 # **deleteContactNotesBulk**
-> deleteContactNotesBulk(id, deleteContactNotesBulkInputObject, xIgnoreNullValues)
+> deleteContactNotesBulk(id, deleteContactNotesBulkInputObject)
 
 Delete contact note by given ID(s) or delete all contact notes.
 
@@ -1514,9 +1486,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer id = 1; // Integer | 
 DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject = new DeleteContactNotesBulkInputObject(); // DeleteContactNotesBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteContactNotesBulk(id, deleteContactNotesBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteContactNotesBulk(id, deleteContactNotesBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteContactNotesBulk");
     e.printStackTrace();
@@ -1529,7 +1500,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
  **deleteContactNotesBulkInputObject** | [**DeleteContactNotesBulkInputObject**](DeleteContactNotesBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1546,7 +1516,7 @@ null (empty response body)
 
 <a name="deleteContactsByIds"></a>
 # **deleteContactsByIds**
-> deleteContactsByIds(deleteContactsByIdsInputObject, xIgnoreNullValues)
+> deleteContactsByIds(deleteContactsByIdsInputObject)
 
 Delete contact by given ID(s) or delete all contacts.
 
@@ -1568,9 +1538,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteContactsByIdsInputObject deleteContactsByIdsInputObject = new DeleteContactsByIdsInputObject(); // DeleteContactsByIdsInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteContactsByIds(deleteContactsByIdsInputObject, xIgnoreNullValues);
+    apiInstance.deleteContactsByIds(deleteContactsByIdsInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteContactsByIds");
     e.printStackTrace();
@@ -1582,7 +1551,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteContactsByIdsInputObject** | [**DeleteContactsByIdsInputObject**](DeleteContactsByIdsInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1805,7 +1773,7 @@ null (empty response body)
 
 <a name="deleteInboundMessagesBulk"></a>
 # **deleteInboundMessagesBulk**
-> deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject, xIgnoreNullValues)
+> deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject)
 
 Delete inbound messages by given ID(s) or delete all inbound messages.
 
@@ -1827,9 +1795,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject = new DeleteInboundMessagesBulkInputObject(); // DeleteInboundMessagesBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteInboundMessagesBulk");
     e.printStackTrace();
@@ -1841,7 +1808,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteInboundMessagesBulkInputObject** | [**DeleteInboundMessagesBulkInputObject**](DeleteInboundMessagesBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -1960,7 +1926,7 @@ null (empty response body)
 
 <a name="deleteListContactsBulk"></a>
 # **deleteListContactsBulk**
-> deleteListContactsBulk(deleteListContactsBulkInputObject, id, xIgnoreNullValues)
+> deleteListContactsBulk(deleteListContactsBulkInputObject, id)
 
 Delete contact from list by given ID(s) or all contacts from list.
 
@@ -1983,9 +1949,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteListContactsBulkInputObject deleteListContactsBulkInputObject = new DeleteListContactsBulkInputObject(); // DeleteListContactsBulkInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteListContactsBulk(deleteListContactsBulkInputObject, id, xIgnoreNullValues);
+    apiInstance.deleteListContactsBulk(deleteListContactsBulkInputObject, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteListContactsBulk");
     e.printStackTrace();
@@ -1998,7 +1963,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteListContactsBulkInputObject** | [**DeleteListContactsBulkInputObject**](DeleteListContactsBulkInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2015,7 +1979,7 @@ null (empty response body)
 
 <a name="deleteListsBulk"></a>
 # **deleteListsBulk**
-> deleteListsBulk(deleteListsBulkInputObject, xIgnoreNullValues)
+> deleteListsBulk(deleteListsBulkInputObject)
 
 Delete list by given ID(s) or delete all lists.
 
@@ -2037,9 +2001,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteListsBulkInputObject deleteListsBulkInputObject = new DeleteListsBulkInputObject(); // DeleteListsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteListsBulk(deleteListsBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteListsBulk(deleteListsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteListsBulk");
     e.printStackTrace();
@@ -2051,7 +2014,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteListsBulkInputObject** | [**DeleteListsBulkInputObject**](DeleteListsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2119,7 +2081,7 @@ null (empty response body)
 
 <a name="deleteMessageSessionsBulk"></a>
 # **deleteMessageSessionsBulk**
-> deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject, xIgnoreNullValues)
+> deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject)
 
 Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
 
@@ -2141,9 +2103,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject = new DeleteMessageSessionsBulkInputObject(); // DeleteMessageSessionsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteMessageSessionsBulk");
     e.printStackTrace();
@@ -2155,7 +2116,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteMessageSessionsBulkInputObject** | [**DeleteMessageSessionsBulkInputObject**](DeleteMessageSessionsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2225,7 +2185,7 @@ null (empty response body)
 
 <a name="deleteOutboundMessagesBulk"></a>
 # **deleteOutboundMessagesBulk**
-> deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues)
+> deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject)
 
 Delete messages by IDs
 
@@ -2249,9 +2209,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject = new DeleteOutboundMessagesBulkInputObject(); // DeleteOutboundMessagesBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteOutboundMessagesBulk");
     e.printStackTrace();
@@ -2263,7 +2222,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteOutboundMessagesBulkInputObject** | [**DeleteOutboundMessagesBulkInputObject**](DeleteOutboundMessagesBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2384,7 +2342,7 @@ null (empty response body)
 
 <a name="deleteScheduledMessagesBulk"></a>
 # **deleteScheduledMessagesBulk**
-> deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues)
+> deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject)
 
 Delete scheduled messages by given ID(s) or delete all scheduled messages.
 
@@ -2406,9 +2364,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject = new DeleteScheduledMessagesBulkInputObject(); // DeleteScheduledMessagesBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteScheduledMessagesBulk");
     e.printStackTrace();
@@ -2420,7 +2377,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteScheduledMessagesBulkInputObject** | [**DeleteScheduledMessagesBulkInputObject**](DeleteScheduledMessagesBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2641,7 +2597,7 @@ null (empty response body)
 
 <a name="deleteTemplatesBulk"></a>
 # **deleteTemplatesBulk**
-> deleteTemplatesBulk(deleteTemplatesBulkInputObject, xIgnoreNullValues)
+> deleteTemplatesBulk(deleteTemplatesBulkInputObject)
 
 Delete template by given ID(s) or delete all templates.
 
@@ -2663,9 +2619,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject = new DeleteTemplatesBulkInputObject(); // DeleteTemplatesBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.deleteTemplatesBulk(deleteTemplatesBulkInputObject, xIgnoreNullValues);
+    apiInstance.deleteTemplatesBulk(deleteTemplatesBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#deleteTemplatesBulk");
     e.printStackTrace();
@@ -2677,7 +2632,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deleteTemplatesBulkInputObject** | [**DeleteTemplatesBulkInputObject**](DeleteTemplatesBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -2694,7 +2648,7 @@ null (empty response body)
 
 <a name="doAuth"></a>
 # **doAuth**
-> DoAuthResponse doAuth(doAuthInputObject, xIgnoreNullValues)
+> DoAuthResponse doAuth(doAuthInputObject)
 
 Authenticate user by given username and password.
 
@@ -2709,9 +2663,8 @@ Returning a username and token that you should pass to the all requests (in X-TM
 
 TextMagicApi apiInstance = new TextMagicApi();
 DoAuthInputObject doAuthInputObject = new DoAuthInputObject(); // DoAuthInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    DoAuthResponse result = apiInstance.doAuth(doAuthInputObject, xIgnoreNullValues);
+    DoAuthResponse result = apiInstance.doAuth(doAuthInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#doAuth");
@@ -2724,7 +2677,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **doAuthInputObject** | [**DoAuthInputObject**](DoAuthInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6187,7 +6139,7 @@ Name | Type | Description  | Notes
 
 <a name="getSubaccountsWithTokens"></a>
 # **getSubaccountsWithTokens**
-> GetSubaccountsWithTokensResponse getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues)
+> GetSubaccountsWithTokensResponse getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit)
 
 Get all subaccounts with their REST API tokens associated with specified app name.
 
@@ -6213,9 +6165,8 @@ TextMagicApi apiInstance = new TextMagicApi();
 GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject = new GetSubaccountsWithTokensInputObject(); // GetSubaccountsWithTokensInputObject | 
 BigDecimal page = new BigDecimal(); // BigDecimal | Fetch specified results page
 Integer limit = 10; // Integer | How many results to return
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    GetSubaccountsWithTokensResponse result = apiInstance.getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues);
+    GetSubaccountsWithTokensResponse result = apiInstance.getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getSubaccountsWithTokens");
@@ -6230,7 +6181,6 @@ Name | Type | Description  | Notes
  **getSubaccountsWithTokensInputObject** | [**GetSubaccountsWithTokensInputObject**](GetSubaccountsWithTokensInputObject.md)|  |
  **page** | **BigDecimal**| Fetch specified results page | [optional] [default to 1]
  **limit** | **Integer**| How many results to return | [optional] [default to 10]
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6881,7 +6831,7 @@ This endpoint does not need any parameter.
 
 <a name="inviteSubaccount"></a>
 # **inviteSubaccount**
-> inviteSubaccount(inviteSubaccountInputObject, xIgnoreNullValues)
+> inviteSubaccount(inviteSubaccountInputObject)
 
 Invite new subaccount.
 
@@ -6903,9 +6853,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 InviteSubaccountInputObject inviteSubaccountInputObject = new InviteSubaccountInputObject(); // InviteSubaccountInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.inviteSubaccount(inviteSubaccountInputObject, xIgnoreNullValues);
+    apiInstance.inviteSubaccount(inviteSubaccountInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#inviteSubaccount");
     e.printStackTrace();
@@ -6917,7 +6866,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inviteSubaccountInputObject** | [**InviteSubaccountInputObject**](InviteSubaccountInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6934,7 +6882,7 @@ null (empty response body)
 
 <a name="markChatsReadBulk"></a>
 # **markChatsReadBulk**
-> markChatsReadBulk(markChatsReadBulkInputObject, xIgnoreNullValues)
+> markChatsReadBulk(markChatsReadBulkInputObject)
 
 Mark several chats as read by chat ids or mark all chats as read
 
@@ -6956,9 +6904,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 MarkChatsReadBulkInputObject markChatsReadBulkInputObject = new MarkChatsReadBulkInputObject(); // MarkChatsReadBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.markChatsReadBulk(markChatsReadBulkInputObject, xIgnoreNullValues);
+    apiInstance.markChatsReadBulk(markChatsReadBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#markChatsReadBulk");
     e.printStackTrace();
@@ -6970,7 +6917,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **markChatsReadBulkInputObject** | [**MarkChatsReadBulkInputObject**](MarkChatsReadBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -6987,7 +6933,7 @@ null (empty response body)
 
 <a name="markChatsUnreadBulk"></a>
 # **markChatsUnreadBulk**
-> markChatsUnreadBulk(markChatsUnreadBulkInputObject, xIgnoreNullValues)
+> markChatsUnreadBulk(markChatsUnreadBulkInputObject)
 
 Mark several chats as UNread by chat ids or mark all chats as UNread
 
@@ -7009,9 +6955,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject = new MarkChatsUnreadBulkInputObject(); // MarkChatsUnreadBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.markChatsUnreadBulk(markChatsUnreadBulkInputObject, xIgnoreNullValues);
+    apiInstance.markChatsUnreadBulk(markChatsUnreadBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#markChatsUnreadBulk");
     e.printStackTrace();
@@ -7023,7 +6968,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **markChatsUnreadBulkInputObject** | [**MarkChatsUnreadBulkInputObject**](MarkChatsUnreadBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7040,7 +6984,7 @@ null (empty response body)
 
 <a name="mergeSurveyNodes"></a>
 # **mergeSurveyNodes**
-> mergeSurveyNodes(mergeSurveyNodesInputObject, xIgnoreNullValues)
+> mergeSurveyNodes(mergeSurveyNodesInputObject)
 
 Merge two question nodes.
 
@@ -7062,9 +7006,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 MergeSurveyNodesInputObject mergeSurveyNodesInputObject = new MergeSurveyNodesInputObject(); // MergeSurveyNodesInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.mergeSurveyNodes(mergeSurveyNodesInputObject, xIgnoreNullValues);
+    apiInstance.mergeSurveyNodes(mergeSurveyNodesInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#mergeSurveyNodes");
     e.printStackTrace();
@@ -7076,7 +7019,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mergeSurveyNodesInputObject** | [**MergeSurveyNodesInputObject**](MergeSurveyNodesInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7093,7 +7035,7 @@ null (empty response body)
 
 <a name="muteChat"></a>
 # **muteChat**
-> ResourceLinkResponse muteChat(muteChatInputObject, xIgnoreNullValues)
+> ResourceLinkResponse muteChat(muteChatInputObject)
 
 Set mute mode.
 
@@ -7115,9 +7057,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 MuteChatInputObject muteChatInputObject = new MuteChatInputObject(); // MuteChatInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.muteChat(muteChatInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.muteChat(muteChatInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#muteChat");
@@ -7130,7 +7071,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **muteChatInputObject** | [**MuteChatInputObject**](MuteChatInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7147,7 +7087,7 @@ Name | Type | Description  | Notes
 
 <a name="muteChatsBulk"></a>
 # **muteChatsBulk**
-> muteChatsBulk(muteChatsBulkInputObject, xIgnoreNullValues)
+> muteChatsBulk(muteChatsBulkInputObject)
 
 Mute several chats by chat ids or mute all chats
 
@@ -7169,9 +7109,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 MuteChatsBulkInputObject muteChatsBulkInputObject = new MuteChatsBulkInputObject(); // MuteChatsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.muteChatsBulk(muteChatsBulkInputObject, xIgnoreNullValues);
+    apiInstance.muteChatsBulk(muteChatsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#muteChatsBulk");
     e.printStackTrace();
@@ -7183,7 +7122,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **muteChatsBulkInputObject** | [**MuteChatsBulkInputObject**](MuteChatsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7248,7 +7186,7 @@ This endpoint does not need any parameter.
 
 <a name="reopenChatsBulk"></a>
 # **reopenChatsBulk**
-> reopenChatsBulk(reopenChatsBulkInputObject, xIgnoreNullValues)
+> reopenChatsBulk(reopenChatsBulkInputObject)
 
 Reopen chats by chat ids or reopen all chats
 
@@ -7270,9 +7208,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 ReopenChatsBulkInputObject reopenChatsBulkInputObject = new ReopenChatsBulkInputObject(); // ReopenChatsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.reopenChatsBulk(reopenChatsBulkInputObject, xIgnoreNullValues);
+    apiInstance.reopenChatsBulk(reopenChatsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#reopenChatsBulk");
     e.printStackTrace();
@@ -7284,7 +7221,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reopenChatsBulkInputObject** | [**ReopenChatsBulkInputObject**](ReopenChatsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7301,7 +7237,7 @@ null (empty response body)
 
 <a name="requestNewSubaccountToken"></a>
 # **requestNewSubaccountToken**
-> User requestNewSubaccountToken(requestNewSubaccountTokenInputObject, xIgnoreNullValues)
+> User requestNewSubaccountToken(requestNewSubaccountTokenInputObject)
 
 Request a new REST API token for subaccount.
 
@@ -7325,9 +7261,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject = new RequestNewSubaccountTokenInputObject(); // RequestNewSubaccountTokenInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    User result = apiInstance.requestNewSubaccountToken(requestNewSubaccountTokenInputObject, xIgnoreNullValues);
+    User result = apiInstance.requestNewSubaccountToken(requestNewSubaccountTokenInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#requestNewSubaccountToken");
@@ -7340,7 +7275,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestNewSubaccountTokenInputObject** | [**RequestNewSubaccountTokenInputObject**](RequestNewSubaccountTokenInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -7357,7 +7291,7 @@ Name | Type | Description  | Notes
 
 <a name="requestSenderId"></a>
 # **requestSenderId**
-> ResourceLinkResponse requestSenderId(requestSenderIdInputObject, xIgnoreNullValues)
+> ResourceLinkResponse requestSenderId(requestSenderIdInputObject)
 
 Request for a new Sender ID.
 
@@ -7379,9 +7313,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 RequestSenderIdInputObject requestSenderIdInputObject = new RequestSenderIdInputObject(); // RequestSenderIdInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.requestSenderId(requestSenderIdInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.requestSenderId(requestSenderIdInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#requestSenderId");
@@ -7394,7 +7327,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestSenderIdInputObject** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8074,7 +8006,7 @@ null (empty response body)
 
 <a name="sendMessage"></a>
 # **sendMessage**
-> SendMessageResponse sendMessage(sendMessageInputObject, xIgnoreNullValues)
+> SendMessageResponse sendMessage(sendMessageInputObject)
 
 Send message
 
@@ -8098,9 +8030,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 SendMessageInputObject sendMessageInputObject = new SendMessageInputObject(); // SendMessageInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    SendMessageResponse result = apiInstance.sendMessage(sendMessageInputObject, xIgnoreNullValues);
+    SendMessageResponse result = apiInstance.sendMessage(sendMessageInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#sendMessage");
@@ -8113,7 +8044,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sendMessageInputObject** | [**SendMessageInputObject**](SendMessageInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8177,7 +8107,7 @@ null (empty response body)
 
 <a name="setChatStatus"></a>
 # **setChatStatus**
-> ResourceLinkResponse setChatStatus(setChatStatusInputObject, xIgnoreNullValues)
+> ResourceLinkResponse setChatStatus(setChatStatusInputObject)
 
 Set status of the chat given by ID.
 
@@ -8199,9 +8129,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 SetChatStatusInputObject setChatStatusInputObject = new SetChatStatusInputObject(); // SetChatStatusInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.setChatStatus(setChatStatusInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.setChatStatus(setChatStatusInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#setChatStatus");
@@ -8214,7 +8143,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **setChatStatusInputObject** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8283,7 +8211,7 @@ Name | Type | Description  | Notes
 
 <a name="unblockContact"></a>
 # **unblockContact**
-> unblockContact(unblockContactInputObject, xIgnoreNullValues)
+> unblockContact(unblockContactInputObject)
 
 Unblock contact by phone number.
 
@@ -8305,9 +8233,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UnblockContactInputObject unblockContactInputObject = new UnblockContactInputObject(); // UnblockContactInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.unblockContact(unblockContactInputObject, xIgnoreNullValues);
+    apiInstance.unblockContact(unblockContactInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#unblockContact");
     e.printStackTrace();
@@ -8319,7 +8246,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unblockContactInputObject** | [**UnblockContactInputObject**](UnblockContactInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8336,7 +8262,7 @@ null (empty response body)
 
 <a name="unblockContactsBulk"></a>
 # **unblockContactsBulk**
-> unblockContactsBulk(unblockContactsBulkInputObject, xIgnoreNullValues)
+> unblockContactsBulk(unblockContactsBulkInputObject)
 
 Unblock several contacts by blocked contact ids or unblock all contacts
 
@@ -8358,9 +8284,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UnblockContactsBulkInputObject unblockContactsBulkInputObject = new UnblockContactsBulkInputObject(); // UnblockContactsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.unblockContactsBulk(unblockContactsBulkInputObject, xIgnoreNullValues);
+    apiInstance.unblockContactsBulk(unblockContactsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#unblockContactsBulk");
     e.printStackTrace();
@@ -8372,7 +8297,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unblockContactsBulkInputObject** | [**UnblockContactsBulkInputObject**](UnblockContactsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8389,7 +8313,7 @@ null (empty response body)
 
 <a name="unmuteChatsBulk"></a>
 # **unmuteChatsBulk**
-> unmuteChatsBulk(unmuteChatsBulkInputObject, xIgnoreNullValues)
+> unmuteChatsBulk(unmuteChatsBulkInputObject)
 
 Unmute several chats by chat ids or unmute all chats
 
@@ -8411,9 +8335,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UnmuteChatsBulkInputObject unmuteChatsBulkInputObject = new UnmuteChatsBulkInputObject(); // UnmuteChatsBulkInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.unmuteChatsBulk(unmuteChatsBulkInputObject, xIgnoreNullValues);
+    apiInstance.unmuteChatsBulk(unmuteChatsBulkInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#unmuteChatsBulk");
     e.printStackTrace();
@@ -8425,7 +8348,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unmuteChatsBulkInputObject** | [**UnmuteChatsBulkInputObject**](UnmuteChatsBulkInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8442,7 +8364,7 @@ null (empty response body)
 
 <a name="unsubscribeContact"></a>
 # **unsubscribeContact**
-> ResourceLinkResponse unsubscribeContact(unsubscribeContactInputObject, xIgnoreNullValues)
+> ResourceLinkResponse unsubscribeContact(unsubscribeContactInputObject)
 
 Unsubscribe contact from your communication by phone number.
 
@@ -8464,9 +8386,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UnsubscribeContactInputObject unsubscribeContactInputObject = new UnsubscribeContactInputObject(); // UnsubscribeContactInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.unsubscribeContact(unsubscribeContactInputObject, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.unsubscribeContact(unsubscribeContactInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#unsubscribeContact");
@@ -8479,7 +8400,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unsubscribeContactInputObject** | [**UnsubscribeContactInputObject**](UnsubscribeContactInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8496,7 +8416,7 @@ Name | Type | Description  | Notes
 
 <a name="updateBalanceNotificationSettings"></a>
 # **updateBalanceNotificationSettings**
-> updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues)
+> updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject)
 
 Update balance notification settings
 
@@ -8518,9 +8438,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject = new UpdateBalanceNotificationSettingsInputObject(); // UpdateBalanceNotificationSettingsInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues);
+    apiInstance.updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateBalanceNotificationSettings");
     e.printStackTrace();
@@ -8532,7 +8451,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateBalanceNotificationSettingsInputObject** | [**UpdateBalanceNotificationSettingsInputObject**](UpdateBalanceNotificationSettingsInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8549,7 +8467,7 @@ null (empty response body)
 
 <a name="updateCallbackSettings"></a>
 # **updateCallbackSettings**
-> updateCallbackSettings(updateCallbackSettingsInputObject, xIgnoreNullValues)
+> updateCallbackSettings(updateCallbackSettingsInputObject)
 
 Update callback URL settings
 
@@ -8571,9 +8489,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject = new UpdateCallbackSettingsInputObject(); // UpdateCallbackSettingsInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updateCallbackSettings(updateCallbackSettingsInputObject, xIgnoreNullValues);
+    apiInstance.updateCallbackSettings(updateCallbackSettingsInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateCallbackSettings");
     e.printStackTrace();
@@ -8585,7 +8502,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateCallbackSettingsInputObject** | [**UpdateCallbackSettingsInputObject**](UpdateCallbackSettingsInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8602,7 +8518,7 @@ null (empty response body)
 
 <a name="updateChatDesktopNotificationSettings"></a>
 # **updateChatDesktopNotificationSettings**
-> updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues)
+> updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject)
 
 Update chat desktop notification settings
 
@@ -8624,9 +8540,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject = new UpdateChatDesktopNotificationSettingsInputObject(); // UpdateChatDesktopNotificationSettingsInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues);
+    apiInstance.updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateChatDesktopNotificationSettings");
     e.printStackTrace();
@@ -8638,7 +8553,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateChatDesktopNotificationSettingsInputObject** | [**UpdateChatDesktopNotificationSettingsInputObject**](UpdateChatDesktopNotificationSettingsInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8655,7 +8569,7 @@ null (empty response body)
 
 <a name="updateContact"></a>
 # **updateContact**
-> ResourceLinkResponse updateContact(updateContactInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateContact(updateContactInputObject, id)
 
 Update existing contact.
 
@@ -8678,9 +8592,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateContactInputObject updateContactInputObject = new UpdateContactInputObject(); // UpdateContactInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateContact(updateContactInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateContact(updateContactInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateContact");
@@ -8694,7 +8607,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateContactInputObject** | [**UpdateContactInputObject**](UpdateContactInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8711,7 +8623,7 @@ Name | Type | Description  | Notes
 
 <a name="updateContactNote"></a>
 # **updateContactNote**
-> ResourceLinkResponse updateContactNote(updateContactNoteInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateContactNote(updateContactNoteInputObject, id)
 
 Update existing contact note.
 
@@ -8734,9 +8646,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateContactNoteInputObject updateContactNoteInputObject = new UpdateContactNoteInputObject(); // UpdateContactNoteInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateContactNote(updateContactNoteInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateContactNote(updateContactNoteInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateContactNote");
@@ -8750,7 +8661,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateContactNoteInputObject** | [**UpdateContactNoteInputObject**](UpdateContactNoteInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8767,7 +8677,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCurrentUser"></a>
 # **updateCurrentUser**
-> UpdateCurrentUserResponse updateCurrentUser(updateCurrentUserInputObject, xIgnoreNullValues)
+> UpdateCurrentUserResponse updateCurrentUser(updateCurrentUserInputObject)
 
 Update current user info.
 
@@ -8789,9 +8699,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateCurrentUserInputObject updateCurrentUserInputObject = new UpdateCurrentUserInputObject(); // UpdateCurrentUserInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    UpdateCurrentUserResponse result = apiInstance.updateCurrentUser(updateCurrentUserInputObject, xIgnoreNullValues);
+    UpdateCurrentUserResponse result = apiInstance.updateCurrentUser(updateCurrentUserInputObject);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateCurrentUser");
@@ -8804,7 +8713,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateCurrentUserInputObject** | [**UpdateCurrentUserInputObject**](UpdateCurrentUserInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8821,7 +8729,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCustomField"></a>
 # **updateCustomField**
-> ResourceLinkResponse updateCustomField(updateCustomFieldInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateCustomField(updateCustomFieldInputObject, id)
 
 Update existing custom field.
 
@@ -8844,9 +8752,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateCustomFieldInputObject updateCustomFieldInputObject = new UpdateCustomFieldInputObject(); // UpdateCustomFieldInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateCustomField(updateCustomFieldInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateCustomField(updateCustomFieldInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateCustomField");
@@ -8860,7 +8767,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateCustomFieldInputObject** | [**UpdateCustomFieldInputObject**](UpdateCustomFieldInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8877,7 +8783,7 @@ Name | Type | Description  | Notes
 
 <a name="updateCustomFieldValue"></a>
 # **updateCustomFieldValue**
-> ResourceLinkResponse updateCustomFieldValue(updateCustomFieldValueInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateCustomFieldValue(updateCustomFieldValueInputObject, id)
 
 Update contact&#39;s custom field value.
 
@@ -8900,9 +8806,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject = new UpdateCustomFieldValueInputObject(); // UpdateCustomFieldValueInputObject | 
 String id = "id_example"; // String | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateCustomFieldValue(updateCustomFieldValueInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateCustomFieldValue(updateCustomFieldValueInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateCustomFieldValue");
@@ -8916,7 +8821,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateCustomFieldValueInputObject** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md)|  |
  **id** | **String**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -8933,7 +8837,7 @@ Name | Type | Description  | Notes
 
 <a name="updateInboundMessagesNotificationSettings"></a>
 # **updateInboundMessagesNotificationSettings**
-> updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues)
+> updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject)
 
 Update inbound messages notification settings
 
@@ -8955,9 +8859,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject = new UpdateInboundMessagesNotificationSettingsInputObject(); // UpdateInboundMessagesNotificationSettingsInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues);
+    apiInstance.updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateInboundMessagesNotificationSettings");
     e.printStackTrace();
@@ -8969,7 +8872,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateInboundMessagesNotificationSettingsInputObject** | [**UpdateInboundMessagesNotificationSettingsInputObject**](UpdateInboundMessagesNotificationSettingsInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9040,7 +8942,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePassword"></a>
 # **updatePassword**
-> updatePassword(updatePasswordInputObject, xIgnoreNullValues)
+> updatePassword(updatePasswordInputObject)
 
 Change user password.
 
@@ -9062,9 +8964,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdatePasswordInputObject updatePasswordInputObject = new UpdatePasswordInputObject(); // UpdatePasswordInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updatePassword(updatePasswordInputObject, xIgnoreNullValues);
+    apiInstance.updatePassword(updatePasswordInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updatePassword");
     e.printStackTrace();
@@ -9076,7 +8977,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updatePasswordInputObject** | [**UpdatePasswordInputObject**](UpdatePasswordInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9093,7 +8993,7 @@ null (empty response body)
 
 <a name="updateSenderSetting"></a>
 # **updateSenderSetting**
-> updateSenderSetting(updateSenderSettingInputObject, xIgnoreNullValues)
+> updateSenderSetting(updateSenderSettingInputObject)
 
 Change sender settings for specified country.
 
@@ -9115,9 +9015,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateSenderSettingInputObject updateSenderSettingInputObject = new UpdateSenderSettingInputObject(); // UpdateSenderSettingInputObject | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    apiInstance.updateSenderSetting(updateSenderSettingInputObject, xIgnoreNullValues);
+    apiInstance.updateSenderSetting(updateSenderSettingInputObject);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateSenderSetting");
     e.printStackTrace();
@@ -9129,7 +9028,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateSenderSettingInputObject** | [**UpdateSenderSettingInputObject**](UpdateSenderSettingInputObject.md)|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9146,7 +9044,7 @@ null (empty response body)
 
 <a name="updateSurvey"></a>
 # **updateSurvey**
-> ResourceLinkResponse updateSurvey(updateSurveyInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateSurvey(updateSurveyInputObject, id)
 
 Update existing survey.
 
@@ -9169,9 +9067,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateSurveyInputObject updateSurveyInputObject = new UpdateSurveyInputObject(); // UpdateSurveyInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateSurvey(updateSurveyInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateSurvey(updateSurveyInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateSurvey");
@@ -9185,7 +9082,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateSurveyInputObject** | [**UpdateSurveyInputObject**](UpdateSurveyInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9202,7 +9098,7 @@ Name | Type | Description  | Notes
 
 <a name="updateSurveyNode"></a>
 # **updateSurveyNode**
-> ResourceLinkResponse updateSurveyNode(updateSurveyNodeInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateSurveyNode(updateSurveyNodeInputObject, id)
 
 Update existing node.
 
@@ -9225,9 +9121,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateSurveyNodeInputObject updateSurveyNodeInputObject = new UpdateSurveyNodeInputObject(); // UpdateSurveyNodeInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateSurveyNode(updateSurveyNodeInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateSurveyNode(updateSurveyNodeInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateSurveyNode");
@@ -9241,7 +9136,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateSurveyNodeInputObject** | [**UpdateSurveyNodeInputObject**](UpdateSurveyNodeInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 
@@ -9258,7 +9152,7 @@ Name | Type | Description  | Notes
 
 <a name="updateTemplate"></a>
 # **updateTemplate**
-> ResourceLinkResponse updateTemplate(updateTemplateInputObject, id, xIgnoreNullValues)
+> ResourceLinkResponse updateTemplate(updateTemplateInputObject, id)
 
 Update existing template.
 
@@ -9281,9 +9175,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateTemplateInputObject updateTemplateInputObject = new UpdateTemplateInputObject(); // UpdateTemplateInputObject | 
 Integer id = 1; // Integer | 
-Boolean xIgnoreNullValues = true; // Boolean | 
 try {
-    ResourceLinkResponse result = apiInstance.updateTemplate(updateTemplateInputObject, id, xIgnoreNullValues);
+    ResourceLinkResponse result = apiInstance.updateTemplate(updateTemplateInputObject, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#updateTemplate");
@@ -9297,7 +9190,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateTemplateInputObject** | [**UpdateTemplateInputObject**](UpdateTemplateInputObject.md)|  |
  **id** | **Integer**|  |
- **xIgnoreNullValues** | **Boolean**|  | [optional] [default to true]
 
 ### Return type
 

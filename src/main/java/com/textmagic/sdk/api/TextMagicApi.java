@@ -333,13 +333,12 @@ public class TextMagicApi {
     /**
      * Build call for blockContact
      * @param blockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call blockContactCall(BlockContactInputObject blockContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call blockContactCall(BlockContactInputObject blockContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = blockContactInputObject;
 
         // create path and map variables
@@ -349,8 +348,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -383,7 +380,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call blockContactValidateBeforeCall(BlockContactInputObject blockContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call blockContactValidateBeforeCall(BlockContactInputObject blockContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'blockContactInputObject' is set
         if (blockContactInputObject == null) {
@@ -391,7 +388,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = blockContactCall(blockContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = blockContactCall(blockContactInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -400,12 +397,11 @@ public class TextMagicApi {
      * Block contact from inbound and outbound communication by phone number.
      * 
      * @param blockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse blockContact(BlockContactInputObject blockContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = blockContactWithHttpInfo(blockContactInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse blockContact(BlockContactInputObject blockContactInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = blockContactWithHttpInfo(blockContactInputObject);
         return resp.getData();
     }
 
@@ -413,12 +409,11 @@ public class TextMagicApi {
      * Block contact from inbound and outbound communication by phone number.
      * 
      * @param blockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> blockContactWithHttpInfo(BlockContactInputObject blockContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = blockContactValidateBeforeCall(blockContactInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> blockContactWithHttpInfo(BlockContactInputObject blockContactInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = blockContactValidateBeforeCall(blockContactInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -427,12 +422,11 @@ public class TextMagicApi {
      * Block contact from inbound and outbound communication by phone number. (asynchronously)
      * 
      * @param blockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call blockContactAsync(BlockContactInputObject blockContactInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call blockContactAsync(BlockContactInputObject blockContactInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -453,7 +447,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = blockContactValidateBeforeCall(blockContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = blockContactValidateBeforeCall(blockContactInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -461,13 +455,12 @@ public class TextMagicApi {
     /**
      * Build call for buyDedicatedNumber
      * @param buyDedicatedNumberInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call buyDedicatedNumberCall(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call buyDedicatedNumberCall(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = buyDedicatedNumberInputObject;
 
         // create path and map variables
@@ -477,8 +470,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -511,7 +502,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call buyDedicatedNumberValidateBeforeCall(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call buyDedicatedNumberValidateBeforeCall(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'buyDedicatedNumberInputObject' is set
         if (buyDedicatedNumberInputObject == null) {
@@ -519,7 +510,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = buyDedicatedNumberCall(buyDedicatedNumberInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = buyDedicatedNumberCall(buyDedicatedNumberInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -528,23 +519,21 @@ public class TextMagicApi {
      * Buy a dedicated number and assign it to the specified account.
      * 
      * @param buyDedicatedNumberInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void buyDedicatedNumber(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        buyDedicatedNumberWithHttpInfo(buyDedicatedNumberInputObject, xIgnoreNullValues);
+    public void buyDedicatedNumber(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject) throws ApiException {
+        buyDedicatedNumberWithHttpInfo(buyDedicatedNumberInputObject);
     }
 
     /**
      * Buy a dedicated number and assign it to the specified account.
      * 
      * @param buyDedicatedNumberInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> buyDedicatedNumberWithHttpInfo(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = buyDedicatedNumberValidateBeforeCall(buyDedicatedNumberInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> buyDedicatedNumberWithHttpInfo(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = buyDedicatedNumberValidateBeforeCall(buyDedicatedNumberInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -552,12 +541,11 @@ public class TextMagicApi {
      * Buy a dedicated number and assign it to the specified account. (asynchronously)
      * 
      * @param buyDedicatedNumberInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call buyDedicatedNumberAsync(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call buyDedicatedNumberAsync(BuyDedicatedNumberInputObject buyDedicatedNumberInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -578,7 +566,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = buyDedicatedNumberValidateBeforeCall(buyDedicatedNumberInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = buyDedicatedNumberValidateBeforeCall(buyDedicatedNumberInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -708,13 +696,12 @@ public class TextMagicApi {
     /**
      * Build call for checkPhoneVerificationCode
      * @param checkPhoneVerificationCodeInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call checkPhoneVerificationCodeCall(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call checkPhoneVerificationCodeCall(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = checkPhoneVerificationCodeInputObject;
 
         // create path and map variables
@@ -724,8 +711,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -758,7 +743,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call checkPhoneVerificationCodeValidateBeforeCall(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call checkPhoneVerificationCodeValidateBeforeCall(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'checkPhoneVerificationCodeInputObject' is set
         if (checkPhoneVerificationCodeInputObject == null) {
@@ -766,7 +751,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = checkPhoneVerificationCodeCall(checkPhoneVerificationCodeInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -775,23 +760,21 @@ public class TextMagicApi {
      * Check user phone verification code
      * 
      * @param checkPhoneVerificationCodeInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void checkPhoneVerificationCode(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        checkPhoneVerificationCodeWithHttpInfo(checkPhoneVerificationCodeInputObject, xIgnoreNullValues);
+    public void checkPhoneVerificationCode(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject) throws ApiException {
+        checkPhoneVerificationCodeWithHttpInfo(checkPhoneVerificationCodeInputObject);
     }
 
     /**
      * Check user phone verification code
      * 
      * @param checkPhoneVerificationCodeInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> checkPhoneVerificationCodeWithHttpInfo(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = checkPhoneVerificationCodeValidateBeforeCall(checkPhoneVerificationCodeInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> checkPhoneVerificationCodeWithHttpInfo(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeValidateBeforeCall(checkPhoneVerificationCodeInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -799,12 +782,11 @@ public class TextMagicApi {
      * Check user phone verification code (asynchronously)
      * 
      * @param checkPhoneVerificationCodeInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call checkPhoneVerificationCodeAsync(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call checkPhoneVerificationCodeAsync(CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -825,7 +807,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = checkPhoneVerificationCodeValidateBeforeCall(checkPhoneVerificationCodeInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeValidateBeforeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -964,13 +946,12 @@ public class TextMagicApi {
     /**
      * Build call for closeChatsBulk
      * @param closeChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call closeChatsBulkCall(CloseChatsBulkInputObject closeChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call closeChatsBulkCall(CloseChatsBulkInputObject closeChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = closeChatsBulkInputObject;
 
         // create path and map variables
@@ -980,8 +961,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1014,7 +993,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call closeChatsBulkValidateBeforeCall(CloseChatsBulkInputObject closeChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call closeChatsBulkValidateBeforeCall(CloseChatsBulkInputObject closeChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'closeChatsBulkInputObject' is set
         if (closeChatsBulkInputObject == null) {
@@ -1022,7 +1001,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = closeChatsBulkCall(closeChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = closeChatsBulkCall(closeChatsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1031,23 +1010,21 @@ public class TextMagicApi {
      * Close chats by chat ids or close all chats
      * 
      * @param closeChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void closeChatsBulk(CloseChatsBulkInputObject closeChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        closeChatsBulkWithHttpInfo(closeChatsBulkInputObject, xIgnoreNullValues);
+    public void closeChatsBulk(CloseChatsBulkInputObject closeChatsBulkInputObject) throws ApiException {
+        closeChatsBulkWithHttpInfo(closeChatsBulkInputObject);
     }
 
     /**
      * Close chats by chat ids or close all chats
      * 
      * @param closeChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> closeChatsBulkWithHttpInfo(CloseChatsBulkInputObject closeChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = closeChatsBulkValidateBeforeCall(closeChatsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> closeChatsBulkWithHttpInfo(CloseChatsBulkInputObject closeChatsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = closeChatsBulkValidateBeforeCall(closeChatsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -1055,12 +1032,11 @@ public class TextMagicApi {
      * Close chats by chat ids or close all chats (asynchronously)
      * 
      * @param closeChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call closeChatsBulkAsync(CloseChatsBulkInputObject closeChatsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call closeChatsBulkAsync(CloseChatsBulkInputObject closeChatsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1081,7 +1057,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = closeChatsBulkValidateBeforeCall(closeChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = closeChatsBulkValidateBeforeCall(closeChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1316,13 +1292,12 @@ public class TextMagicApi {
     /**
      * Build call for createContact
      * @param createContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createContactCall(CreateContactInputObject createContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createContactCall(CreateContactInputObject createContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createContactInputObject;
 
         // create path and map variables
@@ -1332,8 +1307,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1366,7 +1339,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createContactValidateBeforeCall(CreateContactInputObject createContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createContactValidateBeforeCall(CreateContactInputObject createContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createContactInputObject' is set
         if (createContactInputObject == null) {
@@ -1374,7 +1347,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createContactCall(createContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createContactCall(createContactInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1383,12 +1356,11 @@ public class TextMagicApi {
      * Create a new contact from the submitted data.
      * 
      * @param createContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createContact(CreateContactInputObject createContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createContactWithHttpInfo(createContactInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse createContact(CreateContactInputObject createContactInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createContactWithHttpInfo(createContactInputObject);
         return resp.getData();
     }
 
@@ -1396,12 +1368,11 @@ public class TextMagicApi {
      * Create a new contact from the submitted data.
      * 
      * @param createContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createContactWithHttpInfo(CreateContactInputObject createContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createContactValidateBeforeCall(createContactInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createContactWithHttpInfo(CreateContactInputObject createContactInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createContactValidateBeforeCall(createContactInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1410,12 +1381,11 @@ public class TextMagicApi {
      * Create a new contact from the submitted data. (asynchronously)
      * 
      * @param createContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createContactAsync(CreateContactInputObject createContactInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createContactAsync(CreateContactInputObject createContactInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1436,7 +1406,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createContactValidateBeforeCall(createContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createContactValidateBeforeCall(createContactInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1445,13 +1415,12 @@ public class TextMagicApi {
      * Build call for createContactNote
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createContactNoteCall(CreateContactNoteInputObject createContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createContactNoteCall(CreateContactNoteInputObject createContactNoteInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createContactNoteInputObject;
 
         // create path and map variables
@@ -1462,8 +1431,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1496,7 +1463,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createContactNoteValidateBeforeCall(CreateContactNoteInputObject createContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createContactNoteValidateBeforeCall(CreateContactNoteInputObject createContactNoteInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createContactNoteInputObject' is set
         if (createContactNoteInputObject == null) {
@@ -1509,7 +1476,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createContactNoteCall(createContactNoteInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createContactNoteCall(createContactNoteInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1519,12 +1486,11 @@ public class TextMagicApi {
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createContactNote(CreateContactNoteInputObject createContactNoteInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createContactNoteWithHttpInfo(createContactNoteInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse createContactNote(CreateContactNoteInputObject createContactNoteInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createContactNoteWithHttpInfo(createContactNoteInputObject, id);
         return resp.getData();
     }
 
@@ -1533,12 +1499,11 @@ public class TextMagicApi {
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createContactNoteWithHttpInfo(CreateContactNoteInputObject createContactNoteInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createContactNoteValidateBeforeCall(createContactNoteInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createContactNoteWithHttpInfo(CreateContactNoteInputObject createContactNoteInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = createContactNoteValidateBeforeCall(createContactNoteInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1548,12 +1513,11 @@ public class TextMagicApi {
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createContactNoteAsync(CreateContactNoteInputObject createContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createContactNoteAsync(CreateContactNoteInputObject createContactNoteInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1574,7 +1538,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createContactNoteValidateBeforeCall(createContactNoteInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createContactNoteValidateBeforeCall(createContactNoteInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1582,13 +1546,12 @@ public class TextMagicApi {
     /**
      * Build call for createCustomField
      * @param createCustomFieldInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createCustomFieldCall(CreateCustomFieldInputObject createCustomFieldInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createCustomFieldCall(CreateCustomFieldInputObject createCustomFieldInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createCustomFieldInputObject;
 
         // create path and map variables
@@ -1598,8 +1561,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1632,7 +1593,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createCustomFieldValidateBeforeCall(CreateCustomFieldInputObject createCustomFieldInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createCustomFieldValidateBeforeCall(CreateCustomFieldInputObject createCustomFieldInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createCustomFieldInputObject' is set
         if (createCustomFieldInputObject == null) {
@@ -1640,7 +1601,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createCustomFieldCall(createCustomFieldInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createCustomFieldCall(createCustomFieldInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1649,12 +1610,11 @@ public class TextMagicApi {
      * Create a new custom field from the submitted data.
      * 
      * @param createCustomFieldInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createCustomField(CreateCustomFieldInputObject createCustomFieldInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createCustomFieldWithHttpInfo(createCustomFieldInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse createCustomField(CreateCustomFieldInputObject createCustomFieldInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createCustomFieldWithHttpInfo(createCustomFieldInputObject);
         return resp.getData();
     }
 
@@ -1662,12 +1622,11 @@ public class TextMagicApi {
      * Create a new custom field from the submitted data.
      * 
      * @param createCustomFieldInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createCustomFieldWithHttpInfo(CreateCustomFieldInputObject createCustomFieldInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createCustomFieldValidateBeforeCall(createCustomFieldInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createCustomFieldWithHttpInfo(CreateCustomFieldInputObject createCustomFieldInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createCustomFieldValidateBeforeCall(createCustomFieldInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1676,12 +1635,11 @@ public class TextMagicApi {
      * Create a new custom field from the submitted data. (asynchronously)
      * 
      * @param createCustomFieldInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createCustomFieldAsync(CreateCustomFieldInputObject createCustomFieldInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createCustomFieldAsync(CreateCustomFieldInputObject createCustomFieldInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1702,7 +1660,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createCustomFieldValidateBeforeCall(createCustomFieldInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createCustomFieldValidateBeforeCall(createCustomFieldInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1710,13 +1668,12 @@ public class TextMagicApi {
     /**
      * Build call for createList
      * @param createListInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createListCall(CreateListInputObject createListInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createListCall(CreateListInputObject createListInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createListInputObject;
 
         // create path and map variables
@@ -1726,8 +1683,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1760,7 +1715,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createListValidateBeforeCall(CreateListInputObject createListInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createListValidateBeforeCall(CreateListInputObject createListInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createListInputObject' is set
         if (createListInputObject == null) {
@@ -1768,7 +1723,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createListCall(createListInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createListCall(createListInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1777,12 +1732,11 @@ public class TextMagicApi {
      * Create a new list from the submitted data.
      * 
      * @param createListInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createList(CreateListInputObject createListInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createListWithHttpInfo(createListInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse createList(CreateListInputObject createListInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createListWithHttpInfo(createListInputObject);
         return resp.getData();
     }
 
@@ -1790,12 +1744,11 @@ public class TextMagicApi {
      * Create a new list from the submitted data.
      * 
      * @param createListInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createListWithHttpInfo(CreateListInputObject createListInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createListValidateBeforeCall(createListInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createListWithHttpInfo(CreateListInputObject createListInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createListValidateBeforeCall(createListInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1804,12 +1757,11 @@ public class TextMagicApi {
      * Create a new list from the submitted data. (asynchronously)
      * 
      * @param createListInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createListAsync(CreateListInputObject createListInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createListAsync(CreateListInputObject createListInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1830,7 +1782,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createListValidateBeforeCall(createListInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createListValidateBeforeCall(createListInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1838,13 +1790,12 @@ public class TextMagicApi {
     /**
      * Build call for createPushToken
      * @param createPushTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createPushTokenCall(CreatePushTokenInputObject createPushTokenInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createPushTokenCall(CreatePushTokenInputObject createPushTokenInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createPushTokenInputObject;
 
         // create path and map variables
@@ -1854,8 +1805,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -1888,7 +1837,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPushTokenValidateBeforeCall(CreatePushTokenInputObject createPushTokenInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createPushTokenValidateBeforeCall(CreatePushTokenInputObject createPushTokenInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createPushTokenInputObject' is set
         if (createPushTokenInputObject == null) {
@@ -1896,7 +1845,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createPushTokenCall(createPushTokenInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPushTokenCall(createPushTokenInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1905,23 +1854,21 @@ public class TextMagicApi {
      * Add or update a device token.
      * 
      * @param createPushTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void createPushToken(CreatePushTokenInputObject createPushTokenInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        createPushTokenWithHttpInfo(createPushTokenInputObject, xIgnoreNullValues);
+    public void createPushToken(CreatePushTokenInputObject createPushTokenInputObject) throws ApiException {
+        createPushTokenWithHttpInfo(createPushTokenInputObject);
     }
 
     /**
      * Add or update a device token.
      * 
      * @param createPushTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> createPushTokenWithHttpInfo(CreatePushTokenInputObject createPushTokenInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createPushTokenValidateBeforeCall(createPushTokenInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> createPushTokenWithHttpInfo(CreatePushTokenInputObject createPushTokenInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createPushTokenValidateBeforeCall(createPushTokenInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -1929,12 +1876,11 @@ public class TextMagicApi {
      * Add or update a device token. (asynchronously)
      * 
      * @param createPushTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPushTokenAsync(CreatePushTokenInputObject createPushTokenInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call createPushTokenAsync(CreatePushTokenInputObject createPushTokenInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1955,20 +1901,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createPushTokenValidateBeforeCall(createPushTokenInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPushTokenValidateBeforeCall(createPushTokenInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for createSurvey
      * @param createSurveyInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSurveyCall(CreateSurveyInputObject createSurveyInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSurveyCall(CreateSurveyInputObject createSurveyInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createSurveyInputObject;
 
         // create path and map variables
@@ -1978,8 +1923,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -2012,7 +1955,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSurveyValidateBeforeCall(CreateSurveyInputObject createSurveyInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createSurveyValidateBeforeCall(CreateSurveyInputObject createSurveyInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createSurveyInputObject' is set
         if (createSurveyInputObject == null) {
@@ -2020,7 +1963,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createSurveyCall(createSurveyInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSurveyCall(createSurveyInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2029,12 +1972,11 @@ public class TextMagicApi {
      * Create a new survey from the submitted data.
      * 
      * @param createSurveyInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createSurvey(CreateSurveyInputObject createSurveyInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createSurveyWithHttpInfo(createSurveyInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse createSurvey(CreateSurveyInputObject createSurveyInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createSurveyWithHttpInfo(createSurveyInputObject);
         return resp.getData();
     }
 
@@ -2042,12 +1984,11 @@ public class TextMagicApi {
      * Create a new survey from the submitted data.
      * 
      * @param createSurveyInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createSurveyWithHttpInfo(CreateSurveyInputObject createSurveyInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createSurveyValidateBeforeCall(createSurveyInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createSurveyWithHttpInfo(CreateSurveyInputObject createSurveyInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createSurveyValidateBeforeCall(createSurveyInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2056,12 +1997,11 @@ public class TextMagicApi {
      * Create a new survey from the submitted data. (asynchronously)
      * 
      * @param createSurveyInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSurveyAsync(CreateSurveyInputObject createSurveyInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSurveyAsync(CreateSurveyInputObject createSurveyInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2082,7 +2022,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSurveyValidateBeforeCall(createSurveyInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSurveyValidateBeforeCall(createSurveyInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2091,13 +2031,12 @@ public class TextMagicApi {
      * Build call for createSurveyNode
      * @param createSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSurveyNodeCall(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSurveyNodeCall(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createSurveyNodeInputObject;
 
         // create path and map variables
@@ -2108,8 +2047,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -2142,7 +2079,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSurveyNodeValidateBeforeCall(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createSurveyNodeValidateBeforeCall(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createSurveyNodeInputObject' is set
         if (createSurveyNodeInputObject == null) {
@@ -2155,7 +2092,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createSurveyNodeCall(createSurveyNodeInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSurveyNodeCall(createSurveyNodeInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2165,12 +2102,11 @@ public class TextMagicApi {
      * 
      * @param createSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createSurveyNode(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createSurveyNodeWithHttpInfo(createSurveyNodeInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse createSurveyNode(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createSurveyNodeWithHttpInfo(createSurveyNodeInputObject, id);
         return resp.getData();
     }
 
@@ -2179,12 +2115,11 @@ public class TextMagicApi {
      * 
      * @param createSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createSurveyNodeWithHttpInfo(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createSurveyNodeValidateBeforeCall(createSurveyNodeInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createSurveyNodeWithHttpInfo(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = createSurveyNodeValidateBeforeCall(createSurveyNodeInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2194,12 +2129,11 @@ public class TextMagicApi {
      * 
      * @param createSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSurveyNodeAsync(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSurveyNodeAsync(CreateSurveyNodeInputObject createSurveyNodeInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2220,7 +2154,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSurveyNodeValidateBeforeCall(createSurveyNodeInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSurveyNodeValidateBeforeCall(createSurveyNodeInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2228,13 +2162,12 @@ public class TextMagicApi {
     /**
      * Build call for createTemplate
      * @param createTemplateInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createTemplateCall(CreateTemplateInputObject createTemplateInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createTemplateCall(CreateTemplateInputObject createTemplateInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = createTemplateInputObject;
 
         // create path and map variables
@@ -2244,8 +2177,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -2278,7 +2209,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createTemplateValidateBeforeCall(CreateTemplateInputObject createTemplateInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createTemplateValidateBeforeCall(CreateTemplateInputObject createTemplateInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'createTemplateInputObject' is set
         if (createTemplateInputObject == null) {
@@ -2286,7 +2217,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = createTemplateCall(createTemplateInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createTemplateCall(createTemplateInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2295,12 +2226,11 @@ public class TextMagicApi {
      * Create a new template from the submitted data.
      * 
      * @param createTemplateInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse createTemplate(CreateTemplateInputObject createTemplateInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = createTemplateWithHttpInfo(createTemplateInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse createTemplate(CreateTemplateInputObject createTemplateInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = createTemplateWithHttpInfo(createTemplateInputObject);
         return resp.getData();
     }
 
@@ -2308,12 +2238,11 @@ public class TextMagicApi {
      * Create a new template from the submitted data.
      * 
      * @param createTemplateInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> createTemplateWithHttpInfo(CreateTemplateInputObject createTemplateInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(createTemplateInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> createTemplateWithHttpInfo(CreateTemplateInputObject createTemplateInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(createTemplateInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2322,12 +2251,11 @@ public class TextMagicApi {
      * Create a new template from the submitted data. (asynchronously)
      * 
      * @param createTemplateInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createTemplateAsync(CreateTemplateInputObject createTemplateInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createTemplateAsync(CreateTemplateInputObject createTemplateInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2348,7 +2276,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(createTemplateInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(createTemplateInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2684,13 +2612,12 @@ public class TextMagicApi {
      * Build call for deleteChatMessages
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteChatMessagesCall(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteChatMessagesCall(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteChatMessagesBulkInputObject;
 
         // create path and map variables
@@ -2701,8 +2628,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -2735,7 +2660,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteChatMessagesValidateBeforeCall(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteChatMessagesValidateBeforeCall(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteChatMessagesBulkInputObject' is set
         if (deleteChatMessagesBulkInputObject == null) {
@@ -2748,7 +2673,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteChatMessagesCall(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChatMessagesCall(deleteChatMessagesBulkInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2758,11 +2683,10 @@ public class TextMagicApi {
      * 
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteChatMessages(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        deleteChatMessagesWithHttpInfo(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues);
+    public void deleteChatMessages(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id) throws ApiException {
+        deleteChatMessagesWithHttpInfo(deleteChatMessagesBulkInputObject, id);
     }
 
     /**
@@ -2770,12 +2694,11 @@ public class TextMagicApi {
      * 
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteChatMessagesWithHttpInfo(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteChatMessagesValidateBeforeCall(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteChatMessagesWithHttpInfo(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteChatMessagesValidateBeforeCall(deleteChatMessagesBulkInputObject, id, null, null);
         return apiClient.execute(call);
     }
 
@@ -2784,12 +2707,11 @@ public class TextMagicApi {
      * 
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteChatMessagesAsync(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteChatMessagesAsync(DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject, Integer id, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2810,20 +2732,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteChatMessagesValidateBeforeCall(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChatMessagesValidateBeforeCall(deleteChatMessagesBulkInputObject, id, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for deleteChatsBulk
      * @param deleteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteChatsBulkCall(DeleteChatsBulkInputObject deleteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteChatsBulkCall(DeleteChatsBulkInputObject deleteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteChatsBulkInputObject;
 
         // create path and map variables
@@ -2833,8 +2754,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -2867,7 +2786,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteChatsBulkValidateBeforeCall(DeleteChatsBulkInputObject deleteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteChatsBulkValidateBeforeCall(DeleteChatsBulkInputObject deleteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteChatsBulkInputObject' is set
         if (deleteChatsBulkInputObject == null) {
@@ -2875,7 +2794,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteChatsBulkCall(deleteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChatsBulkCall(deleteChatsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2884,23 +2803,21 @@ public class TextMagicApi {
      * Delete chats by given ID(s) or delete all chats.
      * 
      * @param deleteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteChatsBulk(DeleteChatsBulkInputObject deleteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteChatsBulkWithHttpInfo(deleteChatsBulkInputObject, xIgnoreNullValues);
+    public void deleteChatsBulk(DeleteChatsBulkInputObject deleteChatsBulkInputObject) throws ApiException {
+        deleteChatsBulkWithHttpInfo(deleteChatsBulkInputObject);
     }
 
     /**
      * Delete chats by given ID(s) or delete all chats.
      * 
      * @param deleteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteChatsBulkWithHttpInfo(DeleteChatsBulkInputObject deleteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteChatsBulkValidateBeforeCall(deleteChatsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteChatsBulkWithHttpInfo(DeleteChatsBulkInputObject deleteChatsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteChatsBulkValidateBeforeCall(deleteChatsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -2908,12 +2825,11 @@ public class TextMagicApi {
      * Delete chats by given ID(s) or delete all chats. (asynchronously)
      * 
      * @param deleteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteChatsBulkAsync(DeleteChatsBulkInputObject deleteChatsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteChatsBulkAsync(DeleteChatsBulkInputObject deleteChatsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2934,7 +2850,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteChatsBulkValidateBeforeCall(deleteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteChatsBulkValidateBeforeCall(deleteChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -3299,13 +3215,12 @@ public class TextMagicApi {
      * Build call for deleteContactNotesBulk
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteContactNotesBulkCall(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteContactNotesBulkCall(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteContactNotesBulkInputObject;
 
         // create path and map variables
@@ -3316,8 +3231,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -3350,7 +3263,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteContactNotesBulkValidateBeforeCall(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteContactNotesBulkValidateBeforeCall(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -3363,7 +3276,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteContactNotesBulkCall(id, deleteContactNotesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteContactNotesBulkCall(id, deleteContactNotesBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3373,11 +3286,10 @@ public class TextMagicApi {
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteContactNotesBulk(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteContactNotesBulkWithHttpInfo(id, deleteContactNotesBulkInputObject, xIgnoreNullValues);
+    public void deleteContactNotesBulk(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject) throws ApiException {
+        deleteContactNotesBulkWithHttpInfo(id, deleteContactNotesBulkInputObject);
     }
 
     /**
@@ -3385,12 +3297,11 @@ public class TextMagicApi {
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteContactNotesBulkWithHttpInfo(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteContactNotesBulkValidateBeforeCall(id, deleteContactNotesBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteContactNotesBulkWithHttpInfo(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteContactNotesBulkValidateBeforeCall(id, deleteContactNotesBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -3399,12 +3310,11 @@ public class TextMagicApi {
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteContactNotesBulkAsync(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteContactNotesBulkAsync(Integer id, DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3425,20 +3335,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteContactNotesBulkValidateBeforeCall(id, deleteContactNotesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteContactNotesBulkValidateBeforeCall(id, deleteContactNotesBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for deleteContactsByIds
      * @param deleteContactsByIdsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteContactsByIdsCall(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteContactsByIdsCall(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteContactsByIdsInputObject;
 
         // create path and map variables
@@ -3448,8 +3357,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -3482,7 +3389,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteContactsByIdsValidateBeforeCall(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteContactsByIdsValidateBeforeCall(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteContactsByIdsInputObject' is set
         if (deleteContactsByIdsInputObject == null) {
@@ -3490,7 +3397,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteContactsByIdsCall(deleteContactsByIdsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteContactsByIdsCall(deleteContactsByIdsInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3499,23 +3406,21 @@ public class TextMagicApi {
      * Delete contact by given ID(s) or delete all contacts.
      * 
      * @param deleteContactsByIdsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteContactsByIds(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteContactsByIdsWithHttpInfo(deleteContactsByIdsInputObject, xIgnoreNullValues);
+    public void deleteContactsByIds(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject) throws ApiException {
+        deleteContactsByIdsWithHttpInfo(deleteContactsByIdsInputObject);
     }
 
     /**
      * Delete contact by given ID(s) or delete all contacts.
      * 
      * @param deleteContactsByIdsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteContactsByIdsWithHttpInfo(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteContactsByIdsValidateBeforeCall(deleteContactsByIdsInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteContactsByIdsWithHttpInfo(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteContactsByIdsValidateBeforeCall(deleteContactsByIdsInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -3523,12 +3428,11 @@ public class TextMagicApi {
      * Delete contact by given ID(s) or delete all contacts. (asynchronously)
      * 
      * @param deleteContactsByIdsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteContactsByIdsAsync(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteContactsByIdsAsync(DeleteContactsByIdsInputObject deleteContactsByIdsInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3549,7 +3453,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteContactsByIdsValidateBeforeCall(deleteContactsByIdsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteContactsByIdsValidateBeforeCall(deleteContactsByIdsInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -4041,13 +3945,12 @@ public class TextMagicApi {
     /**
      * Build call for deleteInboundMessagesBulk
      * @param deleteInboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteInboundMessagesBulkCall(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteInboundMessagesBulkCall(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteInboundMessagesBulkInputObject;
 
         // create path and map variables
@@ -4057,8 +3960,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -4091,7 +3992,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteInboundMessagesBulkValidateBeforeCall(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteInboundMessagesBulkValidateBeforeCall(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteInboundMessagesBulkInputObject' is set
         if (deleteInboundMessagesBulkInputObject == null) {
@@ -4099,7 +4000,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteInboundMessagesBulkCall(deleteInboundMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteInboundMessagesBulkCall(deleteInboundMessagesBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4108,23 +4009,21 @@ public class TextMagicApi {
      * Delete inbound messages by given ID(s) or delete all inbound messages.
      * 
      * @param deleteInboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteInboundMessagesBulk(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteInboundMessagesBulkWithHttpInfo(deleteInboundMessagesBulkInputObject, xIgnoreNullValues);
+    public void deleteInboundMessagesBulk(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject) throws ApiException {
+        deleteInboundMessagesBulkWithHttpInfo(deleteInboundMessagesBulkInputObject);
     }
 
     /**
      * Delete inbound messages by given ID(s) or delete all inbound messages.
      * 
      * @param deleteInboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteInboundMessagesBulkWithHttpInfo(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteInboundMessagesBulkValidateBeforeCall(deleteInboundMessagesBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteInboundMessagesBulkWithHttpInfo(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteInboundMessagesBulkValidateBeforeCall(deleteInboundMessagesBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -4132,12 +4031,11 @@ public class TextMagicApi {
      * Delete inbound messages by given ID(s) or delete all inbound messages. (asynchronously)
      * 
      * @param deleteInboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteInboundMessagesBulkAsync(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteInboundMessagesBulkAsync(DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4158,7 +4056,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteInboundMessagesBulkValidateBeforeCall(deleteInboundMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteInboundMessagesBulkValidateBeforeCall(deleteInboundMessagesBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -4404,13 +4302,12 @@ public class TextMagicApi {
      * Build call for deleteListContactsBulk
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteListContactsBulkCall(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteListContactsBulkCall(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteListContactsBulkInputObject;
 
         // create path and map variables
@@ -4421,8 +4318,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -4455,7 +4350,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteListContactsBulkValidateBeforeCall(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteListContactsBulkValidateBeforeCall(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteListContactsBulkInputObject' is set
         if (deleteListContactsBulkInputObject == null) {
@@ -4468,7 +4363,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteListContactsBulkCall(deleteListContactsBulkInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteListContactsBulkCall(deleteListContactsBulkInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4478,11 +4373,10 @@ public class TextMagicApi {
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteListContactsBulk(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        deleteListContactsBulkWithHttpInfo(deleteListContactsBulkInputObject, id, xIgnoreNullValues);
+    public void deleteListContactsBulk(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id) throws ApiException {
+        deleteListContactsBulkWithHttpInfo(deleteListContactsBulkInputObject, id);
     }
 
     /**
@@ -4490,12 +4384,11 @@ public class TextMagicApi {
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteListContactsBulkWithHttpInfo(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteListContactsBulkValidateBeforeCall(deleteListContactsBulkInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteListContactsBulkWithHttpInfo(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteListContactsBulkValidateBeforeCall(deleteListContactsBulkInputObject, id, null, null);
         return apiClient.execute(call);
     }
 
@@ -4504,12 +4397,11 @@ public class TextMagicApi {
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteListContactsBulkAsync(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteListContactsBulkAsync(DeleteListContactsBulkInputObject deleteListContactsBulkInputObject, Integer id, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4530,20 +4422,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteListContactsBulkValidateBeforeCall(deleteListContactsBulkInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteListContactsBulkValidateBeforeCall(deleteListContactsBulkInputObject, id, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for deleteListsBulk
      * @param deleteListsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteListsBulkCall(DeleteListsBulkInputObject deleteListsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteListsBulkCall(DeleteListsBulkInputObject deleteListsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteListsBulkInputObject;
 
         // create path and map variables
@@ -4553,8 +4444,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -4587,7 +4476,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteListsBulkValidateBeforeCall(DeleteListsBulkInputObject deleteListsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteListsBulkValidateBeforeCall(DeleteListsBulkInputObject deleteListsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteListsBulkInputObject' is set
         if (deleteListsBulkInputObject == null) {
@@ -4595,7 +4484,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteListsBulkCall(deleteListsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteListsBulkCall(deleteListsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4604,23 +4493,21 @@ public class TextMagicApi {
      * Delete list by given ID(s) or delete all lists.
      * 
      * @param deleteListsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteListsBulk(DeleteListsBulkInputObject deleteListsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteListsBulkWithHttpInfo(deleteListsBulkInputObject, xIgnoreNullValues);
+    public void deleteListsBulk(DeleteListsBulkInputObject deleteListsBulkInputObject) throws ApiException {
+        deleteListsBulkWithHttpInfo(deleteListsBulkInputObject);
     }
 
     /**
      * Delete list by given ID(s) or delete all lists.
      * 
      * @param deleteListsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteListsBulkWithHttpInfo(DeleteListsBulkInputObject deleteListsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteListsBulkValidateBeforeCall(deleteListsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteListsBulkWithHttpInfo(DeleteListsBulkInputObject deleteListsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteListsBulkValidateBeforeCall(deleteListsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -4628,12 +4515,11 @@ public class TextMagicApi {
      * Delete list by given ID(s) or delete all lists. (asynchronously)
      * 
      * @param deleteListsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteListsBulkAsync(DeleteListsBulkInputObject deleteListsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteListsBulkAsync(DeleteListsBulkInputObject deleteListsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4654,7 +4540,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteListsBulkValidateBeforeCall(deleteListsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteListsBulkValidateBeforeCall(deleteListsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -4780,13 +4666,12 @@ public class TextMagicApi {
     /**
      * Build call for deleteMessageSessionsBulk
      * @param deleteMessageSessionsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteMessageSessionsBulkCall(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteMessageSessionsBulkCall(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteMessageSessionsBulkInputObject;
 
         // create path and map variables
@@ -4796,8 +4681,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -4830,7 +4713,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteMessageSessionsBulkValidateBeforeCall(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteMessageSessionsBulkValidateBeforeCall(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteMessageSessionsBulkInputObject' is set
         if (deleteMessageSessionsBulkInputObject == null) {
@@ -4838,7 +4721,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteMessageSessionsBulkCall(deleteMessageSessionsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteMessageSessionsBulkCall(deleteMessageSessionsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4847,23 +4730,21 @@ public class TextMagicApi {
      * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteMessageSessionsBulk(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteMessageSessionsBulkWithHttpInfo(deleteMessageSessionsBulkInputObject, xIgnoreNullValues);
+    public void deleteMessageSessionsBulk(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject) throws ApiException {
+        deleteMessageSessionsBulkWithHttpInfo(deleteMessageSessionsBulkInputObject);
     }
 
     /**
      * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteMessageSessionsBulkWithHttpInfo(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteMessageSessionsBulkValidateBeforeCall(deleteMessageSessionsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteMessageSessionsBulkWithHttpInfo(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteMessageSessionsBulkValidateBeforeCall(deleteMessageSessionsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -4871,12 +4752,11 @@ public class TextMagicApi {
      * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions. (asynchronously)
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteMessageSessionsBulkAsync(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteMessageSessionsBulkAsync(DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4897,7 +4777,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteMessageSessionsBulkValidateBeforeCall(deleteMessageSessionsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteMessageSessionsBulkValidateBeforeCall(deleteMessageSessionsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -5023,13 +4903,12 @@ public class TextMagicApi {
     /**
      * Build call for deleteOutboundMessagesBulk
      * @param deleteOutboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteOutboundMessagesBulkCall(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteOutboundMessagesBulkCall(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteOutboundMessagesBulkInputObject;
 
         // create path and map variables
@@ -5039,8 +4918,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -5073,7 +4950,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteOutboundMessagesBulkValidateBeforeCall(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteOutboundMessagesBulkValidateBeforeCall(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteOutboundMessagesBulkInputObject' is set
         if (deleteOutboundMessagesBulkInputObject == null) {
@@ -5081,7 +4958,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkCall(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkCall(deleteOutboundMessagesBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -5090,23 +4967,21 @@ public class TextMagicApi {
      * Delete messages by IDs
      * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteOutboundMessagesBulk(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteOutboundMessagesBulkWithHttpInfo(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues);
+    public void deleteOutboundMessagesBulk(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject) throws ApiException {
+        deleteOutboundMessagesBulkWithHttpInfo(deleteOutboundMessagesBulkInputObject);
     }
 
     /**
      * Delete messages by IDs
      * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteOutboundMessagesBulkWithHttpInfo(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkValidateBeforeCall(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteOutboundMessagesBulkWithHttpInfo(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkValidateBeforeCall(deleteOutboundMessagesBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -5114,12 +4989,11 @@ public class TextMagicApi {
      * Delete messages by IDs (asynchronously)
      * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteOutboundMessagesBulkAsync(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteOutboundMessagesBulkAsync(DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5140,7 +5014,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkValidateBeforeCall(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteOutboundMessagesBulkValidateBeforeCall(deleteOutboundMessagesBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -5395,13 +5269,12 @@ public class TextMagicApi {
     /**
      * Build call for deleteScheduledMessagesBulk
      * @param deleteScheduledMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteScheduledMessagesBulkCall(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteScheduledMessagesBulkCall(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteScheduledMessagesBulkInputObject;
 
         // create path and map variables
@@ -5411,8 +5284,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -5445,7 +5316,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteScheduledMessagesBulkValidateBeforeCall(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteScheduledMessagesBulkValidateBeforeCall(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteScheduledMessagesBulkInputObject' is set
         if (deleteScheduledMessagesBulkInputObject == null) {
@@ -5453,7 +5324,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkCall(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkCall(deleteScheduledMessagesBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -5462,23 +5333,21 @@ public class TextMagicApi {
      * Delete scheduled messages by given ID(s) or delete all scheduled messages.
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteScheduledMessagesBulk(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteScheduledMessagesBulkWithHttpInfo(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues);
+    public void deleteScheduledMessagesBulk(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject) throws ApiException {
+        deleteScheduledMessagesBulkWithHttpInfo(deleteScheduledMessagesBulkInputObject);
     }
 
     /**
      * Delete scheduled messages by given ID(s) or delete all scheduled messages.
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteScheduledMessagesBulkWithHttpInfo(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkValidateBeforeCall(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteScheduledMessagesBulkWithHttpInfo(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkValidateBeforeCall(deleteScheduledMessagesBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -5486,12 +5355,11 @@ public class TextMagicApi {
      * Delete scheduled messages by given ID(s) or delete all scheduled messages. (asynchronously)
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteScheduledMessagesBulkAsync(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteScheduledMessagesBulkAsync(DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5512,7 +5380,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkValidateBeforeCall(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteScheduledMessagesBulkValidateBeforeCall(deleteScheduledMessagesBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -5995,13 +5863,12 @@ public class TextMagicApi {
     /**
      * Build call for deleteTemplatesBulk
      * @param deleteTemplatesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteTemplatesBulkCall(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteTemplatesBulkCall(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteTemplatesBulkInputObject;
 
         // create path and map variables
@@ -6011,8 +5878,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -6045,7 +5910,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteTemplatesBulkValidateBeforeCall(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteTemplatesBulkValidateBeforeCall(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteTemplatesBulkInputObject' is set
         if (deleteTemplatesBulkInputObject == null) {
@@ -6053,7 +5918,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteTemplatesBulkCall(deleteTemplatesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteTemplatesBulkCall(deleteTemplatesBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -6062,23 +5927,21 @@ public class TextMagicApi {
      * Delete template by given ID(s) or delete all templates.
      * 
      * @param deleteTemplatesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteTemplatesBulk(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        deleteTemplatesBulkWithHttpInfo(deleteTemplatesBulkInputObject, xIgnoreNullValues);
+    public void deleteTemplatesBulk(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject) throws ApiException {
+        deleteTemplatesBulkWithHttpInfo(deleteTemplatesBulkInputObject);
     }
 
     /**
      * Delete template by given ID(s) or delete all templates.
      * 
      * @param deleteTemplatesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteTemplatesBulkWithHttpInfo(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = deleteTemplatesBulkValidateBeforeCall(deleteTemplatesBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> deleteTemplatesBulkWithHttpInfo(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = deleteTemplatesBulkValidateBeforeCall(deleteTemplatesBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -6086,12 +5949,11 @@ public class TextMagicApi {
      * Delete template by given ID(s) or delete all templates. (asynchronously)
      * 
      * @param deleteTemplatesBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteTemplatesBulkAsync(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteTemplatesBulkAsync(DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6112,20 +5974,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteTemplatesBulkValidateBeforeCall(deleteTemplatesBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteTemplatesBulkValidateBeforeCall(deleteTemplatesBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for doAuth
      * @param doAuthInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call doAuthCall(DoAuthInputObject doAuthInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call doAuthCall(DoAuthInputObject doAuthInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = doAuthInputObject;
 
         // create path and map variables
@@ -6135,8 +5996,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -6169,7 +6028,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call doAuthValidateBeforeCall(DoAuthInputObject doAuthInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call doAuthValidateBeforeCall(DoAuthInputObject doAuthInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'doAuthInputObject' is set
         if (doAuthInputObject == null) {
@@ -6177,7 +6036,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = doAuthCall(doAuthInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = doAuthCall(doAuthInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -6186,12 +6045,11 @@ public class TextMagicApi {
      * Authenticate user by given username and password.
      * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return DoAuthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DoAuthResponse doAuth(DoAuthInputObject doAuthInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<DoAuthResponse> resp = doAuthWithHttpInfo(doAuthInputObject, xIgnoreNullValues);
+    public DoAuthResponse doAuth(DoAuthInputObject doAuthInputObject) throws ApiException {
+        ApiResponse<DoAuthResponse> resp = doAuthWithHttpInfo(doAuthInputObject);
         return resp.getData();
     }
 
@@ -6199,12 +6057,11 @@ public class TextMagicApi {
      * Authenticate user by given username and password.
      * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;DoAuthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DoAuthResponse> doAuthWithHttpInfo(DoAuthInputObject doAuthInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = doAuthValidateBeforeCall(doAuthInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<DoAuthResponse> doAuthWithHttpInfo(DoAuthInputObject doAuthInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = doAuthValidateBeforeCall(doAuthInputObject, null, null);
         Type localVarReturnType = new TypeToken<DoAuthResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -6213,12 +6070,11 @@ public class TextMagicApi {
      * Authenticate user by given username and password. (asynchronously)
      * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call doAuthAsync(DoAuthInputObject doAuthInputObject, Boolean xIgnoreNullValues, final ApiCallback<DoAuthResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call doAuthAsync(DoAuthInputObject doAuthInputObject, final ApiCallback<DoAuthResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6239,7 +6095,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = doAuthValidateBeforeCall(doAuthInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = doAuthValidateBeforeCall(doAuthInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DoAuthResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -14399,13 +14255,12 @@ public class TextMagicApi {
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubaccountsWithTokensCall(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSubaccountsWithTokensCall(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = getSubaccountsWithTokensInputObject;
 
         // create path and map variables
@@ -14419,8 +14274,6 @@ public class TextMagicApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -14453,7 +14306,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubaccountsWithTokensValidateBeforeCall(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSubaccountsWithTokensValidateBeforeCall(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'getSubaccountsWithTokensInputObject' is set
         if (getSubaccountsWithTokensInputObject == null) {
@@ -14461,7 +14314,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSubaccountsWithTokensCall(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSubaccountsWithTokensCall(getSubaccountsWithTokensInputObject, page, limit, progressListener, progressRequestListener);
         return call;
 
     }
@@ -14472,12 +14325,11 @@ public class TextMagicApi {
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return GetSubaccountsWithTokensResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSubaccountsWithTokensResponse getSubaccountsWithTokens(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<GetSubaccountsWithTokensResponse> resp = getSubaccountsWithTokensWithHttpInfo(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues);
+    public GetSubaccountsWithTokensResponse getSubaccountsWithTokens(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit) throws ApiException {
+        ApiResponse<GetSubaccountsWithTokensResponse> resp = getSubaccountsWithTokensWithHttpInfo(getSubaccountsWithTokensInputObject, page, limit);
         return resp.getData();
     }
 
@@ -14487,12 +14339,11 @@ public class TextMagicApi {
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;GetSubaccountsWithTokensResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSubaccountsWithTokensResponse> getSubaccountsWithTokensWithHttpInfo(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = getSubaccountsWithTokensValidateBeforeCall(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues, null, null);
+    public ApiResponse<GetSubaccountsWithTokensResponse> getSubaccountsWithTokensWithHttpInfo(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getSubaccountsWithTokensValidateBeforeCall(getSubaccountsWithTokensInputObject, page, limit, null, null);
         Type localVarReturnType = new TypeToken<GetSubaccountsWithTokensResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -14503,12 +14354,11 @@ public class TextMagicApi {
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubaccountsWithTokensAsync(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, Boolean xIgnoreNullValues, final ApiCallback<GetSubaccountsWithTokensResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSubaccountsWithTokensAsync(GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject, BigDecimal page, Integer limit, final ApiCallback<GetSubaccountsWithTokensResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -14529,7 +14379,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubaccountsWithTokensValidateBeforeCall(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSubaccountsWithTokensValidateBeforeCall(getSubaccountsWithTokensInputObject, page, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetSubaccountsWithTokensResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -16027,13 +15877,12 @@ public class TextMagicApi {
     /**
      * Build call for inviteSubaccount
      * @param inviteSubaccountInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call inviteSubaccountCall(InviteSubaccountInputObject inviteSubaccountInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call inviteSubaccountCall(InviteSubaccountInputObject inviteSubaccountInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = inviteSubaccountInputObject;
 
         // create path and map variables
@@ -16043,8 +15892,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16077,7 +15924,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call inviteSubaccountValidateBeforeCall(InviteSubaccountInputObject inviteSubaccountInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call inviteSubaccountValidateBeforeCall(InviteSubaccountInputObject inviteSubaccountInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'inviteSubaccountInputObject' is set
         if (inviteSubaccountInputObject == null) {
@@ -16085,7 +15932,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = inviteSubaccountCall(inviteSubaccountInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = inviteSubaccountCall(inviteSubaccountInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16094,23 +15941,21 @@ public class TextMagicApi {
      * Invite new subaccount.
      * 
      * @param inviteSubaccountInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void inviteSubaccount(InviteSubaccountInputObject inviteSubaccountInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        inviteSubaccountWithHttpInfo(inviteSubaccountInputObject, xIgnoreNullValues);
+    public void inviteSubaccount(InviteSubaccountInputObject inviteSubaccountInputObject) throws ApiException {
+        inviteSubaccountWithHttpInfo(inviteSubaccountInputObject);
     }
 
     /**
      * Invite new subaccount.
      * 
      * @param inviteSubaccountInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> inviteSubaccountWithHttpInfo(InviteSubaccountInputObject inviteSubaccountInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = inviteSubaccountValidateBeforeCall(inviteSubaccountInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> inviteSubaccountWithHttpInfo(InviteSubaccountInputObject inviteSubaccountInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = inviteSubaccountValidateBeforeCall(inviteSubaccountInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16118,12 +15963,11 @@ public class TextMagicApi {
      * Invite new subaccount. (asynchronously)
      * 
      * @param inviteSubaccountInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call inviteSubaccountAsync(InviteSubaccountInputObject inviteSubaccountInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call inviteSubaccountAsync(InviteSubaccountInputObject inviteSubaccountInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16144,20 +15988,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = inviteSubaccountValidateBeforeCall(inviteSubaccountInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = inviteSubaccountValidateBeforeCall(inviteSubaccountInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for markChatsReadBulk
      * @param markChatsReadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call markChatsReadBulkCall(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call markChatsReadBulkCall(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = markChatsReadBulkInputObject;
 
         // create path and map variables
@@ -16167,8 +16010,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16201,7 +16042,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call markChatsReadBulkValidateBeforeCall(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call markChatsReadBulkValidateBeforeCall(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'markChatsReadBulkInputObject' is set
         if (markChatsReadBulkInputObject == null) {
@@ -16209,7 +16050,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = markChatsReadBulkCall(markChatsReadBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = markChatsReadBulkCall(markChatsReadBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16218,23 +16059,21 @@ public class TextMagicApi {
      * Mark several chats as read by chat ids or mark all chats as read
      * 
      * @param markChatsReadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void markChatsReadBulk(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        markChatsReadBulkWithHttpInfo(markChatsReadBulkInputObject, xIgnoreNullValues);
+    public void markChatsReadBulk(MarkChatsReadBulkInputObject markChatsReadBulkInputObject) throws ApiException {
+        markChatsReadBulkWithHttpInfo(markChatsReadBulkInputObject);
     }
 
     /**
      * Mark several chats as read by chat ids or mark all chats as read
      * 
      * @param markChatsReadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> markChatsReadBulkWithHttpInfo(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = markChatsReadBulkValidateBeforeCall(markChatsReadBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> markChatsReadBulkWithHttpInfo(MarkChatsReadBulkInputObject markChatsReadBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = markChatsReadBulkValidateBeforeCall(markChatsReadBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16242,12 +16081,11 @@ public class TextMagicApi {
      * Mark several chats as read by chat ids or mark all chats as read (asynchronously)
      * 
      * @param markChatsReadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call markChatsReadBulkAsync(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call markChatsReadBulkAsync(MarkChatsReadBulkInputObject markChatsReadBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16268,20 +16106,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = markChatsReadBulkValidateBeforeCall(markChatsReadBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = markChatsReadBulkValidateBeforeCall(markChatsReadBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for markChatsUnreadBulk
      * @param markChatsUnreadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call markChatsUnreadBulkCall(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call markChatsUnreadBulkCall(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = markChatsUnreadBulkInputObject;
 
         // create path and map variables
@@ -16291,8 +16128,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16325,7 +16160,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call markChatsUnreadBulkValidateBeforeCall(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call markChatsUnreadBulkValidateBeforeCall(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'markChatsUnreadBulkInputObject' is set
         if (markChatsUnreadBulkInputObject == null) {
@@ -16333,7 +16168,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = markChatsUnreadBulkCall(markChatsUnreadBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = markChatsUnreadBulkCall(markChatsUnreadBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16342,23 +16177,21 @@ public class TextMagicApi {
      * Mark several chats as UNread by chat ids or mark all chats as UNread
      * 
      * @param markChatsUnreadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void markChatsUnreadBulk(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        markChatsUnreadBulkWithHttpInfo(markChatsUnreadBulkInputObject, xIgnoreNullValues);
+    public void markChatsUnreadBulk(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject) throws ApiException {
+        markChatsUnreadBulkWithHttpInfo(markChatsUnreadBulkInputObject);
     }
 
     /**
      * Mark several chats as UNread by chat ids or mark all chats as UNread
      * 
      * @param markChatsUnreadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> markChatsUnreadBulkWithHttpInfo(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = markChatsUnreadBulkValidateBeforeCall(markChatsUnreadBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> markChatsUnreadBulkWithHttpInfo(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = markChatsUnreadBulkValidateBeforeCall(markChatsUnreadBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16366,12 +16199,11 @@ public class TextMagicApi {
      * Mark several chats as UNread by chat ids or mark all chats as UNread (asynchronously)
      * 
      * @param markChatsUnreadBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call markChatsUnreadBulkAsync(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call markChatsUnreadBulkAsync(MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16392,14 +16224,13 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = markChatsUnreadBulkValidateBeforeCall(markChatsUnreadBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = markChatsUnreadBulkValidateBeforeCall(markChatsUnreadBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for mergeSurveyNodes
      * @param mergeSurveyNodesInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -16407,7 +16238,7 @@ public class TextMagicApi {
      * @deprecated
      */
     @Deprecated
-    public com.squareup.okhttp.Call mergeSurveyNodesCall(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call mergeSurveyNodesCall(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = mergeSurveyNodesInputObject;
 
         // create path and map variables
@@ -16417,8 +16248,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16452,7 +16281,7 @@ public class TextMagicApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call mergeSurveyNodesValidateBeforeCall(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call mergeSurveyNodesValidateBeforeCall(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'mergeSurveyNodesInputObject' is set
         if (mergeSurveyNodesInputObject == null) {
@@ -16460,7 +16289,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = mergeSurveyNodesCall(mergeSurveyNodesInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = mergeSurveyNodesCall(mergeSurveyNodesInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16469,27 +16298,25 @@ public class TextMagicApi {
      * Merge two question nodes.
      * 
      * @param mergeSurveyNodesInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @deprecated
      */
     @Deprecated
-    public void mergeSurveyNodes(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        mergeSurveyNodesWithHttpInfo(mergeSurveyNodesInputObject, xIgnoreNullValues);
+    public void mergeSurveyNodes(MergeSurveyNodesInputObject mergeSurveyNodesInputObject) throws ApiException {
+        mergeSurveyNodesWithHttpInfo(mergeSurveyNodesInputObject);
     }
 
     /**
      * Merge two question nodes.
      * 
      * @param mergeSurveyNodesInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<Void> mergeSurveyNodesWithHttpInfo(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = mergeSurveyNodesValidateBeforeCall(mergeSurveyNodesInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> mergeSurveyNodesWithHttpInfo(MergeSurveyNodesInputObject mergeSurveyNodesInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = mergeSurveyNodesValidateBeforeCall(mergeSurveyNodesInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16497,14 +16324,13 @@ public class TextMagicApi {
      * Merge two question nodes. (asynchronously)
      * 
      * @param mergeSurveyNodesInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @deprecated
      */
     @Deprecated
-    public com.squareup.okhttp.Call mergeSurveyNodesAsync(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call mergeSurveyNodesAsync(MergeSurveyNodesInputObject mergeSurveyNodesInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16525,20 +16351,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = mergeSurveyNodesValidateBeforeCall(mergeSurveyNodesInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = mergeSurveyNodesValidateBeforeCall(mergeSurveyNodesInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for muteChat
      * @param muteChatInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call muteChatCall(MuteChatInputObject muteChatInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call muteChatCall(MuteChatInputObject muteChatInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = muteChatInputObject;
 
         // create path and map variables
@@ -16548,8 +16373,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16582,7 +16405,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call muteChatValidateBeforeCall(MuteChatInputObject muteChatInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call muteChatValidateBeforeCall(MuteChatInputObject muteChatInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'muteChatInputObject' is set
         if (muteChatInputObject == null) {
@@ -16590,7 +16413,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = muteChatCall(muteChatInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = muteChatCall(muteChatInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16599,12 +16422,11 @@ public class TextMagicApi {
      * Set mute mode.
      * 
      * @param muteChatInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse muteChat(MuteChatInputObject muteChatInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = muteChatWithHttpInfo(muteChatInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse muteChat(MuteChatInputObject muteChatInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = muteChatWithHttpInfo(muteChatInputObject);
         return resp.getData();
     }
 
@@ -16612,12 +16434,11 @@ public class TextMagicApi {
      * Set mute mode.
      * 
      * @param muteChatInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> muteChatWithHttpInfo(MuteChatInputObject muteChatInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = muteChatValidateBeforeCall(muteChatInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> muteChatWithHttpInfo(MuteChatInputObject muteChatInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = muteChatValidateBeforeCall(muteChatInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -16626,12 +16447,11 @@ public class TextMagicApi {
      * Set mute mode. (asynchronously)
      * 
      * @param muteChatInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call muteChatAsync(MuteChatInputObject muteChatInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call muteChatAsync(MuteChatInputObject muteChatInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16652,7 +16472,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = muteChatValidateBeforeCall(muteChatInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = muteChatValidateBeforeCall(muteChatInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -16660,13 +16480,12 @@ public class TextMagicApi {
     /**
      * Build call for muteChatsBulk
      * @param muteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call muteChatsBulkCall(MuteChatsBulkInputObject muteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call muteChatsBulkCall(MuteChatsBulkInputObject muteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = muteChatsBulkInputObject;
 
         // create path and map variables
@@ -16676,8 +16495,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16710,7 +16527,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call muteChatsBulkValidateBeforeCall(MuteChatsBulkInputObject muteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call muteChatsBulkValidateBeforeCall(MuteChatsBulkInputObject muteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'muteChatsBulkInputObject' is set
         if (muteChatsBulkInputObject == null) {
@@ -16718,7 +16535,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = muteChatsBulkCall(muteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = muteChatsBulkCall(muteChatsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16727,23 +16544,21 @@ public class TextMagicApi {
      * Mute several chats by chat ids or mute all chats
      * 
      * @param muteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void muteChatsBulk(MuteChatsBulkInputObject muteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        muteChatsBulkWithHttpInfo(muteChatsBulkInputObject, xIgnoreNullValues);
+    public void muteChatsBulk(MuteChatsBulkInputObject muteChatsBulkInputObject) throws ApiException {
+        muteChatsBulkWithHttpInfo(muteChatsBulkInputObject);
     }
 
     /**
      * Mute several chats by chat ids or mute all chats
      * 
      * @param muteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> muteChatsBulkWithHttpInfo(MuteChatsBulkInputObject muteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = muteChatsBulkValidateBeforeCall(muteChatsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> muteChatsBulkWithHttpInfo(MuteChatsBulkInputObject muteChatsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = muteChatsBulkValidateBeforeCall(muteChatsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16751,12 +16566,11 @@ public class TextMagicApi {
      * Mute several chats by chat ids or mute all chats (asynchronously)
      * 
      * @param muteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call muteChatsBulkAsync(MuteChatsBulkInputObject muteChatsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call muteChatsBulkAsync(MuteChatsBulkInputObject muteChatsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -16777,7 +16591,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = muteChatsBulkValidateBeforeCall(muteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = muteChatsBulkValidateBeforeCall(muteChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -16897,13 +16711,12 @@ public class TextMagicApi {
     /**
      * Build call for reopenChatsBulk
      * @param reopenChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call reopenChatsBulkCall(ReopenChatsBulkInputObject reopenChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call reopenChatsBulkCall(ReopenChatsBulkInputObject reopenChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = reopenChatsBulkInputObject;
 
         // create path and map variables
@@ -16913,8 +16726,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -16947,7 +16758,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reopenChatsBulkValidateBeforeCall(ReopenChatsBulkInputObject reopenChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call reopenChatsBulkValidateBeforeCall(ReopenChatsBulkInputObject reopenChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reopenChatsBulkInputObject' is set
         if (reopenChatsBulkInputObject == null) {
@@ -16955,7 +16766,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = reopenChatsBulkCall(reopenChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = reopenChatsBulkCall(reopenChatsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -16964,23 +16775,21 @@ public class TextMagicApi {
      * Reopen chats by chat ids or reopen all chats
      * 
      * @param reopenChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void reopenChatsBulk(ReopenChatsBulkInputObject reopenChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        reopenChatsBulkWithHttpInfo(reopenChatsBulkInputObject, xIgnoreNullValues);
+    public void reopenChatsBulk(ReopenChatsBulkInputObject reopenChatsBulkInputObject) throws ApiException {
+        reopenChatsBulkWithHttpInfo(reopenChatsBulkInputObject);
     }
 
     /**
      * Reopen chats by chat ids or reopen all chats
      * 
      * @param reopenChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> reopenChatsBulkWithHttpInfo(ReopenChatsBulkInputObject reopenChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = reopenChatsBulkValidateBeforeCall(reopenChatsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> reopenChatsBulkWithHttpInfo(ReopenChatsBulkInputObject reopenChatsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = reopenChatsBulkValidateBeforeCall(reopenChatsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -16988,12 +16797,11 @@ public class TextMagicApi {
      * Reopen chats by chat ids or reopen all chats (asynchronously)
      * 
      * @param reopenChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reopenChatsBulkAsync(ReopenChatsBulkInputObject reopenChatsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call reopenChatsBulkAsync(ReopenChatsBulkInputObject reopenChatsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17014,20 +16822,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reopenChatsBulkValidateBeforeCall(reopenChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = reopenChatsBulkValidateBeforeCall(reopenChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for requestNewSubaccountToken
      * @param requestNewSubaccountTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call requestNewSubaccountTokenCall(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call requestNewSubaccountTokenCall(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestNewSubaccountTokenInputObject;
 
         // create path and map variables
@@ -17037,8 +16844,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -17071,7 +16876,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call requestNewSubaccountTokenValidateBeforeCall(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call requestNewSubaccountTokenValidateBeforeCall(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestNewSubaccountTokenInputObject' is set
         if (requestNewSubaccountTokenInputObject == null) {
@@ -17079,7 +16884,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = requestNewSubaccountTokenCall(requestNewSubaccountTokenInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestNewSubaccountTokenCall(requestNewSubaccountTokenInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -17088,12 +16893,11 @@ public class TextMagicApi {
      * Request a new REST API token for subaccount.
      * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public User requestNewSubaccountToken(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<User> resp = requestNewSubaccountTokenWithHttpInfo(requestNewSubaccountTokenInputObject, xIgnoreNullValues);
+    public User requestNewSubaccountToken(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject) throws ApiException {
+        ApiResponse<User> resp = requestNewSubaccountTokenWithHttpInfo(requestNewSubaccountTokenInputObject);
         return resp.getData();
     }
 
@@ -17101,12 +16905,11 @@ public class TextMagicApi {
      * Request a new REST API token for subaccount.
      * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<User> requestNewSubaccountTokenWithHttpInfo(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = requestNewSubaccountTokenValidateBeforeCall(requestNewSubaccountTokenInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<User> requestNewSubaccountTokenWithHttpInfo(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = requestNewSubaccountTokenValidateBeforeCall(requestNewSubaccountTokenInputObject, null, null);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -17115,12 +16918,11 @@ public class TextMagicApi {
      * Request a new REST API token for subaccount. (asynchronously)
      * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call requestNewSubaccountTokenAsync(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, Boolean xIgnoreNullValues, final ApiCallback<User> callback) throws ApiException {
+    public com.squareup.okhttp.Call requestNewSubaccountTokenAsync(RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject, final ApiCallback<User> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17141,7 +16943,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = requestNewSubaccountTokenValidateBeforeCall(requestNewSubaccountTokenInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestNewSubaccountTokenValidateBeforeCall(requestNewSubaccountTokenInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -17149,13 +16951,12 @@ public class TextMagicApi {
     /**
      * Build call for requestSenderId
      * @param requestSenderIdInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call requestSenderIdCall(RequestSenderIdInputObject requestSenderIdInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call requestSenderIdCall(RequestSenderIdInputObject requestSenderIdInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = requestSenderIdInputObject;
 
         // create path and map variables
@@ -17165,8 +16966,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -17199,7 +16998,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call requestSenderIdValidateBeforeCall(RequestSenderIdInputObject requestSenderIdInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call requestSenderIdValidateBeforeCall(RequestSenderIdInputObject requestSenderIdInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'requestSenderIdInputObject' is set
         if (requestSenderIdInputObject == null) {
@@ -17207,7 +17006,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = requestSenderIdCall(requestSenderIdInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestSenderIdCall(requestSenderIdInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -17216,12 +17015,11 @@ public class TextMagicApi {
      * Request for a new Sender ID.
      * 
      * @param requestSenderIdInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse requestSenderId(RequestSenderIdInputObject requestSenderIdInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = requestSenderIdWithHttpInfo(requestSenderIdInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse requestSenderId(RequestSenderIdInputObject requestSenderIdInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = requestSenderIdWithHttpInfo(requestSenderIdInputObject);
         return resp.getData();
     }
 
@@ -17229,12 +17027,11 @@ public class TextMagicApi {
      * Request for a new Sender ID.
      * 
      * @param requestSenderIdInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> requestSenderIdWithHttpInfo(RequestSenderIdInputObject requestSenderIdInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = requestSenderIdValidateBeforeCall(requestSenderIdInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> requestSenderIdWithHttpInfo(RequestSenderIdInputObject requestSenderIdInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = requestSenderIdValidateBeforeCall(requestSenderIdInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -17243,12 +17040,11 @@ public class TextMagicApi {
      * Request for a new Sender ID. (asynchronously)
      * 
      * @param requestSenderIdInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call requestSenderIdAsync(RequestSenderIdInputObject requestSenderIdInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call requestSenderIdAsync(RequestSenderIdInputObject requestSenderIdInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -17269,7 +17065,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = requestSenderIdValidateBeforeCall(requestSenderIdInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestSenderIdValidateBeforeCall(requestSenderIdInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -18862,13 +18658,12 @@ public class TextMagicApi {
     /**
      * Build call for sendMessage
      * @param sendMessageInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call sendMessageCall(SendMessageInputObject sendMessageInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call sendMessageCall(SendMessageInputObject sendMessageInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = sendMessageInputObject;
 
         // create path and map variables
@@ -18878,8 +18673,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -18912,7 +18705,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call sendMessageValidateBeforeCall(SendMessageInputObject sendMessageInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendMessageValidateBeforeCall(SendMessageInputObject sendMessageInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sendMessageInputObject' is set
         if (sendMessageInputObject == null) {
@@ -18920,7 +18713,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = sendMessageCall(sendMessageInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendMessageCall(sendMessageInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -18929,12 +18722,11 @@ public class TextMagicApi {
      * Send message
      * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return SendMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SendMessageResponse sendMessage(SendMessageInputObject sendMessageInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<SendMessageResponse> resp = sendMessageWithHttpInfo(sendMessageInputObject, xIgnoreNullValues);
+    public SendMessageResponse sendMessage(SendMessageInputObject sendMessageInputObject) throws ApiException {
+        ApiResponse<SendMessageResponse> resp = sendMessageWithHttpInfo(sendMessageInputObject);
         return resp.getData();
     }
 
@@ -18942,12 +18734,11 @@ public class TextMagicApi {
      * Send message
      * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;SendMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SendMessageResponse> sendMessageWithHttpInfo(SendMessageInputObject sendMessageInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(sendMessageInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<SendMessageResponse> sendMessageWithHttpInfo(SendMessageInputObject sendMessageInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(sendMessageInputObject, null, null);
         Type localVarReturnType = new TypeToken<SendMessageResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -18956,12 +18747,11 @@ public class TextMagicApi {
      * Send message (asynchronously)
      * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMessageAsync(SendMessageInputObject sendMessageInputObject, Boolean xIgnoreNullValues, final ApiCallback<SendMessageResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendMessageAsync(SendMessageInputObject sendMessageInputObject, final ApiCallback<SendMessageResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -18982,7 +18772,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(sendMessageInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(sendMessageInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SendMessageResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -19099,13 +18889,12 @@ public class TextMagicApi {
     /**
      * Build call for setChatStatus
      * @param setChatStatusInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call setChatStatusCall(SetChatStatusInputObject setChatStatusInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call setChatStatusCall(SetChatStatusInputObject setChatStatusInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = setChatStatusInputObject;
 
         // create path and map variables
@@ -19115,8 +18904,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19149,7 +18936,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call setChatStatusValidateBeforeCall(SetChatStatusInputObject setChatStatusInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setChatStatusValidateBeforeCall(SetChatStatusInputObject setChatStatusInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'setChatStatusInputObject' is set
         if (setChatStatusInputObject == null) {
@@ -19157,7 +18944,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = setChatStatusCall(setChatStatusInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setChatStatusCall(setChatStatusInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19166,12 +18953,11 @@ public class TextMagicApi {
      * Set status of the chat given by ID.
      * 
      * @param setChatStatusInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse setChatStatus(SetChatStatusInputObject setChatStatusInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = setChatStatusWithHttpInfo(setChatStatusInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse setChatStatus(SetChatStatusInputObject setChatStatusInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = setChatStatusWithHttpInfo(setChatStatusInputObject);
         return resp.getData();
     }
 
@@ -19179,12 +18965,11 @@ public class TextMagicApi {
      * Set status of the chat given by ID.
      * 
      * @param setChatStatusInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> setChatStatusWithHttpInfo(SetChatStatusInputObject setChatStatusInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = setChatStatusValidateBeforeCall(setChatStatusInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> setChatStatusWithHttpInfo(SetChatStatusInputObject setChatStatusInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = setChatStatusValidateBeforeCall(setChatStatusInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -19193,12 +18978,11 @@ public class TextMagicApi {
      * Set status of the chat given by ID. (asynchronously)
      * 
      * @param setChatStatusInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call setChatStatusAsync(SetChatStatusInputObject setChatStatusInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call setChatStatusAsync(SetChatStatusInputObject setChatStatusInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19219,7 +19003,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = setChatStatusValidateBeforeCall(setChatStatusInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setChatStatusValidateBeforeCall(setChatStatusInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -19350,13 +19134,12 @@ public class TextMagicApi {
     /**
      * Build call for unblockContact
      * @param unblockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call unblockContactCall(UnblockContactInputObject unblockContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call unblockContactCall(UnblockContactInputObject unblockContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = unblockContactInputObject;
 
         // create path and map variables
@@ -19366,8 +19149,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19400,7 +19181,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call unblockContactValidateBeforeCall(UnblockContactInputObject unblockContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call unblockContactValidateBeforeCall(UnblockContactInputObject unblockContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'unblockContactInputObject' is set
         if (unblockContactInputObject == null) {
@@ -19408,7 +19189,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = unblockContactCall(unblockContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unblockContactCall(unblockContactInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19417,23 +19198,21 @@ public class TextMagicApi {
      * Unblock contact by phone number.
      * 
      * @param unblockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void unblockContact(UnblockContactInputObject unblockContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        unblockContactWithHttpInfo(unblockContactInputObject, xIgnoreNullValues);
+    public void unblockContact(UnblockContactInputObject unblockContactInputObject) throws ApiException {
+        unblockContactWithHttpInfo(unblockContactInputObject);
     }
 
     /**
      * Unblock contact by phone number.
      * 
      * @param unblockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> unblockContactWithHttpInfo(UnblockContactInputObject unblockContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = unblockContactValidateBeforeCall(unblockContactInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> unblockContactWithHttpInfo(UnblockContactInputObject unblockContactInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = unblockContactValidateBeforeCall(unblockContactInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -19441,12 +19220,11 @@ public class TextMagicApi {
      * Unblock contact by phone number. (asynchronously)
      * 
      * @param unblockContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call unblockContactAsync(UnblockContactInputObject unblockContactInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call unblockContactAsync(UnblockContactInputObject unblockContactInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19467,20 +19245,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = unblockContactValidateBeforeCall(unblockContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unblockContactValidateBeforeCall(unblockContactInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for unblockContactsBulk
      * @param unblockContactsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call unblockContactsBulkCall(UnblockContactsBulkInputObject unblockContactsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call unblockContactsBulkCall(UnblockContactsBulkInputObject unblockContactsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = unblockContactsBulkInputObject;
 
         // create path and map variables
@@ -19490,8 +19267,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19524,7 +19299,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call unblockContactsBulkValidateBeforeCall(UnblockContactsBulkInputObject unblockContactsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call unblockContactsBulkValidateBeforeCall(UnblockContactsBulkInputObject unblockContactsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'unblockContactsBulkInputObject' is set
         if (unblockContactsBulkInputObject == null) {
@@ -19532,7 +19307,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = unblockContactsBulkCall(unblockContactsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unblockContactsBulkCall(unblockContactsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19541,23 +19316,21 @@ public class TextMagicApi {
      * Unblock several contacts by blocked contact ids or unblock all contacts
      * 
      * @param unblockContactsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void unblockContactsBulk(UnblockContactsBulkInputObject unblockContactsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        unblockContactsBulkWithHttpInfo(unblockContactsBulkInputObject, xIgnoreNullValues);
+    public void unblockContactsBulk(UnblockContactsBulkInputObject unblockContactsBulkInputObject) throws ApiException {
+        unblockContactsBulkWithHttpInfo(unblockContactsBulkInputObject);
     }
 
     /**
      * Unblock several contacts by blocked contact ids or unblock all contacts
      * 
      * @param unblockContactsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> unblockContactsBulkWithHttpInfo(UnblockContactsBulkInputObject unblockContactsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = unblockContactsBulkValidateBeforeCall(unblockContactsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> unblockContactsBulkWithHttpInfo(UnblockContactsBulkInputObject unblockContactsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = unblockContactsBulkValidateBeforeCall(unblockContactsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -19565,12 +19338,11 @@ public class TextMagicApi {
      * Unblock several contacts by blocked contact ids or unblock all contacts (asynchronously)
      * 
      * @param unblockContactsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call unblockContactsBulkAsync(UnblockContactsBulkInputObject unblockContactsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call unblockContactsBulkAsync(UnblockContactsBulkInputObject unblockContactsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19591,20 +19363,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = unblockContactsBulkValidateBeforeCall(unblockContactsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unblockContactsBulkValidateBeforeCall(unblockContactsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for unmuteChatsBulk
      * @param unmuteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call unmuteChatsBulkCall(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call unmuteChatsBulkCall(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = unmuteChatsBulkInputObject;
 
         // create path and map variables
@@ -19614,8 +19385,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19648,7 +19417,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call unmuteChatsBulkValidateBeforeCall(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call unmuteChatsBulkValidateBeforeCall(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'unmuteChatsBulkInputObject' is set
         if (unmuteChatsBulkInputObject == null) {
@@ -19656,7 +19425,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = unmuteChatsBulkCall(unmuteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unmuteChatsBulkCall(unmuteChatsBulkInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19665,23 +19434,21 @@ public class TextMagicApi {
      * Unmute several chats by chat ids or unmute all chats
      * 
      * @param unmuteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void unmuteChatsBulk(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        unmuteChatsBulkWithHttpInfo(unmuteChatsBulkInputObject, xIgnoreNullValues);
+    public void unmuteChatsBulk(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject) throws ApiException {
+        unmuteChatsBulkWithHttpInfo(unmuteChatsBulkInputObject);
     }
 
     /**
      * Unmute several chats by chat ids or unmute all chats
      * 
      * @param unmuteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> unmuteChatsBulkWithHttpInfo(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = unmuteChatsBulkValidateBeforeCall(unmuteChatsBulkInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> unmuteChatsBulkWithHttpInfo(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = unmuteChatsBulkValidateBeforeCall(unmuteChatsBulkInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -19689,12 +19456,11 @@ public class TextMagicApi {
      * Unmute several chats by chat ids or unmute all chats (asynchronously)
      * 
      * @param unmuteChatsBulkInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call unmuteChatsBulkAsync(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call unmuteChatsBulkAsync(UnmuteChatsBulkInputObject unmuteChatsBulkInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19715,20 +19481,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = unmuteChatsBulkValidateBeforeCall(unmuteChatsBulkInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unmuteChatsBulkValidateBeforeCall(unmuteChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for unsubscribeContact
      * @param unsubscribeContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call unsubscribeContactCall(UnsubscribeContactInputObject unsubscribeContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call unsubscribeContactCall(UnsubscribeContactInputObject unsubscribeContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = unsubscribeContactInputObject;
 
         // create path and map variables
@@ -19738,8 +19503,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19772,7 +19535,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call unsubscribeContactValidateBeforeCall(UnsubscribeContactInputObject unsubscribeContactInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call unsubscribeContactValidateBeforeCall(UnsubscribeContactInputObject unsubscribeContactInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'unsubscribeContactInputObject' is set
         if (unsubscribeContactInputObject == null) {
@@ -19780,7 +19543,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = unsubscribeContactCall(unsubscribeContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unsubscribeContactCall(unsubscribeContactInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19789,12 +19552,11 @@ public class TextMagicApi {
      * Unsubscribe contact from your communication by phone number.
      * 
      * @param unsubscribeContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse unsubscribeContact(UnsubscribeContactInputObject unsubscribeContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = unsubscribeContactWithHttpInfo(unsubscribeContactInputObject, xIgnoreNullValues);
+    public ResourceLinkResponse unsubscribeContact(UnsubscribeContactInputObject unsubscribeContactInputObject) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = unsubscribeContactWithHttpInfo(unsubscribeContactInputObject);
         return resp.getData();
     }
 
@@ -19802,12 +19564,11 @@ public class TextMagicApi {
      * Unsubscribe contact from your communication by phone number.
      * 
      * @param unsubscribeContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> unsubscribeContactWithHttpInfo(UnsubscribeContactInputObject unsubscribeContactInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = unsubscribeContactValidateBeforeCall(unsubscribeContactInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> unsubscribeContactWithHttpInfo(UnsubscribeContactInputObject unsubscribeContactInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = unsubscribeContactValidateBeforeCall(unsubscribeContactInputObject, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -19816,12 +19577,11 @@ public class TextMagicApi {
      * Unsubscribe contact from your communication by phone number. (asynchronously)
      * 
      * @param unsubscribeContactInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call unsubscribeContactAsync(UnsubscribeContactInputObject unsubscribeContactInputObject, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call unsubscribeContactAsync(UnsubscribeContactInputObject unsubscribeContactInputObject, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19842,7 +19602,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = unsubscribeContactValidateBeforeCall(unsubscribeContactInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unsubscribeContactValidateBeforeCall(unsubscribeContactInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -19850,13 +19610,12 @@ public class TextMagicApi {
     /**
      * Build call for updateBalanceNotificationSettings
      * @param updateBalanceNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBalanceNotificationSettingsCall(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBalanceNotificationSettingsCall(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateBalanceNotificationSettingsInputObject;
 
         // create path and map variables
@@ -19866,8 +19625,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -19900,7 +19657,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBalanceNotificationSettingsValidateBeforeCall(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBalanceNotificationSettingsValidateBeforeCall(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateBalanceNotificationSettingsInputObject' is set
         if (updateBalanceNotificationSettingsInputObject == null) {
@@ -19908,7 +19665,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsCall(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsCall(updateBalanceNotificationSettingsInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19917,23 +19674,21 @@ public class TextMagicApi {
      * Update balance notification settings
      * 
      * @param updateBalanceNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateBalanceNotificationSettings(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updateBalanceNotificationSettingsWithHttpInfo(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues);
+    public void updateBalanceNotificationSettings(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject) throws ApiException {
+        updateBalanceNotificationSettingsWithHttpInfo(updateBalanceNotificationSettingsInputObject);
     }
 
     /**
      * Update balance notification settings
      * 
      * @param updateBalanceNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateBalanceNotificationSettingsWithHttpInfo(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsValidateBeforeCall(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updateBalanceNotificationSettingsWithHttpInfo(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsValidateBeforeCall(updateBalanceNotificationSettingsInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -19941,12 +19696,11 @@ public class TextMagicApi {
      * Update balance notification settings (asynchronously)
      * 
      * @param updateBalanceNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBalanceNotificationSettingsAsync(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBalanceNotificationSettingsAsync(UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19967,20 +19721,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsValidateBeforeCall(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBalanceNotificationSettingsValidateBeforeCall(updateBalanceNotificationSettingsInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for updateCallbackSettings
      * @param updateCallbackSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCallbackSettingsCall(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCallbackSettingsCall(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateCallbackSettingsInputObject;
 
         // create path and map variables
@@ -19990,8 +19743,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20024,7 +19775,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCallbackSettingsValidateBeforeCall(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCallbackSettingsValidateBeforeCall(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateCallbackSettingsInputObject' is set
         if (updateCallbackSettingsInputObject == null) {
@@ -20032,7 +19783,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateCallbackSettingsCall(updateCallbackSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCallbackSettingsCall(updateCallbackSettingsInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20041,23 +19792,21 @@ public class TextMagicApi {
      * Update callback URL settings
      * 
      * @param updateCallbackSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateCallbackSettings(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updateCallbackSettingsWithHttpInfo(updateCallbackSettingsInputObject, xIgnoreNullValues);
+    public void updateCallbackSettings(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject) throws ApiException {
+        updateCallbackSettingsWithHttpInfo(updateCallbackSettingsInputObject);
     }
 
     /**
      * Update callback URL settings
      * 
      * @param updateCallbackSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateCallbackSettingsWithHttpInfo(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateCallbackSettingsValidateBeforeCall(updateCallbackSettingsInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updateCallbackSettingsWithHttpInfo(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateCallbackSettingsValidateBeforeCall(updateCallbackSettingsInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -20065,12 +19814,11 @@ public class TextMagicApi {
      * Update callback URL settings (asynchronously)
      * 
      * @param updateCallbackSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCallbackSettingsAsync(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCallbackSettingsAsync(UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20091,20 +19839,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateCallbackSettingsValidateBeforeCall(updateCallbackSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCallbackSettingsValidateBeforeCall(updateCallbackSettingsInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for updateChatDesktopNotificationSettings
      * @param updateChatDesktopNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateChatDesktopNotificationSettingsCall(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateChatDesktopNotificationSettingsCall(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateChatDesktopNotificationSettingsInputObject;
 
         // create path and map variables
@@ -20114,8 +19861,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20148,7 +19893,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateChatDesktopNotificationSettingsValidateBeforeCall(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateChatDesktopNotificationSettingsValidateBeforeCall(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateChatDesktopNotificationSettingsInputObject' is set
         if (updateChatDesktopNotificationSettingsInputObject == null) {
@@ -20156,7 +19901,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsCall(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsCall(updateChatDesktopNotificationSettingsInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20165,23 +19910,21 @@ public class TextMagicApi {
      * Update chat desktop notification settings
      * 
      * @param updateChatDesktopNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateChatDesktopNotificationSettings(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updateChatDesktopNotificationSettingsWithHttpInfo(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues);
+    public void updateChatDesktopNotificationSettings(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject) throws ApiException {
+        updateChatDesktopNotificationSettingsWithHttpInfo(updateChatDesktopNotificationSettingsInputObject);
     }
 
     /**
      * Update chat desktop notification settings
      * 
      * @param updateChatDesktopNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateChatDesktopNotificationSettingsWithHttpInfo(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsValidateBeforeCall(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updateChatDesktopNotificationSettingsWithHttpInfo(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsValidateBeforeCall(updateChatDesktopNotificationSettingsInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -20189,12 +19932,11 @@ public class TextMagicApi {
      * Update chat desktop notification settings (asynchronously)
      * 
      * @param updateChatDesktopNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateChatDesktopNotificationSettingsAsync(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateChatDesktopNotificationSettingsAsync(UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20215,7 +19957,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsValidateBeforeCall(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateChatDesktopNotificationSettingsValidateBeforeCall(updateChatDesktopNotificationSettingsInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -20223,13 +19965,12 @@ public class TextMagicApi {
      * Build call for updateContact
      * @param updateContactInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateContactCall(UpdateContactInputObject updateContactInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateContactCall(UpdateContactInputObject updateContactInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateContactInputObject;
 
         // create path and map variables
@@ -20240,8 +19981,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20274,7 +20013,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateContactValidateBeforeCall(UpdateContactInputObject updateContactInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateContactValidateBeforeCall(UpdateContactInputObject updateContactInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateContactInputObject' is set
         if (updateContactInputObject == null) {
@@ -20287,7 +20026,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateContactCall(updateContactInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateContactCall(updateContactInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20297,12 +20036,11 @@ public class TextMagicApi {
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateContact(UpdateContactInputObject updateContactInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateContactWithHttpInfo(updateContactInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateContact(UpdateContactInputObject updateContactInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateContactWithHttpInfo(updateContactInputObject, id);
         return resp.getData();
     }
 
@@ -20311,12 +20049,11 @@ public class TextMagicApi {
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateContactWithHttpInfo(UpdateContactInputObject updateContactInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateContactValidateBeforeCall(updateContactInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateContactWithHttpInfo(UpdateContactInputObject updateContactInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateContactValidateBeforeCall(updateContactInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -20326,12 +20063,11 @@ public class TextMagicApi {
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateContactAsync(UpdateContactInputObject updateContactInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateContactAsync(UpdateContactInputObject updateContactInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20352,7 +20088,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateContactValidateBeforeCall(updateContactInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateContactValidateBeforeCall(updateContactInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -20361,13 +20097,12 @@ public class TextMagicApi {
      * Build call for updateContactNote
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateContactNoteCall(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateContactNoteCall(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateContactNoteInputObject;
 
         // create path and map variables
@@ -20378,8 +20113,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20412,7 +20145,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateContactNoteValidateBeforeCall(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateContactNoteValidateBeforeCall(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateContactNoteInputObject' is set
         if (updateContactNoteInputObject == null) {
@@ -20425,7 +20158,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateContactNoteCall(updateContactNoteInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateContactNoteCall(updateContactNoteInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20435,12 +20168,11 @@ public class TextMagicApi {
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateContactNote(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateContactNoteWithHttpInfo(updateContactNoteInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateContactNote(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateContactNoteWithHttpInfo(updateContactNoteInputObject, id);
         return resp.getData();
     }
 
@@ -20449,12 +20181,11 @@ public class TextMagicApi {
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateContactNoteWithHttpInfo(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateContactNoteValidateBeforeCall(updateContactNoteInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateContactNoteWithHttpInfo(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateContactNoteValidateBeforeCall(updateContactNoteInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -20464,12 +20195,11 @@ public class TextMagicApi {
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateContactNoteAsync(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateContactNoteAsync(UpdateContactNoteInputObject updateContactNoteInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20490,7 +20220,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateContactNoteValidateBeforeCall(updateContactNoteInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateContactNoteValidateBeforeCall(updateContactNoteInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -20498,13 +20228,12 @@ public class TextMagicApi {
     /**
      * Build call for updateCurrentUser
      * @param updateCurrentUserInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCurrentUserCall(UpdateCurrentUserInputObject updateCurrentUserInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCurrentUserCall(UpdateCurrentUserInputObject updateCurrentUserInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateCurrentUserInputObject;
 
         // create path and map variables
@@ -20514,8 +20243,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20548,7 +20275,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCurrentUserValidateBeforeCall(UpdateCurrentUserInputObject updateCurrentUserInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCurrentUserValidateBeforeCall(UpdateCurrentUserInputObject updateCurrentUserInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateCurrentUserInputObject' is set
         if (updateCurrentUserInputObject == null) {
@@ -20556,7 +20283,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateCurrentUserCall(updateCurrentUserInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCurrentUserCall(updateCurrentUserInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20565,12 +20292,11 @@ public class TextMagicApi {
      * Update current user info.
      * 
      * @param updateCurrentUserInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return UpdateCurrentUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public UpdateCurrentUserResponse updateCurrentUser(UpdateCurrentUserInputObject updateCurrentUserInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<UpdateCurrentUserResponse> resp = updateCurrentUserWithHttpInfo(updateCurrentUserInputObject, xIgnoreNullValues);
+    public UpdateCurrentUserResponse updateCurrentUser(UpdateCurrentUserInputObject updateCurrentUserInputObject) throws ApiException {
+        ApiResponse<UpdateCurrentUserResponse> resp = updateCurrentUserWithHttpInfo(updateCurrentUserInputObject);
         return resp.getData();
     }
 
@@ -20578,12 +20304,11 @@ public class TextMagicApi {
      * Update current user info.
      * 
      * @param updateCurrentUserInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;UpdateCurrentUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<UpdateCurrentUserResponse> updateCurrentUserWithHttpInfo(UpdateCurrentUserInputObject updateCurrentUserInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateCurrentUserValidateBeforeCall(updateCurrentUserInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<UpdateCurrentUserResponse> updateCurrentUserWithHttpInfo(UpdateCurrentUserInputObject updateCurrentUserInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateCurrentUserValidateBeforeCall(updateCurrentUserInputObject, null, null);
         Type localVarReturnType = new TypeToken<UpdateCurrentUserResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -20592,12 +20317,11 @@ public class TextMagicApi {
      * Update current user info. (asynchronously)
      * 
      * @param updateCurrentUserInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCurrentUserAsync(UpdateCurrentUserInputObject updateCurrentUserInputObject, Boolean xIgnoreNullValues, final ApiCallback<UpdateCurrentUserResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCurrentUserAsync(UpdateCurrentUserInputObject updateCurrentUserInputObject, final ApiCallback<UpdateCurrentUserResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20618,7 +20342,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateCurrentUserValidateBeforeCall(updateCurrentUserInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCurrentUserValidateBeforeCall(updateCurrentUserInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<UpdateCurrentUserResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -20627,13 +20351,12 @@ public class TextMagicApi {
      * Build call for updateCustomField
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldCall(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldCall(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateCustomFieldInputObject;
 
         // create path and map variables
@@ -20644,8 +20367,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20678,7 +20399,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCustomFieldValidateBeforeCall(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCustomFieldValidateBeforeCall(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateCustomFieldInputObject' is set
         if (updateCustomFieldInputObject == null) {
@@ -20691,7 +20412,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateCustomFieldCall(updateCustomFieldInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCustomFieldCall(updateCustomFieldInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20701,12 +20422,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateCustomField(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateCustomFieldWithHttpInfo(updateCustomFieldInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateCustomField(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateCustomFieldWithHttpInfo(updateCustomFieldInputObject, id);
         return resp.getData();
     }
 
@@ -20715,12 +20435,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateCustomFieldWithHttpInfo(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateCustomFieldValidateBeforeCall(updateCustomFieldInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateCustomFieldWithHttpInfo(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateCustomFieldValidateBeforeCall(updateCustomFieldInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -20730,12 +20449,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldAsync(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldAsync(UpdateCustomFieldInputObject updateCustomFieldInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20756,7 +20474,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateCustomFieldValidateBeforeCall(updateCustomFieldInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCustomFieldValidateBeforeCall(updateCustomFieldInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -20765,13 +20483,12 @@ public class TextMagicApi {
      * Build call for updateCustomFieldValue
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldValueCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldValueCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateCustomFieldValueInputObject;
 
         // create path and map variables
@@ -20782,8 +20499,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20816,7 +20531,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCustomFieldValueValidateBeforeCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCustomFieldValueValidateBeforeCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateCustomFieldValueInputObject' is set
         if (updateCustomFieldValueInputObject == null) {
@@ -20829,7 +20544,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateCustomFieldValueCall(updateCustomFieldValueInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCustomFieldValueCall(updateCustomFieldValueInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20839,12 +20554,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateCustomFieldValue(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateCustomFieldValueWithHttpInfo(updateCustomFieldValueInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateCustomFieldValue(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateCustomFieldValueWithHttpInfo(updateCustomFieldValueInputObject, id);
         return resp.getData();
     }
 
@@ -20853,12 +20567,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateCustomFieldValueWithHttpInfo(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateCustomFieldValueValidateBeforeCall(updateCustomFieldValueInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateCustomFieldValueWithHttpInfo(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id) throws ApiException {
+        com.squareup.okhttp.Call call = updateCustomFieldValueValidateBeforeCall(updateCustomFieldValueInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -20868,12 +20581,11 @@ public class TextMagicApi {
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldValueAsync(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldValueAsync(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -20894,7 +20606,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateCustomFieldValueValidateBeforeCall(updateCustomFieldValueInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateCustomFieldValueValidateBeforeCall(updateCustomFieldValueInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -20902,13 +20614,12 @@ public class TextMagicApi {
     /**
      * Build call for updateInboundMessagesNotificationSettings
      * @param updateInboundMessagesNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsCall(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsCall(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateInboundMessagesNotificationSettingsInputObject;
 
         // create path and map variables
@@ -20918,8 +20629,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -20952,7 +20661,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsValidateBeforeCall(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsValidateBeforeCall(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateInboundMessagesNotificationSettingsInputObject' is set
         if (updateInboundMessagesNotificationSettingsInputObject == null) {
@@ -20960,7 +20669,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsCall(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsCall(updateInboundMessagesNotificationSettingsInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -20969,23 +20678,21 @@ public class TextMagicApi {
      * Update inbound messages notification settings
      * 
      * @param updateInboundMessagesNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateInboundMessagesNotificationSettings(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updateInboundMessagesNotificationSettingsWithHttpInfo(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues);
+    public void updateInboundMessagesNotificationSettings(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject) throws ApiException {
+        updateInboundMessagesNotificationSettingsWithHttpInfo(updateInboundMessagesNotificationSettingsInputObject);
     }
 
     /**
      * Update inbound messages notification settings
      * 
      * @param updateInboundMessagesNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateInboundMessagesNotificationSettingsWithHttpInfo(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsValidateBeforeCall(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updateInboundMessagesNotificationSettingsWithHttpInfo(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsValidateBeforeCall(updateInboundMessagesNotificationSettingsInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -20993,12 +20700,11 @@ public class TextMagicApi {
      * Update inbound messages notification settings (asynchronously)
      * 
      * @param updateInboundMessagesNotificationSettingsInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsAsync(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateInboundMessagesNotificationSettingsAsync(UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21019,7 +20725,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsValidateBeforeCall(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateInboundMessagesNotificationSettingsValidateBeforeCall(updateInboundMessagesNotificationSettingsInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -21153,13 +20859,12 @@ public class TextMagicApi {
     /**
      * Build call for updatePassword
      * @param updatePasswordInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updatePasswordCall(UpdatePasswordInputObject updatePasswordInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updatePasswordCall(UpdatePasswordInputObject updatePasswordInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updatePasswordInputObject;
 
         // create path and map variables
@@ -21169,8 +20874,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -21203,7 +20906,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updatePasswordValidateBeforeCall(UpdatePasswordInputObject updatePasswordInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updatePasswordValidateBeforeCall(UpdatePasswordInputObject updatePasswordInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updatePasswordInputObject' is set
         if (updatePasswordInputObject == null) {
@@ -21211,7 +20914,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updatePasswordCall(updatePasswordInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePasswordCall(updatePasswordInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -21220,23 +20923,21 @@ public class TextMagicApi {
      * Change user password.
      * 
      * @param updatePasswordInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updatePassword(UpdatePasswordInputObject updatePasswordInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updatePasswordWithHttpInfo(updatePasswordInputObject, xIgnoreNullValues);
+    public void updatePassword(UpdatePasswordInputObject updatePasswordInputObject) throws ApiException {
+        updatePasswordWithHttpInfo(updatePasswordInputObject);
     }
 
     /**
      * Change user password.
      * 
      * @param updatePasswordInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updatePasswordWithHttpInfo(UpdatePasswordInputObject updatePasswordInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updatePasswordValidateBeforeCall(updatePasswordInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updatePasswordWithHttpInfo(UpdatePasswordInputObject updatePasswordInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updatePasswordValidateBeforeCall(updatePasswordInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -21244,12 +20945,11 @@ public class TextMagicApi {
      * Change user password. (asynchronously)
      * 
      * @param updatePasswordInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updatePasswordAsync(UpdatePasswordInputObject updatePasswordInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updatePasswordAsync(UpdatePasswordInputObject updatePasswordInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21270,20 +20970,19 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updatePasswordValidateBeforeCall(updatePasswordInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updatePasswordValidateBeforeCall(updatePasswordInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for updateSenderSetting
      * @param updateSenderSettingInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSenderSettingCall(UpdateSenderSettingInputObject updateSenderSettingInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSenderSettingCall(UpdateSenderSettingInputObject updateSenderSettingInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateSenderSettingInputObject;
 
         // create path and map variables
@@ -21293,8 +20992,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -21327,7 +21024,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSenderSettingValidateBeforeCall(UpdateSenderSettingInputObject updateSenderSettingInputObject, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSenderSettingValidateBeforeCall(UpdateSenderSettingInputObject updateSenderSettingInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateSenderSettingInputObject' is set
         if (updateSenderSettingInputObject == null) {
@@ -21335,7 +21032,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateSenderSettingCall(updateSenderSettingInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSenderSettingCall(updateSenderSettingInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -21344,23 +21041,21 @@ public class TextMagicApi {
      * Change sender settings for specified country.
      * 
      * @param updateSenderSettingInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateSenderSetting(UpdateSenderSettingInputObject updateSenderSettingInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        updateSenderSettingWithHttpInfo(updateSenderSettingInputObject, xIgnoreNullValues);
+    public void updateSenderSetting(UpdateSenderSettingInputObject updateSenderSettingInputObject) throws ApiException {
+        updateSenderSettingWithHttpInfo(updateSenderSettingInputObject);
     }
 
     /**
      * Change sender settings for specified country.
      * 
      * @param updateSenderSettingInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateSenderSettingWithHttpInfo(UpdateSenderSettingInputObject updateSenderSettingInputObject, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateSenderSettingValidateBeforeCall(updateSenderSettingInputObject, xIgnoreNullValues, null, null);
+    public ApiResponse<Void> updateSenderSettingWithHttpInfo(UpdateSenderSettingInputObject updateSenderSettingInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = updateSenderSettingValidateBeforeCall(updateSenderSettingInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -21368,12 +21063,11 @@ public class TextMagicApi {
      * Change sender settings for specified country. (asynchronously)
      * 
      * @param updateSenderSettingInputObject  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSenderSettingAsync(UpdateSenderSettingInputObject updateSenderSettingInputObject, Boolean xIgnoreNullValues, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSenderSettingAsync(UpdateSenderSettingInputObject updateSenderSettingInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21394,7 +21088,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateSenderSettingValidateBeforeCall(updateSenderSettingInputObject, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSenderSettingValidateBeforeCall(updateSenderSettingInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -21402,13 +21096,12 @@ public class TextMagicApi {
      * Build call for updateSurvey
      * @param updateSurveyInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSurveyCall(UpdateSurveyInputObject updateSurveyInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSurveyCall(UpdateSurveyInputObject updateSurveyInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateSurveyInputObject;
 
         // create path and map variables
@@ -21419,8 +21112,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -21453,7 +21144,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSurveyValidateBeforeCall(UpdateSurveyInputObject updateSurveyInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSurveyValidateBeforeCall(UpdateSurveyInputObject updateSurveyInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateSurveyInputObject' is set
         if (updateSurveyInputObject == null) {
@@ -21466,7 +21157,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateSurveyCall(updateSurveyInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSurveyCall(updateSurveyInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -21476,12 +21167,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateSurvey(UpdateSurveyInputObject updateSurveyInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateSurveyWithHttpInfo(updateSurveyInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateSurvey(UpdateSurveyInputObject updateSurveyInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateSurveyWithHttpInfo(updateSurveyInputObject, id);
         return resp.getData();
     }
 
@@ -21490,12 +21180,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateSurveyWithHttpInfo(UpdateSurveyInputObject updateSurveyInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateSurveyValidateBeforeCall(updateSurveyInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateSurveyWithHttpInfo(UpdateSurveyInputObject updateSurveyInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateSurveyValidateBeforeCall(updateSurveyInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -21505,12 +21194,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSurveyAsync(UpdateSurveyInputObject updateSurveyInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSurveyAsync(UpdateSurveyInputObject updateSurveyInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21531,7 +21219,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateSurveyValidateBeforeCall(updateSurveyInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSurveyValidateBeforeCall(updateSurveyInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -21540,13 +21228,12 @@ public class TextMagicApi {
      * Build call for updateSurveyNode
      * @param updateSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSurveyNodeCall(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSurveyNodeCall(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateSurveyNodeInputObject;
 
         // create path and map variables
@@ -21557,8 +21244,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -21591,7 +21276,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSurveyNodeValidateBeforeCall(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSurveyNodeValidateBeforeCall(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateSurveyNodeInputObject' is set
         if (updateSurveyNodeInputObject == null) {
@@ -21604,7 +21289,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateSurveyNodeCall(updateSurveyNodeInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSurveyNodeCall(updateSurveyNodeInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -21614,12 +21299,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateSurveyNode(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateSurveyNodeWithHttpInfo(updateSurveyNodeInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateSurveyNode(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateSurveyNodeWithHttpInfo(updateSurveyNodeInputObject, id);
         return resp.getData();
     }
 
@@ -21628,12 +21312,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateSurveyNodeWithHttpInfo(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateSurveyNodeValidateBeforeCall(updateSurveyNodeInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateSurveyNodeWithHttpInfo(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateSurveyNodeValidateBeforeCall(updateSurveyNodeInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -21643,12 +21326,11 @@ public class TextMagicApi {
      * 
      * @param updateSurveyNodeInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSurveyNodeAsync(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSurveyNodeAsync(UpdateSurveyNodeInputObject updateSurveyNodeInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21669,7 +21351,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateSurveyNodeValidateBeforeCall(updateSurveyNodeInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateSurveyNodeValidateBeforeCall(updateSurveyNodeInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -21678,13 +21360,12 @@ public class TextMagicApi {
      * Build call for updateTemplate
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateTemplateCall(UpdateTemplateInputObject updateTemplateInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateTemplateCall(UpdateTemplateInputObject updateTemplateInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateTemplateInputObject;
 
         // create path and map variables
@@ -21695,8 +21376,6 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (xIgnoreNullValues != null)
-        localVarHeaderParams.put("X-Ignore-Null-Values", apiClient.parameterToString(xIgnoreNullValues));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -21729,7 +21408,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateTemplateValidateBeforeCall(UpdateTemplateInputObject updateTemplateInputObject, Integer id, Boolean xIgnoreNullValues, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateTemplateValidateBeforeCall(UpdateTemplateInputObject updateTemplateInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateTemplateInputObject' is set
         if (updateTemplateInputObject == null) {
@@ -21742,7 +21421,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = updateTemplateCall(updateTemplateInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateTemplateCall(updateTemplateInputObject, id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -21752,12 +21431,11 @@ public class TextMagicApi {
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateTemplate(UpdateTemplateInputObject updateTemplateInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        ApiResponse<ResourceLinkResponse> resp = updateTemplateWithHttpInfo(updateTemplateInputObject, id, xIgnoreNullValues);
+    public ResourceLinkResponse updateTemplate(UpdateTemplateInputObject updateTemplateInputObject, Integer id) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = updateTemplateWithHttpInfo(updateTemplateInputObject, id);
         return resp.getData();
     }
 
@@ -21766,12 +21444,11 @@ public class TextMagicApi {
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateTemplateWithHttpInfo(UpdateTemplateInputObject updateTemplateInputObject, Integer id, Boolean xIgnoreNullValues) throws ApiException {
-        com.squareup.okhttp.Call call = updateTemplateValidateBeforeCall(updateTemplateInputObject, id, xIgnoreNullValues, null, null);
+    public ApiResponse<ResourceLinkResponse> updateTemplateWithHttpInfo(UpdateTemplateInputObject updateTemplateInputObject, Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = updateTemplateValidateBeforeCall(updateTemplateInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -21781,12 +21458,11 @@ public class TextMagicApi {
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
-     * @param xIgnoreNullValues  (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateTemplateAsync(UpdateTemplateInputObject updateTemplateInputObject, Integer id, Boolean xIgnoreNullValues, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateTemplateAsync(UpdateTemplateInputObject updateTemplateInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -21807,7 +21483,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateTemplateValidateBeforeCall(updateTemplateInputObject, id, xIgnoreNullValues, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateTemplateValidateBeforeCall(updateTemplateInputObject, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

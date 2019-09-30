@@ -204,8 +204,7 @@ public class TextMagicApiTest {
     @Test
     public void blockContactTest() throws ApiException {
         BlockContactInputObject blockContactInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.blockContact(blockContactInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.blockContact(blockContactInputObject);
 
         // TODO: test validations
     }
@@ -221,8 +220,7 @@ public class TextMagicApiTest {
     @Test
     public void buyDedicatedNumberTest() throws ApiException {
         BuyDedicatedNumberInputObject buyDedicatedNumberInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.buyDedicatedNumber(buyDedicatedNumberInputObject, xIgnoreNullValues);
+        api.buyDedicatedNumber(buyDedicatedNumberInputObject);
 
         // TODO: test validations
     }
@@ -254,8 +252,7 @@ public class TextMagicApiTest {
     @Test
     public void checkPhoneVerificationCodeTest() throws ApiException {
         CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject, xIgnoreNullValues);
+        api.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject);
 
         // TODO: test validations
     }
@@ -288,8 +285,7 @@ public class TextMagicApiTest {
     @Test
     public void closeChatsBulkTest() throws ApiException {
         CloseChatsBulkInputObject closeChatsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.closeChatsBulk(closeChatsBulkInputObject, xIgnoreNullValues);
+        api.closeChatsBulk(closeChatsBulkInputObject);
 
         // TODO: test validations
     }
@@ -336,8 +332,7 @@ public class TextMagicApiTest {
     @Test
     public void createContactTest() throws ApiException {
         CreateContactInputObject createContactInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createContact(createContactInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createContact(createContactInputObject);
 
         // TODO: test validations
     }
@@ -354,8 +349,7 @@ public class TextMagicApiTest {
     public void createContactNoteTest() throws ApiException {
         CreateContactNoteInputObject createContactNoteInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createContactNote(createContactNoteInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createContactNote(createContactNoteInputObject, id);
 
         // TODO: test validations
     }
@@ -371,8 +365,7 @@ public class TextMagicApiTest {
     @Test
     public void createCustomFieldTest() throws ApiException {
         CreateCustomFieldInputObject createCustomFieldInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createCustomField(createCustomFieldInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createCustomField(createCustomFieldInputObject);
 
         // TODO: test validations
     }
@@ -388,8 +381,7 @@ public class TextMagicApiTest {
     @Test
     public void createListTest() throws ApiException {
         CreateListInputObject createListInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createList(createListInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createList(createListInputObject);
 
         // TODO: test validations
     }
@@ -405,8 +397,7 @@ public class TextMagicApiTest {
     @Test
     public void createPushTokenTest() throws ApiException {
         CreatePushTokenInputObject createPushTokenInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.createPushToken(createPushTokenInputObject, xIgnoreNullValues);
+        api.createPushToken(createPushTokenInputObject);
 
         // TODO: test validations
     }
@@ -422,8 +413,7 @@ public class TextMagicApiTest {
     @Test
     public void createSurveyTest() throws ApiException {
         CreateSurveyInputObject createSurveyInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createSurvey(createSurveyInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createSurvey(createSurveyInputObject);
 
         // TODO: test validations
     }
@@ -440,8 +430,7 @@ public class TextMagicApiTest {
     public void createSurveyNodeTest() throws ApiException {
         CreateSurveyNodeInputObject createSurveyNodeInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createSurveyNode(createSurveyNodeInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createSurveyNode(createSurveyNodeInputObject, id);
 
         // TODO: test validations
     }
@@ -457,8 +446,7 @@ public class TextMagicApiTest {
     @Test
     public void createTemplateTest() throws ApiException {
         CreateTemplateInputObject createTemplateInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.createTemplate(createTemplateInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.createTemplate(createTemplateInputObject);
 
         // TODO: test validations
     }
@@ -520,8 +508,7 @@ public class TextMagicApiTest {
     public void deleteChatMessagesTest() throws ApiException {
         DeleteChatMessagesBulkInputObject deleteChatMessagesBulkInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteChatMessages(deleteChatMessagesBulkInputObject, id, xIgnoreNullValues);
+        api.deleteChatMessages(deleteChatMessagesBulkInputObject, id);
 
         // TODO: test validations
     }
@@ -537,8 +524,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteChatsBulkTest() throws ApiException {
         DeleteChatsBulkInputObject deleteChatsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteChatsBulk(deleteChatsBulkInputObject, xIgnoreNullValues);
+        api.deleteChatsBulk(deleteChatsBulkInputObject);
 
         // TODO: test validations
     }
@@ -603,8 +589,7 @@ public class TextMagicApiTest {
     public void deleteContactNotesBulkTest() throws ApiException {
         Integer id = null;
         DeleteContactNotesBulkInputObject deleteContactNotesBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteContactNotesBulk(id, deleteContactNotesBulkInputObject, xIgnoreNullValues);
+        api.deleteContactNotesBulk(id, deleteContactNotesBulkInputObject);
 
         // TODO: test validations
     }
@@ -620,8 +605,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteContactsByIdsTest() throws ApiException {
         DeleteContactsByIdsInputObject deleteContactsByIdsInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteContactsByIds(deleteContactsByIdsInputObject, xIgnoreNullValues);
+        api.deleteContactsByIds(deleteContactsByIdsInputObject);
 
         // TODO: test validations
     }
@@ -702,8 +686,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteInboundMessagesBulkTest() throws ApiException {
         DeleteInboundMessagesBulkInputObject deleteInboundMessagesBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject, xIgnoreNullValues);
+        api.deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject);
 
         // TODO: test validations
     }
@@ -752,8 +735,7 @@ public class TextMagicApiTest {
     public void deleteListContactsBulkTest() throws ApiException {
         DeleteListContactsBulkInputObject deleteListContactsBulkInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteListContactsBulk(deleteListContactsBulkInputObject, id, xIgnoreNullValues);
+        api.deleteListContactsBulk(deleteListContactsBulkInputObject, id);
 
         // TODO: test validations
     }
@@ -769,8 +751,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteListsBulkTest() throws ApiException {
         DeleteListsBulkInputObject deleteListsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteListsBulk(deleteListsBulkInputObject, xIgnoreNullValues);
+        api.deleteListsBulk(deleteListsBulkInputObject);
 
         // TODO: test validations
     }
@@ -802,8 +783,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteMessageSessionsBulkTest() throws ApiException {
         DeleteMessageSessionsBulkInputObject deleteMessageSessionsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject, xIgnoreNullValues);
+        api.deleteMessageSessionsBulk(deleteMessageSessionsBulkInputObject);
 
         // TODO: test validations
     }
@@ -835,8 +815,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteOutboundMessagesBulkTest() throws ApiException {
         DeleteOutboundMessagesBulkInputObject deleteOutboundMessagesBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject, xIgnoreNullValues);
+        api.deleteOutboundMessagesBulk(deleteOutboundMessagesBulkInputObject);
 
         // TODO: test validations
     }
@@ -885,8 +864,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteScheduledMessagesBulkTest() throws ApiException {
         DeleteScheduledMessagesBulkInputObject deleteScheduledMessagesBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject, xIgnoreNullValues);
+        api.deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject);
 
         // TODO: test validations
     }
@@ -966,8 +944,7 @@ public class TextMagicApiTest {
     @Test
     public void deleteTemplatesBulkTest() throws ApiException {
         DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.deleteTemplatesBulk(deleteTemplatesBulkInputObject, xIgnoreNullValues);
+        api.deleteTemplatesBulk(deleteTemplatesBulkInputObject);
 
         // TODO: test validations
     }
@@ -983,8 +960,7 @@ public class TextMagicApiTest {
     @Test
     public void doAuthTest() throws ApiException {
         DoAuthInputObject doAuthInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        DoAuthResponse response = api.doAuth(doAuthInputObject, xIgnoreNullValues);
+        DoAuthResponse response = api.doAuth(doAuthInputObject);
 
         // TODO: test validations
     }
@@ -2099,8 +2075,7 @@ public class TextMagicApiTest {
         GetSubaccountsWithTokensInputObject getSubaccountsWithTokensInputObject = null;
         BigDecimal page = null;
         Integer limit = null;
-        Boolean xIgnoreNullValues = null;
-        GetSubaccountsWithTokensResponse response = api.getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit, xIgnoreNullValues);
+        GetSubaccountsWithTokensResponse response = api.getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit);
 
         // TODO: test validations
     }
@@ -2315,8 +2290,7 @@ public class TextMagicApiTest {
     @Test
     public void inviteSubaccountTest() throws ApiException {
         InviteSubaccountInputObject inviteSubaccountInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.inviteSubaccount(inviteSubaccountInputObject, xIgnoreNullValues);
+        api.inviteSubaccount(inviteSubaccountInputObject);
 
         // TODO: test validations
     }
@@ -2332,8 +2306,7 @@ public class TextMagicApiTest {
     @Test
     public void markChatsReadBulkTest() throws ApiException {
         MarkChatsReadBulkInputObject markChatsReadBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.markChatsReadBulk(markChatsReadBulkInputObject, xIgnoreNullValues);
+        api.markChatsReadBulk(markChatsReadBulkInputObject);
 
         // TODO: test validations
     }
@@ -2349,8 +2322,7 @@ public class TextMagicApiTest {
     @Test
     public void markChatsUnreadBulkTest() throws ApiException {
         MarkChatsUnreadBulkInputObject markChatsUnreadBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.markChatsUnreadBulk(markChatsUnreadBulkInputObject, xIgnoreNullValues);
+        api.markChatsUnreadBulk(markChatsUnreadBulkInputObject);
 
         // TODO: test validations
     }
@@ -2366,8 +2338,7 @@ public class TextMagicApiTest {
     @Test
     public void mergeSurveyNodesTest() throws ApiException {
         MergeSurveyNodesInputObject mergeSurveyNodesInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.mergeSurveyNodes(mergeSurveyNodesInputObject, xIgnoreNullValues);
+        api.mergeSurveyNodes(mergeSurveyNodesInputObject);
 
         // TODO: test validations
     }
@@ -2383,8 +2354,7 @@ public class TextMagicApiTest {
     @Test
     public void muteChatTest() throws ApiException {
         MuteChatInputObject muteChatInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.muteChat(muteChatInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.muteChat(muteChatInputObject);
 
         // TODO: test validations
     }
@@ -2400,8 +2370,7 @@ public class TextMagicApiTest {
     @Test
     public void muteChatsBulkTest() throws ApiException {
         MuteChatsBulkInputObject muteChatsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.muteChatsBulk(muteChatsBulkInputObject, xIgnoreNullValues);
+        api.muteChatsBulk(muteChatsBulkInputObject);
 
         // TODO: test validations
     }
@@ -2432,8 +2401,7 @@ public class TextMagicApiTest {
     @Test
     public void reopenChatsBulkTest() throws ApiException {
         ReopenChatsBulkInputObject reopenChatsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.reopenChatsBulk(reopenChatsBulkInputObject, xIgnoreNullValues);
+        api.reopenChatsBulk(reopenChatsBulkInputObject);
 
         // TODO: test validations
     }
@@ -2449,8 +2417,7 @@ public class TextMagicApiTest {
     @Test
     public void requestNewSubaccountTokenTest() throws ApiException {
         RequestNewSubaccountTokenInputObject requestNewSubaccountTokenInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        User response = api.requestNewSubaccountToken(requestNewSubaccountTokenInputObject, xIgnoreNullValues);
+        User response = api.requestNewSubaccountToken(requestNewSubaccountTokenInputObject);
 
         // TODO: test validations
     }
@@ -2466,8 +2433,7 @@ public class TextMagicApiTest {
     @Test
     public void requestSenderIdTest() throws ApiException {
         RequestSenderIdInputObject requestSenderIdInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.requestSenderId(requestSenderIdInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.requestSenderId(requestSenderIdInputObject);
 
         // TODO: test validations
     }
@@ -2705,8 +2671,7 @@ public class TextMagicApiTest {
     @Test
     public void sendMessageTest() throws ApiException {
         SendMessageInputObject sendMessageInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        SendMessageResponse response = api.sendMessage(sendMessageInputObject, xIgnoreNullValues);
+        SendMessageResponse response = api.sendMessage(sendMessageInputObject);
 
         // TODO: test validations
     }
@@ -2737,8 +2702,7 @@ public class TextMagicApiTest {
     @Test
     public void setChatStatusTest() throws ApiException {
         SetChatStatusInputObject setChatStatusInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.setChatStatus(setChatStatusInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.setChatStatus(setChatStatusInputObject);
 
         // TODO: test validations
     }
@@ -2770,8 +2734,7 @@ public class TextMagicApiTest {
     @Test
     public void unblockContactTest() throws ApiException {
         UnblockContactInputObject unblockContactInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.unblockContact(unblockContactInputObject, xIgnoreNullValues);
+        api.unblockContact(unblockContactInputObject);
 
         // TODO: test validations
     }
@@ -2787,8 +2750,7 @@ public class TextMagicApiTest {
     @Test
     public void unblockContactsBulkTest() throws ApiException {
         UnblockContactsBulkInputObject unblockContactsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.unblockContactsBulk(unblockContactsBulkInputObject, xIgnoreNullValues);
+        api.unblockContactsBulk(unblockContactsBulkInputObject);
 
         // TODO: test validations
     }
@@ -2804,8 +2766,7 @@ public class TextMagicApiTest {
     @Test
     public void unmuteChatsBulkTest() throws ApiException {
         UnmuteChatsBulkInputObject unmuteChatsBulkInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.unmuteChatsBulk(unmuteChatsBulkInputObject, xIgnoreNullValues);
+        api.unmuteChatsBulk(unmuteChatsBulkInputObject);
 
         // TODO: test validations
     }
@@ -2821,8 +2782,7 @@ public class TextMagicApiTest {
     @Test
     public void unsubscribeContactTest() throws ApiException {
         UnsubscribeContactInputObject unsubscribeContactInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.unsubscribeContact(unsubscribeContactInputObject, xIgnoreNullValues);
+        ResourceLinkResponse response = api.unsubscribeContact(unsubscribeContactInputObject);
 
         // TODO: test validations
     }
@@ -2838,8 +2798,7 @@ public class TextMagicApiTest {
     @Test
     public void updateBalanceNotificationSettingsTest() throws ApiException {
         UpdateBalanceNotificationSettingsInputObject updateBalanceNotificationSettingsInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject, xIgnoreNullValues);
+        api.updateBalanceNotificationSettings(updateBalanceNotificationSettingsInputObject);
 
         // TODO: test validations
     }
@@ -2855,8 +2814,7 @@ public class TextMagicApiTest {
     @Test
     public void updateCallbackSettingsTest() throws ApiException {
         UpdateCallbackSettingsInputObject updateCallbackSettingsInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updateCallbackSettings(updateCallbackSettingsInputObject, xIgnoreNullValues);
+        api.updateCallbackSettings(updateCallbackSettingsInputObject);
 
         // TODO: test validations
     }
@@ -2872,8 +2830,7 @@ public class TextMagicApiTest {
     @Test
     public void updateChatDesktopNotificationSettingsTest() throws ApiException {
         UpdateChatDesktopNotificationSettingsInputObject updateChatDesktopNotificationSettingsInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject, xIgnoreNullValues);
+        api.updateChatDesktopNotificationSettings(updateChatDesktopNotificationSettingsInputObject);
 
         // TODO: test validations
     }
@@ -2890,8 +2847,7 @@ public class TextMagicApiTest {
     public void updateContactTest() throws ApiException {
         UpdateContactInputObject updateContactInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateContact(updateContactInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateContact(updateContactInputObject, id);
 
         // TODO: test validations
     }
@@ -2908,8 +2864,7 @@ public class TextMagicApiTest {
     public void updateContactNoteTest() throws ApiException {
         UpdateContactNoteInputObject updateContactNoteInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateContactNote(updateContactNoteInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateContactNote(updateContactNoteInputObject, id);
 
         // TODO: test validations
     }
@@ -2925,8 +2880,7 @@ public class TextMagicApiTest {
     @Test
     public void updateCurrentUserTest() throws ApiException {
         UpdateCurrentUserInputObject updateCurrentUserInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        UpdateCurrentUserResponse response = api.updateCurrentUser(updateCurrentUserInputObject, xIgnoreNullValues);
+        UpdateCurrentUserResponse response = api.updateCurrentUser(updateCurrentUserInputObject);
 
         // TODO: test validations
     }
@@ -2943,8 +2897,7 @@ public class TextMagicApiTest {
     public void updateCustomFieldTest() throws ApiException {
         UpdateCustomFieldInputObject updateCustomFieldInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateCustomField(updateCustomFieldInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateCustomField(updateCustomFieldInputObject, id);
 
         // TODO: test validations
     }
@@ -2961,8 +2914,7 @@ public class TextMagicApiTest {
     public void updateCustomFieldValueTest() throws ApiException {
         UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject = null;
         String id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateCustomFieldValue(updateCustomFieldValueInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateCustomFieldValue(updateCustomFieldValueInputObject, id);
 
         // TODO: test validations
     }
@@ -2978,8 +2930,7 @@ public class TextMagicApiTest {
     @Test
     public void updateInboundMessagesNotificationSettingsTest() throws ApiException {
         UpdateInboundMessagesNotificationSettingsInputObject updateInboundMessagesNotificationSettingsInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject, xIgnoreNullValues);
+        api.updateInboundMessagesNotificationSettings(updateInboundMessagesNotificationSettingsInputObject);
 
         // TODO: test validations
     }
@@ -3012,8 +2963,7 @@ public class TextMagicApiTest {
     @Test
     public void updatePasswordTest() throws ApiException {
         UpdatePasswordInputObject updatePasswordInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updatePassword(updatePasswordInputObject, xIgnoreNullValues);
+        api.updatePassword(updatePasswordInputObject);
 
         // TODO: test validations
     }
@@ -3029,8 +2979,7 @@ public class TextMagicApiTest {
     @Test
     public void updateSenderSettingTest() throws ApiException {
         UpdateSenderSettingInputObject updateSenderSettingInputObject = null;
-        Boolean xIgnoreNullValues = null;
-        api.updateSenderSetting(updateSenderSettingInputObject, xIgnoreNullValues);
+        api.updateSenderSetting(updateSenderSettingInputObject);
 
         // TODO: test validations
     }
@@ -3047,8 +2996,7 @@ public class TextMagicApiTest {
     public void updateSurveyTest() throws ApiException {
         UpdateSurveyInputObject updateSurveyInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateSurvey(updateSurveyInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateSurvey(updateSurveyInputObject, id);
 
         // TODO: test validations
     }
@@ -3065,8 +3013,7 @@ public class TextMagicApiTest {
     public void updateSurveyNodeTest() throws ApiException {
         UpdateSurveyNodeInputObject updateSurveyNodeInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateSurveyNode(updateSurveyNodeInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateSurveyNode(updateSurveyNodeInputObject, id);
 
         // TODO: test validations
     }
@@ -3083,8 +3030,7 @@ public class TextMagicApiTest {
     public void updateTemplateTest() throws ApiException {
         UpdateTemplateInputObject updateTemplateInputObject = null;
         Integer id = null;
-        Boolean xIgnoreNullValues = null;
-        ResourceLinkResponse response = api.updateTemplate(updateTemplateInputObject, id, xIgnoreNullValues);
+        ResourceLinkResponse response = api.updateTemplate(updateTemplateInputObject, id);
 
         // TODO: test validations
     }
