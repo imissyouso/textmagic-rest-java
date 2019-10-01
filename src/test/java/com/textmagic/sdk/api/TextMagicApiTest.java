@@ -472,7 +472,7 @@ public class TextMagicApiTest {
     /**
      * Delete all messages
      *
-     * Delete all messages.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -794,7 +794,7 @@ public class TextMagicApiTest {
     /**
      * Delete message
      *
-     * Delete a single message.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -810,7 +810,7 @@ public class TextMagicApiTest {
     /**
      * Delete messages by IDs
      *
-     * Delete outbound messages by given ID(s) or delete all outbound messages.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -955,7 +955,7 @@ public class TextMagicApiTest {
     /**
      * Authenticate user by given username and password.
      *
-     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1094,7 +1094,7 @@ public class TextMagicApiTest {
     /**
      * Get all messages
      *
-     * Get all user oubound messages.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1472,7 +1472,7 @@ public class TextMagicApiTest {
     /**
      * Fetch user contacts by given group id.
      *
-     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1719,7 +1719,7 @@ public class TextMagicApiTest {
     /**
      * Preview message
      *
-     * Get messages preview (with tags merged) up to 100 messages per session.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1751,7 +1751,7 @@ public class TextMagicApiTest {
     /**
      * Check price
      *
-     * Check pricing for a new outbound message.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1784,7 +1784,7 @@ public class TextMagicApiTest {
     /**
      * Get pricing
      *
-     * Get message prices for all countries.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1832,7 +1832,7 @@ public class TextMagicApiTest {
     /**
      * Fetch messages by given session id.
      *
-     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1885,7 +1885,7 @@ public class TextMagicApiTest {
     /**
      * Get a single message
      *
-     * Get a single outgoing message.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1901,7 +1901,7 @@ public class TextMagicApiTest {
     /**
      * Get history
      *
-     * Get outbound messages history.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2068,7 +2068,7 @@ public class TextMagicApiTest {
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
      *
-     * When more than one token related to app name, last key will be returned.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2412,7 +2412,7 @@ public class TextMagicApiTest {
     /**
      * Request a new REST API token for subaccount.
      *
-     * Returning user object, key and app name.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2586,7 +2586,7 @@ public class TextMagicApiTest {
     /**
      * Find messages
      *
-     * Find outbound messages by given parameters.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2666,7 +2666,7 @@ public class TextMagicApiTest {
     /**
      * Send message
      *
-     * The main entrypoint to send messages. See examples above for the reference.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -3091,7 +3091,7 @@ public class TextMagicApiTest {
     /**
      * Upload message attachment
      *
-     * Upload a new file to insert it as a link.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails

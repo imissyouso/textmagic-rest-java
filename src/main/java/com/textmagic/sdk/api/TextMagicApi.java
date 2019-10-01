@@ -2452,7 +2452,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages
-     * Delete all messages.
+     * 
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteAllOutboundMessages() throws ApiException {
@@ -2461,7 +2461,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages
-     * Delete all messages.
+     * 
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2472,7 +2472,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages (asynchronously)
-     * Delete all messages.
+     * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4850,7 +4850,7 @@ public class TextMagicApi {
 
     /**
      * Delete message
-     * Delete a single message.
+     * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4860,7 +4860,7 @@ public class TextMagicApi {
 
     /**
      * Delete message
-     * Delete a single message.
+     * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4872,7 +4872,7 @@ public class TextMagicApi {
 
     /**
      * Delete message (asynchronously)
-     * Delete a single message.
+     * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4968,7 +4968,7 @@ public class TextMagicApi {
 
     /**
      * Delete messages by IDs
-     * Delete outbound messages by given ID(s) or delete all outbound messages.
+     * 
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4978,7 +4978,7 @@ public class TextMagicApi {
 
     /**
      * Delete messages by IDs
-     * Delete outbound messages by given ID(s) or delete all outbound messages.
+     * 
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4990,7 +4990,7 @@ public class TextMagicApi {
 
     /**
      * Delete messages by IDs (asynchronously)
-     * Delete outbound messages by given ID(s) or delete all outbound messages.
+     * 
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -6046,7 +6046,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password.
-     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
+     * 
      * @param doAuthInputObject  (required)
      * @return DoAuthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6058,7 +6058,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password.
-     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
+     * 
      * @param doAuthInputObject  (required)
      * @return ApiResponse&lt;DoAuthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6071,7 +6071,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password. (asynchronously)
-     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
+     * 
      * @param doAuthInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -7082,7 +7082,7 @@ public class TextMagicApi {
 
     /**
      * Get all messages
-     * Get all user oubound messages.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -7096,7 +7096,7 @@ public class TextMagicApi {
 
     /**
      * Get all messages
-     * Get all user oubound messages.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -7111,7 +7111,7 @@ public class TextMagicApi {
 
     /**
      * Get all messages (asynchronously)
-     * Get all user oubound messages.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -9917,7 +9917,7 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id.
-     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+     * 
      * @param id Given group Id. (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -9933,7 +9933,7 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id.
-     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+     * 
      * @param id Given group Id. (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -9950,7 +9950,7 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id. (asynchronously)
-     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+     * 
      * @param id Given group Id. (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -11804,7 +11804,7 @@ public class TextMagicApi {
 
     /**
      * Preview message
-     * Get messages preview (with tags merged) up to 100 messages per session.
+     * 
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -11832,7 +11832,7 @@ public class TextMagicApi {
 
     /**
      * Preview message
-     * Get messages preview (with tags merged) up to 100 messages per session.
+     * 
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -11861,7 +11861,7 @@ public class TextMagicApi {
 
     /**
      * Preview message (asynchronously)
-     * Get messages preview (with tags merged) up to 100 messages per session.
+     * 
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -12022,7 +12022,7 @@ public class TextMagicApi {
 
     /**
      * Check price
-     * Check pricing for a new outbound message.
+     * 
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12051,7 +12051,7 @@ public class TextMagicApi {
 
     /**
      * Check price
-     * Check pricing for a new outbound message.
+     * 
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12081,7 +12081,7 @@ public class TextMagicApi {
 
     /**
      * Check price (asynchronously)
-     * Check pricing for a new outbound message.
+     * 
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12189,7 +12189,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing
-     * Get message prices for all countries.
+     * 
      * @return GetMessagePricesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12200,7 +12200,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing
-     * Get message prices for all countries.
+     * 
      * @return ApiResponse&lt;GetMessagePricesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12212,7 +12212,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing (asynchronously)
-     * Get message prices for all countries.
+     * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -12573,7 +12573,7 @@ public class TextMagicApi {
 
     /**
      * Fetch messages by given session id.
-     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+     * 
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -12589,7 +12589,7 @@ public class TextMagicApi {
 
     /**
      * Fetch messages by given session id.
-     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+     * 
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -12606,7 +12606,7 @@ public class TextMagicApi {
 
     /**
      * Fetch messages by given session id. (asynchronously)
-     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+     * 
      * @param id  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -12952,7 +12952,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message
-     * Get a single outgoing message.
+     * 
      * @param id  (required)
      * @return MessageOut
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12964,7 +12964,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message
-     * Get a single outgoing message.
+     * 
      * @param id  (required)
      * @return ApiResponse&lt;MessageOut&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12977,7 +12977,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message (asynchronously)
-     * Get a single outgoing message.
+     * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -13083,7 +13083,7 @@ public class TextMagicApi {
 
     /**
      * Get history
-     * Get outbound messages history.
+     * 
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
@@ -13099,7 +13099,7 @@ public class TextMagicApi {
 
     /**
      * Get history
-     * Get outbound messages history.
+     * 
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
@@ -13116,7 +13116,7 @@ public class TextMagicApi {
 
     /**
      * Get history (asynchronously)
-     * Get outbound messages history.
+     * 
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
@@ -14324,7 +14324,7 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
-     * When more than one token related to app name, last key will be returned.
+     * 
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -14338,7 +14338,7 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
-     * When more than one token related to app name, last key will be returned.
+     * 
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -14353,7 +14353,7 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name. (asynchronously)
-     * When more than one token related to app name, last key will be returned.
+     * 
      * @param getSubaccountsWithTokensInputObject  (required)
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
@@ -16894,7 +16894,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount.
-     * Returning user object, key and app name.
+     * 
      * @param requestNewSubaccountTokenInputObject  (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16906,7 +16906,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount.
-     * Returning user object, key and app name.
+     * 
      * @param requestNewSubaccountTokenInputObject  (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16919,7 +16919,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount. (asynchronously)
-     * Returning user object, key and app name.
+     * 
      * @param requestNewSubaccountTokenInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -18173,7 +18173,7 @@ public class TextMagicApi {
 
     /**
      * Find messages
-     * Find outbound messages by given parameters.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -18192,7 +18192,7 @@ public class TextMagicApi {
 
     /**
      * Find messages
-     * Find outbound messages by given parameters.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -18212,7 +18212,7 @@ public class TextMagicApi {
 
     /**
      * Find messages (asynchronously)
-     * Find outbound messages by given parameters.
+     * 
      * @param page Fetch specified results page (optional, default to 1)
      * @param limit How many results to return (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
@@ -18723,7 +18723,7 @@ public class TextMagicApi {
 
     /**
      * Send message
-     * The main entrypoint to send messages. See examples above for the reference.
+     * 
      * @param sendMessageInputObject  (required)
      * @return SendMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18735,7 +18735,7 @@ public class TextMagicApi {
 
     /**
      * Send message
-     * The main entrypoint to send messages. See examples above for the reference.
+     * 
      * @param sendMessageInputObject  (required)
      * @return ApiResponse&lt;SendMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18748,7 +18748,7 @@ public class TextMagicApi {
 
     /**
      * Send message (asynchronously)
-     * The main entrypoint to send messages. See examples above for the reference.
+     * 
      * @param sendMessageInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -21946,7 +21946,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment
-     * Upload a new file to insert it as a link.
+     * 
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @return UploadMessageAttachmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21958,7 +21958,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment
-     * Upload a new file to insert it as a link.
+     * 
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @return ApiResponse&lt;UploadMessageAttachmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21971,7 +21971,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment (asynchronously)
-     * Upload a new file to insert it as a link.
+     * 
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

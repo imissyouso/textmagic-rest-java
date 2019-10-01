@@ -185,6 +185,8 @@ Method | HTTP request | Description
 
 Assign contacts to the specified list.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -239,6 +241,8 @@ Name | Type | Description  | Notes
 
 Block contact from inbound and outbound communication by phone number.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -291,6 +295,8 @@ Name | Type | Description  | Notes
 
 Buy a dedicated number and assign it to the specified account.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -341,6 +347,8 @@ null (empty response body)
 > ResourceLinkResponse cancelSurvey(id)
 
 Cancel a survey.
+
+
 
 ### Example
 ```java
@@ -394,6 +402,8 @@ Name | Type | Description  | Notes
 
 Check user phone verification code
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -444,6 +454,8 @@ null (empty response body)
 > ResourceLinkResponse clearAndAssignContactsToList(clearAndAssignContactsToListInputObject, id)
 
 Reset list members to the specified contacts.
+
+
 
 ### Example
 ```java
@@ -499,6 +511,8 @@ Name | Type | Description  | Notes
 
 Close chats by chat ids or close all chats
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -550,6 +564,8 @@ null (empty response body)
 
 Close all chats that have no unread messages.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -596,6 +612,8 @@ null (empty response body)
 > closeSubaccount(id)
 
 Close subaccount.
+
+
 
 ### Example
 ```java
@@ -648,6 +666,8 @@ null (empty response body)
 
 Create a new contact from the submitted data.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -699,6 +719,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse createContactNote(createContactNoteInputObject, id)
 
 Create a new contact note.
+
+
 
 ### Example
 ```java
@@ -754,6 +776,8 @@ Name | Type | Description  | Notes
 
 Create a new custom field from the submitted data.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -805,6 +829,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse createList(createListInputObject)
 
 Create a new list from the submitted data.
+
+
 
 ### Example
 ```java
@@ -858,6 +884,8 @@ Name | Type | Description  | Notes
 
 Add or update a device token.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -908,6 +936,8 @@ null (empty response body)
 > ResourceLinkResponse createSurvey(createSurveyInputObject)
 
 Create a new survey from the submitted data.
+
+
 
 ### Example
 ```java
@@ -960,6 +990,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse createSurveyNode(createSurveyNodeInputObject, id)
 
 Create a new node from the submitted data.
+
+
 
 ### Example
 ```java
@@ -1015,6 +1047,8 @@ Name | Type | Description  | Notes
 
 Create a new template from the submitted data.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1067,6 +1101,8 @@ Name | Type | Description  | Notes
 
 Delete all contacts.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1114,7 +1150,7 @@ null (empty response body)
 
 Delete all messages
 
-Delete all messages.
+
 
 ### Example
 ```java
@@ -1163,6 +1199,8 @@ null (empty response body)
 
 Delete an avatar for the current user.\\
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1209,6 +1247,8 @@ null (empty response body)
 > deleteChatMessages(deleteChatMessagesBulkInputObject, id)
 
 Delete messages from chat by given messages ID(s).
+
+
 
 ### Example
 ```java
@@ -1263,6 +1303,8 @@ null (empty response body)
 
 Delete chats by given ID(s) or delete all chats.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1313,6 +1355,8 @@ null (empty response body)
 > deleteContact(id)
 
 Delete a single contact.
+
+
 
 ### Example
 ```java
@@ -1365,6 +1409,8 @@ null (empty response body)
 
 Delete an avatar for the contact.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1416,6 +1462,8 @@ null (empty response body)
 
 Delete a single contact note.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1466,6 +1514,8 @@ null (empty response body)
 > deleteContactNotesBulk(id, deleteContactNotesBulkInputObject)
 
 Delete contact note by given ID(s) or delete all contact notes.
+
+
 
 ### Example
 ```java
@@ -1520,6 +1570,8 @@ null (empty response body)
 
 Delete contact by given ID(s) or delete all contacts.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1570,6 +1622,8 @@ null (empty response body)
 > deleteContactsFromList(deleteContacsFromListObject, id)
 
 Unassign contacts from the specified list.
+
+
 
 ### Example
 ```java
@@ -1624,6 +1678,8 @@ null (empty response body)
 
 Delete a single custom field.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1674,6 +1730,8 @@ null (empty response body)
 > deleteDedicatedNumber(id)
 
 Cancel dedicated number subscription.
+
+
 
 ### Example
 ```java
@@ -1726,6 +1784,8 @@ null (empty response body)
 
 Delete the incoming message.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1776,6 +1836,8 @@ null (empty response body)
 > deleteInboundMessagesBulk(deleteInboundMessagesBulkInputObject)
 
 Delete inbound messages by given ID(s) or delete all inbound messages.
+
+
 
 ### Example
 ```java
@@ -1828,6 +1890,8 @@ null (empty response body)
 
 Delete a single list.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1879,6 +1943,8 @@ null (empty response body)
 
 Delete an avatar for the list.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -1929,6 +1995,8 @@ null (empty response body)
 > deleteListContactsBulk(deleteListContactsBulkInputObject, id)
 
 Delete contact from list by given ID(s) or all contacts from list.
+
+
 
 ### Example
 ```java
@@ -1983,6 +2051,8 @@ null (empty response body)
 
 Delete list by given ID(s) or delete all lists.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2033,6 +2103,8 @@ null (empty response body)
 > deleteMessageSession(id)
 
 Delete a message session, together with all nested messages.
+
+
 
 ### Example
 ```java
@@ -2085,6 +2157,8 @@ null (empty response body)
 
 Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2136,7 +2210,7 @@ null (empty response body)
 
 Delete message
 
-Delete a single message.
+
 
 ### Example
 ```java
@@ -2189,7 +2263,7 @@ null (empty response body)
 
 Delete messages by IDs
 
-Delete outbound messages by given ID(s) or delete all outbound messages.
+
 
 ### Example
 ```java
@@ -2241,6 +2315,8 @@ null (empty response body)
 > deletePushToken(type, deviceId)
 
 Delete a push notification device token.
+
+
 
 ### Example
 ```java
@@ -2295,6 +2371,8 @@ null (empty response body)
 
 Delete a message session, together with all nested messages.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2345,6 +2423,8 @@ null (empty response body)
 > deleteScheduledMessagesBulk(deleteScheduledMessagesBulkInputObject)
 
 Delete scheduled messages by given ID(s) or delete all scheduled messages.
+
+
 
 ### Example
 ```java
@@ -2397,6 +2477,8 @@ null (empty response body)
 
 Delete a Sender ID.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2447,6 +2529,8 @@ null (empty response body)
 > deleteSurvey(id)
 
 Delete a survey.
+
+
 
 ### Example
 ```java
@@ -2499,6 +2583,8 @@ null (empty response body)
 
 Delete a node.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2549,6 +2635,8 @@ null (empty response body)
 > deleteTemplate(id)
 
 Delete a single template.
+
+
 
 ### Example
 ```java
@@ -2601,6 +2689,8 @@ null (empty response body)
 
 Delete template by given ID(s) or delete all templates.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2652,7 +2742,7 @@ null (empty response body)
 
 Authenticate user by given username and password.
 
-Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
+
 
 ### Example
 ```java
@@ -2696,6 +2786,8 @@ No authorization required
 > DoCarrierLookupResponse doCarrierLookup(phone, country)
 
 Carrier Lookup
+
+
 
 ### Example
 ```java
@@ -2751,6 +2843,8 @@ Name | Type | Description  | Notes
 
 Validate Email address using Email Lookup tool
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2803,6 +2897,8 @@ Name | Type | Description  | Notes
 
 Duplicate a survey.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -2854,6 +2950,8 @@ Name | Type | Description  | Notes
 > GetAllBulkSessionsPaginatedResponse getAllBulkSessions(page, limit)
 
 Get all bulk sending sessions.
+
+
 
 ### Example
 ```java
@@ -2908,6 +3006,8 @@ Name | Type | Description  | Notes
 > GetAllChatsPaginatedResponse getAllChats(status, page, limit, orderBy, voice, flat)
 
 Get all user chats.
+
+
 
 ### Example
 ```java
@@ -2971,6 +3071,8 @@ Name | Type | Description  | Notes
 
 Get all inbox messages.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3029,6 +3131,8 @@ Name | Type | Description  | Notes
 
 Get all message sending sessions.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3083,7 +3187,7 @@ Name | Type | Description  | Notes
 
 Get all messages
 
-Get all user oubound messages.
+
 
 ### Example
 ```java
@@ -3140,6 +3244,8 @@ Name | Type | Description  | Notes
 > GetAllScheduledMessagesPaginatedResponse getAllScheduledMessages(page, limit, status, orderBy, direction)
 
 Get all scheduled messages.
+
+
 
 ### Example
 ```java
@@ -3201,6 +3307,8 @@ Name | Type | Description  | Notes
 
 Get all user templates.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3254,6 +3362,8 @@ Name | Type | Description  | Notes
 > GetAvailableDedicatedNumbersResponse getAvailableDedicatedNumbers(country, prefix, tollfree)
 
 Find available dedicated numbers to buy.
+
+
 
 ### Example
 ```java
@@ -3311,6 +3421,8 @@ Name | Type | Description  | Notes
 
 Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3363,6 +3475,8 @@ Name | Type | Description  | Notes
 
 Returns the list of available balance options which can be used as a bound to determine when to send email to user with low balance notification. See https://my.textmagic.com/online/account/notifications/balance
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3411,6 +3525,8 @@ This endpoint does not need any parameter.
 
 Get balance notification settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3458,6 +3574,8 @@ This endpoint does not need any parameter.
 > GetBlockedContactsPaginatedResponse getBlockedContacts(page, limit, query, orderBy, direction)
 
 Get blocked contacts.
+
+
 
 ### Example
 ```java
@@ -3519,6 +3637,8 @@ Name | Type | Description  | Notes
 
 Get bulk message session status.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3571,6 +3691,8 @@ Name | Type | Description  | Notes
 
 Fetch callback URL settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3619,6 +3741,8 @@ This endpoint does not need any parameter.
 
 Check pricing for a inbound/outbound call.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3666,6 +3790,8 @@ This endpoint does not need any parameter.
 > Chat getChat(id)
 
 Get a single chat.
+
+
 
 ### Example
 ```java
@@ -3718,6 +3844,8 @@ Name | Type | Description  | Notes
 > Chat getChatByPhone(phone, upsert, reopen)
 
 Find chats by phone.
+
+
 
 ### Example
 ```java
@@ -3774,6 +3902,8 @@ Name | Type | Description  | Notes
 > GetChatMessagesPaginatedResponse getChatMessages(id, page, limit, query, start, end, direction, voice)
 
 Fetch messages from chat with specified chat id.
+
+
 
 ### Example
 ```java
@@ -3841,6 +3971,8 @@ Name | Type | Description  | Notes
 
 Get a single contact.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3892,6 +4024,8 @@ Name | Type | Description  | Notes
 > Contact getContactByPhone(phone)
 
 Get a single contact by phone number.
+
+
 
 ### Example
 ```java
@@ -3945,6 +4079,8 @@ Name | Type | Description  | Notes
 
 Check is that phone number blocked
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -3996,6 +4132,8 @@ Name | Type | Description  | Notes
 > GetContactImportSessionProgressResponse getContactImportSessionProgress(id)
 
 Get contact import session progress.
+
+
 
 ### Example
 ```java
@@ -4049,6 +4187,8 @@ Name | Type | Description  | Notes
 
 Get a single contact note.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4100,6 +4240,8 @@ Name | Type | Description  | Notes
 > GetContactNotesPaginatedResponse getContactNotes(id, page, limit)
 
 Fetch notes assigned to the given contact.
+
+
 
 ### Example
 ```java
@@ -4156,6 +4298,8 @@ Name | Type | Description  | Notes
 > GetContactsPaginatedResponse getContacts(page, limit, shared, orderBy, direction)
 
 Get all user contacts.
+
+
 
 ### Example
 ```java
@@ -4217,6 +4361,8 @@ Name | Type | Description  | Notes
 
 Get contacts autocomplete suggestions by given search term.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4273,7 +4419,7 @@ Name | Type | Description  | Notes
 
 Fetch user contacts by given group id.
 
-A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
+
 
 ### Example
 ```java
@@ -4335,6 +4481,8 @@ Name | Type | Description  | Notes
 
 Return list of countries.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4383,6 +4531,8 @@ This endpoint does not need any parameter.
 
 Get current user info.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4430,6 +4580,8 @@ This endpoint does not need any parameter.
 > UserCustomField getCustomField(id)
 
 Get a single custom field.
+
+
 
 ### Example
 ```java
@@ -4482,6 +4634,8 @@ Name | Type | Description  | Notes
 > GetCustomFieldsPaginatedResponse getCustomFields(page, limit)
 
 Get all contact custom fields.
+
+
 
 ### Example
 ```java
@@ -4537,6 +4691,8 @@ Name | Type | Description  | Notes
 
 Get a single dedicated number.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4589,6 +4745,8 @@ Name | Type | Description  | Notes
 
 Get an array of all rules that are disallowed to the current account.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4636,6 +4794,8 @@ This endpoint does not need any parameter.
 > GetFavouritesPaginatedResponse getFavourites(page, limit, query)
 
 Get favorite contacts and lists.
+
+
 
 ### Example
 ```java
@@ -4693,6 +4853,8 @@ Name | Type | Description  | Notes
 
 Get all forwarded calls.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4747,6 +4909,8 @@ Name | Type | Description  | Notes
 
 Get a single inbox message.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4799,6 +4963,8 @@ Name | Type | Description  | Notes
 
 Get inbound messages notification settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4846,6 +5012,8 @@ This endpoint does not need any parameter.
 > GetInvoicesPaginatedResponse getInvoices(page, limit)
 
 Return account invoices.
+
+
 
 ### Example
 ```java
@@ -4901,6 +5069,8 @@ Name | Type | Description  | Notes
 
 Get a single list.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -4953,6 +5123,8 @@ Name | Type | Description  | Notes
 
 Fetch all contacts IDs belonging to the list with ID.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -5004,6 +5176,8 @@ Name | Type | Description  | Notes
 > GetListsOfContactPaginatedResponse getListsOfContact(id, page, limit)
 
 Return lists which contact belongs to.
+
+
 
 ### Example
 ```java
@@ -5061,7 +5235,7 @@ Name | Type | Description  | Notes
 
 Preview message
 
-Get messages preview (with tags merged) up to 100 messages per session.
+
 
 ### Example
 ```java
@@ -5147,7 +5321,7 @@ Name | Type | Description  | Notes
 
 Check price
 
-Check pricing for a new outbound message.
+
 
 ### Example
 ```java
@@ -5235,7 +5409,7 @@ Name | Type | Description  | Notes
 
 Get pricing
 
-Get message prices for all countries.
+
 
 ### Example
 ```java
@@ -5284,6 +5458,8 @@ This endpoint does not need any parameter.
 > MessageSession getMessageSession(id)
 
 Get a message session.
+
+
 
 ### Example
 ```java
@@ -5336,6 +5512,8 @@ Name | Type | Description  | Notes
 > GetMessageSessionStatResponse getMessageSessionStat(id, includeDeleted)
 
 Get sending session statistics.
+
+
 
 ### Example
 ```java
@@ -5391,7 +5569,7 @@ Name | Type | Description  | Notes
 
 Fetch messages by given session id.
 
-A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
+
 
 ### Example
 ```java
@@ -5453,6 +5631,8 @@ Name | Type | Description  | Notes
 
 Return counters for messaging data views.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -5500,6 +5680,8 @@ This endpoint does not need any parameter.
 > GetMessagingStatResponse getMessagingStat(by, start, end)
 
 Return messaging statistics.
+
+
 
 ### Example
 ```java
@@ -5557,7 +5739,7 @@ Name | Type | Description  | Notes
 
 Get a single message
 
-Get a single outgoing message.
+
 
 ### Example
 ```java
@@ -5611,7 +5793,7 @@ Name | Type | Description  | Notes
 
 Get history
 
-Get outbound messages history.
+
 
 ### Example
 ```java
@@ -5673,6 +5855,8 @@ Name | Type | Description  | Notes
 
 Get all device tokens assigned to the current account
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -5720,6 +5904,8 @@ This endpoint does not need any parameter.
 > MessagesIcs getScheduledMessage(id)
 
 Get message schedule.
+
+
 
 ### Example
 ```java
@@ -5773,6 +5959,8 @@ Name | Type | Description  | Notes
 
 Get a single Sender ID.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -5824,6 +6012,8 @@ Name | Type | Description  | Notes
 > GetSenderIdsPaginatedResponse getSenderIds(page, limit)
 
 Get all sender IDs of current user.
+
+
 
 ### Example
 ```java
@@ -5879,6 +6069,8 @@ Name | Type | Description  | Notes
 
 Get current user sender settings.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -5930,6 +6122,8 @@ Name | Type | Description  | Notes
 > GetSpendingStatPaginatedResponse getSpendingStat(page, limit, start, end)
 
 Return account spending statistics.
+
+
 
 ### Example
 ```java
@@ -5989,6 +6183,8 @@ Name | Type | Description  | Notes
 
 Get current entities state
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6036,6 +6232,8 @@ This endpoint does not need any parameter.
 > User getSubaccount(id)
 
 Get a single subaccount.
+
+
 
 ### Example
 ```java
@@ -6088,6 +6286,8 @@ Name | Type | Description  | Notes
 > User getSubaccounts(page, limit)
 
 Get all subaccounts of current user.
+
+
 
 ### Example
 ```java
@@ -6143,7 +6343,7 @@ Name | Type | Description  | Notes
 
 Get all subaccounts with their REST API tokens associated with specified app name.
 
-When more than one token related to app name, last key will be returned.
+
 
 ### Example
 ```java
@@ -6201,6 +6401,8 @@ Name | Type | Description  | Notes
 
 Get a survey by id.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6252,6 +6454,8 @@ Name | Type | Description  | Notes
 > SurveyNode getSurveyNode(id)
 
 Get a node by id.
+
+
 
 ### Example
 ```java
@@ -6305,6 +6509,8 @@ Name | Type | Description  | Notes
 
 Fetch nodes by given survey id.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6356,6 +6562,8 @@ Name | Type | Description  | Notes
 > GetSurveysPaginatedResponse getSurveys(page, limit)
 
 Get all user surveys.
+
+
 
 ### Example
 ```java
@@ -6411,6 +6619,8 @@ Name | Type | Description  | Notes
 
 Get a single template.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6462,6 +6672,8 @@ Name | Type | Description  | Notes
 > GetTimezonesResponse getTimezones(full)
 
 Return all available timezone IDs.
+
+
 
 ### Example
 ```java
@@ -6515,6 +6727,8 @@ Name | Type | Description  | Notes
 
 Get total amount of unread messages in the current user chats.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6562,6 +6776,8 @@ This endpoint does not need any parameter.
 > UnsubscribedContact getUnsubscribedContact(id)
 
 Get a single unsubscribed contact.
+
+
 
 ### Example
 ```java
@@ -6614,6 +6830,8 @@ Name | Type | Description  | Notes
 > GetUnsubscribersPaginatedResponse getUnsubscribers(page, limit)
 
 Get all contact have unsubscribed from your communication.
+
+
 
 ### Example
 ```java
@@ -6668,6 +6886,8 @@ Name | Type | Description  | Notes
 > GetUserDedicatedNumbersPaginatedResponse getUserDedicatedNumbers(page, limit, surveyId)
 
 Get user&#39;s dedicated numbers.
+
+
 
 ### Example
 ```java
@@ -6724,6 +6944,8 @@ Name | Type | Description  | Notes
 > GetUserListsPaginatedResponse getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine)
 
 Get all user lists.
+
+
 
 ### Example
 ```java
@@ -6787,6 +7009,8 @@ Name | Type | Description  | Notes
 
 Get minimal valid apps versions
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6834,6 +7058,8 @@ This endpoint does not need any parameter.
 > inviteSubaccount(inviteSubaccountInputObject)
 
 Invite new subaccount.
+
+
 
 ### Example
 ```java
@@ -6886,6 +7112,8 @@ null (empty response body)
 
 Mark several chats as read by chat ids or mark all chats as read
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -6936,6 +7164,8 @@ null (empty response body)
 > markChatsUnreadBulk(markChatsUnreadBulkInputObject)
 
 Mark several chats as UNread by chat ids or mark all chats as UNread
+
+
 
 ### Example
 ```java
@@ -6988,6 +7218,8 @@ null (empty response body)
 
 Merge two question nodes.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7038,6 +7270,8 @@ null (empty response body)
 > ResourceLinkResponse muteChat(muteChatInputObject)
 
 Set mute mode.
+
+
 
 ### Example
 ```java
@@ -7091,6 +7325,8 @@ Name | Type | Description  | Notes
 
 Mute several chats by chat ids or mute all chats
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7142,6 +7378,8 @@ null (empty response body)
 
 Just does a pong.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7189,6 +7427,8 @@ This endpoint does not need any parameter.
 > reopenChatsBulk(reopenChatsBulkInputObject)
 
 Reopen chats by chat ids or reopen all chats
+
+
 
 ### Example
 ```java
@@ -7241,7 +7481,7 @@ null (empty response body)
 
 Request a new REST API token for subaccount.
 
-Returning user object, key and app name.
+
 
 ### Example
 ```java
@@ -7295,6 +7535,8 @@ Name | Type | Description  | Notes
 
 Request for a new Sender ID.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7347,6 +7589,8 @@ Name | Type | Description  | Notes
 
 Reset a survey flow.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7398,6 +7642,8 @@ Name | Type | Description  | Notes
 > SearchChatsPaginatedResponse searchChats(page, limit, query)
 
 Find chats by inbound or outbound messages text.
+
+
 
 ### Example
 ```java
@@ -7455,6 +7701,8 @@ Name | Type | Description  | Notes
 
 Find chats by IDs.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7510,6 +7758,8 @@ Name | Type | Description  | Notes
 > SearchChatsByReceipentPaginatedResponse searchChatsByReceipent(page, limit, query, orderBy)
 
 Find chats by recipient (contact, list name or phone number).
+
+
 
 ### Example
 ```java
@@ -7568,6 +7818,8 @@ Name | Type | Description  | Notes
 > SearchContactsPaginatedResponse searchContacts(page, limit, shared, ids, listId, includeBlocked, query, local, country, orderBy, direction)
 
 Find user contacts by given parameters.
+
+
 
 ### Example
 ```java
@@ -7641,6 +7893,8 @@ Name | Type | Description  | Notes
 
 Find inbound messages by given parameters.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7704,6 +7958,8 @@ Name | Type | Description  | Notes
 > SearchListsPaginatedResponse searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction)
 
 Find contact lists by given parameters.
+
+
 
 ### Example
 ```java
@@ -7771,7 +8027,7 @@ Name | Type | Description  | Notes
 
 Find messages
 
-Find outbound messages by given parameters.
+
 
 ### Example
 ```java
@@ -7839,6 +8095,8 @@ Name | Type | Description  | Notes
 
 Find scheduled messages by given parameters.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7903,6 +8161,8 @@ Name | Type | Description  | Notes
 
 Find user templates by given parameters.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -7963,6 +8223,8 @@ Name | Type | Description  | Notes
 
 Send user email verification
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8010,7 +8272,7 @@ null (empty response body)
 
 Send message
 
-The main entrypoint to send messages. See examples above for the reference.
+
 
 ### Example
 ```java
@@ -8064,6 +8326,8 @@ Name | Type | Description  | Notes
 
 Send user phone verification
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8110,6 +8374,8 @@ null (empty response body)
 > ResourceLinkResponse setChatStatus(setChatStatusInputObject)
 
 Set status of the chat given by ID.
+
+
 
 ### Example
 ```java
@@ -8163,6 +8429,8 @@ Name | Type | Description  | Notes
 
 Start a survey.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8215,6 +8483,8 @@ Name | Type | Description  | Notes
 
 Unblock contact by phone number.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8265,6 +8535,8 @@ null (empty response body)
 > unblockContactsBulk(unblockContactsBulkInputObject)
 
 Unblock several contacts by blocked contact ids or unblock all contacts
+
+
 
 ### Example
 ```java
@@ -8317,6 +8589,8 @@ null (empty response body)
 
 Unmute several chats by chat ids or unmute all chats
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8367,6 +8641,8 @@ null (empty response body)
 > ResourceLinkResponse unsubscribeContact(unsubscribeContactInputObject)
 
 Unsubscribe contact from your communication by phone number.
+
+
 
 ### Example
 ```java
@@ -8420,6 +8696,8 @@ Name | Type | Description  | Notes
 
 Update balance notification settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8470,6 +8748,8 @@ null (empty response body)
 > updateCallbackSettings(updateCallbackSettingsInputObject)
 
 Update callback URL settings
+
+
 
 ### Example
 ```java
@@ -8522,6 +8802,8 @@ null (empty response body)
 
 Update chat desktop notification settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8572,6 +8854,8 @@ null (empty response body)
 > ResourceLinkResponse updateContact(updateContactInputObject, id)
 
 Update existing contact.
+
+
 
 ### Example
 ```java
@@ -8627,6 +8911,8 @@ Name | Type | Description  | Notes
 
 Update existing contact note.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8681,6 +8967,8 @@ Name | Type | Description  | Notes
 
 Update current user info.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8732,6 +9020,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse updateCustomField(updateCustomFieldInputObject, id)
 
 Update existing custom field.
+
+
 
 ### Example
 ```java
@@ -8787,6 +9077,8 @@ Name | Type | Description  | Notes
 
 Update contact&#39;s custom field value.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8841,6 +9133,8 @@ Name | Type | Description  | Notes
 
 Update inbound messages notification settings
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8891,6 +9185,8 @@ null (empty response body)
 > ResourceLinkResponse updateList(id, updateListObject)
 
 Update existing list.
+
+
 
 ### Example
 ```java
@@ -8946,6 +9242,8 @@ Name | Type | Description  | Notes
 
 Change user password.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -8997,6 +9295,8 @@ null (empty response body)
 
 Change sender settings for specified country.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -9047,6 +9347,8 @@ null (empty response body)
 > ResourceLinkResponse updateSurvey(updateSurveyInputObject, id)
 
 Update existing survey.
+
+
 
 ### Example
 ```java
@@ -9102,6 +9404,8 @@ Name | Type | Description  | Notes
 
 Update existing node.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -9155,6 +9459,8 @@ Name | Type | Description  | Notes
 > ResourceLinkResponse updateTemplate(updateTemplateInputObject, id)
 
 Update existing template.
+
+
 
 ### Example
 ```java
@@ -9210,6 +9516,8 @@ Name | Type | Description  | Notes
 
 Add an avatar for the current user.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -9260,6 +9568,8 @@ null (empty response body)
 > ResourceLinkResponse uploadContactAvatar(image, id)
 
 Add an avatar for the contact.
+
+
 
 ### Example
 ```java
@@ -9315,6 +9625,8 @@ Name | Type | Description  | Notes
 
 Add an avatar for the list.
 
+
+
 ### Example
 ```java
 // Import classes:
@@ -9369,7 +9681,7 @@ Name | Type | Description  | Notes
 
 Upload message attachment
 
-Upload a new file to insert it as a link.
+
 
 ### Example
 ```java
