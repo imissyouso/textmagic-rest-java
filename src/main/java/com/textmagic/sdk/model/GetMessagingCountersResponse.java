@@ -44,10 +44,10 @@ public class GetMessagingCountersResponse {
   }
 
    /**
-   * Get contacts
+   * Total contacts amount.
    * @return contacts
   **/
-  @ApiModelProperty(example = "10", required = true, value = "")
+  @ApiModelProperty(example = "10", required = true, value = "Total contacts amount.")
   public Integer getContacts() {
     return contacts;
   }
@@ -62,10 +62,10 @@ public class GetMessagingCountersResponse {
   }
 
    /**
-   * Get sent
+   * Total sent messages amount.
    * @return sent
   **/
-  @ApiModelProperty(example = "10", required = true, value = "")
+  @ApiModelProperty(example = "10", required = true, value = "Total sent messages amount.")
   public Integer getSent() {
     return sent;
   }
@@ -80,10 +80,10 @@ public class GetMessagingCountersResponse {
   }
 
    /**
-   * Get received
+   * Total received messages amount.
    * @return received
   **/
-  @ApiModelProperty(example = "10", required = true, value = "")
+  @ApiModelProperty(example = "10", required = true, value = "Total received messages amount.")
   public Integer getReceived() {
     return received;
   }

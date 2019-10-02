@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **String** |  |  [optional]
-**firstName** | **String** |  |  [optional]
-**lastName** | **String** |  |  [optional]
-**email** | **String** |  |  [optional]
+**username** | **String** | Username. |  [optional]
+**firstName** | **String** | Account first name. |  [optional]
+**lastName** | **String** | Account last name. |  [optional]
+**email** | **String** | User email address. |  [optional]
 **phone** | **String** |  |  [optional]
-**company** | **String** |  |  [optional]
-**timezone** | **Integer** | timezone id |  [optional]
+**company** | **String** | Account company name. |  [optional]
+**timezone** | **Integer** | Internal timezone ID |  [optional]
 
 
 

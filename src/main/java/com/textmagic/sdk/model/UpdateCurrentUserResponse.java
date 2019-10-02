@@ -56,10 +56,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * Get username
+   * Username.
    * @return username
   **/
-  @ApiModelProperty(example = "Test", value = "")
+  @ApiModelProperty(example = "charles.conway", value = "Username.")
   public String getUsername() {
     return username;
   }
@@ -74,10 +74,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * Get firstName
+   * Account first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test", value = "")
+  @ApiModelProperty(example = "Charles", value = "Account first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -92,10 +92,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * Get lastName
+   * Account last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test", value = "")
+  @ApiModelProperty(example = "Conway", value = "Account last name.")
   public String getLastName() {
     return lastName;
   }
@@ -110,10 +110,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * Get email
+   * User email address.
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", value = "")
+  @ApiModelProperty(example = "charles@example.com", value = "User email address.")
   public String getEmail() {
     return email;
   }
@@ -146,10 +146,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * Get company
+   * Account company name.
    * @return company
   **/
-  @ApiModelProperty(example = "Dummy company", value = "")
+  @ApiModelProperty(example = "Example Ltd.", value = "Account company name.")
   public String getCompany() {
     return company;
   }
@@ -164,10 +164,10 @@ public class UpdateCurrentUserResponse {
   }
 
    /**
-   * timezone id
+   * Internal timezone ID
    * @return timezone
   **/
-  @ApiModelProperty(example = "2", value = "timezone id")
+  @ApiModelProperty(example = "2", value = "Internal timezone ID")
   public Integer getTimezone() {
     return timezone;
   }

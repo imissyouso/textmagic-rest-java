@@ -50,10 +50,10 @@ public class Timezone {
   }
 
    /**
-   * Get id
+   * Internal timezone ID.
    * @return id
   **/
-  @ApiModelProperty(example = "55", required = true, value = "")
+  @ApiModelProperty(example = "55", required = true, value = "Internal timezone ID.")
   public Integer getId() {
     return id;
   }
@@ -68,10 +68,10 @@ public class Timezone {
   }
 
    /**
-   * Get area
+   * Timezone area.
    * @return area
   **/
-  @ApiModelProperty(example = "Europe", required = true, value = "")
+  @ApiModelProperty(example = "Europe", required = true, value = "Timezone area.")
   public String getArea() {
     return area;
   }
@@ -86,10 +86,10 @@ public class Timezone {
   }
 
    /**
-   * Get dst
+   * Is Daylight saving time used in this timezone?
    * @return dst
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "Is Daylight saving time used in this timezone?")
   public Integer getDst() {
     return dst;
   }
@@ -122,10 +122,10 @@ public class Timezone {
   }
 
    /**
-   * Get timezone
+   * User-friendly timezone name (with spaces replaced by underscores).
    * @return timezone
   **/
-  @ApiModelProperty(example = "Europe/Tallinn", required = true, value = "")
+  @ApiModelProperty(example = "Europe/Tallinn", required = true, value = "User-friendly timezone name (with spaces replaced by underscores).")
   public String getTimezone() {
     return timezone;
   }

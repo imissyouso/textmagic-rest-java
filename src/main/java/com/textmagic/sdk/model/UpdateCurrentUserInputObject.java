@@ -74,10 +74,10 @@ public class UpdateCurrentUserInputObject {
   }
 
    /**
-   * Get firstName
+   * Account first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test", value = "")
+  @ApiModelProperty(example = "Charles", value = "Account first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -92,10 +92,10 @@ public class UpdateCurrentUserInputObject {
   }
 
    /**
-   * Get lastName
+   * Account last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test", value = "")
+  @ApiModelProperty(example = "Conway", value = "Account last name.")
   public String getLastName() {
     return lastName;
   }
@@ -113,7 +113,7 @@ public class UpdateCurrentUserInputObject {
    * Get email
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", value = "")
+  @ApiModelProperty(example = "charles@example.com", value = "")
   public String getEmail() {
     return email;
   }
@@ -131,7 +131,7 @@ public class UpdateCurrentUserInputObject {
    * Get phone
    * @return phone
   **/
-  @ApiModelProperty(example = "79030011222", value = "")
+  @ApiModelProperty(example = "447860021130", value = "")
   public String getPhone() {
     return phone;
   }
@@ -146,10 +146,10 @@ public class UpdateCurrentUserInputObject {
   }
 
    /**
-   * Get company
+   * Account company name.
    * @return company
   **/
-  @ApiModelProperty(example = "Dummy company", value = "")
+  @ApiModelProperty(example = "Example Ltd.", value = "Account company name.")
   public String getCompany() {
     return company;
   }
@@ -164,10 +164,10 @@ public class UpdateCurrentUserInputObject {
   }
 
    /**
-   * timezone id
+   * The timezome internal id
    * @return timezone
   **/
-  @ApiModelProperty(example = "2", value = "timezone id")
+  @ApiModelProperty(example = "2", value = "The timezome internal id")
   public Integer getTimezone() {
     return timezone;
   }

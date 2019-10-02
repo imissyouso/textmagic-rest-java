@@ -343,7 +343,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Close subaccount.
+     * Close sub-account
      *
      * 
      *
@@ -519,7 +519,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete an avatar for the current user.\\
+     * Delete an avatar
      *
      * 
      *
@@ -1539,7 +1539,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get current user info.
+     * Get current account information
      *
      * 
      *
@@ -1603,9 +1603,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get an array of all rules that are disallowed to the current account.
+     * Get disallowed permissions
      *
-     * 
+     * Get an array of all rules that are disallowed to the current account.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1667,9 +1667,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return account invoices.
+     * Get all invoices
      *
-     * 
+     * With the TextMagic API, you can check the invoices and transactions for your account.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1867,9 +1867,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return counters for messaging data views.
+     * Get sent/received messages counters values
      *
-     * 
+     * Get total contacts, sent messages and received messages counters values.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1882,7 +1882,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return messaging statistics.
+     * Get messaging statistics
      *
      * 
      *
@@ -2016,7 +2016,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return account spending statistics.
+     * Get spending statistics
      *
      * 
      *
@@ -2028,7 +2028,7 @@ public class TextMagicApiTest {
         Integer page = null;
         Integer limit = null;
         Integer start = null;
-        Integer end = null;
+        String end = null;
         GetSpendingStatPaginatedResponse response = api.getSpendingStat(page, limit, start, end);
 
         // TODO: test validations
@@ -2050,7 +2050,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single subaccount.
+     * Get sub-account information
      *
      * 
      *
@@ -2066,7 +2066,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all subaccounts of current user.
+     * Get sub-accounts list
      *
      * 
      *
@@ -2083,9 +2083,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all subaccounts with their REST API tokens associated with specified app name.
+     * Get all sub-accounts with their REST API tokens associated with app name
      *
-     * When more than one token related to app name, last key will be returned.
+     * Get all sub-accounts with their REST API tokens associated with specified app name. When more than one token related to app name, last key will be returned.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2300,7 +2300,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Invite new subaccount.
+     * Invite a new sub-account
      *
      * 
      *
@@ -2427,7 +2427,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Request a new REST API token for subaccount.
+     * Request a new REST API token for sub-account
      *
      * Returning user object, key and app name.
      *
@@ -2906,7 +2906,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update current user info.
+     * Edit current account info
      *
      * 
      *
@@ -3072,7 +3072,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Add an avatar for the current user.
+     * Upload an avatar
      *
      * 
      *

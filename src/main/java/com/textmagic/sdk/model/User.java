@@ -49,8 +49,55 @@ public class User {
   @SerializedName("email")
   private String email = null;
 
+  /**
+   * Current account status: * **A** for Active * **T** for Trial. 
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    A("A"),
+    
+    T("T");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("status")
-  private String status = null;
+  private StatusEnum status = null;
 
   @SerializedName("balance")
   private BigDecimal balance = null;
@@ -70,8 +117,57 @@ public class User {
   @SerializedName("timezone")
   private Timezone timezone = null;
 
+  /**
+   * Type of account: * **P** for Parent User * **A** for Administrator Sub-Account * **U** for Regular User 
+   */
+  @JsonAdapter(SubaccountTypeEnum.Adapter.class)
+  public enum SubaccountTypeEnum {
+    P("P"),
+    
+    A("A"),
+    
+    U("U");
+
+    private String value;
+
+    SubaccountTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SubaccountTypeEnum fromValue(String text) {
+      for (SubaccountTypeEnum b : SubaccountTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<SubaccountTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SubaccountTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SubaccountTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return SubaccountTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("subaccountType")
-  private String subaccountType = null;
+  private SubaccountTypeEnum subaccountType = null;
 
   @SerializedName("emailAccepted")
   private Boolean emailAccepted = null;
@@ -88,10 +184,10 @@ public class User {
   }
 
    /**
-   * Get id
+   * User ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "305", required = true, value = "User ID.")
   public Integer getId() {
     return id;
   }
@@ -106,10 +202,10 @@ public class User {
   }
 
    /**
-   * Get username
+   * Username.
    * @return username
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "charles.conway", required = true, value = "Username.")
   public String getUsername() {
     return username;
   }
@@ -124,10 +220,10 @@ public class User {
   }
 
    /**
-   * Get firstName
+   * Account first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "Charles", required = true, value = "Account first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -142,10 +238,10 @@ public class User {
   }
 
    /**
-   * Get lastName
+   * Account last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Account last name.")
   public String getLastName() {
     return lastName;
   }
@@ -160,10 +256,10 @@ public class User {
   }
 
    /**
-   * Get email
+   * User email address.
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "")
+  @ApiModelProperty(example = "charles@example.com", required = true, value = "User email address.")
   public String getEmail() {
     return email;
   }
@@ -172,21 +268,21 @@ public class User {
     this.email = email;
   }
 
-  public User status(String status) {
+  public User status(StatusEnum status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Current account status: * **A** for Active * **T** for Trial. 
    * @return status
   **/
-  @ApiModelProperty(example = "A", required = true, value = "")
-  public String getStatus() {
+  @ApiModelProperty(example = "A", required = true, value = "Current account status: * **A** for Active * **T** for Trial. ")
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 
@@ -196,10 +292,10 @@ public class User {
   }
 
    /**
-   * Get balance
+   * Account balance (in account currency).
    * @return balance
   **/
-  @ApiModelProperty(example = "100.0", required = true, value = "")
+  @ApiModelProperty(example = "208.64", required = true, value = "Account balance (in account currency).")
   public BigDecimal getBalance() {
     return balance;
   }
@@ -232,10 +328,10 @@ public class User {
   }
 
    /**
-   * Get company
+   * Account company name.
    * @return company
   **/
-  @ApiModelProperty(example = "Dummy company", required = true, value = "")
+  @ApiModelProperty(example = "Example Ltd.", required = true, value = "Account company name.")
   public String getCompany() {
     return company;
   }
@@ -298,21 +394,21 @@ public class User {
     this.timezone = timezone;
   }
 
-  public User subaccountType(String subaccountType) {
+  public User subaccountType(SubaccountTypeEnum subaccountType) {
     this.subaccountType = subaccountType;
     return this;
   }
 
    /**
-   * Get subaccountType
+   * Type of account: * **P** for Parent User * **A** for Administrator Sub-Account * **U** for Regular User 
    * @return subaccountType
   **/
-  @ApiModelProperty(example = "P", required = true, value = "")
-  public String getSubaccountType() {
+  @ApiModelProperty(example = "P", required = true, value = "Type of account: * **P** for Parent User * **A** for Administrator Sub-Account * **U** for Regular User ")
+  public SubaccountTypeEnum getSubaccountType() {
     return subaccountType;
   }
 
-  public void setSubaccountType(String subaccountType) {
+  public void setSubaccountType(SubaccountTypeEnum subaccountType) {
     this.subaccountType = subaccountType;
   }
 

@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**bundle** | **Integer** |  | 
-**currency** | **String** |  | 
-**vat** | **Float** |  | 
-**paymentMethod** | **String** |  | 
+**id** | **Integer** | The invoice ID. | 
+**bundle** | **Integer** | Top up amount. | 
+**currency** | **String** | Top up currency. | 
+**vat** | **Float** | VAT charged (if any). | 
+**paymentMethod** | **String** | Payment method description. | 
 
 
 

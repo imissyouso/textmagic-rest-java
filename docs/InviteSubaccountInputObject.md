@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **String** | Subaccount email | 
-**role** | [**RoleEnum**](#RoleEnum) | Subaccount role: A for administrator or U for regular user | 
+**email** | **String** | Invitation email will be sent to this email address. | 
+**role** | [**RoleEnum**](#RoleEnum) | Type of account: *   **A** for Administrator sub-account *   **U** for Regular User  | 
 
 
 <a name="RoleEnum"></a>

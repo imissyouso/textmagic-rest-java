@@ -44,10 +44,10 @@ public class Currency {
   }
 
    /**
-   * Get id
+   * Three-letter ISO currency ID.
    * @return id
   **/
-  @ApiModelProperty(example = "GBP", required = true, value = "")
+  @ApiModelProperty(example = "GBP", required = true, value = "Three-letter ISO currency ID.")
   public String getId() {
     return id;
   }
@@ -62,10 +62,10 @@ public class Currency {
   }
 
    /**
-   * Get unicodeSymbol
+   * Unicode-compatible currency symbol.
    * @return unicodeSymbol
   **/
-  @ApiModelProperty(example = "£", required = true, value = "")
+  @ApiModelProperty(example = "£", required = true, value = "Unicode-compatible currency symbol.")
   public String getUnicodeSymbol() {
     return unicodeSymbol;
   }
@@ -80,10 +80,10 @@ public class Currency {
   }
 
    /**
-   * Get htmlSymbol
+   * HTML-compatible currency symbol.
    * @return htmlSymbol
   **/
-  @ApiModelProperty(example = "&pound;", required = true, value = "")
+  @ApiModelProperty(example = "&pound;", required = true, value = "HTML-compatible currency symbol.")
   public String getHtmlSymbol() {
     return htmlSymbol;
   }

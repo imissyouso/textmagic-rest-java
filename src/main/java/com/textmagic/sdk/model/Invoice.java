@@ -50,10 +50,10 @@ public class Invoice {
   }
 
    /**
-   * Get id
+   * The invoice ID.
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "1099", required = true, value = "The invoice ID.")
   public Integer getId() {
     return id;
   }
@@ -68,10 +68,10 @@ public class Invoice {
   }
 
    /**
-   * Get bundle
+   * Top up amount.
    * @return bundle
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "200", required = true, value = "Top up amount.")
   public Integer getBundle() {
     return bundle;
   }
@@ -86,10 +86,10 @@ public class Invoice {
   }
 
    /**
-   * Get currency
+   * Top up currency.
    * @return currency
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "USD", required = true, value = "Top up currency.")
   public String getCurrency() {
     return currency;
   }
@@ -104,10 +104,10 @@ public class Invoice {
   }
 
    /**
-   * Get vat
+   * VAT charged (if any).
    * @return vat
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2.0", required = true, value = "VAT charged (if any).")
   public Float getVat() {
     return vat;
   }
@@ -122,10 +122,10 @@ public class Invoice {
   }
 
    /**
-   * Get paymentMethod
+   * Payment method description.
    * @return paymentMethod
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "MasterCard ending in 1234", required = true, value = "Payment method description.")
   public String getPaymentMethod() {
     return paymentMethod;
   }

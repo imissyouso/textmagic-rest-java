@@ -33,7 +33,7 @@ public class InviteSubaccountInputObject {
   private String email = null;
 
   /**
-   * Subaccount role: A for administrator or U for regular user
+   * Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
    */
   @JsonAdapter(RoleEnum.Adapter.class)
   public enum RoleEnum {
@@ -88,10 +88,10 @@ public class InviteSubaccountInputObject {
   }
 
    /**
-   * Subaccount email
+   * Invitation email will be sent to this email address.
    * @return email
   **/
-  @ApiModelProperty(example = "user-example@example.com", required = true, value = "Subaccount email")
+  @ApiModelProperty(example = "john@example.com", required = true, value = "Invitation email will be sent to this email address.")
   public String getEmail() {
     return email;
   }
@@ -106,10 +106,10 @@ public class InviteSubaccountInputObject {
   }
 
    /**
-   * Subaccount role: A for administrator or U for regular user
+   * Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
    * @return role
   **/
-  @ApiModelProperty(example = "U", required = true, value = "Subaccount role: A for administrator or U for regular user")
+  @ApiModelProperty(example = "U", required = true, value = "Type of account: *   **A** for Administrator sub-account *   **U** for Regular User ")
   public RoleEnum getRole() {
     return role;
   }

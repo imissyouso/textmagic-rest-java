@@ -63,7 +63,7 @@ public class UserStatement {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "305", required = true, value = "")
   public Integer getId() {
     return id;
   }
@@ -78,10 +78,10 @@ public class UserStatement {
   }
 
    /**
-   * Get userId
+   * User statement ID.
    * @return userId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "User statement ID.")
   public Integer getUserId() {
     return userId;
   }
@@ -96,10 +96,10 @@ public class UserStatement {
   }
 
    /**
-   * Get date
+   * User statement date.
    * @return date
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-09-19T00:00:00+0000", required = true, value = "User statement date.")
   public OffsetDateTime getDate() {
     return date;
   }
@@ -132,10 +132,10 @@ public class UserStatement {
   }
 
    /**
-   * Get delta
+   * Balance change amount.
    * @return delta
   **/
-  @ApiModelProperty(example = "-10.01", required = true, value = "")
+  @ApiModelProperty(example = "-0.15", required = true, value = "Balance change amount.")
   public Float getDelta() {
     return delta;
   }
@@ -150,10 +150,10 @@ public class UserStatement {
   }
 
    /**
-   * Get type
+   * Type of statement (what you have been charged for): *   **sms** for sending SMS *   **number** for renewing a dedicated number *   **schedule** for scheduling text messages *   **topup** for adding credits to your account 
    * @return type
   **/
-  @ApiModelProperty(example = "sms", required = true, value = "")
+  @ApiModelProperty(example = "sms", required = true, value = "Type of statement (what you have been charged for): *   **sms** for sending SMS *   **number** for renewing a dedicated number *   **schedule** for scheduling text messages *   **topup** for adding credits to your account ")
   public String getType() {
     return type;
   }
@@ -168,10 +168,10 @@ public class UserStatement {
   }
 
    /**
-   * Get value
+   * Value differs by **type**: *   for **sms**, it is the sent messages amount *   for **number**, it is a dedicated phone number *   for **schedule**, it is a scheduled messages amount *   for **top-up**, it is an invoice ID 
    * @return value
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "350", required = true, value = "Value differs by **type**: *   for **sms**, it is the sent messages amount *   for **number**, it is a dedicated phone number *   for **schedule**, it is a scheduled messages amount *   for **top-up**, it is an invoice ID ")
   public String getValue() {
     return value;
   }
@@ -186,10 +186,10 @@ public class UserStatement {
   }
 
    /**
-   * Get comment
+   * Optional comment.
    * @return comment
   **/
-  @ApiModelProperty(example = "This is test comment", required = true, value = "")
+  @ApiModelProperty(example = "This is a test comment", required = true, value = "Optional comment.")
   public String getComment() {
     return comment;
   }

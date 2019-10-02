@@ -69,10 +69,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get replyRate
+   * the number of incoming messages divided by the number of total messages.
    * @return replyRate
   **/
-  @ApiModelProperty(example = "55.1", required = true, value = "")
+  @ApiModelProperty(example = "0.32", required = true, value = "the number of incoming messages divided by the number of total messages.")
   public Float getReplyRate() {
     return replyRate;
   }
@@ -87,10 +87,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get date
+   * Time interval start, empty if the **by** parameter was set to **off**. 
    * @return date
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-09-19T00:00:00+0000", required = true, value = "Time interval start, empty if the **by** parameter was set to **off**. ")
   public OffsetDateTime getDate() {
     return date;
   }
@@ -105,10 +105,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get deliveryRate
+   * Message delivery rate:the number of delivered messages divided by the number of total messages.
    * @return deliveryRate
   **/
-  @ApiModelProperty(example = "99.5", required = true, value = "")
+  @ApiModelProperty(example = "0.95", required = true, value = "Message delivery rate:the number of delivered messages divided by the number of total messages.")
   public Float getDeliveryRate() {
     return deliveryRate;
   }
@@ -123,10 +123,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get costs
+   * Cost for sent messages during this period. The costs are in the [Account](/docs/api/account/) currency. TODO 
    * @return costs
   **/
-  @ApiModelProperty(example = "10.01", required = true, value = "")
+  @ApiModelProperty(example = "30.15", required = true, value = "Cost for sent messages during this period. The costs are in the [Account](/docs/api/account/) currency. TODO ")
   public Float getCosts() {
     return costs;
   }
@@ -141,10 +141,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesReceived
+   * Total received messages count.
    * @return messagesReceived
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1085", required = true, value = "Total received messages count.")
   public Integer getMessagesReceived() {
     return messagesReceived;
   }
@@ -159,10 +159,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentDelivered
+   * Delivered messages count. As messages are retried for up to 48 hours, this value could change.
    * @return messagesSentDelivered
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "11893", required = true, value = "Delivered messages count. As messages are retried for up to 48 hours, this value could change.")
   public Integer getMessagesSentDelivered() {
     return messagesSentDelivered;
   }
@@ -177,10 +177,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentAccepted
+   * Messages accepted for delivery (in queue), but not yet delivered.
    * @return messagesSentAccepted
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "2", required = true, value = "Messages accepted for delivery (in queue), but not yet delivered.")
   public Integer getMessagesSentAccepted() {
     return messagesSentAccepted;
   }
@@ -195,10 +195,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentBuffered
+   * Messages buffered by endpoint cell phone operators.
    * @return messagesSentBuffered
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "0", required = true, value = "Messages buffered by endpoint cell phone operators.")
   public Integer getMessagesSentBuffered() {
     return messagesSentBuffered;
   }
@@ -213,10 +213,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentFailed
+   * Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient phone account is out of service.
    * @return messagesSentFailed
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "3", required = true, value = "Messages that have failed for whatever reason, e.g. the destination phone was switched off for 48 hours or the recipient phone account is out of service.")
   public Integer getMessagesSentFailed() {
     return messagesSentFailed;
   }
@@ -231,10 +231,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentRejected
+   * Messages that were rejected: invalid Sender ID used (e.g. you cannot use the Sender ID or your own mobile number when sending to the United States and Canada.) 
    * @return messagesSentRejected
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "50", required = true, value = "Messages that were rejected: invalid Sender ID used (e.g. you cannot use the Sender ID or your own mobile number when sending to the United States and Canada.) ")
   public Integer getMessagesSentRejected() {
     return messagesSentRejected;
   }
@@ -249,10 +249,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Get messagesSentParts
+   * Total sent messages **parts** count. Note that this is not equal to the sent messages count, because one message could consist of 1 to 6 parts and users are charged per part, not per message.
    * @return messagesSentParts
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "15080", required = true, value = "Total sent messages **parts** count. Note that this is not equal to the sent messages count, because one message could consist of 1 to 6 parts and users are charged per part, not per message.")
   public Integer getMessagesSentParts() {
     return messagesSentParts;
   }
