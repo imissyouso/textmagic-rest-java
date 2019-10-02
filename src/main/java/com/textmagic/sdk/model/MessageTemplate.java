@@ -48,10 +48,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Get id
+   * Template ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "519", required = true, value = "Template ID.")
   public Integer getId() {
     return id;
   }
@@ -66,10 +66,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Get name
+   * Template name.
    * @return name
   **/
-  @ApiModelProperty(example = "This is test template name", required = true, value = "")
+  @ApiModelProperty(example = "Appointment reminder", required = true, value = "Template name.")
   public String getName() {
     return name;
   }
@@ -84,10 +84,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Get content
+   * Template text. May contain the tags listed below @TODO.
    * @return content
   **/
-  @ApiModelProperty(example = "This is test template content", required = true, value = "")
+  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Template text. May contain the tags listed below @TODO.")
   public String getContent() {
     return content;
   }
@@ -102,10 +102,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Get lastModified
+   * Time when template was last modified.
    * @return lastModified
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-09-11T08:12:01+0000", required = true, value = "Time when template was last modified.")
   public OffsetDateTime getLastModified() {
     return lastModified;
   }

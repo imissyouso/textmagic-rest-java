@@ -215,9 +215,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Buy a dedicated number and assign it to the specified account.
+     * Buy a dedicated number
      *
-     * 
+     * To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -475,7 +475,7 @@ public class TextMagicApiTest {
     /**
      * Create a template
      *
-     * 
+     * There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -681,7 +681,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Cancel dedicated number subscription.
+     * Cancel dedicated number subscription
      *
      * 
      *
@@ -907,7 +907,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a Sender ID.
+     * Delete a Sender ID
      *
      * 
      *
@@ -1181,7 +1181,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find available dedicated numbers to buy.
+     * Find dedicated numbers available for purchase
      *
      * 
      *
@@ -1199,9 +1199,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+     * Get available sender settings
      *
-     * 
+     * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1587,7 +1587,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single dedicated number.
+     * Get the details of a specific dedicated number
      *
      * 
      *
@@ -1967,7 +1967,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single Sender ID.
+     * Get the details of a specific Sender ID
      *
      * 
      *
@@ -1983,7 +1983,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all sender IDs of current user.
+     * Get all your approved Sender IDs
      *
      * 
      *
@@ -2000,9 +2000,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get current user sender settings.
+     * Get current sender settings
      *
-     * 
+     * @TODO
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2246,7 +2246,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get user&#39;s dedicated numbers.
+     * Get all your dedicated numbers
      *
      * 
      *
@@ -2443,9 +2443,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Request for a new Sender ID.
+     * Apply for a new Sender ID
      *
-     * 
+     * &gt; Sender IDs are shared between all of your sub-accounts.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -3005,9 +3005,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Change sender settings for specified country.
+     * Change sender settings
      *
-     * 
+     * @TODO
      *
      * @throws ApiException
      *          if the Api call fails

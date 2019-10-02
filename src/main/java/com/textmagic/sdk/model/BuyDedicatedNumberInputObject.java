@@ -44,10 +44,10 @@ public class BuyDedicatedNumberInputObject {
   }
 
    /**
-   * Desired dedicated phone number in international E.164 format
+   * Dedicated phone number.
    * @return phone
   **/
-  @ApiModelProperty(example = "123456780", required = true, value = "Desired dedicated phone number in international E.164 format")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Dedicated phone number.")
   public String getPhone() {
     return phone;
   }
@@ -62,10 +62,10 @@ public class BuyDedicatedNumberInputObject {
   }
 
    /**
-   * Dedicated number country. Two charactes in upper case.
+   * Country code phone number.
    * @return country
   **/
-  @ApiModelProperty(example = "AU", required = true, value = "Dedicated number country. Two charactes in upper case.")
+  @ApiModelProperty(example = "AU", required = true, value = "Country code phone number.")
   public String getCountry() {
     return country;
   }
@@ -80,10 +80,10 @@ public class BuyDedicatedNumberInputObject {
   }
 
    /**
-   * User ID this number will be assigned to
+   * Assigned dedicated number. This number will be available for this account only. You cannot transfer numbers between sub-accounts. 
    * @return userId
   **/
-  @ApiModelProperty(required = true, value = "User ID this number will be assigned to")
+  @ApiModelProperty(example = "5501", required = true, value = "Assigned dedicated number. This number will be available for this account only. You cannot transfer numbers between sub-accounts. ")
   public Integer getUserId() {
     return userId;
   }

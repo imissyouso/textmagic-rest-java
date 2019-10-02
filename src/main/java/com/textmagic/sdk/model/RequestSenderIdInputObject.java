@@ -41,10 +41,10 @@ public class RequestSenderIdInputObject {
   }
 
    /**
-   * Alphanumeric Sender ID (maximum 11 characters)
+   * Sender ID that you are applying for. *   11 characters maximum *   Only Latin based characters and digits are allowed *   Should contain at least one letter 
    * @return senderId
   **/
-  @ApiModelProperty(example = "Testid1", required = true, value = "Alphanumeric Sender ID (maximum 11 characters)")
+  @ApiModelProperty(example = "HotRod", required = true, value = "Sender ID that you are applying for. *   11 characters maximum *   Only Latin based characters and digits are allowed *   Should contain at least one letter ")
   public String getSenderId() {
     return senderId;
   }
@@ -59,10 +59,10 @@ public class RequestSenderIdInputObject {
   }
 
    /**
-   * Explain why do you need this Sender ID
+   * Explanation why do you need this Sender ID.
    * @return explanation
   **/
-  @ApiModelProperty(example = "Test description", required = true, value = "Explain why do you need this Sender ID")
+  @ApiModelProperty(example = "Because it equals to my company name.", required = true, value = "Explanation why do you need this Sender ID.")
   public String getExplanation() {
     return explanation;
   }

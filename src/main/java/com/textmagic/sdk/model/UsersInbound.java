@@ -35,6 +35,9 @@ public class UsersInbound {
   @SerializedName("id")
   private Integer id = null;
 
+  @SerializedName("phone")
+  private String phone = null;
+
   @SerializedName("user")
   private User user = null;
 
@@ -45,7 +48,7 @@ public class UsersInbound {
   private OffsetDateTime expireAt = null;
 
   /**
-   * A - active, in use (at least one message was sent/received from/to this number), U - never used before
+   * Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -97,25 +100,40 @@ public class UsersInbound {
   @SerializedName("country")
   private Country country = null;
 
-  @SerializedName("phone")
-  private String phone = null;
-
   public UsersInbound id(Integer id) {
     this.id = id;
     return this;
   }
 
    /**
-   * Get id
+   * Dedicated number ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "305", required = true, value = "Dedicated number ID.")
   public Integer getId() {
     return id;
   }
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public UsersInbound phone(String phone) {
+    this.phone = phone;
+    return this;
+  }
+
+   /**
+   * Dedicated phone number.
+   * @return phone
+  **/
+  @ApiModelProperty(example = "447860021130", value = "Dedicated phone number.")
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
   public UsersInbound user(User user) {
@@ -142,10 +160,10 @@ public class UsersInbound {
   }
 
    /**
-   * Get purchasedAt
+   * Time when the dedicated number was purchased.
    * @return purchasedAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-10-02T11:07:04+0000", required = true, value = "Time when the dedicated number was purchased.")
   public OffsetDateTime getPurchasedAt() {
     return purchasedAt;
   }
@@ -160,10 +178,10 @@ public class UsersInbound {
   }
 
    /**
-   * Get expireAt
+   * Dedicated number subscription expiration time.
    * @return expireAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-10-02T11:07:04+0000", required = true, value = "Dedicated number subscription expiration time.")
   public OffsetDateTime getExpireAt() {
     return expireAt;
   }
@@ -178,10 +196,10 @@ public class UsersInbound {
   }
 
    /**
-   * A - active, in use (at least one message was sent/received from/to this number), U - never used before
+   * Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. 
    * @return status
   **/
-  @ApiModelProperty(example = "U", required = true, value = "A - active, in use (at least one message was sent/received from/to this number), U - never used before")
+  @ApiModelProperty(example = "U", required = true, value = "Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active. ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -208,24 +226,6 @@ public class UsersInbound {
     this.country = country;
   }
 
-  public UsersInbound phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-
-   /**
-   * Get phone
-   * @return phone
-  **/
-  @ApiModelProperty(example = "79030011222", value = "")
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -237,17 +237,17 @@ public class UsersInbound {
     }
     UsersInbound usersInbound = (UsersInbound) o;
     return Objects.equals(this.id, usersInbound.id) &&
+        Objects.equals(this.phone, usersInbound.phone) &&
         Objects.equals(this.user, usersInbound.user) &&
         Objects.equals(this.purchasedAt, usersInbound.purchasedAt) &&
         Objects.equals(this.expireAt, usersInbound.expireAt) &&
         Objects.equals(this.status, usersInbound.status) &&
-        Objects.equals(this.country, usersInbound.country) &&
-        Objects.equals(this.phone, usersInbound.phone);
+        Objects.equals(this.country, usersInbound.country);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, purchasedAt, expireAt, status, country, phone);
+    return Objects.hash(id, phone, user, purchasedAt, expireAt, status, country);
   }
 
 
@@ -257,12 +257,12 @@ public class UsersInbound {
     sb.append("class UsersInbound {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    purchasedAt: ").append(toIndentedString(purchasedAt)).append("\n");
     sb.append("    expireAt: ").append(toIndentedString(expireAt)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

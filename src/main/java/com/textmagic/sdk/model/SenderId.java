@@ -40,7 +40,7 @@ public class SenderId {
   private User user = null;
 
   /**
-   * A - accepted, R - rejected, P - pending
+   * *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -97,10 +97,10 @@ public class SenderId {
   }
 
    /**
-   * Get id
+   * Numeric sender ID.
    * @return id
   **/
-  @ApiModelProperty(example = "332", required = true, value = "")
+  @ApiModelProperty(example = "37", required = true, value = "Numeric sender ID.")
   public Integer getId() {
     return id;
   }
@@ -115,10 +115,10 @@ public class SenderId {
   }
 
    /**
-   * Get senderId
+   * Alphanumeric ID.
    * @return senderId
   **/
-  @ApiModelProperty(example = "Dummy sender id", required = true, value = "")
+  @ApiModelProperty(example = "HotRod", required = true, value = "Alphanumeric ID.")
   public String getSenderId() {
     return senderId;
   }
@@ -151,10 +151,10 @@ public class SenderId {
   }
 
    /**
-   * A - accepted, R - rejected, P - pending
+   * *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. 
    * @return status
   **/
-  @ApiModelProperty(example = "A", required = true, value = "A - accepted, R - rejected, P - pending")
+  @ApiModelProperty(example = "A", required = true, value = "*   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active. ")
   public StatusEnum getStatus() {
     return status;
   }

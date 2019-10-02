@@ -41,10 +41,10 @@ public class Country {
   }
 
    /**
-   * Get id
+   * Two-letter ISO country ID.
    * @return id
   **/
-  @ApiModelProperty(example = "US", required = true, value = "")
+  @ApiModelProperty(example = "US", required = true, value = "Two-letter ISO country ID.")
   public String getId() {
     return id;
   }
@@ -59,10 +59,10 @@ public class Country {
   }
 
    /**
-   * Get name
+   * Full country name.
    * @return name
   **/
-  @ApiModelProperty(example = "India", required = true, value = "")
+  @ApiModelProperty(example = "India", required = true, value = "Full country name.")
   public String getName() {
     return name;
   }

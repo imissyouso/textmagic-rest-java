@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phone** | **String** | Desired dedicated phone number in international E.164 format | 
-**country** | **String** | Dedicated number country. Two charactes in upper case. | 
-**userId** | **Integer** | User ID this number will be assigned to | 
+**phone** | **String** | Dedicated phone number. | 
+**country** | **String** | Country code phone number. | 
+**userId** | **Integer** | Assigned dedicated number. This number will be available for this account only. You cannot transfer numbers between sub-accounts.  | 
 
 
 

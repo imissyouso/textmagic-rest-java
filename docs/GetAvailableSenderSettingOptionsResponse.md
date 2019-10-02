@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dedicated** | **List&lt;String&gt;** |  | 
-**user** | **List&lt;String&gt;** |  | 
-**shared** | **List&lt;String&gt;** |  | 
-**senderIds** | **List&lt;String&gt;** |  | 
+**dedicated** | **List&lt;String&gt;** | Array of dedicated numbers strings. | 
+**user** | **List&lt;String&gt;** | Array of verified account phone numbers (currently only one). | 
+**shared** | **List&lt;String&gt;** | Array of shared numbers strings. | 
+**senderIds** | **List&lt;String&gt;** | Array of alphanumeric sender IDs. | 
 
 
 

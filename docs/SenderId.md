@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**senderId** | **String** |  | 
+**id** | **Integer** | Numeric sender ID. | 
+**senderId** | **String** | Alphanumeric ID. | 
 **user** | [**User**](User.md) |  | 
-**status** | [**StatusEnum**](#StatusEnum) | A - accepted, R - rejected, P - pending | 
+**status** | [**StatusEnum**](#StatusEnum) | *   **P** for Pending. This Sender ID is being reviewed by our support team. *   **R** for Rejected. Our support team rejected your application for this Sender ID. *   **A** for Active.  | 
 
 
 <a name="StatusEnum"></a>

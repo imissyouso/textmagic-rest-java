@@ -48,10 +48,10 @@ public class GetAvailableDedicatedNumbersResponse {
   }
 
    /**
-   * Get numbers
+   * Array of phone number strings.
    * @return numbers
   **/
-  @ApiModelProperty(example = "[18887777773,18887777775]", required = true, value = "")
+  @ApiModelProperty(example = "[18887777773,18887777775]", required = true, value = "Array of phone number strings.")
   public List<String> getNumbers() {
     return numbers;
   }
@@ -66,10 +66,10 @@ public class GetAvailableDedicatedNumbersResponse {
   }
 
    /**
-   * Get price
+   * Dedicated number monthly fee for this country. Returned in current [account](/docs/api/account/) currency.@TODO
    * @return price
   **/
-  @ApiModelProperty(example = "2.4", required = true, value = "")
+  @ApiModelProperty(example = "2.4", required = true, value = "Dedicated number monthly fee for this country. Returned in current [account](/docs/api/account/) currency.@TODO")
   public Float getPrice() {
     return price;
   }

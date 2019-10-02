@@ -521,8 +521,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Buy a dedicated number and assign it to the specified account.
-     * 
+     * Buy a dedicated number
+     * To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
      * @param buyDedicatedNumberInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -531,8 +531,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Buy a dedicated number and assign it to the specified account.
-     * 
+     * Buy a dedicated number
+     * To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
      * @param buyDedicatedNumberInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -543,8 +543,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Buy a dedicated number and assign it to the specified account. (asynchronously)
-     * 
+     * Buy a dedicated number (asynchronously)
+     * To buy a dedicated number, you first need to find an available number matching your criteria using the &#x60;/api/v2/numbers/available&#x60; command described above.
      * @param buyDedicatedNumberInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2466,7 +2466,7 @@ public class TextMagicApi {
 
     /**
      * Create a template
-     * 
+     * There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
      * @param createTemplateInputObject  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2478,7 +2478,7 @@ public class TextMagicApi {
 
     /**
      * Create a template
-     * 
+     * There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
      * @param createTemplateInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2491,7 +2491,7 @@ public class TextMagicApi {
 
     /**
      * Create a template (asynchronously)
-     * 
+     * There are times when creating a new template makes sense (such as when targeting specific clients or improving your business strategies).  You can create new SMS templates for marketing purposes or SMS templates for business campaigns. 
      * @param createTemplateInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4011,7 +4011,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Cancel dedicated number subscription.
+     * Cancel dedicated number subscription
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4021,7 +4021,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Cancel dedicated number subscription.
+     * Cancel dedicated number subscription
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4033,7 +4033,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Cancel dedicated number subscription. (asynchronously)
+     * Cancel dedicated number subscription (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -5691,7 +5691,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a Sender ID.
+     * Delete a Sender ID
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -5701,7 +5701,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a Sender ID.
+     * Delete a Sender ID
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -5713,7 +5713,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a Sender ID. (asynchronously)
+     * Delete a Sender ID (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -7654,9 +7654,9 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAvailableDedicatedNumbers
-     * @param country Dedicated number country. Two letters in upper case (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore. (optional, default to 1)
-     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). Default is false. (optional, default to 0)
+     * @param country Two-letter dedicated number country ISO code. (required)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -7724,11 +7724,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Find available dedicated numbers to buy.
+     * Find dedicated numbers available for purchase
      * 
-     * @param country Dedicated number country. Two letters in upper case (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore. (optional, default to 1)
-     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). Default is false. (optional, default to 0)
+     * @param country Two-letter dedicated number country ISO code. (required)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @return GetAvailableDedicatedNumbersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7738,11 +7738,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Find available dedicated numbers to buy.
+     * Find dedicated numbers available for purchase
      * 
-     * @param country Dedicated number country. Two letters in upper case (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore. (optional, default to 1)
-     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). Default is false. (optional, default to 0)
+     * @param country Two-letter dedicated number country ISO code. (required)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @return ApiResponse&lt;GetAvailableDedicatedNumbersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7753,11 +7753,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Find available dedicated numbers to buy. (asynchronously)
+     * Find dedicated numbers available for purchase (asynchronously)
      * 
-     * @param country Dedicated number country. Two letters in upper case (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for GB). In case provide tollfree &#x3D; 1 parameter and there are available tollfree numbers, this parameter will be ignore. (optional, default to 1)
-     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). Default is false. (optional, default to 0)
+     * @param country Two-letter dedicated number country ISO code. (required)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -7790,7 +7790,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAvailableSenderSettingOptions
-     * @param country Return sender setting options available in specific country only. Two upper case characters (optional)
+     * @param country Two-letter ISO country ID. If not specified, it returns all the available sender settings. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -7849,9 +7849,9 @@ public class TextMagicApi {
     }
 
     /**
+     * Get available sender settings
      * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
-     * 
-     * @param country Return sender setting options available in specific country only. Two upper case characters (optional)
+     * @param country Two-letter ISO country ID. If not specified, it returns all the available sender settings. (optional)
      * @return GetAvailableSenderSettingOptionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7861,9 +7861,9 @@ public class TextMagicApi {
     }
 
     /**
+     * Get available sender settings
      * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
-     * 
-     * @param country Return sender setting options available in specific country only. Two upper case characters (optional)
+     * @param country Two-letter ISO country ID. If not specified, it returns all the available sender settings. (optional)
      * @return ApiResponse&lt;GetAvailableSenderSettingOptionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7874,9 +7874,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method. (asynchronously)
-     * 
-     * @param country Return sender setting options available in specific country only. Two upper case characters (optional)
+     * Get available sender settings (asynchronously)
+     * Get all available sender setting options which could be used in \&quot;from\&quot; parameter of POST messages method.
+     * @param country Two-letter ISO country ID. If not specified, it returns all the available sender settings. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -10764,7 +10764,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single dedicated number.
+     * Get the details of a specific dedicated number
      * 
      * @param id  (required)
      * @return UsersInbound
@@ -10776,7 +10776,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single dedicated number.
+     * Get the details of a specific dedicated number
      * 
      * @param id  (required)
      * @return ApiResponse&lt;UsersInbound&gt;
@@ -10789,7 +10789,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single dedicated number. (asynchronously)
+     * Get the details of a specific dedicated number (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -13567,7 +13567,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single Sender ID.
+     * Get the details of a specific Sender ID
      * 
      * @param id  (required)
      * @return SenderId
@@ -13579,7 +13579,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single Sender ID.
+     * Get the details of a specific Sender ID
      * 
      * @param id  (required)
      * @return ApiResponse&lt;SenderId&gt;
@@ -13592,7 +13592,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single Sender ID. (asynchronously)
+     * Get the details of a specific Sender ID (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -13689,7 +13689,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all sender IDs of current user.
+     * Get all your approved Sender IDs
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -13702,7 +13702,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all sender IDs of current user.
+     * Get all your approved Sender IDs
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -13716,7 +13716,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all sender IDs of current user. (asynchronously)
+     * Get all your approved Sender IDs (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -13811,8 +13811,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get current user sender settings.
-     * 
+     * Get current sender settings
+     * @TODO
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @return GetSenderSettingsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -13823,8 +13823,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get current user sender settings.
-     * 
+     * Get current sender settings
+     * @TODO
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @return ApiResponse&lt;GetSenderSettingsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -13836,8 +13836,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get current user sender settings. (asynchronously)
-     * 
+     * Get current sender settings (asynchronously)
+     * @TODO
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -15665,7 +15665,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get user&#39;s dedicated numbers.
+     * Get all your dedicated numbers
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -15679,7 +15679,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get user&#39;s dedicated numbers.
+     * Get all your dedicated numbers
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -15694,7 +15694,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get user&#39;s dedicated numbers. (asynchronously)
+     * Get all your dedicated numbers (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -17129,8 +17129,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Request for a new Sender ID.
-     * 
+     * Apply for a new Sender ID
+     * &gt; Sender IDs are shared between all of your sub-accounts.
      * @param requestSenderIdInputObject  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17141,8 +17141,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Request for a new Sender ID.
-     * 
+     * Apply for a new Sender ID
+     * &gt; Sender IDs are shared between all of your sub-accounts.
      * @param requestSenderIdInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17154,8 +17154,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Request for a new Sender ID. (asynchronously)
-     * 
+     * Apply for a new Sender ID (asynchronously)
+     * &gt; Sender IDs are shared between all of your sub-accounts.
      * @param requestSenderIdInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -21277,8 +21277,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Change sender settings for specified country.
-     * 
+     * Change sender settings
+     * @TODO
      * @param updateSenderSettingInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -21287,8 +21287,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Change sender settings for specified country.
-     * 
+     * Change sender settings
+     * @TODO
      * @param updateSenderSettingInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21299,8 +21299,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Change sender settings for specified country. (asynchronously)
-     * 
+     * Change sender settings (asynchronously)
+     * @TODO
      * @param updateSenderSettingInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

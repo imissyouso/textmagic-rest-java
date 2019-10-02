@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Integer** | Dedicated number ID. | 
+**phone** | **String** | Dedicated phone number. |  [optional]
 **user** | [**User**](User.md) |  | 
-**purchasedAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**expireAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**status** | [**StatusEnum**](#StatusEnum) | A - active, in use (at least one message was sent/received from/to this number), U - never used before | 
+**purchasedAt** | [**OffsetDateTime**](OffsetDateTime.md) | Time when the dedicated number was purchased. | 
+**expireAt** | [**OffsetDateTime**](OffsetDateTime.md) | Dedicated number subscription expiration time. | 
+**status** | [**StatusEnum**](#StatusEnum) | Number status: *   **U** for Unused. No messages have been sent from (or received to) this number. *   **A** for Active.  | 
 **country** | [**Country**](Country.md) |  | 
-**phone** | **String** |  |  [optional]
 
 
 <a name="StatusEnum"></a>
