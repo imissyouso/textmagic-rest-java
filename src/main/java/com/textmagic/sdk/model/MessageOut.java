@@ -43,7 +43,7 @@ public class MessageOut {
   private String text = null;
 
   /**
-   * Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
+   * Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -261,10 +261,10 @@ public class MessageOut {
   }
 
    /**
-   * Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
+   * Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
    * @return status
   **/
-  @ApiModelProperty(example = "d", required = true, value = "Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. ")
+  @ApiModelProperty(example = "d", required = true, value = "Delivery status of the message. TODO: Please see the table below to see different delivery statuses. ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -405,10 +405,10 @@ public class MessageOut {
   }
 
    /**
-   * @TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
+   * TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
    * @return firstName
   **/
-  @ApiModelProperty(example = "John", required = true, value = "@TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). ")
+  @ApiModelProperty(example = "John", required = true, value = "TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). ")
   public String getFirstName() {
     return firstName;
   }

@@ -84,10 +84,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Template text. May contain the tags listed below @TODO.
+   * Template text. May contain the tags listed below TODO.
    * @return content
   **/
-  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Template text. May contain the tags listed below @TODO.")
+  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Template text. May contain the tags listed below TODO.")
   public String getContent() {
     return content;
   }
