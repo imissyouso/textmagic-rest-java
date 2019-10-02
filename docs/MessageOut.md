@@ -4,24 +4,24 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Integer** | Message ID. | 
+**sender** | **String** | Message sender (phone number or alphanumeric Sender ID). |  [optional]
+**receiver** | **String** | Recipient phone number. |  [optional]
+**text** | **String** |  | 
+**status** | [**StatusEnum**](#StatusEnum) | Delivery status of the message. @TODO: Please see the table below to see different delivery statuses.  | 
 **contactId** | **Integer** |  | 
 **sessionId** | **Integer** |  | 
-**receiver** | **String** |  |  [optional]
-**messageTime** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**status** | [**StatusEnum**](#StatusEnum) | q - queued s - scheduled queue e - sending error r - enroute a - acked d - delivered b - buffered f - failed u - unknown j - rejected i - bulk insert p - scheduled suspend h - queue suspend | 
+**messageTime** | [**OffsetDateTime**](OffsetDateTime.md) | Sending time. | 
 **avatar** | **String** |  | 
-**text** | **String** |  | 
 **deleted** | **Boolean** |  |  [optional]
-**charset** | **String** |  | 
+**charset** | **String** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS  | 
 **charsetLabel** | **String** |  | 
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
-**country** | **String** |  | 
-**sender** | **String** |  |  [optional]
+**firstName** | **String** | @TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID).  | 
+**lastName** | **String** | Contact last name. | 
+**country** | **String** | Two-letter ISO country code of the recipient phone number.  | 
 **phone** | **String** |  |  [optional]
 **price** | **Float** |  |  [optional]
-**partsCount** | **Integer** |  | 
+**partsCount** | **Integer** | Message parts (multiples of 160 characters) count. | 
 **fromEmail** | **String** |  |  [optional]
 **fromNumber** | **String** |  |  [optional]
 **smscId** | **String** |  |  [optional]

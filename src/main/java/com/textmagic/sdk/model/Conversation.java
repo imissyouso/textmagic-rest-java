@@ -33,8 +33,55 @@ public class Conversation {
   @SerializedName("id")
   private Integer id = null;
 
+  /**
+   * Message type: inbound or outbound. 
+   */
+  @JsonAdapter(DirectionEnum.Adapter.class)
+  public enum DirectionEnum {
+    IN("in"),
+    
+    OUT("out");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DirectionEnum fromValue(String text) {
+      for (DirectionEnum b : DirectionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DirectionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DirectionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DirectionEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DirectionEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("direction")
-  private String direction = null;
+  private DirectionEnum direction = null;
 
   @SerializedName("sender")
   private String sender = null;
@@ -78,21 +125,21 @@ public class Conversation {
     this.id = id;
   }
 
-  public Conversation direction(String direction) {
+  public Conversation direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
 
    /**
-   * Get direction
+   * Message type: inbound or outbound. 
    * @return direction
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getDirection() {
+  @ApiModelProperty(example = "in", required = true, value = "Message type: inbound or outbound. ")
+  public DirectionEnum getDirection() {
     return direction;
   }
 
-  public void setDirection(String direction) {
+  public void setDirection(DirectionEnum direction) {
     this.direction = direction;
   }
 
@@ -102,10 +149,10 @@ public class Conversation {
   }
 
    /**
-   * Get sender
+   * Sender phone number.
    * @return sender
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Sender phone number.")
   public String getSender() {
     return sender;
   }
@@ -120,10 +167,10 @@ public class Conversation {
   }
 
    /**
-   * Get messageTime
+   * Time when message arrived at TextMagic.
    * @return messageTime
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2012-11-28T18:38:28+0000", required = true, value = "Time when message arrived at TextMagic.")
   public OffsetDateTime getMessageTime() {
     return messageTime;
   }
@@ -138,10 +185,10 @@ public class Conversation {
   }
 
    /**
-   * Get text
+   * Message text.
    * @return text
   **/
-  @ApiModelProperty(example = "This is sample message", required = true, value = "")
+  @ApiModelProperty(example = "This is a sample message", required = true, value = "Message text.")
   public String getText() {
     return text;
   }
@@ -156,10 +203,10 @@ public class Conversation {
   }
 
    /**
-   * Get receiver
+   * Receiver phone number.
    * @return receiver
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "447624800500", required = true, value = "Receiver phone number.")
   public String getReceiver() {
     return receiver;
   }
@@ -174,10 +221,10 @@ public class Conversation {
   }
 
    /**
-   * Get status
+   * Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details.
    * @return status
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "d", required = true, value = "Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details.")
   public String getStatus() {
     return status;
   }
@@ -192,10 +239,10 @@ public class Conversation {
   }
 
    /**
-   * Get firstName
+   * Contact first name.
    * @return firstName
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Charles", required = true, value = "Contact first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -210,10 +257,10 @@ public class Conversation {
   }
 
    /**
-   * Get lastName
+   * Contact last name.
    * @return lastName
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Contact last name.")
   public String getLastName() {
     return lastName;
   }

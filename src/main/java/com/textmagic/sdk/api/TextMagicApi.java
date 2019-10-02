@@ -35,6 +35,7 @@ import com.textmagic.sdk.model.BulkSession;
 import com.textmagic.sdk.model.BuyDedicatedNumberInputObject;
 import com.textmagic.sdk.model.Chat;
 import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject;
+import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject1;
 import com.textmagic.sdk.model.ClearAndAssignContactsToListInputObject;
 import com.textmagic.sdk.model.CloseChatsBulkInputObject;
 import com.textmagic.sdk.model.Contact;
@@ -88,7 +89,6 @@ import com.textmagic.sdk.model.GetCountriesResponse;
 import com.textmagic.sdk.model.GetCustomFieldsPaginatedResponse;
 import com.textmagic.sdk.model.GetDisallowedRulesResponse;
 import com.textmagic.sdk.model.GetFavouritesPaginatedResponse;
-import com.textmagic.sdk.model.GetForwardedCallsPaginatedResponse;
 import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
@@ -145,6 +145,8 @@ import com.textmagic.sdk.model.SearchScheduledMessagesPaginatedResponse;
 import com.textmagic.sdk.model.SearchTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.SendMessageInputObject;
 import com.textmagic.sdk.model.SendMessageResponse;
+import com.textmagic.sdk.model.SendPhoneVerificationCodeInputObject;
+import com.textmagic.sdk.model.SendPhoneVerificationCodeResponse;
 import com.textmagic.sdk.model.SenderId;
 import com.textmagic.sdk.model.SetChatStatusInputObject;
 import com.textmagic.sdk.model.Survey;
@@ -697,6 +699,125 @@ public class TextMagicApi {
         return call;
     }
     /**
+     * Build call for cancelVerification
+     * @param verifyId the verifyId that you received in Step 1. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cancelVerificationCall(String verifyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/verify/{verifyId}"
+            .replaceAll("\\{" + "verifyId" + "\\}", apiClient.escapeString(verifyId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cancelVerificationValidateBeforeCall(String verifyId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'verifyId' is set
+        if (verifyId == null) {
+            throw new ApiException("Missing the required parameter 'verifyId' when calling cancelVerification(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = cancelVerificationCall(verifyId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Cancel verification process
+     * You can cancel the verification not earlier than 30 seconds after the initial request.
+     * @param verifyId the verifyId that you received in Step 1. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void cancelVerification(String verifyId) throws ApiException {
+        cancelVerificationWithHttpInfo(verifyId);
+    }
+
+    /**
+     * Cancel verification process
+     * You can cancel the verification not earlier than 30 seconds after the initial request.
+     * @param verifyId the verifyId that you received in Step 1. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> cancelVerificationWithHttpInfo(String verifyId) throws ApiException {
+        com.squareup.okhttp.Call call = cancelVerificationValidateBeforeCall(verifyId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Cancel verification process (asynchronously)
+     * You can cancel the verification not earlier than 30 seconds after the initial request.
+     * @param verifyId the verifyId that you received in Step 1. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cancelVerificationAsync(String verifyId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cancelVerificationValidateBeforeCall(verifyId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for checkPhoneVerificationCode
      * @param checkPhoneVerificationCodeInputObject  (required)
      * @param progressListener Progress listener
@@ -811,6 +932,124 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = checkPhoneVerificationCodeValidateBeforeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for checkPhoneVerificationCode_0
+     * @param checkPhoneVerificationCodeInputObject  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call checkPhoneVerificationCode_0Call(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = checkPhoneVerificationCodeInputObject;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/verify";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call checkPhoneVerificationCode_0ValidateBeforeCall(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'checkPhoneVerificationCodeInputObject' is set
+        if (checkPhoneVerificationCodeInputObject == null) {
+            throw new ApiException("Missing the required parameter 'checkPhoneVerificationCodeInputObject' when calling checkPhoneVerificationCode_0(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0Call(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Step 2: Check the verification code 
+     * Check received code from user with the code which was actually sent.
+     * @param checkPhoneVerificationCodeInputObject  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void checkPhoneVerificationCode_0(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
+        checkPhoneVerificationCode_0WithHttpInfo(checkPhoneVerificationCodeInputObject);
+    }
+
+    /**
+     * Step 2: Check the verification code 
+     * Check received code from user with the code which was actually sent.
+     * @param checkPhoneVerificationCodeInputObject  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> checkPhoneVerificationCode_0WithHttpInfo(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0ValidateBeforeCall(checkPhoneVerificationCodeInputObject, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Step 2: Check the verification code  (asynchronously)
+     * Check received code from user with the code which was actually sent.
+     * @param checkPhoneVerificationCodeInputObject  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call checkPhoneVerificationCode_0Async(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0ValidateBeforeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1010,8 +1249,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Close chats (bulk)
      * Close chats by chat ids or close all chats
-     * 
      * @param closeChatsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1020,8 +1259,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Close chats (bulk)
      * Close chats by chat ids or close all chats
-     * 
      * @param closeChatsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1032,8 +1271,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Close chats by chat ids or close all chats (asynchronously)
-     * 
+     * Close chats (bulk) (asynchronously)
+     * Close chats by chat ids or close all chats
      * @param closeChatsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1122,8 +1361,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Close read chats
      * Close all chats that have no unread messages.
-     * 
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void closeReadChats() throws ApiException {
@@ -1131,8 +1370,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Close read chats
      * Close all chats that have no unread messages.
-     * 
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1142,8 +1381,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Close all chats that have no unread messages. (asynchronously)
-     * 
+     * Close read chats (asynchronously)
+     * Close all chats that have no unread messages.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2226,7 +2465,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new template from the submitted data.
+     * Create a template
      * 
      * @param createTemplateInputObject  (required)
      * @return ResourceLinkResponse
@@ -2238,7 +2477,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new template from the submitted data.
+     * Create a template
      * 
      * @param createTemplateInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
@@ -2251,7 +2490,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new template from the submitted data. (asynchronously)
+     * Create a template (asynchronously)
      * 
      * @param createTemplateInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -2452,7 +2691,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages
-     * 
+     * Delete all messages.
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteAllOutboundMessages() throws ApiException {
@@ -2461,7 +2700,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages
-     * 
+     * Delete all messages.
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2472,7 +2711,7 @@ public class TextMagicApi {
 
     /**
      * Delete all messages (asynchronously)
-     * 
+     * Delete all messages.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2682,8 +2921,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Delete chat messages by ID(s)
      * Delete messages from chat by given messages ID(s).
-     * 
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2693,8 +2932,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Delete chat messages by ID(s)
      * Delete messages from chat by given messages ID(s).
-     * 
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -2706,8 +2945,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages from chat by given messages ID(s). (asynchronously)
-     * 
+     * Delete chat messages by ID(s) (asynchronously)
+     * Delete messages from chat by given messages ID(s).
      * @param deleteChatMessagesBulkInputObject  (required)
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -2803,8 +3042,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Delete chats (bulk)
      * Delete chats by given ID(s) or delete all chats.
-     * 
      * @param deleteChatsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2813,8 +3052,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Delete chats (bulk)
      * Delete chats by given ID(s) or delete all chats.
-     * 
      * @param deleteChatsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2825,8 +3064,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete chats by given ID(s) or delete all chats. (asynchronously)
-     * 
+     * Delete chats (bulk) (asynchronously)
+     * Delete chats by given ID(s) or delete all chats.
      * @param deleteChatsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3828,7 +4067,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for deleteInboundMessage
-     * @param id  (required)
+     * @param id The unique numeric ID for the inbound message. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -3891,9 +4130,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete the incoming message.
-     * 
-     * @param id  (required)
+     * Delete a single inbound message
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+     * @param id The unique numeric ID for the inbound message. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteInboundMessage(Integer id) throws ApiException {
@@ -3901,9 +4140,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete the incoming message.
-     * 
-     * @param id  (required)
+     * Delete a single inbound message
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+     * @param id The unique numeric ID for the inbound message. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3913,9 +4152,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete the incoming message. (asynchronously)
-     * 
-     * @param id  (required)
+     * Delete a single inbound message (asynchronously)
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
+     * @param id The unique numeric ID for the inbound message. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -4009,8 +4248,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete inbound messages by given ID(s) or delete all inbound messages.
-     * 
+     * Delete inbound messages (bulk)
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
      * @param deleteInboundMessagesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4019,8 +4258,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete inbound messages by given ID(s) or delete all inbound messages.
-     * 
+     * Delete inbound messages (bulk)
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
      * @param deleteInboundMessagesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4031,8 +4270,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete inbound messages by given ID(s) or delete all inbound messages. (asynchronously)
-     * 
+     * Delete inbound messages (bulk) (asynchronously)
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
      * @param deleteInboundMessagesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4612,7 +4851,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a session
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4622,7 +4861,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a session
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4634,7 +4873,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages. (asynchronously)
+     * Delete a session (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -4730,7 +4969,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+     * Delete sessions (bulk)
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4740,7 +4979,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+     * Delete sessions (bulk)
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4752,7 +4991,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions. (asynchronously)
+     * Delete sessions (bulk) (asynchronously)
      * 
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -4850,7 +5089,7 @@ public class TextMagicApi {
 
     /**
      * Delete message
-     * 
+     * Delete a single message.
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4860,7 +5099,7 @@ public class TextMagicApi {
 
     /**
      * Delete message
-     * 
+     * Delete a single message.
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4872,7 +5111,7 @@ public class TextMagicApi {
 
     /**
      * Delete message (asynchronously)
-     * 
+     * Delete a single message.
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4967,8 +5206,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages by IDs
-     * 
+     * Delete messages (bulk)
+     * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4977,8 +5216,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages by IDs
-     * 
+     * Delete messages (bulk)
+     * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4989,8 +5228,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete messages by IDs (asynchronously)
-     * 
+     * Delete messages (bulk) (asynchronously)
+     * Delete outbound messages by given ID(s) or delete all outbound messages.
      * @param deleteOutboundMessagesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -5215,7 +5454,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a single scheduled message
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -5225,7 +5464,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a single scheduled message
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -5237,7 +5476,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a message session, together with all nested messages. (asynchronously)
+     * Delete a single scheduled message (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -5333,7 +5572,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete scheduled messages by given ID(s) or delete all scheduled messages.
+     * Delete scheduled messages (bulk)
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -5343,7 +5582,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete scheduled messages by given ID(s) or delete all scheduled messages.
+     * Delete scheduled messages (bulk)
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -5355,7 +5594,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete scheduled messages by given ID(s) or delete all scheduled messages. (asynchronously)
+     * Delete scheduled messages (bulk) (asynchronously)
      * 
      * @param deleteScheduledMessagesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -5809,7 +6048,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single template.
+     * Delete a template
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -5819,7 +6058,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single template.
+     * Delete a template
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -5831,7 +6070,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single template. (asynchronously)
+     * Delete a template (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -5927,7 +6166,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete template by given ID(s) or delete all templates.
+     * Delete templates (bulk)
      * 
      * @param deleteTemplatesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -5937,7 +6176,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete template by given ID(s) or delete all templates.
+     * Delete templates (bulk)
      * 
      * @param deleteTemplatesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -5949,7 +6188,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete template by given ID(s) or delete all templates. (asynchronously)
+     * Delete templates (bulk) (asynchronously)
      * 
      * @param deleteTemplatesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -6046,7 +6285,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password.
-     * 
+     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
      * @return DoAuthResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6058,7 +6297,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password.
-     * 
+     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
      * @return ApiResponse&lt;DoAuthResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6071,7 +6310,7 @@ public class TextMagicApi {
 
     /**
      * Authenticate user by given username and password. (asynchronously)
-     * 
+     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      * @param doAuthInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -6480,8 +6719,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllBulkSessions
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -6544,8 +6783,8 @@ public class TextMagicApi {
     /**
      * Get all bulk sending sessions.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetAllBulkSessionsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6557,8 +6796,8 @@ public class TextMagicApi {
     /**
      * Get all bulk sending sessions.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetAllBulkSessionsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6571,8 +6810,8 @@ public class TextMagicApi {
     /**
      * Get all bulk sending sessions. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -6606,8 +6845,8 @@ public class TextMagicApi {
     /**
      * Build call for getAllChats
      * @param status Fetch only (a)ctive, (c)losed or (d)eleted chats (optional)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
@@ -6679,11 +6918,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user chats.
+     * Get all chats
      * 
      * @param status Fetch only (a)ctive, (c)losed or (d)eleted chats (optional)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
@@ -6696,11 +6935,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user chats.
+     * Get all chats
      * 
      * @param status Fetch only (a)ctive, (c)losed or (d)eleted chats (optional)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
@@ -6714,11 +6953,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user chats. (asynchronously)
+     * Get all chats (asynchronously)
      * 
      * @param status Fetch only (a)ctive, (c)losed or (d)eleted chats (optional)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param voice Fetch results with voice calls (optional, default to 0)
      * @param flat Should additional contact info be included (optional, default to 0)
@@ -6754,8 +6993,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllInboundMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param progressListener Progress listener
@@ -6822,10 +7061,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all inbox messages.
+     * Get all inbound messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @return GetAllInboundMessagesPaginatedResponse
@@ -6837,10 +7076,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all inbox messages.
+     * Get all inbound messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @return ApiResponse&lt;GetAllInboundMessagesPaginatedResponse&gt;
@@ -6853,10 +7092,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all inbox messages. (asynchronously)
+     * Get all inbound messages (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param callback The callback to be executed when the API call finishes
@@ -6891,8 +7130,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllMessageSessions
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -6953,10 +7192,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all message sending sessions.
+     * Get all sessions
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetAllMessageSessionsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6966,10 +7205,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all message sending sessions.
+     * Get all sessions
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetAllMessageSessionsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6980,10 +7219,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all message sending sessions. (asynchronously)
+     * Get all sessions (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -7016,8 +7255,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllOutboundMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -7082,9 +7321,9 @@ public class TextMagicApi {
 
     /**
      * Get all messages
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Get all user oubound messages.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @return GetAllOutboundMessagesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -7096,9 +7335,9 @@ public class TextMagicApi {
 
     /**
      * Get all messages
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Get all user oubound messages.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @return ApiResponse&lt;GetAllOutboundMessagesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -7111,9 +7350,9 @@ public class TextMagicApi {
 
     /**
      * Get all messages (asynchronously)
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Get all user oubound messages.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -7147,8 +7386,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllScheduledMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7218,10 +7457,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all scheduled messages.
+     * Get all scheduled messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7234,10 +7473,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all scheduled messages.
+     * Get all scheduled messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7251,10 +7490,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all scheduled messages. (asynchronously)
+     * Get all scheduled messages (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7290,8 +7529,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getAllTemplates
-     * @param page Fetch specified results page (optional)
-     * @param limit How many results to return (optional)
+     * @param page Fetch specified results page. (optional)
+     * @param limit The number of results per page. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -7352,10 +7591,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user templates.
+     * Get all templates
      * 
-     * @param page Fetch specified results page (optional)
-     * @param limit How many results to return (optional)
+     * @param page Fetch specified results page. (optional)
+     * @param limit The number of results per page. (optional)
      * @return GetAllTemplatesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7365,10 +7604,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user templates.
+     * Get all templates
      * 
-     * @param page Fetch specified results page (optional)
-     * @param limit How many results to return (optional)
+     * @param page Fetch specified results page. (optional)
+     * @param limit The number of results per page. (optional)
      * @return ApiResponse&lt;GetAllTemplatesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -7379,10 +7618,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user templates. (asynchronously)
+     * Get all templates (asynchronously)
      * 
-     * @param page Fetch specified results page (optional)
-     * @param limit How many results to return (optional)
+     * @param page Fetch specified results page. (optional)
+     * @param limit The number of results per page. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -7896,8 +8135,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getBlockedContacts
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7969,8 +8208,8 @@ public class TextMagicApi {
     /**
      * Get blocked contacts.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -7985,8 +8224,8 @@ public class TextMagicApi {
     /**
      * Get blocked contacts.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -8002,8 +8241,8 @@ public class TextMagicApi {
     /**
      * Get blocked contacts. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find blocked contacts by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -8451,7 +8690,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single chat.
+     * Get a single chat
      * 
      * @param id  (required)
      * @return Chat
@@ -8463,7 +8702,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single chat.
+     * Get a single chat
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Chat&gt;
@@ -8476,7 +8715,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single chat. (asynchronously)
+     * Get a single chat (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -8580,7 +8819,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by phone.
+     * Find chats by phone
      * 
      * @param phone  (required)
      * @param upsert Create a new chat if not found (optional, default to 0)
@@ -8594,7 +8833,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by phone.
+     * Find chats by phone
      * 
      * @param phone  (required)
      * @param upsert Create a new chat if not found (optional, default to 0)
@@ -8609,7 +8848,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by phone. (asynchronously)
+     * Find chats by phone (asynchronously)
      * 
      * @param phone  (required)
      * @param upsert Create a new chat if not found (optional, default to 0)
@@ -8647,8 +8886,8 @@ public class TextMagicApi {
     /**
      * Build call for getChatMessages
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param start Return messages since specified timestamp only (optional)
      * @param end Return messages up to specified timestamp only (optional)
@@ -8730,11 +8969,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages from chat with specified chat id.
+     * Get chat messages
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param start Return messages since specified timestamp only (optional)
      * @param end Return messages up to specified timestamp only (optional)
@@ -8749,11 +8988,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages from chat with specified chat id.
+     * Get chat messages
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param start Return messages since specified timestamp only (optional)
      * @param end Return messages up to specified timestamp only (optional)
@@ -8769,11 +9008,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages from chat with specified chat id. (asynchronously)
+     * Get chat messages (asynchronously)
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param start Return messages since specified timestamp only (optional)
      * @param end Return messages up to specified timestamp only (optional)
@@ -9428,8 +9667,8 @@ public class TextMagicApi {
     /**
      * Build call for getContactNotes
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -9499,8 +9738,8 @@ public class TextMagicApi {
      * Fetch notes assigned to the given contact.
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetContactNotesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9513,8 +9752,8 @@ public class TextMagicApi {
      * Fetch notes assigned to the given contact.
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetContactNotesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9528,8 +9767,8 @@ public class TextMagicApi {
      * Fetch notes assigned to the given contact. (asynchronously)
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -9562,8 +9801,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getContacts
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -9635,8 +9874,8 @@ public class TextMagicApi {
     /**
      * Get all user contacts.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -9651,8 +9890,8 @@ public class TextMagicApi {
     /**
      * Get all user contacts.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -9668,8 +9907,8 @@ public class TextMagicApi {
     /**
      * Get all user contacts. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
@@ -9706,7 +9945,7 @@ public class TextMagicApi {
     /**
      * Build call for getContactsAutocomplete
      * @param query Find recipients by specified search query (required)
-     * @param limit How many results to return (optional, default to 10)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -9778,7 +10017,7 @@ public class TextMagicApi {
      * Get contacts autocomplete suggestions by given search term.
      * 
      * @param query Find recipients by specified search query (required)
-     * @param limit How many results to return (optional, default to 10)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
      * @return GetContactsAutocompleteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -9792,7 +10031,7 @@ public class TextMagicApi {
      * Get contacts autocomplete suggestions by given search term.
      * 
      * @param query Find recipients by specified search query (required)
-     * @param limit How many results to return (optional, default to 10)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
      * @return ApiResponse&lt;GetContactsAutocompleteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -9807,7 +10046,7 @@ public class TextMagicApi {
      * Get contacts autocomplete suggestions by given search term. (asynchronously)
      * 
      * @param query Find recipients by specified search query (required)
-     * @param limit How many results to return (optional, default to 10)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -9842,8 +10081,8 @@ public class TextMagicApi {
     /**
      * Build call for getContactsByListId
      * @param id Given group Id. (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param progressListener Progress listener
@@ -9917,10 +10156,10 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id.
-     * 
+     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @return GetContactsByListIdPaginatedResponse
@@ -9933,10 +10172,10 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id.
-     * 
+     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @return ApiResponse&lt;GetContactsByListIdPaginatedResponse&gt;
@@ -9950,10 +10189,10 @@ public class TextMagicApi {
 
     /**
      * Fetch user contacts by given group id. (asynchronously)
-     * 
+     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param callback The callback to be executed when the API call finishes
@@ -10337,8 +10576,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getCustomFields
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -10401,8 +10640,8 @@ public class TextMagicApi {
     /**
      * Get all contact custom fields.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetCustomFieldsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10414,8 +10653,8 @@ public class TextMagicApi {
     /**
      * Get all contact custom fields.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetCustomFieldsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10428,8 +10667,8 @@ public class TextMagicApi {
     /**
      * Get all contact custom fields. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -10698,8 +10937,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getFavourites
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -10765,8 +11004,8 @@ public class TextMagicApi {
     /**
      * Get favorite contacts and lists.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
      * @return GetFavouritesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -10779,8 +11018,8 @@ public class TextMagicApi {
     /**
      * Get favorite contacts and lists.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
      * @return ApiResponse&lt;GetFavouritesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -10794,8 +11033,8 @@ public class TextMagicApi {
     /**
      * Get favorite contacts and lists. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find contacts or lists by specified search query (optional, default to A)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -10828,133 +11067,8 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for getForwardedCalls
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getForwardedCallsCall(Integer page, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/calls";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (page != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getForwardedCallsValidateBeforeCall(Integer page, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getForwardedCallsCall(page, limit, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get all forwarded calls.
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
-     * @return GetForwardedCallsPaginatedResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public GetForwardedCallsPaginatedResponse getForwardedCalls(Integer page, Integer limit) throws ApiException {
-        ApiResponse<GetForwardedCallsPaginatedResponse> resp = getForwardedCallsWithHttpInfo(page, limit);
-        return resp.getData();
-    }
-
-    /**
-     * Get all forwarded calls.
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
-     * @return ApiResponse&lt;GetForwardedCallsPaginatedResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<GetForwardedCallsPaginatedResponse> getForwardedCallsWithHttpInfo(Integer page, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getForwardedCallsValidateBeforeCall(page, limit, null, null);
-        Type localVarReturnType = new TypeToken<GetForwardedCallsPaginatedResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get all forwarded calls. (asynchronously)
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getForwardedCallsAsync(Integer page, Integer limit, final ApiCallback<GetForwardedCallsPaginatedResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getForwardedCallsValidateBeforeCall(page, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetForwardedCallsPaginatedResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for getInboundMessage
-     * @param id  (required)
+     * @param id The unique numeric ID for the inbound message. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -11017,9 +11131,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single inbox message.
+     * Get a single inbound message
      * 
-     * @param id  (required)
+     * @param id The unique numeric ID for the inbound message. (required)
      * @return MessageIn
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11029,9 +11143,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single inbox message.
+     * Get a single inbound message
      * 
-     * @param id  (required)
+     * @param id The unique numeric ID for the inbound message. (required)
      * @return ApiResponse&lt;MessageIn&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11042,9 +11156,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single inbox message. (asynchronously)
+     * Get a single inbound message (asynchronously)
      * 
-     * @param id  (required)
+     * @param id The unique numeric ID for the inbound message. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -11190,8 +11304,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getInvoices
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -11254,8 +11368,8 @@ public class TextMagicApi {
     /**
      * Return account invoices.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetInvoicesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11267,8 +11381,8 @@ public class TextMagicApi {
     /**
      * Return account invoices.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetInvoicesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11281,8 +11395,8 @@ public class TextMagicApi {
     /**
      * Return account invoices. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -11562,8 +11676,8 @@ public class TextMagicApi {
     /**
      * Build call for getListsOfContact
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -11633,8 +11747,8 @@ public class TextMagicApi {
      * Return lists which contact belongs to.
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetListsOfContactPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11647,8 +11761,8 @@ public class TextMagicApi {
      * Return lists which contact belongs to.
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetListsOfContactPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -11662,8 +11776,8 @@ public class TextMagicApi {
      * Return lists which contact belongs to. (asynchronously)
      * 
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -11804,7 +11918,7 @@ public class TextMagicApi {
 
     /**
      * Preview message
-     * 
+     * Get messages preview (with tags merged) up to 100 messages per session.
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -11832,7 +11946,7 @@ public class TextMagicApi {
 
     /**
      * Preview message
-     * 
+     * Get messages preview (with tags merged) up to 100 messages per session.
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -11861,7 +11975,7 @@ public class TextMagicApi {
 
     /**
      * Preview message (asynchronously)
-     * 
+     * Get messages preview (with tags merged) up to 100 messages per session.
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
      * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
@@ -12022,7 +12136,7 @@ public class TextMagicApi {
 
     /**
      * Check price
-     * 
+     * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12051,7 +12165,7 @@ public class TextMagicApi {
 
     /**
      * Check price
-     * 
+     * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12081,7 +12195,7 @@ public class TextMagicApi {
 
     /**
      * Check price (asynchronously)
-     * 
+     * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
      * @param templateId Template used instead of message text. Required if text is not set (optional)
@@ -12189,7 +12303,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing
-     * 
+     * Get message prices for all countries.
      * @return GetMessagePricesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12200,7 +12314,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing
-     * 
+     * Get message prices for all countries.
      * @return ApiResponse&lt;GetMessagePricesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12212,7 +12326,7 @@ public class TextMagicApi {
 
     /**
      * Get pricing (asynchronously)
-     * 
+     * Get message prices for all countries.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -12245,7 +12359,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for getMessageSession
-     * @param id  (required)
+     * @param id a session ID (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -12308,9 +12422,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a message session.
+     * Get a session details
      * 
-     * @param id  (required)
+     * @param id a session ID (required)
      * @return MessageSession
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12320,9 +12434,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a message session.
+     * Get a session details
      * 
-     * @param id  (required)
+     * @param id a session ID (required)
      * @return ApiResponse&lt;MessageSession&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -12333,9 +12447,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a message session. (asynchronously)
+     * Get a session details (asynchronously)
      * 
-     * @param id  (required)
+     * @param id a session ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -12434,7 +12548,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get sending session statistics.
+     * Get a session statistics
      * 
      * @param id  (required)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
@@ -12447,7 +12561,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get sending session statistics.
+     * Get a session statistics
      * 
      * @param id  (required)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
@@ -12461,7 +12575,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get sending session statistics. (asynchronously)
+     * Get a session statistics (asynchronously)
      * 
      * @param id  (required)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
@@ -12498,8 +12612,8 @@ public class TextMagicApi {
     /**
      * Build call for getMessagesBySessionId
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @param progressListener Progress listener
@@ -12572,11 +12686,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages by given session id.
-     * 
+     * Get a session messages
+     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @return GetMessagesBySessionIdPaginatedResponse
@@ -12588,11 +12702,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages by given session id.
-     * 
+     * Get a session messages
+     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @return ApiResponse&lt;GetMessagesBySessionIdPaginatedResponse&gt;
@@ -12605,11 +12719,11 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch messages by given session id. (asynchronously)
-     * 
+     * Get a session messages (asynchronously)
+     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
      * @param id  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param statuses Find messages by status (optional)
      * @param includeDeleted Search also in deleted messages (optional, default to 0)
      * @param callback The callback to be executed when the API call finishes
@@ -12952,7 +13066,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message
-     * 
+     * Get a single outgoing message.
      * @param id  (required)
      * @return MessageOut
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12964,7 +13078,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message
-     * 
+     * Get a single outgoing message.
      * @param id  (required)
      * @return ApiResponse&lt;MessageOut&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12977,7 +13091,7 @@ public class TextMagicApi {
 
     /**
      * Get a single message (asynchronously)
-     * 
+     * Get a single outgoing message.
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -13011,7 +13125,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for getOutboundMessagesHistory
-     * @param limit How many results to return (optional, default to 10)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -13083,8 +13197,8 @@ public class TextMagicApi {
 
     /**
      * Get history
-     * 
-     * @param limit How many results to return (optional, default to 10)
+     * Get outbound messages history.
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -13099,8 +13213,8 @@ public class TextMagicApi {
 
     /**
      * Get history
-     * 
-     * @param limit How many results to return (optional, default to 10)
+     * Get outbound messages history.
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -13116,8 +13230,8 @@ public class TextMagicApi {
 
     /**
      * Get history (asynchronously)
-     * 
-     * @param limit How many results to return (optional, default to 10)
+     * Get outbound messages history.
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. (optional)
      * @param query Find message by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -13330,7 +13444,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get message schedule.
+     * Get a single scheduled message
      * 
      * @param id  (required)
      * @return MessagesIcs
@@ -13342,7 +13456,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get message schedule.
+     * Get a single scheduled message
      * 
      * @param id  (required)
      * @return ApiResponse&lt;MessagesIcs&gt;
@@ -13355,7 +13469,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get message schedule. (asynchronously)
+     * Get a single scheduled message (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -13513,8 +13627,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getSenderIds
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -13577,8 +13691,8 @@ public class TextMagicApi {
     /**
      * Get all sender IDs of current user.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetSenderIdsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -13590,8 +13704,8 @@ public class TextMagicApi {
     /**
      * Get all sender IDs of current user.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetSenderIdsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -13604,8 +13718,8 @@ public class TextMagicApi {
     /**
      * Get all sender IDs of current user. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -13757,8 +13871,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getSpendingStat
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
      * @param progressListener Progress listener
@@ -13827,8 +13941,8 @@ public class TextMagicApi {
     /**
      * Return account spending statistics.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
      * @return GetSpendingStatPaginatedResponse
@@ -13842,8 +13956,8 @@ public class TextMagicApi {
     /**
      * Return account spending statistics.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
      * @return ApiResponse&lt;GetSpendingStatPaginatedResponse&gt;
@@ -13858,8 +13972,8 @@ public class TextMagicApi {
     /**
      * Return account spending statistics. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param start Optional. Start date in unix timestamp format. Default is 7 days ago (optional)
      * @param end Optional. End date in unix timestamp format. Default is now (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -14130,8 +14244,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getSubaccounts
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -14194,8 +14308,8 @@ public class TextMagicApi {
     /**
      * Get all subaccounts of current user.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14207,8 +14321,8 @@ public class TextMagicApi {
     /**
      * Get all subaccounts of current user.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14221,8 +14335,8 @@ public class TextMagicApi {
     /**
      * Get all subaccounts of current user. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -14256,8 +14370,8 @@ public class TextMagicApi {
     /**
      * Build call for getSubaccountsWithTokens
      * @param getSubaccountsWithTokensInputObject  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -14324,10 +14438,10 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
-     * 
+     * When more than one token related to app name, last key will be returned.
      * @param getSubaccountsWithTokensInputObject  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetSubaccountsWithTokensResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14338,10 +14452,10 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
-     * 
+     * When more than one token related to app name, last key will be returned.
      * @param getSubaccountsWithTokensInputObject  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetSubaccountsWithTokensResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14353,10 +14467,10 @@ public class TextMagicApi {
 
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name. (asynchronously)
-     * 
+     * When more than one token related to app name, last key will be returned.
      * @param getSubaccountsWithTokensInputObject  (required)
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -14758,8 +14872,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getSurveys
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -14822,8 +14936,8 @@ public class TextMagicApi {
     /**
      * Get all user surveys.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetSurveysPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14835,8 +14949,8 @@ public class TextMagicApi {
     /**
      * Get all user surveys.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetSurveysPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -14849,8 +14963,8 @@ public class TextMagicApi {
     /**
      * Get all user surveys. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -14946,7 +15060,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single template.
+     * Get a template details
      * 
      * @param id  (required)
      * @return MessageTemplate
@@ -14958,7 +15072,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single template.
+     * Get a template details
      * 
      * @param id  (required)
      * @return ApiResponse&lt;MessageTemplate&gt;
@@ -14971,7 +15085,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single template. (asynchronously)
+     * Get a template details (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -15181,8 +15295,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Get unread messages number
      * Get total amount of unread messages in the current user chats.
-     * 
      * @return GetUnreadMessagesTotalResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -15192,8 +15306,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Get unread messages number
      * Get total amount of unread messages in the current user chats.
-     * 
      * @return ApiResponse&lt;GetUnreadMessagesTotalResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -15204,8 +15318,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get total amount of unread messages in the current user chats. (asynchronously)
-     * 
+     * Get unread messages number (asynchronously)
+     * Get total amount of unread messages in the current user chats.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -15361,8 +15475,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getUnsubscribers
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -15425,8 +15539,8 @@ public class TextMagicApi {
     /**
      * Get all contact have unsubscribed from your communication.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return GetUnsubscribersPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -15438,8 +15552,8 @@ public class TextMagicApi {
     /**
      * Get all contact have unsubscribed from your communication.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetUnsubscribersPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -15452,8 +15566,8 @@ public class TextMagicApi {
     /**
      * Get all contact have unsubscribed from your communication. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -15486,8 +15600,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getUserDedicatedNumbers
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -15553,8 +15667,8 @@ public class TextMagicApi {
     /**
      * Get user&#39;s dedicated numbers.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
      * @return GetUserDedicatedNumbersPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15567,8 +15681,8 @@ public class TextMagicApi {
     /**
      * Get user&#39;s dedicated numbers.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
      * @return ApiResponse&lt;GetUserDedicatedNumbersPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15582,8 +15696,8 @@ public class TextMagicApi {
     /**
      * Get user&#39;s dedicated numbers. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param surveyId Fetch only that numbers which are ready for the survey (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -15617,8 +15731,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for getUserLists
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
@@ -15693,8 +15807,8 @@ public class TextMagicApi {
     /**
      * Get all user lists.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
@@ -15710,8 +15824,8 @@ public class TextMagicApi {
     /**
      * Get all user lists.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
@@ -15728,8 +15842,8 @@ public class TextMagicApi {
     /**
      * Get all user lists. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param direction Order direction. Default is desc (optional, default to desc)
      * @param favoriteOnly Return only favorite lists (optional, default to 0)
@@ -16059,8 +16173,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mark chats as read (bulk)
      * Mark several chats as read by chat ids or mark all chats as read
-     * 
      * @param markChatsReadBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16069,8 +16183,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mark chats as read (bulk)
      * Mark several chats as read by chat ids or mark all chats as read
-     * 
      * @param markChatsReadBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16081,8 +16195,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Mark several chats as read by chat ids or mark all chats as read (asynchronously)
-     * 
+     * Mark chats as read (bulk) (asynchronously)
+     * Mark several chats as read by chat ids or mark all chats as read
      * @param markChatsReadBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -16177,8 +16291,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mark chats as unread (bulk)
      * Mark several chats as UNread by chat ids or mark all chats as UNread
-     * 
      * @param markChatsUnreadBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16187,8 +16301,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mark chats as unread (bulk)
      * Mark several chats as UNread by chat ids or mark all chats as UNread
-     * 
      * @param markChatsUnreadBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16199,8 +16313,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Mark several chats as UNread by chat ids or mark all chats as UNread (asynchronously)
-     * 
+     * Mark chats as unread (bulk) (asynchronously)
+     * Mark several chats as UNread by chat ids or mark all chats as UNread
      * @param markChatsUnreadBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -16422,7 +16536,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Set mute mode.
+     * Mute chat sounds
      * 
      * @param muteChatInputObject  (required)
      * @return ResourceLinkResponse
@@ -16434,7 +16548,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Set mute mode.
+     * Mute chat sounds
      * 
      * @param muteChatInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
@@ -16447,7 +16561,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Set mute mode. (asynchronously)
+     * Mute chat sounds (asynchronously)
      * 
      * @param muteChatInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -16544,8 +16658,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mute chats (bulk)
      * Mute several chats by chat ids or mute all chats
-     * 
      * @param muteChatsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16554,8 +16668,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Mute chats (bulk)
      * Mute several chats by chat ids or mute all chats
-     * 
      * @param muteChatsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16566,8 +16680,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Mute several chats by chat ids or mute all chats (asynchronously)
-     * 
+     * Mute chats (bulk) (asynchronously)
+     * Mute several chats by chat ids or mute all chats
      * @param muteChatsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -16775,8 +16889,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Reopen chats (bulk)
      * Reopen chats by chat ids or reopen all chats
-     * 
      * @param reopenChatsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16785,8 +16899,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Reopen chats (bulk)
      * Reopen chats by chat ids or reopen all chats
-     * 
      * @param reopenChatsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16797,8 +16911,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Reopen chats by chat ids or reopen all chats (asynchronously)
-     * 
+     * Reopen chats (bulk) (asynchronously)
+     * Reopen chats by chat ids or reopen all chats
      * @param reopenChatsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -16894,7 +17008,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount.
-     * 
+     * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16906,7 +17020,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount.
-     * 
+     * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -16919,7 +17033,7 @@ public class TextMagicApi {
 
     /**
      * Request a new REST API token for subaccount. (asynchronously)
-     * 
+     * Returning user object, key and app name.
      * @param requestNewSubaccountTokenInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -17198,8 +17312,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchChats
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -17263,10 +17377,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by inbound or outbound messages text.
+     * Find chats by message text
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @return SearchChatsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17277,10 +17391,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by inbound or outbound messages text.
+     * Find chats by message text
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @return ApiResponse&lt;SearchChatsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17292,10 +17406,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by inbound or outbound messages text. (asynchronously)
+     * Find chats by message text (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -17329,8 +17443,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchChatsByIds
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -17394,10 +17508,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by IDs.
+     * Find chats (bulk)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
      * @return SearchChatsByIdsPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17408,10 +17522,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by IDs.
+     * Find chats (bulk)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
      * @return ApiResponse&lt;SearchChatsByIdsPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -17423,10 +17537,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by IDs. (asynchronously)
+     * Find chats (bulk) (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find chats by ID(s) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -17460,8 +17574,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchChatsByReceipent
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param progressListener Progress listener
@@ -17528,10 +17642,10 @@ public class TextMagicApi {
     }
 
     /**
+     * Find chats by recipient
      * Find chats by recipient (contact, list name or phone number).
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @return SearchChatsByReceipentPaginatedResponse
@@ -17543,10 +17657,10 @@ public class TextMagicApi {
     }
 
     /**
+     * Find chats by recipient
      * Find chats by recipient (contact, list name or phone number).
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @return ApiResponse&lt;SearchChatsByReceipentPaginatedResponse&gt;
@@ -17559,10 +17673,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find chats by recipient (contact, list name or phone number). (asynchronously)
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Find chats by recipient (asynchronously)
+     * Find chats by recipient (contact, list name or phone number).
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find chats by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
      * @param callback The callback to be executed when the API call finishes
@@ -17597,8 +17711,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchContacts
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param ids Find contact by ID(s) (optional)
      * @param listId Find contact by List ID (optional)
@@ -17688,8 +17802,8 @@ public class TextMagicApi {
     /**
      * Find user contacts by given parameters.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param ids Find contact by ID(s) (optional)
      * @param listId Find contact by List ID (optional)
@@ -17710,8 +17824,8 @@ public class TextMagicApi {
     /**
      * Find user contacts by given parameters.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param ids Find contact by ID(s) (optional)
      * @param listId Find contact by List ID (optional)
@@ -17733,8 +17847,8 @@ public class TextMagicApi {
     /**
      * Find user contacts by given parameters. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param shared Should shared contacts to be included (optional, default to 0)
      * @param ids Find contact by ID(s) (optional)
      * @param listId Find contact by List ID (optional)
@@ -17776,8 +17890,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchInboundMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find message by ID(s) (optional)
      * @param query Find recipients by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -17853,10 +17967,10 @@ public class TextMagicApi {
     }
 
     /**
+     * Find inbound messages
      * Find inbound messages by given parameters.
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find message by ID(s) (optional)
      * @param query Find recipients by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -17871,10 +17985,10 @@ public class TextMagicApi {
     }
 
     /**
+     * Find inbound messages
      * Find inbound messages by given parameters.
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find message by ID(s) (optional)
      * @param query Find recipients by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -17890,10 +18004,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find inbound messages by given parameters. (asynchronously)
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Find inbound messages (asynchronously)
+     * Find inbound messages by given parameters.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find message by ID(s) (optional)
      * @param query Find recipients by specified search query (optional)
      * @param orderBy Order results by some field. Default is id (optional, default to id)
@@ -17931,8 +18045,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchLists
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find lists by ID(s) (optional)
      * @param query Find lists by specified search query (optional)
      * @param onlyMine Return only current user lists (optional, default to 0)
@@ -18013,8 +18127,8 @@ public class TextMagicApi {
     /**
      * Find contact lists by given parameters.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find lists by ID(s) (optional)
      * @param query Find lists by specified search query (optional)
      * @param onlyMine Return only current user lists (optional, default to 0)
@@ -18032,8 +18146,8 @@ public class TextMagicApi {
     /**
      * Find contact lists by given parameters.
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find lists by ID(s) (optional)
      * @param query Find lists by specified search query (optional)
      * @param onlyMine Return only current user lists (optional, default to 0)
@@ -18052,8 +18166,8 @@ public class TextMagicApi {
     /**
      * Find contact lists by given parameters. (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find lists by ID(s) (optional)
      * @param query Find lists by specified search query (optional)
      * @param onlyMine Return only current user lists (optional, default to 0)
@@ -18092,8 +18206,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchOutboundMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param ids Find message by ID(s) (optional)
      * @param sessionId Find messages by session ID (optional)
@@ -18173,9 +18287,9 @@ public class TextMagicApi {
 
     /**
      * Find messages
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Find outbound messages by given parameters.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param ids Find message by ID(s) (optional)
      * @param sessionId Find messages by session ID (optional)
@@ -18192,9 +18306,9 @@ public class TextMagicApi {
 
     /**
      * Find messages
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Find outbound messages by given parameters.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param ids Find message by ID(s) (optional)
      * @param sessionId Find messages by session ID (optional)
@@ -18212,9 +18326,9 @@ public class TextMagicApi {
 
     /**
      * Find messages (asynchronously)
-     * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * Find outbound messages by given parameters.
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param lastId Filter results by ID, selecting all values lesser than the specified ID. Note that \\&#39;page\\&#39; parameter is ignored when \\&#39;lastId\\&#39; is specified (optional)
      * @param ids Find message by ID(s) (optional)
      * @param sessionId Find messages by session ID (optional)
@@ -18253,8 +18367,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchScheduledMessages
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param ids Find schedules by ID(s) (optional)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
@@ -18330,10 +18444,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find scheduled messages by given parameters.
+     * Find scheduled messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param ids Find schedules by ID(s) (optional)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
@@ -18348,10 +18462,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find scheduled messages by given parameters.
+     * Find scheduled messages
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param ids Find schedules by ID(s) (optional)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
@@ -18367,10 +18481,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find scheduled messages by given parameters. (asynchronously)
+     * Find scheduled messages (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param query Find messages by specified search query (optional)
      * @param ids Find schedules by ID(s) (optional)
      * @param status Fetch schedules with the specific status: a - actual, c - completed, x - all (optional, default to x)
@@ -18408,8 +18522,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for searchTemplates
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
@@ -18479,10 +18593,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user templates by given parameters.
+     * Find templates by criteria
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
@@ -18495,10 +18609,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user templates by given parameters.
+     * Find templates by criteria
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
@@ -18512,10 +18626,10 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user templates by given parameters. (asynchronously)
+     * Find templates by criteria (asynchronously)
      * 
-     * @param page Fetch specified results page (optional, default to 1)
-     * @param limit How many results to return (optional, default to 10)
+     * @param page Fetch specified results page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
      * @param name Find template by name (optional)
      * @param content Find template by content (optional)
@@ -18723,7 +18837,7 @@ public class TextMagicApi {
 
     /**
      * Send message
-     * 
+     * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
      * @return SendMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18735,7 +18849,7 @@ public class TextMagicApi {
 
     /**
      * Send message
-     * 
+     * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
      * @return ApiResponse&lt;SendMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18748,7 +18862,7 @@ public class TextMagicApi {
 
     /**
      * Send message (asynchronously)
-     * 
+     * The main entrypoint to send messages. See examples above for the reference.
      * @param sendMessageInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -18890,6 +19004,128 @@ public class TextMagicApi {
         return call;
     }
     /**
+     * Build call for sendPhoneVerificationCode_0
+     * @param sendPhoneVerificationCodeInputObject  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call sendPhoneVerificationCode_0Call(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = sendPhoneVerificationCodeInputObject;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/verify";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call sendPhoneVerificationCode_0ValidateBeforeCall(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'sendPhoneVerificationCodeInputObject' is set
+        if (sendPhoneVerificationCodeInputObject == null) {
+            throw new ApiException("Missing the required parameter 'sendPhoneVerificationCodeInputObject' when calling sendPhoneVerificationCode_0(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0Call(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Step 1: Send a verification code 
+     * Sends verification code to specified phone number.
+     * @param sendPhoneVerificationCodeInputObject  (required)
+     * @return SendPhoneVerificationCodeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SendPhoneVerificationCodeResponse sendPhoneVerificationCode_0(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
+        ApiResponse<SendPhoneVerificationCodeResponse> resp = sendPhoneVerificationCode_0WithHttpInfo(sendPhoneVerificationCodeInputObject);
+        return resp.getData();
+    }
+
+    /**
+     * Step 1: Send a verification code 
+     * Sends verification code to specified phone number.
+     * @param sendPhoneVerificationCodeInputObject  (required)
+     * @return ApiResponse&lt;SendPhoneVerificationCodeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SendPhoneVerificationCodeResponse> sendPhoneVerificationCode_0WithHttpInfo(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0ValidateBeforeCall(sendPhoneVerificationCodeInputObject, null, null);
+        Type localVarReturnType = new TypeToken<SendPhoneVerificationCodeResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Step 1: Send a verification code  (asynchronously)
+     * Sends verification code to specified phone number.
+     * @param sendPhoneVerificationCodeInputObject  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call sendPhoneVerificationCode_0Async(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ApiCallback<SendPhoneVerificationCodeResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0ValidateBeforeCall(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SendPhoneVerificationCodeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for setChatStatus
      * @param setChatStatusInputObject  (required)
      * @param progressListener Progress listener
@@ -18953,8 +19189,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Change chat status
      * Set status of the chat given by ID.
-     * 
      * @param setChatStatusInputObject  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18965,8 +19201,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Change chat status
      * Set status of the chat given by ID.
-     * 
      * @param setChatStatusInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -18978,8 +19214,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Set status of the chat given by ID. (asynchronously)
-     * 
+     * Change chat status (asynchronously)
+     * Set status of the chat given by ID.
      * @param setChatStatusInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -19434,8 +19670,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Unmute chats (bulk)
      * Unmute several chats by chat ids or unmute all chats
-     * 
      * @param unmuteChatsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -19444,8 +19680,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Unmute chats (bulk)
      * Unmute several chats by chat ids or unmute all chats
-     * 
      * @param unmuteChatsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -19456,8 +19692,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Unmute several chats by chat ids or unmute all chats (asynchronously)
-     * 
+     * Unmute chats (bulk) (asynchronously)
+     * Unmute several chats by chat ids or unmute all chats
      * @param unmuteChatsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -21430,7 +21666,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing template.
+     * Update a template
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
@@ -21443,7 +21679,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing template.
+     * Update a template
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
@@ -21457,7 +21693,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing template. (asynchronously)
+     * Update a template (asynchronously)
      * 
      * @param updateTemplateInputObject  (required)
      * @param id  (required)
@@ -21946,7 +22182,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment
-     * 
+     * Upload a new file to insert it as a link.
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @return UploadMessageAttachmentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21958,7 +22194,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment
-     * 
+     * Upload a new file to insert it as a link.
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @return ApiResponse&lt;UploadMessageAttachmentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21971,7 +22207,7 @@ public class TextMagicApi {
 
     /**
      * Upload message attachment (asynchronously)
-     * 
+     * Upload a new file to insert it as a link.
      * @param file Attachment. Supports .jpg, .gif, .png, .pdf, .txt, .csv, .doc, .docx, .xls, .xlsx, .ppt, .pptx &amp; .vcf file formats (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -22,6 +22,7 @@ import com.textmagic.sdk.model.BulkSession;
 import com.textmagic.sdk.model.BuyDedicatedNumberInputObject;
 import com.textmagic.sdk.model.Chat;
 import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject;
+import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject1;
 import com.textmagic.sdk.model.ClearAndAssignContactsToListInputObject;
 import com.textmagic.sdk.model.CloseChatsBulkInputObject;
 import com.textmagic.sdk.model.Contact;
@@ -75,7 +76,6 @@ import com.textmagic.sdk.model.GetCountriesResponse;
 import com.textmagic.sdk.model.GetCustomFieldsPaginatedResponse;
 import com.textmagic.sdk.model.GetDisallowedRulesResponse;
 import com.textmagic.sdk.model.GetFavouritesPaginatedResponse;
-import com.textmagic.sdk.model.GetForwardedCallsPaginatedResponse;
 import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
@@ -132,6 +132,8 @@ import com.textmagic.sdk.model.SearchScheduledMessagesPaginatedResponse;
 import com.textmagic.sdk.model.SearchTemplatesPaginatedResponse;
 import com.textmagic.sdk.model.SendMessageInputObject;
 import com.textmagic.sdk.model.SendMessageResponse;
+import com.textmagic.sdk.model.SendPhoneVerificationCodeInputObject;
+import com.textmagic.sdk.model.SendPhoneVerificationCodeResponse;
 import com.textmagic.sdk.model.SenderId;
 import com.textmagic.sdk.model.SetChatStatusInputObject;
 import com.textmagic.sdk.model.Survey;
@@ -245,6 +247,22 @@ public class TextMagicApiTest {
     }
     
     /**
+     * Cancel verification process
+     *
+     * You can cancel the verification not earlier than 30 seconds after the initial request.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelVerificationTest() throws ApiException {
+        String verifyId = null;
+        api.cancelVerification(verifyId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Check user phone verification code
      *
      * 
@@ -256,6 +274,22 @@ public class TextMagicApiTest {
     public void checkPhoneVerificationCodeTest() throws ApiException {
         CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = null;
         api.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Step 2: Check the verification code 
+     *
+     * Check received code from user with the code which was actually sent.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void checkPhoneVerificationCode_0Test() throws ApiException {
+        CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject = null;
+        api.checkPhoneVerificationCode_0(checkPhoneVerificationCodeInputObject);
 
         // TODO: test validations
     }
@@ -278,9 +312,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Close chats by chat ids or close all chats
+     * Close chats (bulk)
      *
-     * 
+     * Close chats by chat ids or close all chats
      *
      * @throws ApiException
      *          if the Api call fails
@@ -294,9 +328,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Close all chats that have no unread messages.
+     * Close read chats
      *
-     * 
+     * Close all chats that have no unread messages.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -439,7 +473,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Create a new template from the submitted data.
+     * Create a template
      *
      * 
      *
@@ -472,7 +506,7 @@ public class TextMagicApiTest {
     /**
      * Delete all messages
      *
-     * 
+     * Delete all messages.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -500,9 +534,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete messages from chat by given messages ID(s).
+     * Delete chat messages by ID(s)
      *
-     * 
+     * Delete messages from chat by given messages ID(s).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -517,9 +551,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete chats by given ID(s) or delete all chats.
+     * Delete chats (bulk)
      *
-     * 
+     * Delete chats by given ID(s) or delete all chats.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -663,9 +697,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete the incoming message.
+     * Delete a single inbound message
      *
-     * 
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -679,9 +713,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete inbound messages by given ID(s) or delete all inbound messages.
+     * Delete inbound messages (bulk)
      *
-     * 
+     * &gt; Note, deleted inbound message will disappear from TextMagic Online, chats, and any other place they are referenced.  So, be careful! 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -760,7 +794,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a session
      *
      * 
      *
@@ -776,7 +810,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
+     * Delete sessions (bulk)
      *
      * 
      *
@@ -794,7 +828,7 @@ public class TextMagicApiTest {
     /**
      * Delete message
      *
-     * 
+     * Delete a single message.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -808,9 +842,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete messages by IDs
+     * Delete messages (bulk)
      *
-     * 
+     * Delete outbound messages by given ID(s) or delete all outbound messages.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -841,7 +875,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a message session, together with all nested messages.
+     * Delete a single scheduled message
      *
      * 
      *
@@ -857,7 +891,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete scheduled messages by given ID(s) or delete all scheduled messages.
+     * Delete scheduled messages (bulk)
      *
      * 
      *
@@ -921,7 +955,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single template.
+     * Delete a template
      *
      * 
      *
@@ -937,7 +971,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete template by given ID(s) or delete all templates.
+     * Delete templates (bulk)
      *
      * 
      *
@@ -955,7 +989,7 @@ public class TextMagicApiTest {
     /**
      * Authenticate user by given username and password.
      *
-     * 
+     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1035,7 +1069,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all user chats.
+     * Get all chats
      *
      * 
      *
@@ -1056,7 +1090,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all inbox messages.
+     * Get all inbound messages
      *
      * 
      *
@@ -1075,7 +1109,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all message sending sessions.
+     * Get all sessions
      *
      * 
      *
@@ -1094,7 +1128,7 @@ public class TextMagicApiTest {
     /**
      * Get all messages
      *
-     * 
+     * Get all user oubound messages.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1110,7 +1144,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all scheduled messages.
+     * Get all scheduled messages
      *
      * 
      *
@@ -1130,7 +1164,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all user templates.
+     * Get all templates
      *
      * 
      *
@@ -1277,7 +1311,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single chat.
+     * Get a single chat
      *
      * 
      *
@@ -1293,7 +1327,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find chats by phone.
+     * Find chats by phone
      *
      * 
      *
@@ -1311,7 +1345,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Fetch messages from chat with specified chat id.
+     * Get chat messages
      *
      * 
      *
@@ -1472,7 +1506,7 @@ public class TextMagicApiTest {
     /**
      * Fetch user contacts by given group id.
      *
-     * 
+     * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1602,24 +1636,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all forwarded calls.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getForwardedCallsTest() throws ApiException {
-        Integer page = null;
-        Integer limit = null;
-        GetForwardedCallsPaginatedResponse response = api.getForwardedCalls(page, limit);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get a single inbox message.
+     * Get a single inbound message
      *
      * 
      *
@@ -1719,7 +1736,7 @@ public class TextMagicApiTest {
     /**
      * Preview message
      *
-     * 
+     * Get messages preview (with tags merged) up to 100 messages per session.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1751,7 +1768,7 @@ public class TextMagicApiTest {
     /**
      * Check price
      *
-     * 
+     * Check pricing for a new outbound message.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1784,7 +1801,7 @@ public class TextMagicApiTest {
     /**
      * Get pricing
      *
-     * 
+     * Get message prices for all countries.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1797,7 +1814,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a message session.
+     * Get a session details
      *
      * 
      *
@@ -1813,7 +1830,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get sending session statistics.
+     * Get a session statistics
      *
      * 
      *
@@ -1830,9 +1847,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Fetch messages by given session id.
+     * Get a session messages
      *
-     * 
+     * A useful synonym for \&quot;messages/search\&quot; command with provided \&quot;sessionId\&quot; parameter.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1885,7 +1902,7 @@ public class TextMagicApiTest {
     /**
      * Get a single message
      *
-     * 
+     * Get a single outgoing message.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1901,7 +1918,7 @@ public class TextMagicApiTest {
     /**
      * Get history
      *
-     * 
+     * Get outbound messages history.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1934,7 +1951,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get message schedule.
+     * Get a single scheduled message
      *
      * 
      *
@@ -2068,7 +2085,7 @@ public class TextMagicApiTest {
     /**
      * Get all subaccounts with their REST API tokens associated with specified app name.
      *
-     * 
+     * When more than one token related to app name, last key will be returned.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2149,7 +2166,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single template.
+     * Get a template details
      *
      * 
      *
@@ -2181,9 +2198,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get total amount of unread messages in the current user chats.
+     * Get unread messages number
      *
-     * 
+     * Get total amount of unread messages in the current user chats.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2299,9 +2316,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Mark several chats as read by chat ids or mark all chats as read
+     * Mark chats as read (bulk)
      *
-     * 
+     * Mark several chats as read by chat ids or mark all chats as read
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2315,9 +2332,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Mark several chats as UNread by chat ids or mark all chats as UNread
+     * Mark chats as unread (bulk)
      *
-     * 
+     * Mark several chats as UNread by chat ids or mark all chats as UNread
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2347,7 +2364,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Set mute mode.
+     * Mute chat sounds
      *
      * 
      *
@@ -2363,9 +2380,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Mute several chats by chat ids or mute all chats
+     * Mute chats (bulk)
      *
-     * 
+     * Mute several chats by chat ids or mute all chats
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2394,9 +2411,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Reopen chats by chat ids or reopen all chats
+     * Reopen chats (bulk)
      *
-     * 
+     * Reopen chats by chat ids or reopen all chats
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2412,7 +2429,7 @@ public class TextMagicApiTest {
     /**
      * Request a new REST API token for subaccount.
      *
-     * 
+     * Returning user object, key and app name.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2458,7 +2475,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find chats by inbound or outbound messages text.
+     * Find chats by message text
      *
      * 
      *
@@ -2476,7 +2493,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find chats by IDs.
+     * Find chats (bulk)
      *
      * 
      *
@@ -2494,9 +2511,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find chats by recipient (contact, list name or phone number).
+     * Find chats by recipient
      *
-     * 
+     * Find chats by recipient (contact, list name or phone number).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2539,9 +2556,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find inbound messages by given parameters.
+     * Find inbound messages
      *
-     * 
+     * Find inbound messages by given parameters.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2586,7 +2603,7 @@ public class TextMagicApiTest {
     /**
      * Find messages
      *
-     * 
+     * Find outbound messages by given parameters.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2607,7 +2624,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find scheduled messages by given parameters.
+     * Find scheduled messages
      *
      * 
      *
@@ -2629,7 +2646,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find user templates by given parameters.
+     * Find templates by criteria
      *
      * 
      *
@@ -2666,7 +2683,7 @@ public class TextMagicApiTest {
     /**
      * Send message
      *
-     * 
+     * The main entrypoint to send messages. See examples above for the reference.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2695,9 +2712,25 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Set status of the chat given by ID.
+     * Step 1: Send a verification code 
      *
-     * 
+     * Sends verification code to specified phone number.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void sendPhoneVerificationCode_0Test() throws ApiException {
+        SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject = null;
+        SendPhoneVerificationCodeResponse response = api.sendPhoneVerificationCode_0(sendPhoneVerificationCodeInputObject);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Change chat status
+     *
+     * Set status of the chat given by ID.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2759,9 +2792,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Unmute several chats by chat ids or unmute all chats
+     * Unmute chats (bulk)
      *
-     * 
+     * Unmute several chats by chat ids or unmute all chats
      *
      * @throws ApiException
      *          if the Api call fails
@@ -3022,7 +3055,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing template.
+     * Update a template
      *
      * 
      *
@@ -3091,7 +3124,7 @@ public class TextMagicApiTest {
     /**
      * Upload message attachment
      *
-     * 
+     * Upload a new file to insert it as a link.
      *
      * @throws ApiException
      *          if the Api call fails

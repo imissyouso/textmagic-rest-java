@@ -60,10 +60,10 @@ public class MessageSession {
   }
 
    /**
-   * Get id
+   * Session ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "4991", required = true, value = "Session ID.")
   public Integer getId() {
     return id;
   }
@@ -78,10 +78,10 @@ public class MessageSession {
   }
 
    /**
-   * Get startTime
+   * Session creation time.
    * @return startTime
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "Session creation time.")
   public String getStartTime() {
     return startTime;
   }
@@ -96,10 +96,10 @@ public class MessageSession {
   }
 
    /**
-   * Get text
+   * Session text. If a template was used for the session text (see [Messages: Send](#tag/Outbound-Messages) for details), it may contain template tags. 
    * @return text
   **/
-  @ApiModelProperty(example = "Sample message text", required = true, value = "")
+  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Session text. If a template was used for the session text (see [Messages: Send](#tag/Outbound-Messages) for details), it may contain template tags. ")
   public String getText() {
     return text;
   }
@@ -114,10 +114,10 @@ public class MessageSession {
   }
 
    /**
-   * Get source
+   * *   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](/docs/api/send-email-to-sms/) *   **X** for [Distribution lists](/docs/api/distribution-lists/) 
    * @return source
   **/
-  @ApiModelProperty(example = "A", required = true, value = "")
+  @ApiModelProperty(example = "O", required = true, value = "*   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](/docs/api/send-email-to-sms/) *   **X** for [Distribution lists](/docs/api/distribution-lists/) ")
   public String getSource() {
     return source;
   }
@@ -132,10 +132,10 @@ public class MessageSession {
   }
 
    /**
-   * Get referenceId
+   * Custom reference ID (see [Messages: Send](/docs/api/send-sms/) for details). 
    * @return referenceId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "my_reference_id_4991", required = true, value = "Custom reference ID (see [Messages: Send](/docs/api/send-sms/) for details). ")
   public String getReferenceId() {
     return referenceId;
   }
@@ -150,10 +150,10 @@ public class MessageSession {
   }
 
    /**
-   * Get price
+   * Session cost (in account currency).
    * @return price
   **/
-  @ApiModelProperty(example = "0.05", required = true, value = "")
+  @ApiModelProperty(example = "3.45", required = true, value = "Session cost (in account currency).")
   public BigDecimal getPrice() {
     return price;
   }
@@ -168,10 +168,10 @@ public class MessageSession {
   }
 
    /**
-   * Get numbersCount
+   * Session recipient count.
    * @return numbersCount
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "18", required = true, value = "Session recipient count.")
   public Integer getNumbersCount() {
     return numbersCount;
   }

@@ -33,20 +33,17 @@ public class MessageOut {
   @SerializedName("id")
   private Integer id = null;
 
-  @SerializedName("contactId")
-  private Integer contactId = null;
-
-  @SerializedName("sessionId")
-  private Integer sessionId = null;
+  @SerializedName("sender")
+  private String sender = null;
 
   @SerializedName("receiver")
   private String receiver = null;
 
-  @SerializedName("messageTime")
-  private OffsetDateTime messageTime = null;
+  @SerializedName("text")
+  private String text = null;
 
   /**
-   * q - queued s - scheduled queue e - sending error r - enroute a - acked d - delivered b - buffered f - failed u - unknown j - rejected i - bulk insert p - scheduled suspend h - queue suspend
+   * Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -117,11 +114,17 @@ public class MessageOut {
   @SerializedName("status")
   private StatusEnum status = null;
 
+  @SerializedName("contactId")
+  private Integer contactId = null;
+
+  @SerializedName("sessionId")
+  private Integer sessionId = null;
+
+  @SerializedName("messageTime")
+  private OffsetDateTime messageTime = null;
+
   @SerializedName("avatar")
   private String avatar = null;
-
-  @SerializedName("text")
-  private String text = null;
 
   @SerializedName("deleted")
   private Boolean deleted = null;
@@ -140,9 +143,6 @@ public class MessageOut {
 
   @SerializedName("country")
   private String country = null;
-
-  @SerializedName("sender")
-  private String sender = null;
 
   @SerializedName("phone")
   private String phone = null;
@@ -189,16 +189,88 @@ public class MessageOut {
   }
 
    /**
-   * Get id
+   * Message ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "4991", required = true, value = "Message ID.")
   public Integer getId() {
     return id;
   }
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public MessageOut sender(String sender) {
+    this.sender = sender;
+    return this;
+  }
+
+   /**
+   * Message sender (phone number or alphanumeric Sender ID).
+   * @return sender
+  **/
+  @ApiModelProperty(example = "447624800500", value = "Message sender (phone number or alphanumeric Sender ID).")
+  public String getSender() {
+    return sender;
+  }
+
+  public void setSender(String sender) {
+    this.sender = sender;
+  }
+
+  public MessageOut receiver(String receiver) {
+    this.receiver = receiver;
+    return this;
+  }
+
+   /**
+   * Recipient phone number.
+   * @return receiver
+  **/
+  @ApiModelProperty(example = "447860021130", value = "Recipient phone number.")
+  public String getReceiver() {
+    return receiver;
+  }
+
+  public void setReceiver(String receiver) {
+    this.receiver = receiver;
+  }
+
+  public MessageOut text(String text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * Get text
+   * @return text
+  **/
+  @ApiModelProperty(example = "I love TextMagic!", required = true, value = "")
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public MessageOut status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. 
+   * @return status
+  **/
+  @ApiModelProperty(example = "d", required = true, value = "Delivery status of the message. @TODO: Please see the table below to see different delivery statuses. ")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
   public MessageOut contactId(Integer contactId) {
@@ -237,58 +309,22 @@ public class MessageOut {
     this.sessionId = sessionId;
   }
 
-  public MessageOut receiver(String receiver) {
-    this.receiver = receiver;
-    return this;
-  }
-
-   /**
-   * Get receiver
-   * @return receiver
-  **/
-  @ApiModelProperty(example = "19993322110", value = "")
-  public String getReceiver() {
-    return receiver;
-  }
-
-  public void setReceiver(String receiver) {
-    this.receiver = receiver;
-  }
-
   public MessageOut messageTime(OffsetDateTime messageTime) {
     this.messageTime = messageTime;
     return this;
   }
 
    /**
-   * Get messageTime
+   * Sending time.
    * @return messageTime
   **/
-  @ApiModelProperty(example = "2019-08-12T11:43:37+0000", required = true, value = "")
+  @ApiModelProperty(example = "2019-08-12T11:43:37+0000", required = true, value = "Sending time.")
   public OffsetDateTime getMessageTime() {
     return messageTime;
   }
 
   public void setMessageTime(OffsetDateTime messageTime) {
     this.messageTime = messageTime;
-  }
-
-  public MessageOut status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * q - queued s - scheduled queue e - sending error r - enroute a - acked d - delivered b - buffered f - failed u - unknown j - rejected i - bulk insert p - scheduled suspend h - queue suspend
-   * @return status
-  **/
-  @ApiModelProperty(example = "q", required = true, value = "q - queued s - scheduled queue e - sending error r - enroute a - acked d - delivered b - buffered f - failed u - unknown j - rejected i - bulk insert p - scheduled suspend h - queue suspend")
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-  public void setStatus(StatusEnum status) {
-    this.status = status;
   }
 
   public MessageOut avatar(String avatar) {
@@ -307,24 +343,6 @@ public class MessageOut {
 
   public void setAvatar(String avatar) {
     this.avatar = avatar;
-  }
-
-  public MessageOut text(String text) {
-    this.text = text;
-    return this;
-  }
-
-   /**
-   * Get text
-   * @return text
-  **/
-  @ApiModelProperty(example = "Test message", required = true, value = "")
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
   }
 
   public MessageOut deleted(Boolean deleted) {
@@ -351,10 +369,10 @@ public class MessageOut {
   }
 
    /**
-   * Get charset
+   * Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS 
    * @return charset
   **/
-  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "")
+  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS ")
   public String getCharset() {
     return charset;
   }
@@ -387,10 +405,10 @@ public class MessageOut {
   }
 
    /**
-   * Get firstName
+   * @TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test first name", required = true, value = "")
+  @ApiModelProperty(example = "John", required = true, value = "@TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). ")
   public String getFirstName() {
     return firstName;
   }
@@ -405,10 +423,10 @@ public class MessageOut {
   }
 
    /**
-   * Get lastName
+   * Contact last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test last name", required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Contact last name.")
   public String getLastName() {
     return lastName;
   }
@@ -423,34 +441,16 @@ public class MessageOut {
   }
 
    /**
-   * Get country
+   * Two-letter ISO country code of the recipient phone number. 
    * @return country
   **/
-  @ApiModelProperty(example = "US", required = true, value = "")
+  @ApiModelProperty(example = "US", required = true, value = "Two-letter ISO country code of the recipient phone number. ")
   public String getCountry() {
     return country;
   }
 
   public void setCountry(String country) {
     this.country = country;
-  }
-
-  public MessageOut sender(String sender) {
-    this.sender = sender;
-    return this;
-  }
-
-   /**
-   * Get sender
-   * @return sender
-  **/
-  @ApiModelProperty(example = "447624800500", value = "")
-  public String getSender() {
-    return sender;
-  }
-
-  public void setSender(String sender) {
-    this.sender = sender;
   }
 
   public MessageOut phone(String phone) {
@@ -495,10 +495,10 @@ public class MessageOut {
   }
 
    /**
-   * Get partsCount
+   * Message parts (multiples of 160 characters) count.
    * @return partsCount
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "Message parts (multiples of 160 characters) count.")
   public Integer getPartsCount() {
     return partsCount;
   }
@@ -698,20 +698,20 @@ public class MessageOut {
     }
     MessageOut messageOut = (MessageOut) o;
     return Objects.equals(this.id, messageOut.id) &&
+        Objects.equals(this.sender, messageOut.sender) &&
+        Objects.equals(this.receiver, messageOut.receiver) &&
+        Objects.equals(this.text, messageOut.text) &&
+        Objects.equals(this.status, messageOut.status) &&
         Objects.equals(this.contactId, messageOut.contactId) &&
         Objects.equals(this.sessionId, messageOut.sessionId) &&
-        Objects.equals(this.receiver, messageOut.receiver) &&
         Objects.equals(this.messageTime, messageOut.messageTime) &&
-        Objects.equals(this.status, messageOut.status) &&
         Objects.equals(this.avatar, messageOut.avatar) &&
-        Objects.equals(this.text, messageOut.text) &&
         Objects.equals(this.deleted, messageOut.deleted) &&
         Objects.equals(this.charset, messageOut.charset) &&
         Objects.equals(this.charsetLabel, messageOut.charsetLabel) &&
         Objects.equals(this.firstName, messageOut.firstName) &&
         Objects.equals(this.lastName, messageOut.lastName) &&
         Objects.equals(this.country, messageOut.country) &&
-        Objects.equals(this.sender, messageOut.sender) &&
         Objects.equals(this.phone, messageOut.phone) &&
         Objects.equals(this.price, messageOut.price) &&
         Objects.equals(this.partsCount, messageOut.partsCount) &&
@@ -729,7 +729,7 @@ public class MessageOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactId, sessionId, receiver, messageTime, status, avatar, text, deleted, charset, charsetLabel, firstName, lastName, country, sender, phone, price, partsCount, fromEmail, fromNumber, smscId, contact, source, deliveredCount, numbersCount, userId, creditsPrice, chars);
+    return Objects.hash(id, sender, receiver, text, status, contactId, sessionId, messageTime, avatar, deleted, charset, charsetLabel, firstName, lastName, country, phone, price, partsCount, fromEmail, fromNumber, smscId, contact, source, deliveredCount, numbersCount, userId, creditsPrice, chars);
   }
 
 
@@ -739,20 +739,20 @@ public class MessageOut {
     sb.append("class MessageOut {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
+    sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    contactId: ").append(toIndentedString(contactId)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
-    sb.append("    receiver: ").append(toIndentedString(receiver)).append("\n");
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    avatar: ").append(toIndentedString(avatar)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    charset: ").append(toIndentedString(charset)).append("\n");
     sb.append("    charsetLabel: ").append(toIndentedString(charsetLabel)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    partsCount: ").append(toIndentedString(partsCount)).append("\n");

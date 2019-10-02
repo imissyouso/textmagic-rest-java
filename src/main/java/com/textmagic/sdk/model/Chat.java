@@ -83,10 +83,10 @@ public class Chat {
   }
 
    /**
-   * Get id
+   * Chat ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "43328", required = true, value = "Chat ID.")
   public Integer getId() {
     return id;
   }
@@ -119,10 +119,10 @@ public class Chat {
   }
 
    /**
-   * Get phone
+   * Chat partner phone number.
    * @return phone
   **/
-  @ApiModelProperty(example = "19998887766", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Chat partner phone number.")
   public String getPhone() {
     return phone;
   }
@@ -173,10 +173,10 @@ public class Chat {
   }
 
    /**
-   * Get unread
+   * Unread incoming messages count.
    * @return unread
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "5", required = true, value = "Unread incoming messages count.")
   public Integer getUnread() {
     return unread;
   }
@@ -191,10 +191,10 @@ public class Chat {
   }
 
    /**
-   * Get updatedAt
+   * Time when last incoming message arrived at this chat.
    * @return updatedAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-01-08T06:13:21+0000", required = true, value = "Time when last incoming message arrived at this chat.")
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }

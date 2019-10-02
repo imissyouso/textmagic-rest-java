@@ -63,10 +63,10 @@ public class MessageIn {
   }
 
    /**
-   * Get id
+   * The ID of the inbound message.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1782832", required = true, value = "The ID of the inbound message.")
   public Integer getId() {
     return id;
   }
@@ -81,10 +81,10 @@ public class MessageIn {
   }
 
    /**
-   * Get sender
+   * The sender’s phone number.
    * @return sender
   **/
-  @ApiModelProperty(example = "19993322111", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "The sender’s phone number.")
   public String getSender() {
     return sender;
   }
@@ -99,10 +99,10 @@ public class MessageIn {
   }
 
    /**
-   * Get receiver
+   * The receiver’s phone number (i.e. your dedicated or shared reply number).
    * @return receiver
   **/
-  @ApiModelProperty(example = "19993322222", required = true, value = "")
+  @ApiModelProperty(example = "447624800500", required = true, value = "The receiver’s phone number (i.e. your dedicated or shared reply number).")
   public String getReceiver() {
     return receiver;
   }
@@ -117,10 +117,10 @@ public class MessageIn {
   }
 
    /**
-   * Get messageTime
+   * The time when the message reached the TextMagic API endpoint.
    * @return messageTime
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2012-11-28T18:38:28+0000", required = true, value = "The time when the message reached the TextMagic API endpoint.")
   public OffsetDateTime getMessageTime() {
     return messageTime;
   }
@@ -135,10 +135,10 @@ public class MessageIn {
   }
 
    /**
-   * Get text
+   * The text from the received message.
    * @return text
   **/
-  @ApiModelProperty(example = "Sample message text", required = true, value = "")
+  @ApiModelProperty(example = "Test reply", required = true, value = "The text from the received message.")
   public String getText() {
     return text;
   }

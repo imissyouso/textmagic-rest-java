@@ -90,10 +90,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get id
+   * Schedule ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "562", required = true, value = "Schedule ID.")
   public Integer getId() {
     return id;
   }
@@ -108,10 +108,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get nextSend
+   * Next send date in [ISO 8601](https://en.wikipedia.org/?title&#x3D;ISO_8601) format. 
    * @return nextSend
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2014-10-13T05:00:00+0000", required = true, value = "Next send date in [ISO 8601](https://en.wikipedia.org/?title=ISO_8601) format. ")
   public OffsetDateTime getNextSend() {
     return nextSend;
   }
@@ -126,10 +126,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get rrule
+   * [iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string. 
    * @return rrule
   **/
-  @ApiModelProperty(example = "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1", required = true, value = "")
+  @ApiModelProperty(example = "FREQ=DAILY;INTERVAL=2;COUNT=5;", required = true, value = "[iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string. ")
   public String getRrule() {
     return rrule;
   }
