@@ -83,7 +83,6 @@ import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
 import com.textmagic.sdk.model.GetListsPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
-import com.textmagic.sdk.model.GetMessagePricesResponse;
 import com.textmagic.sdk.model.GetMessageSessionStatResponse;
 import com.textmagic.sdk.model.GetMessagesBySessionIdPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagingCountersResponse;
@@ -1814,21 +1813,6 @@ public class TextMagicApiTest {
         Integer local = null;
         String localCountry = null;
         GetMessagePriceResponse response = api.getMessagePrice(includeBlocked, text, templateId, sendingTime, sendingDateTime, sendingTimezone, contacts, lists, phones, cutExtra, partsCount, referenceId, from, rule, createChat, tts, local, localCountry);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get pricing
-     *
-     * Get message prices for all countries.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getMessagePricesTest() throws ApiException {
-        GetMessagePricesResponse response = api.getMessagePrices();
 
         // TODO: test validations
     }

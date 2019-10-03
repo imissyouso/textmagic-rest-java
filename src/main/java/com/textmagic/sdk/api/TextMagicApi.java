@@ -96,7 +96,6 @@ import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
 import com.textmagic.sdk.model.GetListsPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
-import com.textmagic.sdk.model.GetMessagePricesResponse;
 import com.textmagic.sdk.model.GetMessageSessionStatResponse;
 import com.textmagic.sdk.model.GetMessagesBySessionIdPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagingCountersResponse;
@@ -12389,119 +12388,6 @@ public class TextMagicApi {
 
         com.squareup.okhttp.Call call = getMessagePriceValidateBeforeCall(includeBlocked, text, templateId, sendingTime, sendingDateTime, sendingTimezone, contacts, lists, phones, cutExtra, partsCount, referenceId, from, rule, createChat, tts, local, localCountry, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetMessagePriceResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for getMessagePrices
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getMessagePricesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/messages/prices";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMessagePricesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getMessagePricesCall(progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get pricing
-     * Get message prices for all countries.
-     * @return GetMessagePricesResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public GetMessagePricesResponse getMessagePrices() throws ApiException {
-        ApiResponse<GetMessagePricesResponse> resp = getMessagePricesWithHttpInfo();
-        return resp.getData();
-    }
-
-    /**
-     * Get pricing
-     * Get message prices for all countries.
-     * @return ApiResponse&lt;GetMessagePricesResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<GetMessagePricesResponse> getMessagePricesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getMessagePricesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<GetMessagePricesResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get pricing (asynchronously)
-     * Get message prices for all countries.
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getMessagePricesAsync(final ApiCallback<GetMessagePricesResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getMessagePricesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetMessagePricesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -101,7 +101,6 @@ Method | HTTP request | Description
 [**getListsOfContact**](TextMagicApi.md#getListsOfContact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
 [**getMessagePreview**](TextMagicApi.md#getMessagePreview) | **GET** /api/v2/messages/preview | Preview message
 [**getMessagePrice**](TextMagicApi.md#getMessagePrice) | **GET** /api/v2/messages/price | Check price
-[**getMessagePrices**](TextMagicApi.md#getMessagePrices) | **GET** /api/v2/messages/prices | Get pricing
 [**getMessageSession**](TextMagicApi.md#getMessageSession) | **GET** /api/v2/sessions/{id} | Get a session details
 [**getMessageSessionStat**](TextMagicApi.md#getMessageSessionStat) | **GET** /api/v2/sessions/{id}/stat | Get a session statistics
 [**getMessagesBySessionId**](TextMagicApi.md#getMessagesBySessionId) | **GET** /api/v2/sessions/{id}/messages | Get a session messages
@@ -5509,56 +5508,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetMessagePriceResponse**](GetMessagePriceResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getMessagePrices"></a>
-# **getMessagePrices**
-> GetMessagePricesResponse getMessagePrices()
-
-Get pricing
-
-Get message prices for all countries.
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-try {
-    GetMessagePricesResponse result = apiInstance.getMessagePrices();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getMessagePrices");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetMessagePricesResponse**](GetMessagePricesResponse.md)
 
 ### Authorization
 
