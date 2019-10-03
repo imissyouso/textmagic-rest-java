@@ -93,6 +93,7 @@ import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
 import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
+import com.textmagic.sdk.model.GetListsPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
 import com.textmagic.sdk.model.GetMessagePricesResponse;
@@ -114,9 +115,7 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.GetUserListsPaginatedResponse;
 import com.textmagic.sdk.model.GetVersionsResponse;
-import com.textmagic.sdk.model.Group;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -936,14 +935,14 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for checkPhoneVerificationCode_0
+     * Build call for checkPhoneVerificationCodeTFA
      * @param checkPhoneVerificationCodeInputObject  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call checkPhoneVerificationCode_0Call(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call checkPhoneVerificationCodeTFACall(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = checkPhoneVerificationCodeInputObject;
 
         // create path and map variables
@@ -985,15 +984,15 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call checkPhoneVerificationCode_0ValidateBeforeCall(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call checkPhoneVerificationCodeTFAValidateBeforeCall(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'checkPhoneVerificationCodeInputObject' is set
         if (checkPhoneVerificationCodeInputObject == null) {
-            throw new ApiException("Missing the required parameter 'checkPhoneVerificationCodeInputObject' when calling checkPhoneVerificationCode_0(Async)");
+            throw new ApiException("Missing the required parameter 'checkPhoneVerificationCodeInputObject' when calling checkPhoneVerificationCodeTFA(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0Call(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeTFACall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1004,8 +1003,8 @@ public class TextMagicApi {
      * @param checkPhoneVerificationCodeInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void checkPhoneVerificationCode_0(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
-        checkPhoneVerificationCode_0WithHttpInfo(checkPhoneVerificationCodeInputObject);
+    public void checkPhoneVerificationCodeTFA(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
+        checkPhoneVerificationCodeTFAWithHttpInfo(checkPhoneVerificationCodeInputObject);
     }
 
     /**
@@ -1015,8 +1014,8 @@ public class TextMagicApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> checkPhoneVerificationCode_0WithHttpInfo(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
-        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0ValidateBeforeCall(checkPhoneVerificationCodeInputObject, null, null);
+    public ApiResponse<Void> checkPhoneVerificationCodeTFAWithHttpInfo(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeTFAValidateBeforeCall(checkPhoneVerificationCodeInputObject, null, null);
         return apiClient.execute(call);
     }
 
@@ -1028,7 +1027,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call checkPhoneVerificationCode_0Async(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call checkPhoneVerificationCodeTFAAsync(CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1049,7 +1048,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = checkPhoneVerificationCode_0ValidateBeforeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = checkPhoneVerificationCodeTFAValidateBeforeCall(checkPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -1971,7 +1970,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new list from the submitted data.
+     * Create a new list
      * 
      * @param createListInputObject  (required)
      * @return ResourceLinkResponse
@@ -1983,7 +1982,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new list from the submitted data.
+     * Create a new list
      * 
      * @param createListInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
@@ -1996,7 +1995,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new list from the submitted data. (asynchronously)
+     * Create a new list (asynchronously)
      * 
      * @param createListInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -11492,39 +11491,39 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single list.
+     * Get the details of a specific list
      * 
      * @param id  (required)
-     * @return Group
+     * @return List
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Group getList(Integer id) throws ApiException {
-        ApiResponse<Group> resp = getListWithHttpInfo(id);
+    public List getList(Integer id) throws ApiException {
+        ApiResponse<List> resp = getListWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Get a single list.
+     * Get the details of a specific list
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;Group&gt;
+     * @return ApiResponse&lt;List&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Group> getListWithHttpInfo(Integer id) throws ApiException {
+    public ApiResponse<List> getListWithHttpInfo(Integer id) throws ApiException {
         com.squareup.okhttp.Call call = getListValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        Type localVarReturnType = new TypeToken<List>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get a single list. (asynchronously)
+     * Get the details of a specific list (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getListAsync(Integer id, final ApiCallback<Group> callback) throws ApiException {
+    public com.squareup.okhttp.Call getListAsync(Integer id, final ApiCallback<List> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -11546,7 +11545,7 @@ public class TextMagicApi {
         }
 
         com.squareup.okhttp.Call call = getListValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Group>(){}.getType();
+        Type localVarReturnType = new TypeToken<List>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -11670,6 +11669,155 @@ public class TextMagicApi {
 
         com.squareup.okhttp.Call call = getListContactsIdsValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetListContactsIdsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getLists
+     * @param page The current fetched page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
+     * @param orderBy Order results by some field. Default is id (optional, default to id)
+     * @param direction Order direction. Default is desc (optional, default to desc)
+     * @param favoriteOnly Return only favorite lists (optional, default to 0)
+     * @param onlyMine Return only current user lists (optional, default to 0)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getListsCall(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/lists";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("orderBy", orderBy));
+        if (direction != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("direction", direction));
+        if (favoriteOnly != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("favoriteOnly", favoriteOnly));
+        if (onlyMine != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("onlyMine", onlyMine));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getListsValidateBeforeCall(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getListsCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get all lists
+     * 
+     * @param page The current fetched page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
+     * @param orderBy Order results by some field. Default is id (optional, default to id)
+     * @param direction Order direction. Default is desc (optional, default to desc)
+     * @param favoriteOnly Return only favorite lists (optional, default to 0)
+     * @param onlyMine Return only current user lists (optional, default to 0)
+     * @return GetListsPaginatedResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetListsPaginatedResponse getLists(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
+        ApiResponse<GetListsPaginatedResponse> resp = getListsWithHttpInfo(page, limit, orderBy, direction, favoriteOnly, onlyMine);
+        return resp.getData();
+    }
+
+    /**
+     * Get all lists
+     * 
+     * @param page The current fetched page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
+     * @param orderBy Order results by some field. Default is id (optional, default to id)
+     * @param direction Order direction. Default is desc (optional, default to desc)
+     * @param favoriteOnly Return only favorite lists (optional, default to 0)
+     * @param onlyMine Return only current user lists (optional, default to 0)
+     * @return ApiResponse&lt;GetListsPaginatedResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetListsPaginatedResponse> getListsWithHttpInfo(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
+        com.squareup.okhttp.Call call = getListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, null, null);
+        Type localVarReturnType = new TypeToken<GetListsPaginatedResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get all lists (asynchronously)
+     * 
+     * @param page The current fetched page. (optional, default to 1)
+     * @param limit The number of results per page. (optional, default to 10)
+     * @param orderBy Order results by some field. Default is id (optional, default to id)
+     * @param direction Order direction. Default is desc (optional, default to desc)
+     * @param favoriteOnly Return only favorite lists (optional, default to 0)
+     * @param onlyMine Return only current user lists (optional, default to 0)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getListsAsync(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ApiCallback<GetListsPaginatedResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetListsPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -15730,155 +15878,6 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for getUserLists
-     * @param page Fetch specified results page. (optional, default to 1)
-     * @param limit The number of results per page. (optional, default to 10)
-     * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @param direction Order direction. Default is desc (optional, default to desc)
-     * @param favoriteOnly Return only favorite lists (optional, default to 0)
-     * @param onlyMine Return only current user lists (optional, default to 0)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getUserListsCall(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/lists";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (page != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-        if (orderBy != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("orderBy", orderBy));
-        if (direction != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("direction", direction));
-        if (favoriteOnly != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("favoriteOnly", favoriteOnly));
-        if (onlyMine != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("onlyMine", onlyMine));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserListsValidateBeforeCall(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getUserListsCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get all user lists.
-     * 
-     * @param page Fetch specified results page. (optional, default to 1)
-     * @param limit The number of results per page. (optional, default to 10)
-     * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @param direction Order direction. Default is desc (optional, default to desc)
-     * @param favoriteOnly Return only favorite lists (optional, default to 0)
-     * @param onlyMine Return only current user lists (optional, default to 0)
-     * @return GetUserListsPaginatedResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public GetUserListsPaginatedResponse getUserLists(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
-        ApiResponse<GetUserListsPaginatedResponse> resp = getUserListsWithHttpInfo(page, limit, orderBy, direction, favoriteOnly, onlyMine);
-        return resp.getData();
-    }
-
-    /**
-     * Get all user lists.
-     * 
-     * @param page Fetch specified results page. (optional, default to 1)
-     * @param limit The number of results per page. (optional, default to 10)
-     * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @param direction Order direction. Default is desc (optional, default to desc)
-     * @param favoriteOnly Return only favorite lists (optional, default to 0)
-     * @param onlyMine Return only current user lists (optional, default to 0)
-     * @return ApiResponse&lt;GetUserListsPaginatedResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<GetUserListsPaginatedResponse> getUserListsWithHttpInfo(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine) throws ApiException {
-        com.squareup.okhttp.Call call = getUserListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, null, null);
-        Type localVarReturnType = new TypeToken<GetUserListsPaginatedResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get all user lists. (asynchronously)
-     * 
-     * @param page Fetch specified results page. (optional, default to 1)
-     * @param limit The number of results per page. (optional, default to 10)
-     * @param orderBy Order results by some field. Default is id (optional, default to id)
-     * @param direction Order direction. Default is desc (optional, default to desc)
-     * @param favoriteOnly Return only favorite lists (optional, default to 0)
-     * @param onlyMine Return only current user lists (optional, default to 0)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getUserListsAsync(Integer page, Integer limit, String orderBy, String direction, Integer favoriteOnly, Integer onlyMine, final ApiCallback<GetUserListsPaginatedResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getUserListsValidateBeforeCall(page, limit, orderBy, direction, favoriteOnly, onlyMine, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetUserListsPaginatedResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for getVersions
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -19004,14 +19003,14 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for sendPhoneVerificationCode_0
+     * Build call for sendPhoneVerificationCodeTFA
      * @param sendPhoneVerificationCodeInputObject  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call sendPhoneVerificationCode_0Call(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call sendPhoneVerificationCodeTFACall(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = sendPhoneVerificationCodeInputObject;
 
         // create path and map variables
@@ -19053,15 +19052,15 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call sendPhoneVerificationCode_0ValidateBeforeCall(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendPhoneVerificationCodeTFAValidateBeforeCall(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sendPhoneVerificationCodeInputObject' is set
         if (sendPhoneVerificationCodeInputObject == null) {
-            throw new ApiException("Missing the required parameter 'sendPhoneVerificationCodeInputObject' when calling sendPhoneVerificationCode_0(Async)");
+            throw new ApiException("Missing the required parameter 'sendPhoneVerificationCodeInputObject' when calling sendPhoneVerificationCodeTFA(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0Call(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendPhoneVerificationCodeTFACall(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         return call;
 
     }
@@ -19073,8 +19072,8 @@ public class TextMagicApi {
      * @return SendPhoneVerificationCodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SendPhoneVerificationCodeResponse sendPhoneVerificationCode_0(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
-        ApiResponse<SendPhoneVerificationCodeResponse> resp = sendPhoneVerificationCode_0WithHttpInfo(sendPhoneVerificationCodeInputObject);
+    public SendPhoneVerificationCodeResponse sendPhoneVerificationCodeTFA(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
+        ApiResponse<SendPhoneVerificationCodeResponse> resp = sendPhoneVerificationCodeTFAWithHttpInfo(sendPhoneVerificationCodeInputObject);
         return resp.getData();
     }
 
@@ -19085,8 +19084,8 @@ public class TextMagicApi {
      * @return ApiResponse&lt;SendPhoneVerificationCodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SendPhoneVerificationCodeResponse> sendPhoneVerificationCode_0WithHttpInfo(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
-        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0ValidateBeforeCall(sendPhoneVerificationCodeInputObject, null, null);
+    public ApiResponse<SendPhoneVerificationCodeResponse> sendPhoneVerificationCodeTFAWithHttpInfo(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject) throws ApiException {
+        com.squareup.okhttp.Call call = sendPhoneVerificationCodeTFAValidateBeforeCall(sendPhoneVerificationCodeInputObject, null, null);
         Type localVarReturnType = new TypeToken<SendPhoneVerificationCodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -19099,7 +19098,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendPhoneVerificationCode_0Async(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ApiCallback<SendPhoneVerificationCodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendPhoneVerificationCodeTFAAsync(SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject, final ApiCallback<SendPhoneVerificationCodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -19120,7 +19119,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = sendPhoneVerificationCode_0ValidateBeforeCall(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendPhoneVerificationCodeTFAValidateBeforeCall(sendPhoneVerificationCodeInputObject, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SendPhoneVerificationCodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

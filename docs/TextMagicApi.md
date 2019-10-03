@@ -1,6 +1,6 @@
 # TextMagicApi
 
-All URIs are relative to *http://my.textmagic.com*
+All URIs are relative to *http://rest.textmagic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**cancelSurvey**](TextMagicApi.md#cancelSurvey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancelVerification**](TextMagicApi.md#cancelVerification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
 [**checkPhoneVerificationCode**](TextMagicApi.md#checkPhoneVerificationCode) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
-[**checkPhoneVerificationCode_0**](TextMagicApi.md#checkPhoneVerificationCode_0) | **PUT** /api/v2/verify | Step 2: Check the verification code 
+[**checkPhoneVerificationCodeTFA**](TextMagicApi.md#checkPhoneVerificationCodeTFA) | **PUT** /api/v2/verify | Step 2: Check the verification code 
 [**clearAndAssignContactsToList**](TextMagicApi.md#clearAndAssignContactsToList) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts.
 [**closeChatsBulk**](TextMagicApi.md#closeChatsBulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
 [**closeReadChats**](TextMagicApi.md#closeReadChats) | **POST** /api/v2/chats/close/read | Close read chats
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**createContact**](TextMagicApi.md#createContact) | **POST** /api/v2/contacts | Create a new contact from the submitted data.
 [**createContactNote**](TextMagicApi.md#createContactNote) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
 [**createCustomField**](TextMagicApi.md#createCustomField) | **POST** /api/v2/customfields | Create a new custom field from the submitted data.
-[**createList**](TextMagicApi.md#createList) | **POST** /api/v2/lists | Create a new list from the submitted data.
+[**createList**](TextMagicApi.md#createList) | **POST** /api/v2/lists | Create a new list
 [**createPushToken**](TextMagicApi.md#createPushToken) | **POST** /api/v2/push/tokens | Add or update a device token.
 [**createSurvey**](TextMagicApi.md#createSurvey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
 [**createSurveyNode**](TextMagicApi.md#createSurveyNode) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
@@ -95,8 +95,9 @@ Method | HTTP request | Description
 [**getInboundMessage**](TextMagicApi.md#getInboundMessage) | **GET** /api/v2/replies/{id} | Get a single inbound message
 [**getInboundMessagesNotificationSettings**](TextMagicApi.md#getInboundMessagesNotificationSettings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**getInvoices**](TextMagicApi.md#getInvoices) | **GET** /api/v2/invoices | Get all invoices
-[**getList**](TextMagicApi.md#getList) | **GET** /api/v2/lists/{id} | Get a single list.
+[**getList**](TextMagicApi.md#getList) | **GET** /api/v2/lists/{id} | Get the details of a specific list
 [**getListContactsIds**](TextMagicApi.md#getListContactsIds) | **GET** /api/v2/lists/{id}/contacts/ids | Fetch all contacts IDs belonging to the list with ID.
+[**getLists**](TextMagicApi.md#getLists) | **GET** /api/v2/lists | Get all lists
 [**getListsOfContact**](TextMagicApi.md#getListsOfContact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
 [**getMessagePreview**](TextMagicApi.md#getMessagePreview) | **GET** /api/v2/messages/preview | Preview message
 [**getMessagePrice**](TextMagicApi.md#getMessagePrice) | **GET** /api/v2/messages/price | Check price
@@ -128,7 +129,6 @@ Method | HTTP request | Description
 [**getUnsubscribedContact**](TextMagicApi.md#getUnsubscribedContact) | **GET** /api/v2/unsubscribers/{id} | Get a single unsubscribed contact.
 [**getUnsubscribers**](TextMagicApi.md#getUnsubscribers) | **GET** /api/v2/unsubscribers | Get all contact have unsubscribed from your communication.
 [**getUserDedicatedNumbers**](TextMagicApi.md#getUserDedicatedNumbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**getUserLists**](TextMagicApi.md#getUserLists) | **GET** /api/v2/lists | Get all user lists.
 [**getVersions**](TextMagicApi.md#getVersions) | **GET** /api/v2/versions | Get minimal valid apps versions
 [**inviteSubaccount**](TextMagicApi.md#inviteSubaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**markChatsReadBulk**](TextMagicApi.md#markChatsReadBulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
@@ -153,7 +153,7 @@ Method | HTTP request | Description
 [**sendEmailVerificationCode**](TextMagicApi.md#sendEmailVerificationCode) | **GET** /api/v2/user/email/verification | Send user email verification
 [**sendMessage**](TextMagicApi.md#sendMessage) | **POST** /api/v2/messages | Send message
 [**sendPhoneVerificationCode**](TextMagicApi.md#sendPhoneVerificationCode) | **GET** /api/v2/user/phone/verification | Send user phone verification
-[**sendPhoneVerificationCode_0**](TextMagicApi.md#sendPhoneVerificationCode_0) | **POST** /api/v2/verify | Step 1: Send a verification code 
+[**sendPhoneVerificationCodeTFA**](TextMagicApi.md#sendPhoneVerificationCodeTFA) | **POST** /api/v2/verify | Step 1: Send a verification code 
 [**setChatStatus**](TextMagicApi.md#setChatStatus) | **POST** /api/v2/chats/status | Change chat status
 [**startSurvey**](TextMagicApi.md#startSurvey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblockContact**](TextMagicApi.md#unblockContact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
@@ -504,9 +504,9 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="checkPhoneVerificationCode_0"></a>
-# **checkPhoneVerificationCode_0**
-> checkPhoneVerificationCode_0(checkPhoneVerificationCodeInputObject)
+<a name="checkPhoneVerificationCodeTFA"></a>
+# **checkPhoneVerificationCodeTFA**
+> checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject)
 
 Step 2: Check the verification code 
 
@@ -531,9 +531,9 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject = new CheckPhoneVerificationCodeInputObject1(); // CheckPhoneVerificationCodeInputObject1 | 
 try {
-    apiInstance.checkPhoneVerificationCode_0(checkPhoneVerificationCodeInputObject);
+    apiInstance.checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#checkPhoneVerificationCode_0");
+    System.err.println("Exception when calling TextMagicApi#checkPhoneVerificationCodeTFA");
     e.printStackTrace();
 }
 ```
@@ -936,7 +936,7 @@ Name | Type | Description  | Notes
 # **createList**
 > ResourceLinkResponse createList(createListInputObject)
 
-Create a new list from the submitted data.
+Create a new list
 
 
 
@@ -5117,9 +5117,9 @@ Name | Type | Description  | Notes
 
 <a name="getList"></a>
 # **getList**
-> Group getList(id)
+> List getList(id)
 
-Get a single list.
+Get the details of a specific list
 
 
 
@@ -5142,7 +5142,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer id = 1; // Integer | 
 try {
-    Group result = apiInstance.getList(id);
+    List result = apiInstance.getList(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#getList");
@@ -5158,7 +5158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Group**](Group.md)
+[**List**](List.md)
 
 ### Authorization
 
@@ -5213,6 +5213,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetListContactsIdsResponse**](GetListContactsIdsResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getLists"></a>
+# **getLists**
+> GetListsPaginatedResponse getLists(page, limit, orderBy, direction, favoriteOnly, onlyMine)
+
+Get all lists
+
+
+
+### Example
+```java
+// Import classes:
+//import com.textmagic.sdk.ApiClient;
+//import com.textmagic.sdk.ApiException;
+//import com.textmagic.sdk.Configuration;
+//import com.textmagic.sdk.auth.*;
+//import com.textmagic.sdk.api.TextMagicApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
+
+TextMagicApi apiInstance = new TextMagicApi();
+Integer page = 1; // Integer | The current fetched page.
+Integer limit = 10; // Integer | The number of results per page.
+String orderBy = "id"; // String | Order results by some field. Default is id
+String direction = "desc"; // String | Order direction. Default is desc
+Integer favoriteOnly = 0; // Integer | Return only favorite lists
+Integer onlyMine = 0; // Integer | Return only current user lists
+try {
+    GetListsPaginatedResponse result = apiInstance.getLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TextMagicApi#getLists");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| The current fetched page. | [optional] [default to 1]
+ **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
+ **orderBy** | **String**| Order results by some field. Default is id | [optional] [default to id] [enum: id, firstName, lastName]
+ **direction** | **String**| Order direction. Default is desc | [optional] [default to desc] [enum: asc, desc]
+ **favoriteOnly** | **Integer**| Return only favorite lists | [optional] [default to 0]
+ **onlyMine** | **Integer**| Return only current user lists | [optional] [default to 0]
+
+### Return type
+
+[**GetListsPaginatedResponse**](GetListsPaginatedResponse.md)
 
 ### Authorization
 
@@ -6991,70 +7055,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getUserLists"></a>
-# **getUserLists**
-> GetUserListsPaginatedResponse getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine)
-
-Get all user lists.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer page = 1; // Integer | Fetch specified results page.
-Integer limit = 10; // Integer | The number of results per page.
-String orderBy = "id"; // String | Order results by some field. Default is id
-String direction = "desc"; // String | Order direction. Default is desc
-Integer favoriteOnly = 0; // Integer | Return only favorite lists
-Integer onlyMine = 0; // Integer | Return only current user lists
-try {
-    GetUserListsPaginatedResponse result = apiInstance.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getUserLists");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
- **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **orderBy** | **String**| Order results by some field. Default is id | [optional] [default to id] [enum: id, firstName, lastName]
- **direction** | **String**| Order direction. Default is desc | [optional] [default to desc] [enum: asc, desc]
- **favoriteOnly** | **Integer**| Return only favorite lists | [optional] [default to 0]
- **onlyMine** | **Integer**| Return only current user lists | [optional] [default to 0]
-
-### Return type
-
-[**GetUserListsPaginatedResponse**](GetUserListsPaginatedResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="getVersions"></a>
 # **getVersions**
 > GetVersionsResponse getVersions()
@@ -8421,9 +8421,9 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="sendPhoneVerificationCode_0"></a>
-# **sendPhoneVerificationCode_0**
-> SendPhoneVerificationCodeResponse sendPhoneVerificationCode_0(sendPhoneVerificationCodeInputObject)
+<a name="sendPhoneVerificationCodeTFA"></a>
+# **sendPhoneVerificationCodeTFA**
+> SendPhoneVerificationCodeResponse sendPhoneVerificationCodeTFA(sendPhoneVerificationCodeInputObject)
 
 Step 1: Send a verification code 
 
@@ -8448,10 +8448,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject = new SendPhoneVerificationCodeInputObject(); // SendPhoneVerificationCodeInputObject | 
 try {
-    SendPhoneVerificationCodeResponse result = apiInstance.sendPhoneVerificationCode_0(sendPhoneVerificationCodeInputObject);
+    SendPhoneVerificationCodeResponse result = apiInstance.sendPhoneVerificationCodeTFA(sendPhoneVerificationCodeInputObject);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#sendPhoneVerificationCode_0");
+    System.err.println("Exception when calling TextMagicApi#sendPhoneVerificationCodeTFA");
     e.printStackTrace();
 }
 ```

@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BadRequestResponseErrors
+ * If it was a **POST** or **PUT** request (and the **message** returned is &#x60;Validation Failed&#x60;), this field may contain **errors **that describe the errors grouped by the input parameter name. 
  */
+@ApiModel(description = "If it was a **POST** or **PUT** request (and the **message** returned is `Validation Failed`), this field may contain **errors **that describe the errors grouped by the input parameter name. ")
 
 public class BadRequestResponseErrors {
   @SerializedName("common")
@@ -51,10 +52,10 @@ public class BadRequestResponseErrors {
   }
 
    /**
-   * Get common
+   * Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](/docs/api/send-sms/). 
    * @return common
   **/
-  @ApiModelProperty(example = "[\"Common error message 1\",\"Common error message 2\"]", value = "")
+  @ApiModelProperty(example = "[\"Common error message 1\",\"Common error message 2\"]", value = "Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](/docs/api/send-sms/). ")
   public List<String> getCommon() {
     return common;
   }
@@ -69,10 +70,10 @@ public class BadRequestResponseErrors {
   }
 
    /**
-   * Get fields
+   * Associative array. The keys are the POST/PUT parameters names and the values are arrays with error messages for these parameters. 
    * @return fields
   **/
-  @ApiModelProperty(example = "{\"fieldName1\":[\"Error message 1\",\"Error message 2\"],\"fieldName2\":[\"Error message 3\",\"Error message 4\"]}", value = "")
+  @ApiModelProperty(example = "{\"fieldName1\":[\"Error message 1\",\"Error message 2\"],\"fieldName2\":[\"Error message 3\",\"Error message 4\"]}", value = "Associative array. The keys are the POST/PUT parameters names and the values are arrays with error messages for these parameters. ")
   public Object getFields() {
     return fields;
   }

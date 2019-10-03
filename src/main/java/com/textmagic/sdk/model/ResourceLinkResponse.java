@@ -41,10 +41,10 @@ public class ResourceLinkResponse {
   }
 
    /**
-   * Get id
+   * Resource ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "515", required = true, value = "Resource ID.")
   public Integer getId() {
     return id;
   }
@@ -59,10 +59,10 @@ public class ResourceLinkResponse {
   }
 
    /**
-   * Get href
+   * A link to this resource. If you want to fetch it, just **GET** this address.
    * @return href
   **/
-  @ApiModelProperty(example = "/api/v2/entity_name/1", required = true, value = "")
+  @ApiModelProperty(example = "/api/v2/entity_name/1", required = true, value = "A link to this resource. If you want to fetch it, just **GET** this address.")
   public String getHref() {
     return href;
   }

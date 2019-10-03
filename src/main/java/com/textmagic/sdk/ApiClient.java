@@ -52,7 +52,7 @@ import com.textmagic.sdk.auth.OAuth;
 
 public class ApiClient {
 
-    private String basePath = "http://my.textmagic.com";
+    private String basePath = "http://rest.textmagic.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -106,7 +106,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://my.textmagic.com
+     * @param basePath Base path of the URL (e.g http://rest.textmagic.com
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

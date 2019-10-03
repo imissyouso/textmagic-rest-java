@@ -24,7 +24,6 @@ import com.textmagic.sdk.model.ContactCustomField;
 import com.textmagic.sdk.model.ContactImage;
 import com.textmagic.sdk.model.ContactNote;
 import com.textmagic.sdk.model.Country;
-import com.textmagic.sdk.model.Group;
 import com.textmagic.sdk.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -71,7 +70,7 @@ public class Contact {
   private User user = null;
 
   @SerializedName("lists")
-  private List<Group> lists = new ArrayList<Group>();
+  private List<List> lists = new ArrayList<List>();
 
   @SerializedName("phoneType")
   private String phoneType = null;
@@ -285,12 +284,12 @@ public class Contact {
     this.user = user;
   }
 
-  public Contact lists(List<Group> lists) {
+  public Contact lists(List<List> lists) {
     this.lists = lists;
     return this;
   }
 
-  public Contact addListsItem(Group listsItem) {
+  public Contact addListsItem(List listsItem) {
     this.lists.add(listsItem);
     return this;
   }
@@ -300,11 +299,11 @@ public class Contact {
    * @return lists
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Group> getLists() {
+  public List<List> getLists() {
     return lists;
   }
 
-  public void setLists(List<Group> lists) {
+  public void setLists(List<List> lists) {
     this.lists = lists;
   }
 

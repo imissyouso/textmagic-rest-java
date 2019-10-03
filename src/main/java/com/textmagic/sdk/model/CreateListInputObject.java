@@ -33,7 +33,7 @@ public class CreateListInputObject {
   private String name = null;
 
   @SerializedName("shared")
-  private Boolean shared = null;
+  private Boolean shared = false;
 
   @SerializedName("favorited")
   private Boolean favorited = false;
@@ -47,10 +47,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * List name
+   * List name.
    * @return name
   **/
-  @ApiModelProperty(example = "New test list", required = true, value = "List name")
+  @ApiModelProperty(example = "List name", required = true, value = "List name.")
   public String getName() {
     return name;
   }
@@ -65,10 +65,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * Should this list be shared with sub-accounts
+   * Should new list be shared among all the sub-accounts? The default is 0 (false).
    * @return shared
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Should this list be shared with sub-accounts")
+  @ApiModelProperty(example = "false", value = "Should new list be shared among all the sub-accounts? The default is 0 (false).")
   public Boolean isShared() {
     return shared;
   }
@@ -83,10 +83,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * Is list favorited. Default is false
+   * Is list favorited. Default is false.
    * @return favorited
   **/
-  @ApiModelProperty(example = "true", value = "Is list favorited. Default is false")
+  @ApiModelProperty(example = "false", value = "Is list favorited. Default is false.")
   public Boolean isFavorited() {
     return favorited;
   }
@@ -101,10 +101,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * Is list default for new contacts (web only).
+   * Is list default for new contacts (web only). Default is false.
    * @return isDefault
   **/
-  @ApiModelProperty(example = "true", value = "Is list default for new contacts (web only).")
+  @ApiModelProperty(example = "false", value = "Is list default for new contacts (web only). Default is false.")
   public Boolean isIsDefault() {
     return isDefault;
   }

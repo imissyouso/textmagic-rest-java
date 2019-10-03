@@ -46,10 +46,10 @@ public class BadRequestResponse {
   }
 
    /**
-   * Get code
+   * HTTP error code.
    * @return code
   **/
-  @ApiModelProperty(example = "400", value = "")
+  @ApiModelProperty(example = "400", value = "HTTP error code.")
   public Integer getCode() {
     return code;
   }
@@ -64,10 +64,10 @@ public class BadRequestResponse {
   }
 
    /**
-   * Get message
+   * Brief error message. You could display this message to your user or save it in a log.
    * @return message
   **/
-  @ApiModelProperty(example = "Error messages goes here", value = "")
+  @ApiModelProperty(example = "Resource does not exist", value = "Brief error message. You could display this message to your user or save it in a log.")
   public String getMessage() {
     return message;
   }

@@ -80,6 +80,7 @@ import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
 import com.textmagic.sdk.model.GetListContactsIdsResponse;
 import com.textmagic.sdk.model.GetListsOfContactPaginatedResponse;
+import com.textmagic.sdk.model.GetListsPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagePreviewResponse;
 import com.textmagic.sdk.model.GetMessagePriceResponse;
 import com.textmagic.sdk.model.GetMessagePricesResponse;
@@ -101,9 +102,7 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.GetUserListsPaginatedResponse;
 import com.textmagic.sdk.model.GetVersionsResponse;
-import com.textmagic.sdk.model.Group;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -287,9 +286,9 @@ public class TextMagicApiTest {
      *          if the Api call fails
      */
     @Test
-    public void checkPhoneVerificationCode_0Test() throws ApiException {
+    public void checkPhoneVerificationCodeTFATest() throws ApiException {
         CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject = null;
-        api.checkPhoneVerificationCode_0(checkPhoneVerificationCodeInputObject);
+        api.checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject);
 
         // TODO: test validations
     }
@@ -408,7 +407,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Create a new list from the submitted data.
+     * Create a new list
      *
      * 
      *
@@ -1684,7 +1683,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single list.
+     * Get the details of a specific list
      *
      * 
      *
@@ -1694,7 +1693,7 @@ public class TextMagicApiTest {
     @Test
     public void getListTest() throws ApiException {
         Integer id = null;
-        Group response = api.getList(id);
+        List response = api.getList(id);
 
         // TODO: test validations
     }
@@ -1711,6 +1710,27 @@ public class TextMagicApiTest {
     public void getListContactsIdsTest() throws ApiException {
         Integer id = null;
         GetListContactsIdsResponse response = api.getListContactsIds(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get all lists
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getListsTest() throws ApiException {
+        Integer page = null;
+        Integer limit = null;
+        String orderBy = null;
+        String direction = null;
+        Integer favoriteOnly = null;
+        Integer onlyMine = null;
+        GetListsPaginatedResponse response = api.getLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
 
         // TODO: test validations
     }
@@ -2264,27 +2284,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all user lists.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserListsTest() throws ApiException {
-        Integer page = null;
-        Integer limit = null;
-        String orderBy = null;
-        String direction = null;
-        Integer favoriteOnly = null;
-        Integer onlyMine = null;
-        GetUserListsPaginatedResponse response = api.getUserLists(page, limit, orderBy, direction, favoriteOnly, onlyMine);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Get minimal valid apps versions
      *
      * 
@@ -2720,9 +2719,9 @@ public class TextMagicApiTest {
      *          if the Api call fails
      */
     @Test
-    public void sendPhoneVerificationCode_0Test() throws ApiException {
+    public void sendPhoneVerificationCodeTFATest() throws ApiException {
         SendPhoneVerificationCodeInputObject sendPhoneVerificationCodeInputObject = null;
-        SendPhoneVerificationCodeResponse response = api.sendPhoneVerificationCode_0(sendPhoneVerificationCodeInputObject);
+        SendPhoneVerificationCodeResponse response = api.sendPhoneVerificationCodeTFA(sendPhoneVerificationCodeInputObject);
 
         // TODO: test validations
     }

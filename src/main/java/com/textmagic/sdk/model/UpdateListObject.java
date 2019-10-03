@@ -68,7 +68,7 @@ public class UpdateListObject {
    * Should this list be shared with sub-accounts
    * @return shared
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Should this list be shared with sub-accounts")
+  @ApiModelProperty(example = "true", value = "Should this list be shared with sub-accounts")
   public Boolean isShared() {
     return shared;
   }
