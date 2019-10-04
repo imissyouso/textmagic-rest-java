@@ -151,7 +151,7 @@ public class DoCarrierLookupResponse {
    * Get number164
    * @return number164
   **/
-  @ApiModelProperty(example = "+15417543010", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "")
   public String getNumber164() {
     return number164;
   }

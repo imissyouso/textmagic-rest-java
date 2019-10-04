@@ -51,10 +51,10 @@ public class UnsubscribedContact {
   }
 
    /**
-   * Get id
+   * Unsubscribed contact ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "27074", required = true, value = "Unsubscribed contact ID.")
   public Integer getId() {
     return id;
   }
@@ -69,10 +69,10 @@ public class UnsubscribedContact {
   }
 
    /**
-   * Get phone
+   * Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
    * @return phone
   **/
-  @ApiModelProperty(example = "+1386673549434", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).")
   public String getPhone() {
     return phone;
   }
@@ -87,10 +87,10 @@ public class UnsubscribedContact {
   }
 
    /**
-   * Get unsubscribeTime
+   * Time when contact has been opted-out.
    * @return unsubscribeTime
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-01-09T18:59:46+0000", required = true, value = "Time when contact has been opted-out.")
   public OffsetDateTime getUnsubscribeTime() {
     return unsubscribeTime;
   }
@@ -105,10 +105,10 @@ public class UnsubscribedContact {
   }
 
    /**
-   * Get firstName
+   * Unsubscribed contact first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test fist name", required = true, value = "")
+  @ApiModelProperty(example = "Charles", required = true, value = "Unsubscribed contact first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -123,10 +123,10 @@ public class UnsubscribedContact {
   }
 
    /**
-   * Get lastName
+   * Unsubscribed contact last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test last name", required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Unsubscribed contact last name.")
   public String getLastName() {
     return lastName;
   }

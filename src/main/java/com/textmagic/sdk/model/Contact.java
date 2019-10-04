@@ -87,10 +87,10 @@ public class Contact {
   }
 
    /**
-   * Get id
+   * Contact ID.
    * @return id
   **/
-  @ApiModelProperty(example = "224", required = true, value = "")
+  @ApiModelProperty(example = "27074", required = true, value = "Contact ID.")
   public Integer getId() {
     return id;
   }
@@ -141,10 +141,10 @@ public class Contact {
   }
 
    /**
-   * Get firstName
+   * Contact first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test first name", required = true, value = "")
+  @ApiModelProperty(example = "Charles", required = true, value = "Contact first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -159,10 +159,10 @@ public class Contact {
   }
 
    /**
-   * Get lastName
+   * Contact last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test last name", required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Contact last name.")
   public String getLastName() {
     return lastName;
   }
@@ -177,10 +177,10 @@ public class Contact {
   }
 
    /**
-   * Get companyName
+   * Company name.
    * @return companyName
   **/
-  @ApiModelProperty(example = "Test company name", required = true, value = "")
+  @ApiModelProperty(example = "Example Ltd.", required = true, value = "Company name.")
   public String getCompanyName() {
     return companyName;
   }
@@ -195,10 +195,10 @@ public class Contact {
   }
 
    /**
-   * Get phone
+   * Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
    * @return phone
   **/
-  @ApiModelProperty(example = "79030011222", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).")
   public String getPhone() {
     return phone;
   }
@@ -213,10 +213,10 @@ public class Contact {
   }
 
    /**
-   * Get email
+   * Contact email address.
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "")
+  @ApiModelProperty(example = "charles@example.com", required = true, value = "Contact email address.")
   public String getEmail() {
     return email;
   }
@@ -231,10 +231,10 @@ public class Contact {
   }
 
    /**
-   * Get country
+   * Contact country.
    * @return country
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Contact country.")
   public Country getCountry() {
     return country;
   }
@@ -254,10 +254,10 @@ public class Contact {
   }
 
    /**
-   * Get customFields
+   * See [Custom Fields](/docs/api/custom-fields/) section.
    * @return customFields
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "See [Custom Fields](/docs/api/custom-fields/) section.")
   public List<ContactCustomField> getCustomFields() {
     return customFields;
   }

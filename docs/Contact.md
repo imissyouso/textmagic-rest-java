@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
+**id** | **Integer** | Contact ID. | 
 **favorited** | **Boolean** |  | 
 **blocked** | **Boolean** |  | 
-**firstName** | **String** |  | 
-**lastName** | **String** |  | 
-**companyName** | **String** |  | 
-**phone** | **String** |  | 
-**email** | **String** |  | 
-**country** | [**Country**](Country.md) |  | 
-**customFields** | [**List&lt;ContactCustomField&gt;**](ContactCustomField.md) |  | 
+**firstName** | **String** | Contact first name. | 
+**lastName** | **String** | Contact last name. | 
+**companyName** | **String** | Company name. | 
+**phone** | **String** | Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164). | 
+**email** | **String** | Contact email address. | 
+**country** | [**Country**](Country.md) | Contact country. | 
+**customFields** | [**List&lt;ContactCustomField&gt;**](ContactCustomField.md) | See [Custom Fields](/docs/api/custom-fields/) section. | 
 **user** | [**User**](User.md) |  | 
 **lists** | [**List&lt;List&gt;**](List.md) |  | 
 **phoneType** | **String** |  | 

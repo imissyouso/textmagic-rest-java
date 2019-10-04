@@ -182,7 +182,7 @@ public class TextMagicApiTest {
     /**
      * Assign contacts to a list
      *
-     * 
+     * &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -197,9 +197,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Block contact from inbound and outbound communication by phone number.
+     * Block contact by phone number
      *
-     * 
+     * Block contact from inbound and outbound communication by phone number.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -357,7 +357,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Create a new contact from the submitted data.
+     * Add a new contact
      *
      * 
      *
@@ -390,7 +390,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Create a new custom field from the submitted data.
+     * Add a new custom field
      *
      * 
      *
@@ -487,7 +487,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete all contacts.
+     * Delete contacts (bulk)
      *
      * 
      *
@@ -565,9 +565,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single contact.
+     * Delete a contact
      *
-     * 
+     * &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -581,7 +581,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete an avatar for the contact.
+     * Delete an avatar
      *
      * 
      *
@@ -630,7 +630,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete contact by given ID(s) or delete all contacts.
+     * Delete contacts by IDs (bulk)
      *
      * 
      *
@@ -648,7 +648,7 @@ public class TextMagicApiTest {
     /**
      * Unassign contacts from a list
      *
-     * 
+     * &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -663,9 +663,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single custom field.
+     * Delete a custom field
      *
-     * 
+     * &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -727,9 +727,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single list
+     * Delete a list
      *
-     * 
+     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -759,7 +759,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete contact from list by given ID(s) or all contacts from list
+     * Delete contacts from list (bulk)
      *
      * 
      *
@@ -776,7 +776,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete list by given ID(s) or delete all lists
+     * Delete lists (bulk)
      *
      * 
      *
@@ -794,7 +794,7 @@ public class TextMagicApiTest {
     /**
      * Delete a session
      *
-     * 
+     * Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -810,7 +810,7 @@ public class TextMagicApiTest {
     /**
      * Delete sessions (bulk)
      *
-     * 
+     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -971,7 +971,7 @@ public class TextMagicApiTest {
     /**
      * Delete templates (bulk)
      *
-     * 
+     * Delete template by given ID(s) or delete all templates.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1109,7 +1109,7 @@ public class TextMagicApiTest {
     /**
      * Get all sessions
      *
-     * 
+     * Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1243,7 +1243,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get blocked contacts.
+     * Get blocked contacts
      *
      * 
      *
@@ -1366,7 +1366,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single contact.
+     * Get the details of a specific contact
      *
      * 
      *
@@ -1382,7 +1382,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single contact by phone number.
+     * Get the details of a specific contact by phone number
      *
      * 
      *
@@ -1464,7 +1464,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all user contacts.
+     * Get all contacts
      *
      * 
      *
@@ -1484,9 +1484,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get contacts autocomplete suggestions by given search term.
+     * Get contacts autocomplete suggestions
      *
-     * 
+     * Get contacts autocomplete suggestions by given search term
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1552,7 +1552,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single custom field.
+     * Get the details of a specific custom field
      *
      * 
      *
@@ -1568,7 +1568,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all contact custom fields.
+     * Get all custom fields
      *
      * 
      *
@@ -1616,7 +1616,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get favorite contacts and lists.
+     * Get favorite contacts and lists
      *
      * 
      *
@@ -1698,7 +1698,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Fetch all contacts IDs belonging to the list with ID
+     * Get all contacts IDs in a list
      *
      * 
      *
@@ -1735,9 +1735,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return lists which contact belongs to.
+     * Get contact&#39;s lists
      *
-     * 
+     * Get all the lists in which the contact is included
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1820,7 +1820,7 @@ public class TextMagicApiTest {
     /**
      * Get a session details
      *
-     * 
+     * Get a specific session’s details
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2172,7 +2172,7 @@ public class TextMagicApiTest {
     /**
      * Get a template details
      *
-     * 
+     * Get a single template.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2217,7 +2217,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single unsubscribed contact.
+     * Get the details of a specific unsubscribed contact
      *
      * 
      *
@@ -2233,9 +2233,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all contact have unsubscribed from your communication.
+     * Get all unsubscribed contacts
      *
-     * 
+     * When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2513,7 +2513,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find user contacts by given parameters.
+     * Find contacts by given criteria
      *
      * 
      *
@@ -2561,7 +2561,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find contact lists by given parameters
+     * Find lists by given criteria
      *
      * 
      *
@@ -2631,7 +2631,7 @@ public class TextMagicApiTest {
     /**
      * Find templates by criteria
      *
-     * 
+     * Find user templates by given parameters.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2759,9 +2759,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Unblock several contacts by blocked contact ids or unblock all contacts
+     * Unblock contacts (bulk)
      *
-     * 
+     * Unblock several contacts by blocked contact ids or unblock all contacts
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2791,9 +2791,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Unsubscribe contact from your communication by phone number.
+     * Manually unsubscribe a contact
      *
-     * 
+     * &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2855,7 +2855,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing contact.
+     * Edit a contact
      *
      * 
      *
@@ -2905,7 +2905,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing custom field.
+     * Edit a custom field
      *
      * 
      *
@@ -2922,7 +2922,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update contact&#39;s custom field value.
+     * Edit the custom field value of a specified contact
      *
      * 
      *
@@ -2955,7 +2955,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing list
+     * Edit a list
      *
      * 
      *
@@ -3071,7 +3071,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Add an avatar for the contact.
+     * Upload an avatar
      *
      * 
      *

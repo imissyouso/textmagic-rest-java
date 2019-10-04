@@ -50,7 +50,7 @@ public class CreateListInputObject {
    * List name.
    * @return name
   **/
-  @ApiModelProperty(example = "List name", required = true, value = "List name.")
+  @ApiModelProperty(example = "Private list", required = true, value = "List name.")
   public String getName() {
     return name;
   }
@@ -65,10 +65,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * Should new list be shared among all the sub-accounts? The default is 0 (false).
+   * Should new list be **shared** among all the sub-accounts?
    * @return shared
   **/
-  @ApiModelProperty(example = "false", value = "Should new list be shared among all the sub-accounts? The default is 0 (false).")
+  @ApiModelProperty(example = "false", value = "Should new list be **shared** among all the sub-accounts?")
   public Boolean isShared() {
     return shared;
   }
@@ -101,10 +101,10 @@ public class CreateListInputObject {
   }
 
    /**
-   * Is list default for new contacts (web only). Default is false.
+   * Is list default for new contacts (web only).
    * @return isDefault
   **/
-  @ApiModelProperty(example = "false", value = "Is list default for new contacts (web only). Default is false.")
+  @ApiModelProperty(example = "false", value = "Is list default for new contacts (web only).")
   public Boolean isIsDefault() {
     return isDefault;
   }

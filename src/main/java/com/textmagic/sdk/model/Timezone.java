@@ -104,10 +104,10 @@ public class Timezone {
   }
 
    /**
-   * Get offset
+   * Offset from UTC time in seconds. In this example it is 21600/60/60&#x3D;6 hours.
    * @return offset
   **/
-  @ApiModelProperty(example = "10800", required = true, value = "")
+  @ApiModelProperty(example = "10800", required = true, value = "Offset from UTC time in seconds. In this example it is 21600/60/60=6 hours.")
   public Integer getOffset() {
     return offset;
   }

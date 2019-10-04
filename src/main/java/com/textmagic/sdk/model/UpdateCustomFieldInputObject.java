@@ -38,10 +38,10 @@ public class UpdateCustomFieldInputObject {
   }
 
    /**
-   * Custom field name
+   * Custom field name.
    * @return name
   **/
-  @ApiModelProperty(example = "Test custom field", required = true, value = "Custom field name")
+  @ApiModelProperty(example = "DOB", required = true, value = "Custom field name.")
   public String getName() {
     return name;
   }

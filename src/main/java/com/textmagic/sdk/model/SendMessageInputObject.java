@@ -215,7 +215,7 @@ public class SendMessageInputObject {
    * Comma separated array of E.164 phone numbers message will be sent to
    * @return phones
   **/
-  @ApiModelProperty(example = "+19993322111,+19993322110", required = true, value = "Comma separated array of E.164 phone numbers message will be sent to")
+  @ApiModelProperty(example = "447860021130,447860021131", required = true, value = "Comma separated array of E.164 phone numbers message will be sent to")
   public String getPhones() {
     return phones;
   }

@@ -41,10 +41,10 @@ public class UpdateCustomFieldValueInputObject {
   }
 
    /**
-   * Get contactId
+   * [Contact](/docs/api/contacts/) 
    * @return contactId
   **/
-  @ApiModelProperty(example = "5", value = "")
+  @ApiModelProperty(example = "50315", value = "[Contact](/docs/api/contacts/) ")
   public Integer getContactId() {
     return contactId;
   }
@@ -59,10 +59,10 @@ public class UpdateCustomFieldValueInputObject {
   }
 
    /**
-   * Get value
+   * Custom field value. Note that this value is not parsed in any way. It is stored and used in tags exactly as you send it.
    * @return value
   **/
-  @ApiModelProperty(example = "Test custom field value", value = "")
+  @ApiModelProperty(example = "1983-08-31T00:00:00.000Z", value = "Custom field value. Note that this value is not parsed in any way. It is stored and used in tags exactly as you send it.")
   public String getValue() {
     return value;
   }

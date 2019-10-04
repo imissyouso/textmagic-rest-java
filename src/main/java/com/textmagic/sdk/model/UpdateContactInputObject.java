@@ -107,10 +107,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Contact phone number in E.164 (international) format without leading + or zeroes
+   * Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
    * @return phone
   **/
-  @ApiModelProperty(example = "+23058300573", required = true, value = "Contact phone number in E.164 (international) format without leading + or zeroes")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).")
   public String getPhone() {
     return phone;
   }
@@ -125,10 +125,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Contact email
+   * Contact email address.
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", value = "Contact email")
+  @ApiModelProperty(example = "charles@example.com", value = "Contact email address.")
   public String getEmail() {
     return email;
   }
@@ -161,10 +161,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Array of list resources id contact will be assigned to
+   * Comma-separated [list](/docs/api/lists/) ID. Each contact must be assigned to at least one list.
    * @return lists
   **/
-  @ApiModelProperty(example = "1,2,3,4", required = true, value = "Array of list resources id contact will be assigned to")
+  @ApiModelProperty(example = "10541,18599", required = true, value = "Comma-separated [list](/docs/api/lists/) ID. Each contact must be assigned to at least one list.")
   public String getLists() {
     return lists;
   }

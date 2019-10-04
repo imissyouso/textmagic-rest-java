@@ -15,7 +15,7 @@ package com.textmagic.sdk.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
+import com.textmagic.sdk.model.GetContactsAutocompleteResponseItem;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +23,7 @@ import java.util.List;
  * GetContactsAutocompleteResponse
  */
 
-public class GetContactsAutocompleteResponse extends ArrayList<GetContactsAutocompleteResponse> {
+public class GetContactsAutocompleteResponse extends ArrayList<GetContactsAutocompleteResponseItem> {
 
   @Override
   public boolean equals(java.lang.Object o) {

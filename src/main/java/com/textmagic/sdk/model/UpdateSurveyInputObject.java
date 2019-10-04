@@ -107,7 +107,7 @@ public class UpdateSurveyInputObject {
    * Array of E.164 phone numbers message will be sent to
    * @return phones
   **/
-  @ApiModelProperty(example = "+19998887766,+19998887755", value = "Array of E.164 phone numbers message will be sent to")
+  @ApiModelProperty(example = "447860021130,447860021131", value = "Array of E.164 phone numbers message will be sent to")
   public String getPhones() {
     return phones;
   }

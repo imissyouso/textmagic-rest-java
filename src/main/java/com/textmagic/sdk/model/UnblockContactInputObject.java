@@ -41,7 +41,7 @@ public class UnblockContactInputObject {
    * Contact phone number
    * @return phone
   **/
-  @ApiModelProperty(example = "+14153288240", value = "Contact phone number")
+  @ApiModelProperty(example = "447860021130", value = "Contact phone number")
   public String getPhone() {
     return phone;
   }

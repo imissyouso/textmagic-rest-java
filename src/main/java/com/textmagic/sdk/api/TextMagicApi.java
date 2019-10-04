@@ -203,7 +203,7 @@ public class TextMagicApi {
 
     /**
      * Build call for assignContactsToList
-     * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * @param assignContactsToListInputObject  (required)
      * @param id  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -273,8 +273,8 @@ public class TextMagicApi {
 
     /**
      * Assign contacts to a list
-     * 
-     * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+     * @param assignContactsToListInputObject  (required)
      * @param id  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -286,8 +286,8 @@ public class TextMagicApi {
 
     /**
      * Assign contacts to a list
-     * 
-     * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+     * @param assignContactsToListInputObject  (required)
      * @param id  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -300,8 +300,8 @@ public class TextMagicApi {
 
     /**
      * Assign contacts to a list (asynchronously)
-     * 
-     * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * &gt; Unlike all other PUT requests, this command does not need old contact IDs to be submitted. For example, if you have a list with contacts 150, 151 and 152 and you want to add contact ID 153, you only need to submit 153 as a parameter of PUT /api/v2/lists/{id}/contacts. 
+     * @param assignContactsToListInputObject  (required)
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -397,8 +397,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Block contact by phone number
      * Block contact from inbound and outbound communication by phone number.
-     * 
      * @param blockContactInputObject  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -409,8 +409,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Block contact by phone number
      * Block contact from inbound and outbound communication by phone number.
-     * 
      * @param blockContactInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,8 +422,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Block contact from inbound and outbound communication by phone number. (asynchronously)
-     * 
+     * Block contact by phone number (asynchronously)
+     * Block contact from inbound and outbound communication by phone number.
      * @param blockContactInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1593,7 +1593,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact from the submitted data.
+     * Add a new contact
      * 
      * @param createContactInputObject  (required)
      * @return ResourceLinkResponse
@@ -1605,7 +1605,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact from the submitted data.
+     * Add a new contact
      * 
      * @param createContactInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
@@ -1618,7 +1618,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact from the submitted data. (asynchronously)
+     * Add a new contact (asynchronously)
      * 
      * @param createContactInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -1847,7 +1847,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new custom field from the submitted data.
+     * Add a new custom field
      * 
      * @param createCustomFieldInputObject  (required)
      * @return ResourceLinkResponse
@@ -1859,7 +1859,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new custom field from the submitted data.
+     * Add a new custom field
      * 
      * @param createCustomFieldInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
@@ -1872,7 +1872,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new custom field from the submitted data. (asynchronously)
+     * Add a new custom field (asynchronously)
      * 
      * @param createCustomFieldInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -2579,7 +2579,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete all contacts.
+     * Delete contacts (bulk)
      * 
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2588,7 +2588,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete all contacts.
+     * Delete contacts (bulk)
      * 
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2599,7 +2599,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete all contacts. (asynchronously)
+     * Delete contacts (bulk) (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3159,8 +3159,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact.
-     * 
+     * Delete a contact
+     * &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3169,8 +3169,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact.
-     * 
+     * Delete a contact
+     * &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3181,8 +3181,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact. (asynchronously)
-     * 
+     * Delete a contact (asynchronously)
+     * &gt; This command removes your contact completely. If it was assigned or saved to a shared list, it will disappear from there too. If you only need to remove a contact from selected lists, instead use the Contact assignment command in the Lists section rather than deleting the contact. 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3278,7 +3278,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the contact.
+     * Delete an avatar
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3288,7 +3288,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the contact.
+     * Delete an avatar
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -3300,7 +3300,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the contact. (asynchronously)
+     * Delete an avatar (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -3643,7 +3643,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact by given ID(s) or delete all contacts.
+     * Delete contacts by IDs (bulk)
      * 
      * @param deleteContactsByIdsInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3653,7 +3653,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact by given ID(s) or delete all contacts.
+     * Delete contacts by IDs (bulk)
      * 
      * @param deleteContactsByIdsInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -3665,7 +3665,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact by given ID(s) or delete all contacts. (asynchronously)
+     * Delete contacts by IDs (bulk) (asynchronously)
      * 
      * @param deleteContactsByIdsInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -3699,7 +3699,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for deleteContactsFromList
-     * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
+     * @param deleteContacsFromListObject  (required)
      * @param id  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -3769,8 +3769,8 @@ public class TextMagicApi {
 
     /**
      * Unassign contacts from a list
-     * 
-     * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
+     * &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+     * @param deleteContacsFromListObject  (required)
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3780,8 +3780,8 @@ public class TextMagicApi {
 
     /**
      * Unassign contacts from a list
-     * 
-     * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
+     * &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+     * @param deleteContacsFromListObject  (required)
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3793,8 +3793,8 @@ public class TextMagicApi {
 
     /**
      * Unassign contacts from a list (asynchronously)
-     * 
-     * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
+     * &gt; When you remove contacts from a specific list, they will be deleted permanently, unless they are first saved in another list. 
+     * @param deleteContacsFromListObject  (required)
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -3890,8 +3890,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single custom field.
-     * 
+     * Delete a custom field
+     * &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3900,8 +3900,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single custom field.
-     * 
+     * Delete a custom field
+     * &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3912,8 +3912,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single custom field. (asynchronously)
-     * 
+     * Delete a custom field (asynchronously)
+     * &gt; When a custom field is deleted, all the information that was added to contacts under this custom field will also be lost. 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4365,8 +4365,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list
-     * 
+     * Delete a list
+     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4375,8 +4375,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list
-     * 
+     * Delete a list
+     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4387,8 +4387,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list (asynchronously)
-     * 
+     * Delete a list (asynchronously)
+     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4609,7 +4609,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list
+     * Delete contacts from list (bulk)
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4620,7 +4620,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list
+     * Delete contacts from list (bulk)
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4633,7 +4633,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list (asynchronously)
+     * Delete contacts from list (bulk) (asynchronously)
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4730,7 +4730,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists
+     * Delete lists (bulk)
      * 
      * @param deleteListsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4740,7 +4740,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists
+     * Delete lists (bulk)
      * 
      * @param deleteListsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4752,7 +4752,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists (asynchronously)
+     * Delete lists (bulk) (asynchronously)
      * 
      * @param deleteListsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -4850,7 +4850,7 @@ public class TextMagicApi {
 
     /**
      * Delete a session
-     * 
+     * Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4860,7 +4860,7 @@ public class TextMagicApi {
 
     /**
      * Delete a session
-     * 
+     * Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4872,7 +4872,7 @@ public class TextMagicApi {
 
     /**
      * Delete a session (asynchronously)
-     * 
+     * Delete a message session, together with all nested messages. &gt; You will not be refunded for any deleted sent sessions. 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -4968,7 +4968,7 @@ public class TextMagicApi {
 
     /**
      * Delete sessions (bulk)
-     * 
+     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -4978,7 +4978,7 @@ public class TextMagicApi {
 
     /**
      * Delete sessions (bulk)
-     * 
+     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4990,7 +4990,7 @@ public class TextMagicApi {
 
     /**
      * Delete sessions (bulk) (asynchronously)
-     * 
+     * Delete messages sessions, together with all nested messages, by given ID(s) or delete all messages sessions.
      * @param deleteMessageSessionsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -6165,7 +6165,7 @@ public class TextMagicApi {
 
     /**
      * Delete templates (bulk)
-     * 
+     * Delete template by given ID(s) or delete all templates.
      * @param deleteTemplatesBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6175,7 +6175,7 @@ public class TextMagicApi {
 
     /**
      * Delete templates (bulk)
-     * 
+     * Delete template by given ID(s) or delete all templates.
      * @param deleteTemplatesBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6187,7 +6187,7 @@ public class TextMagicApi {
 
     /**
      * Delete templates (bulk) (asynchronously)
-     * 
+     * Delete template by given ID(s) or delete all templates.
      * @param deleteTemplatesBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -7191,7 +7191,7 @@ public class TextMagicApi {
 
     /**
      * Get all sessions
-     * 
+     * Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @return GetAllMessageSessionsPaginatedResponse
@@ -7204,7 +7204,7 @@ public class TextMagicApi {
 
     /**
      * Get all sessions
-     * 
+     * Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetAllMessageSessionsPaginatedResponse&gt;
@@ -7218,7 +7218,7 @@ public class TextMagicApi {
 
     /**
      * Get all sessions (asynchronously)
-     * 
+     * Get all message sending sessions. &gt; This list contains all of your sessions, including those which were sent but not via API 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
@@ -8204,7 +8204,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get blocked contacts.
+     * Get blocked contacts
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -8220,7 +8220,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get blocked contacts.
+     * Get blocked contacts
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -8237,7 +8237,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get blocked contacts. (asynchronously)
+     * Get blocked contacts (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -9111,7 +9111,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact.
+     * Get the details of a specific contact
      * 
      * @param id The contact id (required)
      * @return Contact
@@ -9123,7 +9123,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact.
+     * Get the details of a specific contact
      * 
      * @param id The contact id (required)
      * @return ApiResponse&lt;Contact&gt;
@@ -9136,7 +9136,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact. (asynchronously)
+     * Get the details of a specific contact (asynchronously)
      * 
      * @param id The contact id (required)
      * @param callback The callback to be executed when the API call finishes
@@ -9234,7 +9234,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact by phone number.
+     * Get the details of a specific contact by phone number
      * 
      * @param phone  (required)
      * @return Contact
@@ -9246,7 +9246,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact by phone number.
+     * Get the details of a specific contact by phone number
      * 
      * @param phone  (required)
      * @return ApiResponse&lt;Contact&gt;
@@ -9259,7 +9259,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact by phone number. (asynchronously)
+     * Get the details of a specific contact by phone number (asynchronously)
      * 
      * @param phone  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -9870,7 +9870,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user contacts.
+     * Get all contacts
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -9886,7 +9886,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user contacts.
+     * Get all contacts
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -9903,7 +9903,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all user contacts. (asynchronously)
+     * Get all contacts (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -10012,8 +10012,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get contacts autocomplete suggestions by given search term.
-     * 
+     * Get contacts autocomplete suggestions
+     * Get contacts autocomplete suggestions by given search term
      * @param query Find recipients by specified search query (required)
      * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
@@ -10026,8 +10026,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get contacts autocomplete suggestions by given search term.
-     * 
+     * Get contacts autocomplete suggestions
+     * Get contacts autocomplete suggestions by given search term
      * @param query Find recipients by specified search query (required)
      * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
@@ -10041,8 +10041,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get contacts autocomplete suggestions by given search term. (asynchronously)
-     * 
+     * Get contacts autocomplete suggestions (asynchronously)
+     * Get contacts autocomplete suggestions by given search term
      * @param query Find recipients by specified search query (required)
      * @param limit The number of results per page. (optional, default to 10)
      * @param lists Should lists be returned or not (optional, default to 0)
@@ -10514,7 +10514,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single custom field.
+     * Get the details of a specific custom field
      * 
      * @param id  (required)
      * @return UserCustomField
@@ -10526,7 +10526,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single custom field.
+     * Get the details of a specific custom field
      * 
      * @param id  (required)
      * @return ApiResponse&lt;UserCustomField&gt;
@@ -10539,7 +10539,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single custom field. (asynchronously)
+     * Get the details of a specific custom field (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -10636,7 +10636,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact custom fields.
+     * Get all custom fields
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -10649,7 +10649,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact custom fields.
+     * Get all custom fields
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -10663,7 +10663,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact custom fields. (asynchronously)
+     * Get all custom fields (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11000,7 +11000,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get favorite contacts and lists.
+     * Get favorite contacts and lists
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11014,7 +11014,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get favorite contacts and lists.
+     * Get favorite contacts and lists
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11029,7 +11029,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get favorite contacts and lists. (asynchronously)
+     * Get favorite contacts and lists (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11613,7 +11613,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID
+     * Get all contacts IDs in a list
      * 
      * @param id  (required)
      * @return GetListContactsIdsResponse
@@ -11625,7 +11625,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID
+     * Get all contacts IDs in a list
      * 
      * @param id  (required)
      * @return ApiResponse&lt;GetListContactsIdsResponse&gt;
@@ -11638,7 +11638,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID (asynchronously)
+     * Get all contacts IDs in a list (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -11891,8 +11891,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return lists which contact belongs to.
-     * 
+     * Get contact&#39;s lists
+     * Get all the lists in which the contact is included
      * @param id  (required)
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11905,8 +11905,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return lists which contact belongs to.
-     * 
+     * Get contact&#39;s lists
+     * Get all the lists in which the contact is included
      * @param id  (required)
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -11920,8 +11920,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return lists which contact belongs to. (asynchronously)
-     * 
+     * Get contact&#39;s lists (asynchronously)
+     * Get all the lists in which the contact is included
      * @param id  (required)
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -12457,7 +12457,7 @@ public class TextMagicApi {
 
     /**
      * Get a session details
-     * 
+     * Get a specific session’s details
      * @param id a session ID (required)
      * @return MessageSession
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12469,7 +12469,7 @@ public class TextMagicApi {
 
     /**
      * Get a session details
-     * 
+     * Get a specific session’s details
      * @param id a session ID (required)
      * @return ApiResponse&lt;MessageSession&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -12482,7 +12482,7 @@ public class TextMagicApi {
 
     /**
      * Get a session details (asynchronously)
-     * 
+     * Get a specific session’s details
      * @param id a session ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -15095,7 +15095,7 @@ public class TextMagicApi {
 
     /**
      * Get a template details
-     * 
+     * Get a single template.
      * @param id  (required)
      * @return MessageTemplate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15107,7 +15107,7 @@ public class TextMagicApi {
 
     /**
      * Get a template details
-     * 
+     * Get a single template.
      * @param id  (required)
      * @return ApiResponse&lt;MessageTemplate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15120,7 +15120,7 @@ public class TextMagicApi {
 
     /**
      * Get a template details (asynchronously)
-     * 
+     * Get a single template.
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -15449,7 +15449,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single unsubscribed contact.
+     * Get the details of a specific unsubscribed contact
      * 
      * @param id  (required)
      * @return UnsubscribedContact
@@ -15461,7 +15461,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single unsubscribed contact.
+     * Get the details of a specific unsubscribed contact
      * 
      * @param id  (required)
      * @return ApiResponse&lt;UnsubscribedContact&gt;
@@ -15474,7 +15474,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single unsubscribed contact. (asynchronously)
+     * Get the details of a specific unsubscribed contact (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -15571,8 +15571,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact have unsubscribed from your communication.
-     * 
+     * Get all unsubscribed contacts
+     * When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @return GetUnsubscribersPaginatedResponse
@@ -15584,8 +15584,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact have unsubscribed from your communication.
-     * 
+     * Get all unsubscribed contacts
+     * When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @return ApiResponse&lt;GetUnsubscribersPaginatedResponse&gt;
@@ -15598,8 +15598,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all contact have unsubscribed from your communication. (asynchronously)
-     * 
+     * Get all unsubscribed contacts (asynchronously)
+     * When one of your message recipients sends a request with one of the [STOP-words](/sms-stop-command/), they will be immediately opted-out of your send lists and their contact status will change to an unsubscribed contact. To retrieve information on all contacts who have unsubscribed, use: 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
@@ -17685,7 +17685,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user contacts by given parameters.
+     * Find contacts by given criteria
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -17707,7 +17707,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user contacts by given parameters.
+     * Find contacts by given criteria
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -17730,7 +17730,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find user contacts by given parameters. (asynchronously)
+     * Find contacts by given criteria (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18010,7 +18010,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters
+     * Find lists by given criteria
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18029,7 +18029,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters
+     * Find lists by given criteria
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18049,7 +18049,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters (asynchronously)
+     * Find lists by given criteria (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18479,7 +18479,7 @@ public class TextMagicApi {
 
     /**
      * Find templates by criteria
-     * 
+     * Find user templates by given parameters.
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
@@ -18495,7 +18495,7 @@ public class TextMagicApi {
 
     /**
      * Find templates by criteria
-     * 
+     * Find user templates by given parameters.
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
@@ -18512,7 +18512,7 @@ public class TextMagicApi {
 
     /**
      * Find templates by criteria (asynchronously)
-     * 
+     * Find user templates by given parameters.
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
      * @param ids Find template by ID(s) (optional)
@@ -19437,8 +19437,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Unblock contacts (bulk)
      * Unblock several contacts by blocked contact ids or unblock all contacts
-     * 
      * @param unblockContactsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -19447,8 +19447,8 @@ public class TextMagicApi {
     }
 
     /**
+     * Unblock contacts (bulk)
      * Unblock several contacts by blocked contact ids or unblock all contacts
-     * 
      * @param unblockContactsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -19459,8 +19459,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Unblock several contacts by blocked contact ids or unblock all contacts (asynchronously)
-     * 
+     * Unblock contacts (bulk) (asynchronously)
+     * Unblock several contacts by blocked contact ids or unblock all contacts
      * @param unblockContactsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -19673,8 +19673,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Unsubscribe contact from your communication by phone number.
-     * 
+     * Manually unsubscribe a contact
+     * &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
      * @param unsubscribeContactInputObject  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -19685,8 +19685,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Unsubscribe contact from your communication by phone number.
-     * 
+     * Manually unsubscribe a contact
+     * &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
      * @param unsubscribeContactInputObject  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -19698,8 +19698,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Unsubscribe contact from your communication by phone number. (asynchronously)
-     * 
+     * Manually unsubscribe a contact (asynchronously)
+     * &gt; Please note, if you unsubscribe a contact, this action cannot be reversed. 
      * @param unsubscribeContactInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -20156,7 +20156,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact.
+     * Edit a contact
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
@@ -20169,7 +20169,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact.
+     * Edit a contact
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
@@ -20183,7 +20183,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact. (asynchronously)
+     * Edit a contact (asynchronously)
      * 
      * @param updateContactInputObject  (required)
      * @param id  (required)
@@ -20542,7 +20542,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing custom field.
+     * Edit a custom field
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
@@ -20555,7 +20555,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing custom field.
+     * Edit a custom field
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
@@ -20569,7 +20569,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing custom field. (asynchronously)
+     * Edit a custom field (asynchronously)
      * 
      * @param updateCustomFieldInputObject  (required)
      * @param id  (required)
@@ -20674,7 +20674,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update contact&#39;s custom field value.
+     * Edit the custom field value of a specified contact
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
@@ -20687,7 +20687,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update contact&#39;s custom field value.
+     * Edit the custom field value of a specified contact
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
@@ -20701,7 +20701,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update contact&#39;s custom field value. (asynchronously)
+     * Edit the custom field value of a specified contact (asynchronously)
      * 
      * @param updateCustomFieldValueInputObject  (required)
      * @param id  (required)
@@ -20919,7 +20919,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list
+     * Edit a list
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -20932,7 +20932,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list
+     * Edit a list
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -20946,7 +20946,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list (asynchronously)
+     * Edit a list (asynchronously)
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -21805,7 +21805,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the contact.
+     * Upload an avatar
      * 
      * @param image Contact avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)
@@ -21818,7 +21818,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the contact.
+     * Upload an avatar
      * 
      * @param image Contact avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)
@@ -21832,7 +21832,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the contact. (asynchronously)
+     * Upload an avatar (asynchronously)
      * 
      * @param image Contact avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)

@@ -33,7 +33,7 @@ public class UpdateListObject {
   private String name = null;
 
   @SerializedName("shared")
-  private Boolean shared = null;
+  private Boolean shared = false;
 
   @SerializedName("favorited")
   private Boolean favorited = false;
@@ -47,10 +47,10 @@ public class UpdateListObject {
   }
 
    /**
-   * List name
+   * List name.
    * @return name
   **/
-  @ApiModelProperty(example = "New test list", required = true, value = "List name")
+  @ApiModelProperty(example = "Private list", required = true, value = "List name.")
   public String getName() {
     return name;
   }
@@ -65,10 +65,10 @@ public class UpdateListObject {
   }
 
    /**
-   * Should this list be shared with sub-accounts
+   * Make this list shared or not?
    * @return shared
   **/
-  @ApiModelProperty(example = "true", value = "Should this list be shared with sub-accounts")
+  @ApiModelProperty(example = "true", value = "Make this list shared or not?")
   public Boolean isShared() {
     return shared;
   }
@@ -83,10 +83,10 @@ public class UpdateListObject {
   }
 
    /**
-   * Is list favorited. Default is false
+   * Is list favorited.
    * @return favorited
   **/
-  @ApiModelProperty(example = "true", value = "Is list favorited. Default is false")
+  @ApiModelProperty(example = "true", value = "Is list favorited.")
   public Boolean isFavorited() {
     return favorited;
   }

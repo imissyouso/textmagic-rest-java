@@ -38,10 +38,10 @@ public class AssignContactsToListInputObject {
   }
 
    /**
-   * Get contacts
+   * Comma-separated array of [Contacts](/docs/api/contacts/) IDs.
    * @return contacts
   **/
-  @ApiModelProperty(example = "1,2", required = true, value = "")
+  @ApiModelProperty(example = "318,454,30091", required = true, value = "Comma-separated array of [Contacts](/docs/api/contacts/) IDs.")
   public String getContacts() {
     return contacts;
   }

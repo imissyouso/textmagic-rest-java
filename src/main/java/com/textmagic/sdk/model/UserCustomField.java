@@ -45,10 +45,10 @@ public class UserCustomField {
   }
 
    /**
-   * Get id
+   * Custom field ID.
    * @return id
   **/
-  @ApiModelProperty(example = "23", required = true, value = "")
+  @ApiModelProperty(example = "23", required = true, value = "Custom field ID.")
   public Integer getId() {
     return id;
   }
@@ -63,10 +63,10 @@ public class UserCustomField {
   }
 
    /**
-   * Get name
+   * Custom field name.
    * @return name
   **/
-  @ApiModelProperty(example = "My new custom field", required = true, value = "")
+  @ApiModelProperty(example = "DOB", required = true, value = "Custom field name.")
   public String getName() {
     return name;
   }
@@ -81,10 +81,10 @@ public class UserCustomField {
   }
 
    /**
-   * Get createdAt
+   * Custom field creation time.
    * @return createdAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-02-11T07:33:19+0000", required = true, value = "Custom field creation time.")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
