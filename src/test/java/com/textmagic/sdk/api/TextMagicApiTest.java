@@ -2990,7 +2990,7 @@ public class TextMagicApiTest {
     /**
      * Change sender settings
      *
-     * @TODO
+     * 
      *
      * @throws ApiException
      *          if the Api call fails

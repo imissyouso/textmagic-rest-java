@@ -21163,7 +21163,7 @@ public class TextMagicApi {
 
     /**
      * Change sender settings
-     * @TODO
+     * 
      * @param updateSenderSettingInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -21173,7 +21173,7 @@ public class TextMagicApi {
 
     /**
      * Change sender settings
-     * @TODO
+     * 
      * @param updateSenderSettingInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -21185,7 +21185,7 @@ public class TextMagicApi {
 
     /**
      * Change sender settings (asynchronously)
-     * @TODO
+     * 
      * @param updateSenderSettingInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
