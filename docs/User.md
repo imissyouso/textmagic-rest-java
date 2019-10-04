@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | User ID. | 
+**displayTimeFormat** | **String** | Format for representation of time |  [optional]
 **username** | **String** | Username. | 
 **firstName** | **String** | Account first name. | 
 **lastName** | **String** | Account last name. | 

@@ -33,6 +33,9 @@ public class SenderId {
   @SerializedName("id")
   private Integer id = null;
 
+  @SerializedName("displayTimeFormat")
+  private String displayTimeFormat = null;
+
   @SerializedName("senderId")
   private String senderId = null;
 
@@ -109,6 +112,24 @@ public class SenderId {
     this.id = id;
   }
 
+  public SenderId displayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
+    return this;
+  }
+
+   /**
+   * Format for representation of time
+   * @return displayTimeFormat
+  **/
+  @ApiModelProperty(example = "24h", value = "Format for representation of time")
+  public String getDisplayTimeFormat() {
+    return displayTimeFormat;
+  }
+
+  public void setDisplayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
+  }
+
   public SenderId senderId(String senderId) {
     this.senderId = senderId;
     return this;
@@ -174,6 +195,7 @@ public class SenderId {
     }
     SenderId senderId = (SenderId) o;
     return Objects.equals(this.id, senderId.id) &&
+        Objects.equals(this.displayTimeFormat, senderId.displayTimeFormat) &&
         Objects.equals(this.senderId, senderId.senderId) &&
         Objects.equals(this.user, senderId.user) &&
         Objects.equals(this.status, senderId.status);
@@ -181,7 +203,7 @@ public class SenderId {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, senderId, user, status);
+    return Objects.hash(id, displayTimeFormat, senderId, user, status);
   }
 
 
@@ -191,6 +213,7 @@ public class SenderId {
     sb.append("class SenderId {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    displayTimeFormat: ").append(toIndentedString(displayTimeFormat)).append("\n");
     sb.append("    senderId: ").append(toIndentedString(senderId)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

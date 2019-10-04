@@ -6209,8 +6209,8 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page.
 Integer limit = 10; // Integer | The number of results per page.
-Integer start = 1430438400; // Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-String end = "1431648000"; // String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+Integer start = "2018-11-11 11:11"; // Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+String end = "\"2019-11-11 11:11\""; // String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 try {
     GetSpendingStatPaginatedResponse result = apiInstance.getSpendingStat(page, limit, start, end);
     System.out.println(result);

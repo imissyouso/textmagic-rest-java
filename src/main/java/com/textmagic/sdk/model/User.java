@@ -37,6 +37,9 @@ public class User {
   @SerializedName("id")
   private Integer id = null;
 
+  @SerializedName("displayTimeFormat")
+  private String displayTimeFormat = null;
+
   @SerializedName("username")
   private String username = null;
 
@@ -194,6 +197,24 @@ public class User {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public User displayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
+    return this;
+  }
+
+   /**
+   * Format for representation of time
+   * @return displayTimeFormat
+  **/
+  @ApiModelProperty(example = "24h", value = "Format for representation of time")
+  public String getDisplayTimeFormat() {
+    return displayTimeFormat;
+  }
+
+  public void setDisplayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
   }
 
   public User username(String username) {
@@ -477,6 +498,7 @@ public class User {
     }
     User user = (User) o;
     return Objects.equals(this.id, user.id) &&
+        Objects.equals(this.displayTimeFormat, user.displayTimeFormat) &&
         Objects.equals(this.username, user.username) &&
         Objects.equals(this.firstName, user.firstName) &&
         Objects.equals(this.lastName, user.lastName) &&
@@ -496,7 +518,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, status, balance, phone, company, currency, country, timezone, subaccountType, emailAccepted, phoneAccepted, avatar);
+    return Objects.hash(id, displayTimeFormat, username, firstName, lastName, email, status, balance, phone, company, currency, country, timezone, subaccountType, emailAccepted, phoneAccepted, avatar);
   }
 
 
@@ -506,6 +528,7 @@ public class User {
     sb.append("class User {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    displayTimeFormat: ").append(toIndentedString(displayTimeFormat)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");

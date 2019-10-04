@@ -40,7 +40,11 @@ public class Conversation {
   public enum DirectionEnum {
     IN("in"),
     
-    OUT("out");
+    OUT("out"),
+    
+    O("o"),
+    
+    I("i");
 
     private String value;
 

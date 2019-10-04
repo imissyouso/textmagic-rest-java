@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Dedicated number ID. | 
+**displayTimeFormat** | **String** | Format for representation of time |  [optional]
 **phone** | **String** | Dedicated phone number. |  [optional]
 **user** | [**User**](User.md) |  | 
 **purchasedAt** | [**OffsetDateTime**](OffsetDateTime.md) | Time when the dedicated number was purchased. | 

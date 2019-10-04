@@ -35,6 +35,9 @@ public class UsersInbound {
   @SerializedName("id")
   private Integer id = null;
 
+  @SerializedName("displayTimeFormat")
+  private String displayTimeFormat = null;
+
   @SerializedName("phone")
   private String phone = null;
 
@@ -116,6 +119,24 @@ public class UsersInbound {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public UsersInbound displayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
+    return this;
+  }
+
+   /**
+   * Format for representation of time
+   * @return displayTimeFormat
+  **/
+  @ApiModelProperty(example = "24h", value = "Format for representation of time")
+  public String getDisplayTimeFormat() {
+    return displayTimeFormat;
+  }
+
+  public void setDisplayTimeFormat(String displayTimeFormat) {
+    this.displayTimeFormat = displayTimeFormat;
   }
 
   public UsersInbound phone(String phone) {
@@ -237,6 +258,7 @@ public class UsersInbound {
     }
     UsersInbound usersInbound = (UsersInbound) o;
     return Objects.equals(this.id, usersInbound.id) &&
+        Objects.equals(this.displayTimeFormat, usersInbound.displayTimeFormat) &&
         Objects.equals(this.phone, usersInbound.phone) &&
         Objects.equals(this.user, usersInbound.user) &&
         Objects.equals(this.purchasedAt, usersInbound.purchasedAt) &&
@@ -247,7 +269,7 @@ public class UsersInbound {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, phone, user, purchasedAt, expireAt, status, country);
+    return Objects.hash(id, displayTimeFormat, phone, user, purchasedAt, expireAt, status, country);
   }
 
 
@@ -257,6 +279,7 @@ public class UsersInbound {
     sb.append("class UsersInbound {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    displayTimeFormat: ").append(toIndentedString(displayTimeFormat)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    purchasedAt: ").append(toIndentedString(purchasedAt)).append("\n");
