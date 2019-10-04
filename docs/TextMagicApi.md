@@ -4,14 +4,14 @@ All URIs are relative to *http://rest.textmagic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assignContactsToList**](TextMagicApi.md#assignContactsToList) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to the specified list.
+[**assignContactsToList**](TextMagicApi.md#assignContactsToList) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list
 [**blockContact**](TextMagicApi.md#blockContact) | **POST** /api/v2/contacts/block | Block contact from inbound and outbound communication by phone number.
 [**buyDedicatedNumber**](TextMagicApi.md#buyDedicatedNumber) | **POST** /api/v2/numbers | Buy a dedicated number
 [**cancelSurvey**](TextMagicApi.md#cancelSurvey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancelVerification**](TextMagicApi.md#cancelVerification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
 [**checkPhoneVerificationCode**](TextMagicApi.md#checkPhoneVerificationCode) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
 [**checkPhoneVerificationCodeTFA**](TextMagicApi.md#checkPhoneVerificationCodeTFA) | **PUT** /api/v2/verify | Step 2: Check the verification code 
-[**clearAndAssignContactsToList**](TextMagicApi.md#clearAndAssignContactsToList) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts.
+[**clearAndAssignContactsToList**](TextMagicApi.md#clearAndAssignContactsToList) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts
 [**closeChatsBulk**](TextMagicApi.md#closeChatsBulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
 [**closeReadChats**](TextMagicApi.md#closeReadChats) | **POST** /api/v2/chats/close/read | Close read chats
 [**closeSubaccount**](TextMagicApi.md#closeSubaccount) | **DELETE** /api/v2/subaccounts/{id} | Close sub-account
@@ -33,15 +33,15 @@ Method | HTTP request | Description
 [**deleteContactNote**](TextMagicApi.md#deleteContactNote) | **DELETE** /api/v2/notes/{id} | Delete a single contact note.
 [**deleteContactNotesBulk**](TextMagicApi.md#deleteContactNotesBulk) | **POST** /api/v2/contacts/{id}/notes/delete | Delete contact note by given ID(s) or delete all contact notes.
 [**deleteContactsByIds**](TextMagicApi.md#deleteContactsByIds) | **POST** /api/v2/contacts/delete | Delete contact by given ID(s) or delete all contacts.
-[**deleteContactsFromList**](TextMagicApi.md#deleteContactsFromList) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from the specified list.
+[**deleteContactsFromList**](TextMagicApi.md#deleteContactsFromList) | **DELETE** /api/v2/lists/{id}/contacts | Unassign contacts from a list
 [**deleteCustomField**](TextMagicApi.md#deleteCustomField) | **DELETE** /api/v2/customfields/{id} | Delete a single custom field.
 [**deleteDedicatedNumber**](TextMagicApi.md#deleteDedicatedNumber) | **DELETE** /api/v2/numbers/{id} | Cancel dedicated number subscription
 [**deleteInboundMessage**](TextMagicApi.md#deleteInboundMessage) | **DELETE** /api/v2/replies/{id} | Delete a single inbound message
 [**deleteInboundMessagesBulk**](TextMagicApi.md#deleteInboundMessagesBulk) | **POST** /api/v2/replies/delete | Delete inbound messages (bulk)
-[**deleteList**](TextMagicApi.md#deleteList) | **DELETE** /api/v2/lists/{id} | Delete a single list.
-[**deleteListAvatar**](TextMagicApi.md#deleteListAvatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for the list.
-[**deleteListContactsBulk**](TextMagicApi.md#deleteListContactsBulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contact from list by given ID(s) or all contacts from list.
-[**deleteListsBulk**](TextMagicApi.md#deleteListsBulk) | **POST** /api/v2/lists/delete | Delete list by given ID(s) or delete all lists.
+[**deleteList**](TextMagicApi.md#deleteList) | **DELETE** /api/v2/lists/{id} | Delete a single list
+[**deleteListAvatar**](TextMagicApi.md#deleteListAvatar) | **DELETE** /api/v2/lists/{id}/avatar | Delete an avatar for the list
+[**deleteListContactsBulk**](TextMagicApi.md#deleteListContactsBulk) | **POST** /api/v2/lists/{id}/contacts/delete | Delete contact from list by given ID(s) or all contacts from list
+[**deleteListsBulk**](TextMagicApi.md#deleteListsBulk) | **POST** /api/v2/lists/delete | Delete list by given ID(s) or delete all lists
 [**deleteMessageSession**](TextMagicApi.md#deleteMessageSession) | **DELETE** /api/v2/sessions/{id} | Delete a session
 [**deleteMessageSessionsBulk**](TextMagicApi.md#deleteMessageSessionsBulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
 [**deleteOutboundMessage**](TextMagicApi.md#deleteOutboundMessage) | **DELETE** /api/v2/messages/{id} | Delete message
@@ -84,7 +84,7 @@ Method | HTTP request | Description
 [**getContactNotes**](TextMagicApi.md#getContactNotes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
 [**getContacts**](TextMagicApi.md#getContacts) | **GET** /api/v2/contacts | Get all user contacts.
 [**getContactsAutocomplete**](TextMagicApi.md#getContactsAutocomplete) | **GET** /api/v2/contacts/autocomplete | Get contacts autocomplete suggestions by given search term.
-[**getContactsByListId**](TextMagicApi.md#getContactsByListId) | **GET** /api/v2/lists/{id}/contacts | Fetch user contacts by given group id.
+[**getContactsByListId**](TextMagicApi.md#getContactsByListId) | **GET** /api/v2/lists/{id}/contacts | Get all contacts in a list
 [**getCountries**](TextMagicApi.md#getCountries) | **GET** /api/v2/countries | Return list of countries.
 [**getCurrentUser**](TextMagicApi.md#getCurrentUser) | **GET** /api/v2/user | Get current account information
 [**getCustomField**](TextMagicApi.md#getCustomField) | **GET** /api/v2/customfields/{id} | Get a single custom field.
@@ -96,7 +96,7 @@ Method | HTTP request | Description
 [**getInboundMessagesNotificationSettings**](TextMagicApi.md#getInboundMessagesNotificationSettings) | **GET** /api/v2/user/notification/inbound | Get inbound messages notification settings
 [**getInvoices**](TextMagicApi.md#getInvoices) | **GET** /api/v2/invoices | Get all invoices
 [**getList**](TextMagicApi.md#getList) | **GET** /api/v2/lists/{id} | Get the details of a specific list
-[**getListContactsIds**](TextMagicApi.md#getListContactsIds) | **GET** /api/v2/lists/{id}/contacts/ids | Fetch all contacts IDs belonging to the list with ID.
+[**getListContactsIds**](TextMagicApi.md#getListContactsIds) | **GET** /api/v2/lists/{id}/contacts/ids | Fetch all contacts IDs belonging to the list with ID
 [**getLists**](TextMagicApi.md#getLists) | **GET** /api/v2/lists | Get all lists
 [**getListsOfContact**](TextMagicApi.md#getListsOfContact) | **GET** /api/v2/contacts/{id}/lists | Return lists which contact belongs to.
 [**getMessagePreview**](TextMagicApi.md#getMessagePreview) | **GET** /api/v2/messages/preview | Preview message
@@ -145,7 +145,7 @@ Method | HTTP request | Description
 [**searchChatsByReceipent**](TextMagicApi.md#searchChatsByReceipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
 [**searchContacts**](TextMagicApi.md#searchContacts) | **GET** /api/v2/contacts/search | Find user contacts by given parameters.
 [**searchInboundMessages**](TextMagicApi.md#searchInboundMessages) | **GET** /api/v2/replies/search | Find inbound messages
-[**searchLists**](TextMagicApi.md#searchLists) | **GET** /api/v2/lists/search | Find contact lists by given parameters.
+[**searchLists**](TextMagicApi.md#searchLists) | **GET** /api/v2/lists/search | Find contact lists by given parameters
 [**searchOutboundMessages**](TextMagicApi.md#searchOutboundMessages) | **GET** /api/v2/messages/search | Find messages
 [**searchScheduledMessages**](TextMagicApi.md#searchScheduledMessages) | **GET** /api/v2/schedules/search | Find scheduled messages
 [**searchTemplates**](TextMagicApi.md#searchTemplates) | **GET** /api/v2/templates/search | Find templates by criteria
@@ -168,7 +168,7 @@ Method | HTTP request | Description
 [**updateCustomField**](TextMagicApi.md#updateCustomField) | **PUT** /api/v2/customfields/{id} | Update existing custom field.
 [**updateCustomFieldValue**](TextMagicApi.md#updateCustomFieldValue) | **PUT** /api/v2/customfields/{id}/update | Update contact&#39;s custom field value.
 [**updateInboundMessagesNotificationSettings**](TextMagicApi.md#updateInboundMessagesNotificationSettings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings
-[**updateList**](TextMagicApi.md#updateList) | **PUT** /api/v2/lists/{id} | Update existing list.
+[**updateList**](TextMagicApi.md#updateList) | **PUT** /api/v2/lists/{id} | Update existing list
 [**updatePassword**](TextMagicApi.md#updatePassword) | **PUT** /api/v2/user/password/change | Change user password.
 [**updateSenderSetting**](TextMagicApi.md#updateSenderSetting) | **PUT** /api/v2/sender/settings | Change sender settings
 [**updateSurvey**](TextMagicApi.md#updateSurvey) | **PUT** /api/v2/surveys/{id} | Update existing survey.
@@ -176,7 +176,7 @@ Method | HTTP request | Description
 [**updateTemplate**](TextMagicApi.md#updateTemplate) | **PUT** /api/v2/templates/{id} | Update a template
 [**uploadAvatar**](TextMagicApi.md#uploadAvatar) | **POST** /api/v2/user/avatar | Upload an avatar
 [**uploadContactAvatar**](TextMagicApi.md#uploadContactAvatar) | **POST** /api/v2/contacts/{id}/avatar | Add an avatar for the contact.
-[**uploadListAvatar**](TextMagicApi.md#uploadListAvatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for the list.
+[**uploadListAvatar**](TextMagicApi.md#uploadListAvatar) | **POST** /api/v2/lists/{id}/avatar | Add an avatar for the list
 [**uploadMessageAttachment**](TextMagicApi.md#uploadMessageAttachment) | **POST** /api/v2/messages/attachment | Upload message attachment
 
 
@@ -184,7 +184,7 @@ Method | HTTP request | Description
 # **assignContactsToList**
 > ResourceLinkResponse assignContactsToList(assignContactsToListInputObject, id)
 
-Assign contacts to the specified list.
+Assign contacts to a list
 
 
 
@@ -560,7 +560,7 @@ null (empty response body)
 # **clearAndAssignContactsToList**
 > ResourceLinkResponse clearAndAssignContactsToList(clearAndAssignContactsToListInputObject, id)
 
-Reset list members to the specified contacts.
+Reset list members to the specified contacts
 
 
 
@@ -1728,7 +1728,7 @@ null (empty response body)
 # **deleteContactsFromList**
 > deleteContactsFromList(deleteContacsFromListObject, id)
 
-Unassign contacts from the specified list.
+Unassign contacts from a list
 
 
 
@@ -1995,7 +1995,7 @@ null (empty response body)
 # **deleteList**
 > deleteList(id)
 
-Delete a single list.
+Delete a single list
 
 
 
@@ -2048,7 +2048,7 @@ null (empty response body)
 # **deleteListAvatar**
 > deleteListAvatar(id)
 
-Delete an avatar for the list.
+Delete an avatar for the list
 
 
 
@@ -2101,7 +2101,7 @@ null (empty response body)
 # **deleteListContactsBulk**
 > deleteListContactsBulk(deleteListContactsBulkInputObject, id)
 
-Delete contact from list by given ID(s) or all contacts from list.
+Delete contact from list by given ID(s) or all contacts from list
 
 
 
@@ -2156,7 +2156,7 @@ null (empty response body)
 # **deleteListsBulk**
 > deleteListsBulk(deleteListsBulkInputObject)
 
-Delete list by given ID(s) or delete all lists.
+Delete list by given ID(s) or delete all lists
 
 
 
@@ -4524,7 +4524,7 @@ Name | Type | Description  | Notes
 # **getContactsByListId**
 > GetContactsByListIdPaginatedResponse getContactsByListId(id, page, limit, orderBy, direction)
 
-Fetch user contacts by given group id.
+Get all contacts in a list
 
 A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
 
@@ -5172,7 +5172,7 @@ Name | Type | Description  | Notes
 # **getListContactsIds**
 > GetListContactsIdsResponse getListContactsIds(id)
 
-Fetch all contacts IDs belonging to the list with ID.
+Fetch all contacts IDs belonging to the list with ID
 
 
 
@@ -6134,7 +6134,7 @@ Name | Type | Description  | Notes
 
 Get current sender settings
 
-@TODO
+
 
 ### Example
 ```java
@@ -7958,7 +7958,7 @@ Name | Type | Description  | Notes
 # **searchLists**
 > SearchListsPaginatedResponse searchLists(page, limit, ids, query, onlyMine, onlyDefault, orderBy, direction)
 
-Find contact lists by given parameters.
+Find contact lists by given parameters
 
 
 
@@ -9239,7 +9239,7 @@ null (empty response body)
 # **updateList**
 > ResourceLinkResponse updateList(id, updateListObject)
 
-Update existing list.
+Update existing list
 
 
 
@@ -9678,7 +9678,7 @@ Name | Type | Description  | Notes
 # **uploadListAvatar**
 > ResourceLinkResponse uploadListAvatar(image, id)
 
-Add an avatar for the list.
+Add an avatar for the list
 
 
 

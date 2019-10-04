@@ -272,7 +272,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Assign contacts to the specified list.
+     * Assign contacts to a list
      * 
      * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -285,7 +285,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Assign contacts to the specified list.
+     * Assign contacts to a list
      * 
      * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -299,7 +299,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Assign contacts to the specified list. (asynchronously)
+     * Assign contacts to a list (asynchronously)
      * 
      * @param assignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -1122,7 +1122,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Reset list members to the specified contacts.
+     * Reset list members to the specified contacts
      * 
      * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -1135,7 +1135,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Reset list members to the specified contacts.
+     * Reset list members to the specified contacts
      * 
      * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -1149,7 +1149,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Reset list members to the specified contacts. (asynchronously)
+     * Reset list members to the specified contacts (asynchronously)
      * 
      * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
      * @param id  (required)
@@ -3768,7 +3768,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Unassign contacts from the specified list.
+     * Unassign contacts from a list
      * 
      * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
      * @param id  (required)
@@ -3779,7 +3779,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Unassign contacts from the specified list.
+     * Unassign contacts from a list
      * 
      * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
      * @param id  (required)
@@ -3792,7 +3792,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Unassign contacts from the specified list. (asynchronously)
+     * Unassign contacts from a list (asynchronously)
      * 
      * @param deleteContacsFromListObject Contact ID(s), separated by comma (required)
      * @param id  (required)
@@ -4365,7 +4365,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list.
+     * Delete a single list
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4375,7 +4375,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list.
+     * Delete a single list
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4387,7 +4387,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single list. (asynchronously)
+     * Delete a single list (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -4484,7 +4484,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the list.
+     * Delete an avatar for the list
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4494,7 +4494,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the list.
+     * Delete an avatar for the list
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4506,7 +4506,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete an avatar for the list. (asynchronously)
+     * Delete an avatar for the list (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -4609,7 +4609,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list.
+     * Delete contact from list by given ID(s) or all contacts from list
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4620,7 +4620,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list.
+     * Delete contact from list by given ID(s) or all contacts from list
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4633,7 +4633,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact from list by given ID(s) or all contacts from list. (asynchronously)
+     * Delete contact from list by given ID(s) or all contacts from list (asynchronously)
      * 
      * @param deleteListContactsBulkInputObject  (required)
      * @param id  (required)
@@ -4730,7 +4730,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists.
+     * Delete list by given ID(s) or delete all lists
      * 
      * @param deleteListsBulkInputObject  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -4740,7 +4740,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists.
+     * Delete list by given ID(s) or delete all lists
      * 
      * @param deleteListsBulkInputObject  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -4752,7 +4752,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete list by given ID(s) or delete all lists. (asynchronously)
+     * Delete list by given ID(s) or delete all lists (asynchronously)
      * 
      * @param deleteListsBulkInputObject  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -10153,7 +10153,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch user contacts by given group id.
+     * Get all contacts in a list
      * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
      * @param page Fetch specified results page. (optional, default to 1)
@@ -10169,7 +10169,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch user contacts by given group id.
+     * Get all contacts in a list
      * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
      * @param page Fetch specified results page. (optional, default to 1)
@@ -10186,7 +10186,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch user contacts by given group id. (asynchronously)
+     * Get all contacts in a list (asynchronously)
      * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      * @param id Given group Id. (required)
      * @param page Fetch specified results page. (optional, default to 1)
@@ -11613,7 +11613,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID.
+     * Fetch all contacts IDs belonging to the list with ID
      * 
      * @param id  (required)
      * @return GetListContactsIdsResponse
@@ -11625,7 +11625,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID.
+     * Fetch all contacts IDs belonging to the list with ID
      * 
      * @param id  (required)
      * @return ApiResponse&lt;GetListContactsIdsResponse&gt;
@@ -11638,7 +11638,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Fetch all contacts IDs belonging to the list with ID. (asynchronously)
+     * Fetch all contacts IDs belonging to the list with ID (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -13846,7 +13846,7 @@ public class TextMagicApi {
 
     /**
      * Get current sender settings
-     * @TODO
+     * 
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @return GetSenderSettingsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -13858,7 +13858,7 @@ public class TextMagicApi {
 
     /**
      * Get current sender settings
-     * @TODO
+     * 
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @return ApiResponse&lt;GetSenderSettingsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -13871,7 +13871,7 @@ public class TextMagicApi {
 
     /**
      * Get current sender settings (asynchronously)
-     * @TODO
+     * 
      * @param country Return sender settings enabled for sending to specified country. Two upper case characters (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -18010,7 +18010,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters.
+     * Find contact lists by given parameters
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18029,7 +18029,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters.
+     * Find contact lists by given parameters
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -18049,7 +18049,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Find contact lists by given parameters. (asynchronously)
+     * Find contact lists by given parameters (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -20919,7 +20919,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list.
+     * Update existing list
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -20932,7 +20932,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list.
+     * Update existing list
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -20946,7 +20946,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing list. (asynchronously)
+     * Update existing list (asynchronously)
      * 
      * @param id  (required)
      * @param updateListObject  (optional)
@@ -21939,7 +21939,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the list.
+     * Add an avatar for the list
      * 
      * @param image List avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)
@@ -21952,7 +21952,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the list.
+     * Add an avatar for the list
      * 
      * @param image List avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)
@@ -21966,7 +21966,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Add an avatar for the list. (asynchronously)
+     * Add an avatar for the list (asynchronously)
      * 
      * @param image List avatar. Should be PNG or JPG file not more than 10 MB (required)
      * @param id  (required)

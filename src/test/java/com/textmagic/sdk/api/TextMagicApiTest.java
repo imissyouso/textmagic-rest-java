@@ -180,7 +180,7 @@ public class TextMagicApiTest {
 
     
     /**
-     * Assign contacts to the specified list.
+     * Assign contacts to a list
      *
      * 
      *
@@ -293,7 +293,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Reset list members to the specified contacts.
+     * Reset list members to the specified contacts
      *
      * 
      *
@@ -646,7 +646,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Unassign contacts from the specified list.
+     * Unassign contacts from a list
      *
      * 
      *
@@ -727,7 +727,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single list.
+     * Delete a single list
      *
      * 
      *
@@ -743,7 +743,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete an avatar for the list.
+     * Delete an avatar for the list
      *
      * 
      *
@@ -759,7 +759,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete contact from list by given ID(s) or all contacts from list.
+     * Delete contact from list by given ID(s) or all contacts from list
      *
      * 
      *
@@ -776,7 +776,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete list by given ID(s) or delete all lists.
+     * Delete list by given ID(s) or delete all lists
      *
      * 
      *
@@ -1502,7 +1502,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Fetch user contacts by given group id.
+     * Get all contacts in a list
      *
      * A useful synonym for \&quot;contacts/search\&quot; command with provided \&quot;listId\&quot; parameter.
      *
@@ -1698,7 +1698,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Fetch all contacts IDs belonging to the list with ID.
+     * Fetch all contacts IDs belonging to the list with ID
      *
      * 
      *
@@ -2006,7 +2006,7 @@ public class TextMagicApiTest {
     /**
      * Get current sender settings
      *
-     * @TODO
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2561,7 +2561,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Find contact lists by given parameters.
+     * Find contact lists by given parameters
      *
      * 
      *
@@ -2955,7 +2955,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing list.
+     * Update existing list
      *
      * 
      *
@@ -3088,7 +3088,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Add an avatar for the list.
+     * Add an avatar for the list
      *
      * 
      *
