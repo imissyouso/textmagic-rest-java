@@ -1785,7 +1785,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Check price
+     * Check message price
      *
      * Check pricing for a new outbound message.
      *
