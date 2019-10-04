@@ -12282,7 +12282,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Check price
+     * Check message price
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
@@ -12311,7 +12311,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Check price
+     * Check message price
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
@@ -12341,7 +12341,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Check price (asynchronously)
+     * Check message price (asynchronously)
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
      * @param text Message text. Required if template_id is not set (optional)
