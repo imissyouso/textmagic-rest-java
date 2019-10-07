@@ -40,8 +40,57 @@ public class DoCarrierLookupResponse {
   @SerializedName("local")
   private String local = null;
 
+  /**
+   * Phone number type.
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    MOBILE("mobile"),
+    
+    LANDLINE("landline"),
+    
+    VOIP("voip");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
 
   @SerializedName("carrier")
   private String carrier = null;
@@ -58,10 +107,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get cost
+   * Cost to check one number is constant – 0.04 in your account currency.
    * @return cost
   **/
-  @ApiModelProperty(example = "0.04", required = true, value = "")
+  @ApiModelProperty(example = "0.04", required = true, value = "Cost to check one number is constant – 0.04 in your account currency.")
   public BigDecimal getCost() {
     return cost;
   }
@@ -76,10 +125,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get country
+   * Phone number country.
    * @return country
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Phone number country.")
   public Country getCountry() {
     return country;
   }
@@ -94,10 +143,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get local
+   * Phone number in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).
    * @return local
   **/
-  @ApiModelProperty(example = "(541) 754-3010", required = true, value = "")
+  @ApiModelProperty(example = "07860", required = true, value = "Phone number in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).")
   public String getLocal() {
     return local;
   }
@@ -106,21 +155,21 @@ public class DoCarrierLookupResponse {
     this.local = local;
   }
 
-  public DoCarrierLookupResponse type(String type) {
+  public DoCarrierLookupResponse type(TypeEnum type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Get type
+   * Phone number type.
    * @return type
   **/
-  @ApiModelProperty(example = "mobile", required = true, value = "")
-  public String getType() {
+  @ApiModelProperty(example = "mobile", required = true, value = "Phone number type.")
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
@@ -130,10 +179,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get carrier
+   * Carrier name.
    * @return carrier
   **/
-  @ApiModelProperty(example = "Example Messaging Systems", required = true, value = "")
+  @ApiModelProperty(example = "Telefonica UK", required = true, value = "Carrier name.")
   public String getCarrier() {
     return carrier;
   }
@@ -148,10 +197,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get number164
+   * Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).
    * @return number164
   **/
-  @ApiModelProperty(example = "447860021130", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164).")
   public String getNumber164() {
     return number164;
   }
@@ -166,10 +215,10 @@ public class DoCarrierLookupResponse {
   }
 
    /**
-   * Get valid
+   * The field shows if entered phone number is valid or not.
    * @return valid
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "The field shows if entered phone number is valid or not.")
   public Boolean isValid() {
     return valid;
   }

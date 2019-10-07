@@ -6342,8 +6342,8 @@ public class TextMagicApi {
     }
     /**
      * Build call for doCarrierLookup
-     * @param phone  (required)
-     * @param country Country code for local formatted numbers (optional, default to US)
+     * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  (required)
+     * @param country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -6409,9 +6409,9 @@ public class TextMagicApi {
 
     /**
      * Carrier Lookup
-     * 
-     * @param phone  (required)
-     * @param country Country code for local formatted numbers (optional, default to US)
+     * This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+     * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  (required)
+     * @param country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  (optional)
      * @return DoCarrierLookupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6422,9 +6422,9 @@ public class TextMagicApi {
 
     /**
      * Carrier Lookup
-     * 
-     * @param phone  (required)
-     * @param country Country code for local formatted numbers (optional, default to US)
+     * This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+     * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  (required)
+     * @param country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  (optional)
      * @return ApiResponse&lt;DoCarrierLookupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6436,9 +6436,9 @@ public class TextMagicApi {
 
     /**
      * Carrier Lookup (asynchronously)
-     * 
-     * @param phone  (required)
-     * @param country Country code for local formatted numbers (optional, default to US)
+     * This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
+     * @param phone Phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) or in [National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers).  (required)
+     * @param country This option must be specified only if the phone number in a **[National format](https://en.wikipedia.org/wiki/National_conventions_for_writing_telephone_numbers)**.  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -6471,7 +6471,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for doEmailLookup
-     * @param email  (required)
+     * @param email Email address. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -6534,9 +6534,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Validate Email address using Email Lookup tool
-     * 
-     * @param email  (required)
+     * Email Lookup
+     * To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+     * @param email Email address. (required)
      * @return DoEmailLookupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6546,9 +6546,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Validate Email address using Email Lookup tool
-     * 
-     * @param email  (required)
+     * Email Lookup
+     * To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+     * @param email Email address. (required)
      * @return ApiResponse&lt;DoEmailLookupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -6559,9 +6559,9 @@ public class TextMagicApi {
     }
 
     /**
-     * Validate Email address using Email Lookup tool (asynchronously)
-     * 
-     * @param email  (required)
+     * Email Lookup (asynchronously)
+     * To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
+     * @param email Email address. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -10281,7 +10281,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Return list of countries.
+     * Get countries
      * 
      * @return GetCountriesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -10292,7 +10292,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Return list of countries.
+     * Get countries
      * 
      * @return ApiResponse&lt;GetCountriesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -10304,7 +10304,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Return list of countries. (asynchronously)
+     * Get countries (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -15213,8 +15213,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return all available timezone IDs.
-     * 
+     * Get timezones
+     * Return all available timezone IDs
      * @param full Return full info about timezones in array (0 or 1). Default is 0 (optional, default to 0)
      * @return GetTimezonesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15225,8 +15225,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return all available timezone IDs.
-     * 
+     * Get timezones
+     * Return all available timezone IDs
      * @param full Return full info about timezones in array (0 or 1). Default is 0 (optional, default to 0)
      * @return ApiResponse&lt;GetTimezonesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -15238,8 +15238,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Return all available timezone IDs. (asynchronously)
-     * 
+     * Get timezones (asynchronously)
+     * Return all available timezone IDs
      * @param full Return full info about timezones in array (0 or 1). Default is 0 (optional, default to 0)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -16655,8 +16655,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Just does a pong.
-     * 
+     * Ping
+     * Make a simple ping request
      * @return PingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16666,8 +16666,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Just does a pong.
-     * 
+     * Ping
+     * Make a simple ping request
      * @return ApiResponse&lt;PingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -16678,8 +16678,8 @@ public class TextMagicApi {
     }
 
     /**
-     * Just does a pong. (asynchronously)
-     * 
+     * Ping (asynchronously)
+     * Make a simple ping request
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

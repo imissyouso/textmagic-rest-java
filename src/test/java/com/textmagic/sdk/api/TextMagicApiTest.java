@@ -1003,7 +1003,7 @@ public class TextMagicApiTest {
     /**
      * Carrier Lookup
      *
-     * 
+     * This API call allows you to retrieve additional information about a phone number: region-specific phone number formatting, carrier, phone type (landline/mobile) and country information.  &gt; Numbers can be checked one by one. You cannot check multiple numbers in one request.   
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1018,9 +1018,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Validate Email address using Email Lookup tool
+     * Email Lookup
      *
-     * 
+     * To get more details about an email address or to check if it is a valid email, you can use the Email Lookup command. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).  This API call allows you to retrieve additional information about an email address, such as mailbox detection, syntax checks, DNS validation, deliverability status, and many more helpful values (see the table below).  &gt; Emails must be checked one by one. You cannot check multiple emails in one request. To upload and check emails in bulk, please use our [Web app](https://my.textmagic.com/online/email-lookup/).
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1522,7 +1522,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return list of countries.
+     * Get countries
      *
      * 
      *
@@ -2186,9 +2186,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Return all available timezone IDs.
+     * Get timezones
      *
-     * 
+     * Return all available timezone IDs
      *
      * @throws ApiException
      *          if the Api call fails
@@ -2379,9 +2379,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Just does a pong.
+     * Ping
      *
-     * 
+     * Make a simple ping request
      *
      * @throws ApiException
      *          if the Api call fails

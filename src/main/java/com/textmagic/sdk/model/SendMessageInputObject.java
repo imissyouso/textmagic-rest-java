@@ -89,7 +89,7 @@ public class SendMessageInputObject {
    * Message text. Required if template_id is not set
    * @return text
   **/
-  @ApiModelProperty(example = "Test message test", required = true, value = "Message text. Required if template_id is not set")
+  @ApiModelProperty(example = "Hello, how are you?", required = true, value = "Message text. Required if template_id is not set")
   public String getText() {
     return text;
   }
