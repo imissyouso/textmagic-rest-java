@@ -1,6 +1,6 @@
 # TextMagicApi
 
-All URIs are relative to *http://rest.textmagic.com*
+All URIs are relative to *https://rest.textmagic.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -3133,7 +3133,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-String status = "status_example"; // String | Fetch only (a)ctive, (c)losed or (d)eleted chats
+String status = "\"a\""; // String | Fetch only (a)ctive, (c)losed or (d)eleted chats
 Integer page = 1; // Integer | Fetch specified results page.
 Integer limit = 10; // Integer | The number of results per page.
 String orderBy = "id"; // String | Order results by some field. Default is id

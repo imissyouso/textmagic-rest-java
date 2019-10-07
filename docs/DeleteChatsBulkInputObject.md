@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ids** | **String** | Entity ID(s), separated by comma |  [optional]
 **all** | **Boolean** | Entity ID(s), separated by comma |  [optional]
-**status** | [**StatusEnum**](#StatusEnum) | Default is empty string (false). If set then all entities with specified status will be affected. |  [optional]
+**status** | [**StatusEnum**](#StatusEnum) | Default is empty string. If set then all entities with specified status will be affected. |  [optional]
 
 
 <a name="StatusEnum"></a>
