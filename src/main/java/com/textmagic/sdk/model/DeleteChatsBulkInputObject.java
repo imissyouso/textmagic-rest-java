@@ -85,7 +85,7 @@ public class DeleteChatsBulkInputObject {
   }
 
   @SerializedName("status")
-  private StatusEnum status = ;
+  private StatusEnum status = null;
 
   public DeleteChatsBulkInputObject ids(String ids) {
     this.ids = ids;
