@@ -25,13 +25,15 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Confirmation code to check
+ * CheckPhoneVerificationCodeInputObject
  */
-@ApiModel(description = "Confirmation code to check")
 
 public class CheckPhoneVerificationCodeInputObject {
   @SerializedName("code")
   private Integer code = null;
+
+  @SerializedName("verifyId")
+  private String verifyId = null;
 
   public CheckPhoneVerificationCodeInputObject code(Integer code) {
     this.code = code;
@@ -39,16 +41,34 @@ public class CheckPhoneVerificationCodeInputObject {
   }
 
    /**
-   * Get code
+   * Verification code that was received by the user and entered into the form field.
    * @return code
   **/
-  @ApiModelProperty(example = "1111", required = true, value = "")
+  @ApiModelProperty(example = "1234", required = true, value = "Verification code that was received by the user and entered into the form field.")
   public Integer getCode() {
     return code;
   }
 
   public void setCode(Integer code) {
     this.code = code;
+  }
+
+  public CheckPhoneVerificationCodeInputObject verifyId(String verifyId) {
+    this.verifyId = verifyId;
+    return this;
+  }
+
+   /**
+   * VerifyId from Step 1 to match both requests together.
+   * @return verifyId
+  **/
+  @ApiModelProperty(example = "123e4567-e89b-12d3-a456-426655440000", required = true, value = "VerifyId from Step 1 to match both requests together.")
+  public String getVerifyId() {
+    return verifyId;
+  }
+
+  public void setVerifyId(String verifyId) {
+    this.verifyId = verifyId;
   }
 
 
@@ -61,12 +81,13 @@ public class CheckPhoneVerificationCodeInputObject {
       return false;
     }
     CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = (CheckPhoneVerificationCodeInputObject) o;
-    return Objects.equals(this.code, checkPhoneVerificationCodeInputObject.code);
+    return Objects.equals(this.code, checkPhoneVerificationCodeInputObject.code) &&
+        Objects.equals(this.verifyId, checkPhoneVerificationCodeInputObject.verifyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code);
+    return Objects.hash(code, verifyId);
   }
 
 
@@ -76,6 +97,7 @@ public class CheckPhoneVerificationCodeInputObject {
     sb.append("class CheckPhoneVerificationCodeInputObject {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    verifyId: ").append(toIndentedString(verifyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

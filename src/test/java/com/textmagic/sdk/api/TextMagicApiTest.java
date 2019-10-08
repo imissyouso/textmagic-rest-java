@@ -22,7 +22,6 @@ import com.textmagic.sdk.model.BulkSession;
 import com.textmagic.sdk.model.BuyDedicatedNumberInputObject;
 import com.textmagic.sdk.model.Chat;
 import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject;
-import com.textmagic.sdk.model.CheckPhoneVerificationCodeInputObject1;
 import com.textmagic.sdk.model.ClearAndAssignContactsToListInputObject;
 import com.textmagic.sdk.model.CloseChatsBulkInputObject;
 import com.textmagic.sdk.model.Contact;
@@ -31,9 +30,6 @@ import com.textmagic.sdk.model.CreateContactInputObject;
 import com.textmagic.sdk.model.CreateContactNoteInputObject;
 import com.textmagic.sdk.model.CreateCustomFieldInputObject;
 import com.textmagic.sdk.model.CreateListInputObject;
-import com.textmagic.sdk.model.CreatePushTokenInputObject;
-import com.textmagic.sdk.model.CreateSurveyInputObject;
-import com.textmagic.sdk.model.CreateSurveyNodeInputObject;
 import com.textmagic.sdk.model.CreateTemplateInputObject;
 import com.textmagic.sdk.model.DeleteChatMessagesBulkInputObject;
 import com.textmagic.sdk.model.DeleteChatsBulkInputObject;
@@ -47,8 +43,6 @@ import com.textmagic.sdk.model.DeleteMessageSessionsBulkInputObject;
 import com.textmagic.sdk.model.DeleteOutboundMessagesBulkInputObject;
 import com.textmagic.sdk.model.DeleteScheduledMessagesBulkInputObject;
 import com.textmagic.sdk.model.DeleteTemplatesBulkInputObject;
-import com.textmagic.sdk.model.DoAuthInputObject;
-import com.textmagic.sdk.model.DoAuthResponse;
 import com.textmagic.sdk.model.DoCarrierLookupResponse;
 import com.textmagic.sdk.model.DoEmailLookupResponse;
 import java.io.File;
@@ -86,14 +80,11 @@ import com.textmagic.sdk.model.GetMessagesBySessionIdPaginatedResponse;
 import com.textmagic.sdk.model.GetMessagingCountersResponse;
 import com.textmagic.sdk.model.GetMessagingStatResponse;
 import com.textmagic.sdk.model.GetOutboundMessagesHistoryPaginatedResponse;
-import com.textmagic.sdk.model.GetPushTokensResponse;
 import com.textmagic.sdk.model.GetSenderIdsPaginatedResponse;
 import com.textmagic.sdk.model.GetSenderSettingsResponse;
 import com.textmagic.sdk.model.GetSpendingStatPaginatedResponse;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensInputObject;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensResponse;
-import com.textmagic.sdk.model.GetSurveyNodesResponse;
-import com.textmagic.sdk.model.GetSurveysPaginatedResponse;
 import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
@@ -101,7 +92,6 @@ import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
-import com.textmagic.sdk.model.MergeSurveyNodesInputObject;
 import com.textmagic.sdk.model.MessageIn;
 import com.textmagic.sdk.model.MessageOut;
 import com.textmagic.sdk.model.MessageSession;
@@ -129,8 +119,6 @@ import com.textmagic.sdk.model.SendPhoneVerificationCodeInputObject;
 import com.textmagic.sdk.model.SendPhoneVerificationCodeResponse;
 import com.textmagic.sdk.model.SenderId;
 import com.textmagic.sdk.model.SetChatStatusInputObject;
-import com.textmagic.sdk.model.Survey;
-import com.textmagic.sdk.model.SurveyNode;
 import com.textmagic.sdk.model.UnauthorizedResponse;
 import com.textmagic.sdk.model.UnblockContactInputObject;
 import com.textmagic.sdk.model.UnblockContactsBulkInputObject;
@@ -148,10 +136,7 @@ import com.textmagic.sdk.model.UpdateCustomFieldInputObject;
 import com.textmagic.sdk.model.UpdateCustomFieldValueInputObject;
 import com.textmagic.sdk.model.UpdateInboundMessagesNotificationSettingsInputObject;
 import com.textmagic.sdk.model.UpdateListObject;
-import com.textmagic.sdk.model.UpdatePasswordInputObject;
 import com.textmagic.sdk.model.UpdateSenderSettingInputObject;
-import com.textmagic.sdk.model.UpdateSurveyInputObject;
-import com.textmagic.sdk.model.UpdateSurveyNodeInputObject;
 import com.textmagic.sdk.model.UpdateTemplateInputObject;
 import com.textmagic.sdk.model.UploadMessageAttachmentResponse;
 import com.textmagic.sdk.model.User;
@@ -224,22 +209,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Cancel a survey.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cancelSurveyTest() throws ApiException {
-        Integer id = null;
-        ResourceLinkResponse response = api.cancelSurvey(id);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Cancel verification process
      *
      * You can cancel the verification not earlier than 30 seconds after the initial request.
@@ -256,22 +225,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Check user phone verification code
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void checkPhoneVerificationCodeTest() throws ApiException {
-        CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = null;
-        api.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Step 2: Check the verification code 
      *
      * Check received code from user with the code which was actually sent.
@@ -281,7 +234,7 @@ public class TextMagicApiTest {
      */
     @Test
     public void checkPhoneVerificationCodeTFATest() throws ApiException {
-        CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject = null;
+        CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = null;
         api.checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject);
 
         // TODO: test validations
@@ -412,55 +365,6 @@ public class TextMagicApiTest {
     public void createListTest() throws ApiException {
         CreateListInputObject createListInputObject = null;
         ResourceLinkResponse response = api.createList(createListInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Add or update a device token.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createPushTokenTest() throws ApiException {
-        CreatePushTokenInputObject createPushTokenInputObject = null;
-        api.createPushToken(createPushTokenInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Create a new survey from the submitted data.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createSurveyTest() throws ApiException {
-        CreateSurveyInputObject createSurveyInputObject = null;
-        ResourceLinkResponse response = api.createSurvey(createSurveyInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Create a new node from the submitted data.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createSurveyNodeTest() throws ApiException {
-        CreateSurveyNodeInputObject createSurveyNodeInputObject = null;
-        Integer id = null;
-        ResourceLinkResponse response = api.createSurveyNode(createSurveyNodeInputObject, id);
 
         // TODO: test validations
     }
@@ -851,23 +755,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a push notification device token.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deletePushTokenTest() throws ApiException {
-        String type = null;
-        Integer deviceId = null;
-        api.deletePushToken(type, deviceId);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Delete a single scheduled message
      *
      * 
@@ -916,38 +803,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a survey.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteSurveyTest() throws ApiException {
-        Integer id = null;
-        api.deleteSurvey(id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Delete a node.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteSurveyNodeTest() throws ApiException {
-        Integer id = null;
-        api.deleteSurveyNode(id);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Delete a template
      *
      * 
@@ -975,22 +830,6 @@ public class TextMagicApiTest {
     public void deleteTemplatesBulkTest() throws ApiException {
         DeleteTemplatesBulkInputObject deleteTemplatesBulkInputObject = null;
         api.deleteTemplatesBulk(deleteTemplatesBulkInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Authenticate user by given username and password.
-     *
-     * Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void doAuthTest() throws ApiException {
-        DoAuthInputObject doAuthInputObject = null;
-        DoAuthResponse response = api.doAuth(doAuthInputObject);
 
         // TODO: test validations
     }
@@ -1024,22 +863,6 @@ public class TextMagicApiTest {
     public void doEmailLookupTest() throws ApiException {
         String email = null;
         DoEmailLookupResponse response = api.doEmailLookup(email);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Duplicate a survey.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void duplicateSurveyTest() throws ApiException {
-        Integer id = null;
-        ResourceLinkResponse response = api.duplicateSurvey(id);
 
         // TODO: test validations
     }
@@ -1904,21 +1727,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all device tokens assigned to the current account
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getPushTokensTest() throws ApiException {
-        GetPushTokensResponse response = api.getPushTokens();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Get a single scheduled message
      *
      * 
@@ -2049,71 +1857,6 @@ public class TextMagicApiTest {
         BigDecimal page = null;
         Integer limit = null;
         GetSubaccountsWithTokensResponse response = api.getSubaccountsWithTokens(getSubaccountsWithTokensInputObject, page, limit);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get a survey by id.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getSurveyTest() throws ApiException {
-        Integer id = null;
-        Survey response = api.getSurvey(id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get a node by id.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getSurveyNodeTest() throws ApiException {
-        Integer id = null;
-        SurveyNode response = api.getSurveyNode(id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Fetch nodes by given survey id.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getSurveyNodesTest() throws ApiException {
-        Integer id = null;
-        GetSurveyNodesResponse response = api.getSurveyNodes(id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get all user surveys.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getSurveysTest() throws ApiException {
-        Integer page = null;
-        Integer limit = null;
-        GetSurveysPaginatedResponse response = api.getSurveys(page, limit);
 
         // TODO: test validations
     }
@@ -2265,22 +2008,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Merge two question nodes.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void mergeSurveyNodesTest() throws ApiException {
-        MergeSurveyNodesInputObject mergeSurveyNodesInputObject = null;
-        api.mergeSurveyNodes(mergeSurveyNodesInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Mute chat sounds
      *
      * 
@@ -2356,22 +2083,6 @@ public class TextMagicApiTest {
     public void requestSenderIdTest() throws ApiException {
         RequestSenderIdInputObject requestSenderIdInputObject = null;
         ResourceLinkResponse response = api.requestSenderId(requestSenderIdInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Reset a survey flow.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void resetSurveyTest() throws ApiException {
-        Integer id = null;
-        ResourceLinkResponse response = api.resetSurvey(id);
 
         // TODO: test validations
     }
@@ -2568,21 +2279,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Send user email verification
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void sendEmailVerificationCodeTest() throws ApiException {
-        api.sendEmailVerificationCode();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Send message
      *
      * The main entrypoint to send messages. See examples above for the reference.
@@ -2594,21 +2290,6 @@ public class TextMagicApiTest {
     public void sendMessageTest() throws ApiException {
         SendMessageInputObject sendMessageInputObject = null;
         SendMessageResponse response = api.sendMessage(sendMessageInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Send user phone verification
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void sendPhoneVerificationCodeTest() throws ApiException {
-        api.sendPhoneVerificationCode();
 
         // TODO: test validations
     }
@@ -2641,22 +2322,6 @@ public class TextMagicApiTest {
     public void setChatStatusTest() throws ApiException {
         SetChatStatusInputObject setChatStatusInputObject = null;
         ResourceLinkResponse response = api.setChatStatus(setChatStatusInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Start a survey.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void startSurveyTest() throws ApiException {
-        Integer id = null;
-        ResourceLinkResponse response = api.startSurvey(id);
 
         // TODO: test validations
     }
@@ -2891,22 +2556,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Change user password.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updatePasswordTest() throws ApiException {
-        UpdatePasswordInputObject updatePasswordInputObject = null;
-        api.updatePassword(updatePasswordInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Change sender settings
      *
      * 
@@ -2918,40 +2567,6 @@ public class TextMagicApiTest {
     public void updateSenderSettingTest() throws ApiException {
         UpdateSenderSettingInputObject updateSenderSettingInputObject = null;
         api.updateSenderSetting(updateSenderSettingInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update existing survey.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateSurveyTest() throws ApiException {
-        UpdateSurveyInputObject updateSurveyInputObject = null;
-        Integer id = null;
-        ResourceLinkResponse response = api.updateSurvey(updateSurveyInputObject, id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update existing node.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateSurveyNodeTest() throws ApiException {
-        UpdateSurveyNodeInputObject updateSurveyNodeInputObject = null;
-        Integer id = null;
-        ResourceLinkResponse response = api.updateSurveyNode(updateSurveyNodeInputObject, id);
 
         // TODO: test validations
     }

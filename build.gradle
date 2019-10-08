@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'com.textmagic.sdk'
-version = '2.0.544'
+version = '2.0.545'
 
 buildscript {
     repositories {

@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**assignContactsToList**](TextMagicApi.md#assignContactsToList) | **PUT** /api/v2/lists/{id}/contacts | Assign contacts to a list
 [**blockContact**](TextMagicApi.md#blockContact) | **POST** /api/v2/contacts/block | Block contact by phone number
 [**buyDedicatedNumber**](TextMagicApi.md#buyDedicatedNumber) | **POST** /api/v2/numbers | Buy a dedicated number
-[**cancelSurvey**](TextMagicApi.md#cancelSurvey) | **PUT** /api/v2/surveys/{id}/cancel | Cancel a survey.
 [**cancelVerification**](TextMagicApi.md#cancelVerification) | **DELETE** /api/v2/verify/{verifyId} | Cancel verification process
-[**checkPhoneVerificationCode**](TextMagicApi.md#checkPhoneVerificationCode) | **PUT** /api/v2/user/phone/verification | Check user phone verification code
 [**checkPhoneVerificationCodeTFA**](TextMagicApi.md#checkPhoneVerificationCodeTFA) | **PUT** /api/v2/verify | Step 2: Check the verification code 
 [**clearAndAssignContactsToList**](TextMagicApi.md#clearAndAssignContactsToList) | **POST** /api/v2/lists/{id}/contacts | Reset list members to the specified contacts
 [**closeChatsBulk**](TextMagicApi.md#closeChatsBulk) | **POST** /api/v2/chats/close/bulk | Close chats (bulk)
@@ -19,9 +17,6 @@ Method | HTTP request | Description
 [**createContactNote**](TextMagicApi.md#createContactNote) | **POST** /api/v2/contacts/{id}/notes | Create a new contact note.
 [**createCustomField**](TextMagicApi.md#createCustomField) | **POST** /api/v2/customfields | Add a new custom field
 [**createList**](TextMagicApi.md#createList) | **POST** /api/v2/lists | Create a new list
-[**createPushToken**](TextMagicApi.md#createPushToken) | **POST** /api/v2/push/tokens | Add or update a device token.
-[**createSurvey**](TextMagicApi.md#createSurvey) | **POST** /api/v2/surveys | Create a new survey from the submitted data.
-[**createSurveyNode**](TextMagicApi.md#createSurveyNode) | **POST** /api/v2/surveys/{id}/nodes | Create a new node from the submitted data.
 [**createTemplate**](TextMagicApi.md#createTemplate) | **POST** /api/v2/templates | Create a template
 [**deleteAllContacts**](TextMagicApi.md#deleteAllContacts) | **DELETE** /api/v2/contact/all | Delete contacts (bulk)
 [**deleteAllOutboundMessages**](TextMagicApi.md#deleteAllOutboundMessages) | **DELETE** /api/v2/message/all | Delete all messages
@@ -46,18 +41,13 @@ Method | HTTP request | Description
 [**deleteMessageSessionsBulk**](TextMagicApi.md#deleteMessageSessionsBulk) | **POST** /api/v2/sessions/delete | Delete sessions (bulk)
 [**deleteOutboundMessage**](TextMagicApi.md#deleteOutboundMessage) | **DELETE** /api/v2/messages/{id} | Delete message
 [**deleteOutboundMessagesBulk**](TextMagicApi.md#deleteOutboundMessagesBulk) | **POST** /api/v2/messages/delete | Delete messages (bulk)
-[**deletePushToken**](TextMagicApi.md#deletePushToken) | **DELETE** /api/v2/push/tokens/{type}/{deviceId} | Delete a push notification device token.
 [**deleteScheduledMessage**](TextMagicApi.md#deleteScheduledMessage) | **DELETE** /api/v2/schedules/{id} | Delete a single scheduled message
 [**deleteScheduledMessagesBulk**](TextMagicApi.md#deleteScheduledMessagesBulk) | **POST** /api/v2/schedules/delete | Delete scheduled messages (bulk)
 [**deleteSenderId**](TextMagicApi.md#deleteSenderId) | **DELETE** /api/v2/senderids/{id} | Delete a Sender ID
-[**deleteSurvey**](TextMagicApi.md#deleteSurvey) | **DELETE** /api/v2/surveys/{id} | Delete a survey.
-[**deleteSurveyNode**](TextMagicApi.md#deleteSurveyNode) | **DELETE** /api/v2/surveys/nodes/{id} | Delete a node.
 [**deleteTemplate**](TextMagicApi.md#deleteTemplate) | **DELETE** /api/v2/templates/{id} | Delete a template
 [**deleteTemplatesBulk**](TextMagicApi.md#deleteTemplatesBulk) | **POST** /api/v2/templates/delete | Delete templates (bulk)
-[**doAuth**](TextMagicApi.md#doAuth) | **POST** /api/v2/auth | Authenticate user by given username and password.
 [**doCarrierLookup**](TextMagicApi.md#doCarrierLookup) | **GET** /api/v2/lookups/{phone} | Carrier Lookup
 [**doEmailLookup**](TextMagicApi.md#doEmailLookup) | **GET** /api/v2/email-lookups/{email} | Email Lookup
-[**duplicateSurvey**](TextMagicApi.md#duplicateSurvey) | **PUT** /api/v2/surveys/{id}/duplicate | Duplicate a survey.
 [**getAllBulkSessions**](TextMagicApi.md#getAllBulkSessions) | **GET** /api/v2/bulks | Get all bulk sending sessions.
 [**getAllChats**](TextMagicApi.md#getAllChats) | **GET** /api/v2/chats | Get all chats
 [**getAllInboundMessages**](TextMagicApi.md#getAllInboundMessages) | **GET** /api/v2/replies | Get all inbound messages
@@ -106,7 +96,6 @@ Method | HTTP request | Description
 [**getMessagingStat**](TextMagicApi.md#getMessagingStat) | **GET** /api/v2/stats/messaging | Get messaging statistics
 [**getOutboundMessage**](TextMagicApi.md#getOutboundMessage) | **GET** /api/v2/messages/{id} | Get a single message
 [**getOutboundMessagesHistory**](TextMagicApi.md#getOutboundMessagesHistory) | **GET** /api/v2/history | Get history
-[**getPushTokens**](TextMagicApi.md#getPushTokens) | **GET** /api/v2/push/tokens | Get all device tokens assigned to the current account
 [**getScheduledMessage**](TextMagicApi.md#getScheduledMessage) | **GET** /api/v2/schedules/{id} | Get a single scheduled message
 [**getSenderId**](TextMagicApi.md#getSenderId) | **GET** /api/v2/senderids/{id} | Get the details of a specific Sender ID
 [**getSenderIds**](TextMagicApi.md#getSenderIds) | **GET** /api/v2/senderids | Get all your approved Sender IDs
@@ -115,10 +104,6 @@ Method | HTTP request | Description
 [**getSubaccount**](TextMagicApi.md#getSubaccount) | **GET** /api/v2/subaccounts/{id} | Get sub-account information
 [**getSubaccounts**](TextMagicApi.md#getSubaccounts) | **GET** /api/v2/subaccounts | Get sub-accounts list
 [**getSubaccountsWithTokens**](TextMagicApi.md#getSubaccountsWithTokens) | **POST** /api/v2/subaccounts/tokens/list | Get all sub-accounts with their REST API tokens associated with app name
-[**getSurvey**](TextMagicApi.md#getSurvey) | **GET** /api/v2/surveys/{id} | Get a survey by id.
-[**getSurveyNode**](TextMagicApi.md#getSurveyNode) | **GET** /api/v2/surveys/nodes/{id} | Get a node by id.
-[**getSurveyNodes**](TextMagicApi.md#getSurveyNodes) | **GET** /api/v2/surveys/{id}/nodes | Fetch nodes by given survey id.
-[**getSurveys**](TextMagicApi.md#getSurveys) | **GET** /api/v2/surveys | Get all user surveys.
 [**getTemplate**](TextMagicApi.md#getTemplate) | **GET** /api/v2/templates/{id} | Get a template details
 [**getTimezones**](TextMagicApi.md#getTimezones) | **GET** /api/v2/timezones | Get timezones
 [**getUnreadMessagesTotal**](TextMagicApi.md#getUnreadMessagesTotal) | **GET** /api/v2/chats/unread/count | Get unread messages number
@@ -128,13 +113,11 @@ Method | HTTP request | Description
 [**inviteSubaccount**](TextMagicApi.md#inviteSubaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**markChatsReadBulk**](TextMagicApi.md#markChatsReadBulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**markChatsUnreadBulk**](TextMagicApi.md#markChatsUnreadBulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
-[**mergeSurveyNodes**](TextMagicApi.md#mergeSurveyNodes) | **POST** /api/v2/surveys/nodes/merge | Merge two question nodes.
 [**muteChat**](TextMagicApi.md#muteChat) | **POST** /api/v2/chats/mute | Mute chat sounds
 [**muteChatsBulk**](TextMagicApi.md#muteChatsBulk) | **POST** /api/v2/chats/mute/bulk | Mute chats (bulk)
 [**reopenChatsBulk**](TextMagicApi.md#reopenChatsBulk) | **POST** /api/v2/chats/reopen/bulk | Reopen chats (bulk)
 [**requestNewSubaccountToken**](TextMagicApi.md#requestNewSubaccountToken) | **POST** /api/v2/subaccounts/tokens | Request a new REST API token for sub-account
 [**requestSenderId**](TextMagicApi.md#requestSenderId) | **POST** /api/v2/senderids | Apply for a new Sender ID
-[**resetSurvey**](TextMagicApi.md#resetSurvey) | **PUT** /api/v2/surveys/{id}/reset | Reset a survey flow.
 [**searchChats**](TextMagicApi.md#searchChats) | **GET** /api/v2/chats/search | Find chats by message text
 [**searchChatsByIds**](TextMagicApi.md#searchChatsByIds) | **GET** /api/v2/chats/search/ids | Find chats (bulk)
 [**searchChatsByReceipent**](TextMagicApi.md#searchChatsByReceipent) | **GET** /api/v2/chats/search/recipients | Find chats by recipient
@@ -144,12 +127,9 @@ Method | HTTP request | Description
 [**searchOutboundMessages**](TextMagicApi.md#searchOutboundMessages) | **GET** /api/v2/messages/search | Find messages
 [**searchScheduledMessages**](TextMagicApi.md#searchScheduledMessages) | **GET** /api/v2/schedules/search | Find scheduled messages
 [**searchTemplates**](TextMagicApi.md#searchTemplates) | **GET** /api/v2/templates/search | Find templates by criteria
-[**sendEmailVerificationCode**](TextMagicApi.md#sendEmailVerificationCode) | **GET** /api/v2/user/email/verification | Send user email verification
 [**sendMessage**](TextMagicApi.md#sendMessage) | **POST** /api/v2/messages | Send message
-[**sendPhoneVerificationCode**](TextMagicApi.md#sendPhoneVerificationCode) | **GET** /api/v2/user/phone/verification | Send user phone verification
 [**sendPhoneVerificationCodeTFA**](TextMagicApi.md#sendPhoneVerificationCodeTFA) | **POST** /api/v2/verify | Step 1: Send a verification code 
 [**setChatStatus**](TextMagicApi.md#setChatStatus) | **POST** /api/v2/chats/status | Change chat status
-[**startSurvey**](TextMagicApi.md#startSurvey) | **PUT** /api/v2/surveys/{id}/start | Start a survey.
 [**unblockContact**](TextMagicApi.md#unblockContact) | **POST** /api/v2/contacts/unblock | Unblock contact by phone number.
 [**unblockContactsBulk**](TextMagicApi.md#unblockContactsBulk) | **POST** /api/v2/contacts/unblock/bulk | Unblock contacts (bulk)
 [**unmuteChatsBulk**](TextMagicApi.md#unmuteChatsBulk) | **POST** /api/v2/chats/unmute/bulk | Unmute chats (bulk)
@@ -164,10 +144,7 @@ Method | HTTP request | Description
 [**updateCustomFieldValue**](TextMagicApi.md#updateCustomFieldValue) | **PUT** /api/v2/customfields/{id}/update | Edit the custom field value of a specified contact
 [**updateInboundMessagesNotificationSettings**](TextMagicApi.md#updateInboundMessagesNotificationSettings) | **PUT** /api/v2/user/notification/inbound | Update inbound messages notification settings
 [**updateList**](TextMagicApi.md#updateList) | **PUT** /api/v2/lists/{id} | Edit a list
-[**updatePassword**](TextMagicApi.md#updatePassword) | **PUT** /api/v2/user/password/change | Change user password.
 [**updateSenderSetting**](TextMagicApi.md#updateSenderSetting) | **PUT** /api/v2/sender/settings | Change sender settings
-[**updateSurvey**](TextMagicApi.md#updateSurvey) | **PUT** /api/v2/surveys/{id} | Update existing survey.
-[**updateSurveyNode**](TextMagicApi.md#updateSurveyNode) | **PUT** /api/v2/surveys/nodes/{id} | Update existing node.
 [**updateTemplate**](TextMagicApi.md#updateTemplate) | **PUT** /api/v2/templates/{id} | Update a template
 [**uploadAvatar**](TextMagicApi.md#uploadAvatar) | **POST** /api/v2/user/avatar | Upload an avatar
 [**uploadContactAvatar**](TextMagicApi.md#uploadContactAvatar) | **POST** /api/v2/contacts/{id}/avatar | Upload an avatar
@@ -338,60 +315,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="cancelSurvey"></a>
-# **cancelSurvey**
-> ResourceLinkResponse cancelSurvey(id)
-
-Cancel a survey.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.cancelSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#cancelSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="cancelVerification"></a>
 # **cancelVerification**
 > cancelVerification(verifyId)
@@ -445,59 +368,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="checkPhoneVerificationCode"></a>
-# **checkPhoneVerificationCode**
-> checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject)
-
-Check user phone verification code
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = new CheckPhoneVerificationCodeInputObject(); // CheckPhoneVerificationCodeInputObject | 
-try {
-    apiInstance.checkPhoneVerificationCode(checkPhoneVerificationCodeInputObject);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#checkPhoneVerificationCode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **checkPhoneVerificationCodeInputObject** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="checkPhoneVerificationCodeTFA"></a>
 # **checkPhoneVerificationCodeTFA**
 > checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject)
@@ -523,7 +393,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-CheckPhoneVerificationCodeInputObject1 checkPhoneVerificationCodeInputObject = new CheckPhoneVerificationCodeInputObject1(); // CheckPhoneVerificationCodeInputObject1 | 
+CheckPhoneVerificationCodeInputObject checkPhoneVerificationCodeInputObject = new CheckPhoneVerificationCodeInputObject(); // CheckPhoneVerificationCodeInputObject | 
 try {
     apiInstance.checkPhoneVerificationCodeTFA(checkPhoneVerificationCodeInputObject);
 } catch (ApiException e) {
@@ -536,7 +406,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkPhoneVerificationCodeInputObject** | [**CheckPhoneVerificationCodeInputObject1**](CheckPhoneVerificationCodeInputObject1.md)|  |
+ **checkPhoneVerificationCodeInputObject** | [**CheckPhoneVerificationCodeInputObject**](CheckPhoneVerificationCodeInputObject.md)|  |
 
 ### Return type
 
@@ -966,169 +836,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createListInputObject** | [**CreateListInputObject**](CreateListInputObject.md)|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createPushToken"></a>
-# **createPushToken**
-> createPushToken(createPushTokenInputObject)
-
-Add or update a device token.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-CreatePushTokenInputObject createPushTokenInputObject = new CreatePushTokenInputObject(); // CreatePushTokenInputObject | 
-try {
-    apiInstance.createPushToken(createPushTokenInputObject);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#createPushToken");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createPushTokenInputObject** | [**CreatePushTokenInputObject**](CreatePushTokenInputObject.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createSurvey"></a>
-# **createSurvey**
-> ResourceLinkResponse createSurvey(createSurveyInputObject)
-
-Create a new survey from the submitted data.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-CreateSurveyInputObject createSurveyInputObject = new CreateSurveyInputObject(); // CreateSurveyInputObject | 
-try {
-    ResourceLinkResponse result = apiInstance.createSurvey(createSurveyInputObject);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#createSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createSurveyInputObject** | [**CreateSurveyInputObject**](CreateSurveyInputObject.md)|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createSurveyNode"></a>
-# **createSurveyNode**
-> ResourceLinkResponse createSurveyNode(createSurveyNodeInputObject, id)
-
-Create a new node from the submitted data.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-CreateSurveyNodeInputObject createSurveyNodeInputObject = new CreateSurveyNodeInputObject(); // CreateSurveyNodeInputObject | 
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.createSurveyNode(createSurveyNodeInputObject, id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#createSurveyNode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createSurveyNodeInputObject** | [**CreateSurveyNodeInputObject**](CreateSurveyNodeInputObject.md)|  |
- **id** | **Integer**|  |
 
 ### Return type
 
@@ -2412,61 +2119,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="deletePushToken"></a>
-# **deletePushToken**
-> deletePushToken(type, deviceId)
-
-Delete a push notification device token.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-String type = "type_example"; // String | 
-Integer deviceId = 56; // Integer | 
-try {
-    apiInstance.deletePushToken(type, deviceId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#deletePushToken");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**|  |
- **deviceId** | **Integer**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
 <a name="deleteScheduledMessage"></a>
 # **deleteScheduledMessage**
 > deleteScheduledMessage(id)
@@ -2626,112 +2278,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="deleteSurvey"></a>
-# **deleteSurvey**
-> deleteSurvey(id)
-
-Delete a survey.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    apiInstance.deleteSurvey(id);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#deleteSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-<a name="deleteSurveyNode"></a>
-# **deleteSurveyNode**
-> deleteSurveyNode(id)
-
-Delete a node.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    apiInstance.deleteSurveyNode(id);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#deleteSurveyNode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
 <a name="deleteTemplate"></a>
 # **deleteTemplate**
 > deleteTemplate(id)
@@ -2838,51 +2384,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="doAuth"></a>
-# **doAuth**
-> DoAuthResponse doAuth(doAuthInputObject)
-
-Authenticate user by given username and password.
-
-Returning a username and token that you should pass to the all requests (in X-TM-Username and X-TM-Key, respectively)
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-
-TextMagicApi apiInstance = new TextMagicApi();
-DoAuthInputObject doAuthInputObject = new DoAuthInputObject(); // DoAuthInputObject | 
-try {
-    DoAuthResponse result = apiInstance.doAuth(doAuthInputObject);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#doAuth");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **doAuthInputObject** | [**DoAuthInputObject**](DoAuthInputObject.md)|  |
-
-### Return type
-
-[**DoAuthResponse**](DoAuthResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="doCarrierLookup"></a>
 # **doCarrierLookup**
 > DoCarrierLookupResponse doCarrierLookup(phone, country)
@@ -2983,60 +2484,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DoEmailLookupResponse**](DoEmailLookupResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="duplicateSurvey"></a>
-# **duplicateSurvey**
-> ResourceLinkResponse duplicateSurvey(id)
-
-Duplicate a survey.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.duplicateSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#duplicateSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
 
 ### Authorization
 
@@ -5805,56 +5252,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getPushTokens"></a>
-# **getPushTokens**
-> GetPushTokensResponse getPushTokens()
-
-Get all device tokens assigned to the current account
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-try {
-    GetPushTokensResponse result = apiInstance.getPushTokens();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getPushTokens");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**GetPushTokensResponse**](GetPushTokensResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="getScheduledMessage"></a>
 # **getScheduledMessage**
 > MessagesIcs getScheduledMessage(id)
@@ -6291,224 +5688,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetSubaccountsWithTokensResponse**](GetSubaccountsWithTokensResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getSurvey"></a>
-# **getSurvey**
-> Survey getSurvey(id)
-
-Get a survey by id.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    Survey result = apiInstance.getSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-[**Survey**](Survey.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getSurveyNode"></a>
-# **getSurveyNode**
-> SurveyNode getSurveyNode(id)
-
-Get a node by id.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    SurveyNode result = apiInstance.getSurveyNode(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getSurveyNode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-[**SurveyNode**](SurveyNode.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getSurveyNodes"></a>
-# **getSurveyNodes**
-> GetSurveyNodesResponse getSurveyNodes(id)
-
-Fetch nodes by given survey id.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    GetSurveyNodesResponse result = apiInstance.getSurveyNodes(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getSurveyNodes");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
-
-### Return type
-
-[**GetSurveyNodesResponse**](GetSurveyNodesResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="getSurveys"></a>
-# **getSurveys**
-> GetSurveysPaginatedResponse getSurveys(page, limit)
-
-Get all user surveys.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer page = 1; // Integer | Fetch specified results page.
-Integer limit = 10; // Integer | The number of results per page.
-try {
-    GetSurveysPaginatedResponse result = apiInstance.getSurveys(page, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#getSurveys");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
- **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
-
-### Return type
-
-[**GetSurveysPaginatedResponse**](GetSurveysPaginatedResponse.md)
 
 ### Authorization
 
@@ -7004,59 +6183,6 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="mergeSurveyNodes"></a>
-# **mergeSurveyNodes**
-> mergeSurveyNodes(mergeSurveyNodesInputObject)
-
-Merge two question nodes.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-MergeSurveyNodesInputObject mergeSurveyNodesInputObject = new MergeSurveyNodesInputObject(); // MergeSurveyNodesInputObject | 
-try {
-    apiInstance.mergeSurveyNodes(mergeSurveyNodesInputObject);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#mergeSurveyNodes");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mergeSurveyNodesInputObject** | [**MergeSurveyNodesInputObject**](MergeSurveyNodesInputObject.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
 <a name="muteChat"></a>
 # **muteChat**
 > ResourceLinkResponse muteChat(muteChatInputObject)
@@ -7311,60 +6437,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestSenderIdInputObject** | [**RequestSenderIdInputObject**](RequestSenderIdInputObject.md)|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="resetSurvey"></a>
-# **resetSurvey**
-> ResourceLinkResponse resetSurvey(id)
-
-Reset a survey flow.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.resetSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#resetSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
 
 ### Return type
 
@@ -7959,55 +7031,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="sendEmailVerificationCode"></a>
-# **sendEmailVerificationCode**
-> sendEmailVerificationCode()
-
-Send user email verification
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-try {
-    apiInstance.sendEmailVerificationCode();
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#sendEmailVerificationCode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="sendMessage"></a>
 # **sendMessage**
 > SendMessageResponse sendMessage(sendMessageInputObject)
@@ -8052,55 +7075,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SendMessageResponse**](SendMessageResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="sendPhoneVerificationCode"></a>
-# **sendPhoneVerificationCode**
-> sendPhoneVerificationCode()
-
-Send user phone verification
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-try {
-    apiInstance.sendPhoneVerificationCode();
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#sendPhoneVerificationCode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 
@@ -8205,60 +7179,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **setChatStatusInputObject** | [**SetChatStatusInputObject**](SetChatStatusInputObject.md)|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="startSurvey"></a>
-# **startSurvey**
-> ResourceLinkResponse startSurvey(id)
-
-Start a survey.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.startSurvey(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#startSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
 
 ### Return type
 
@@ -9032,59 +7952,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updatePassword"></a>
-# **updatePassword**
-> updatePassword(updatePasswordInputObject)
-
-Change user password.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-UpdatePasswordInputObject updatePasswordInputObject = new UpdatePasswordInputObject(); // UpdatePasswordInputObject | 
-try {
-    apiInstance.updatePassword(updatePasswordInputObject);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#updatePassword");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updatePasswordInputObject** | [**UpdatePasswordInputObject**](UpdatePasswordInputObject.md)|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
 <a name="updateSenderSetting"></a>
 # **updateSenderSetting**
 > updateSenderSetting(updateSenderSettingInputObject)
@@ -9137,118 +8004,6 @@ null (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
-
-<a name="updateSurvey"></a>
-# **updateSurvey**
-> ResourceLinkResponse updateSurvey(updateSurveyInputObject, id)
-
-Update existing survey.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-UpdateSurveyInputObject updateSurveyInputObject = new UpdateSurveyInputObject(); // UpdateSurveyInputObject | 
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.updateSurvey(updateSurveyInputObject, id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#updateSurvey");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateSurveyInputObject** | [**UpdateSurveyInputObject**](UpdateSurveyInputObject.md)|  |
- **id** | **Integer**|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateSurveyNode"></a>
-# **updateSurveyNode**
-> ResourceLinkResponse updateSurveyNode(updateSurveyNodeInputObject, id)
-
-Update existing node.
-
-
-
-### Example
-```java
-// Import classes:
-//import com.textmagic.sdk.ApiClient;
-//import com.textmagic.sdk.ApiException;
-//import com.textmagic.sdk.Configuration;
-//import com.textmagic.sdk.auth.*;
-//import com.textmagic.sdk.api.TextMagicApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
-
-TextMagicApi apiInstance = new TextMagicApi();
-UpdateSurveyNodeInputObject updateSurveyNodeInputObject = new UpdateSurveyNodeInputObject(); // UpdateSurveyNodeInputObject | 
-Integer id = 1; // Integer | 
-try {
-    ResourceLinkResponse result = apiInstance.updateSurveyNode(updateSurveyNodeInputObject, id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TextMagicApi#updateSurveyNode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **updateSurveyNodeInputObject** | [**UpdateSurveyNodeInputObject**](UpdateSurveyNodeInputObject.md)|  |
- **id** | **Integer**|  |
-
-### Return type
-
-[**ResourceLinkResponse**](ResourceLinkResponse.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 <a name="updateTemplate"></a>
 # **updateTemplate**
