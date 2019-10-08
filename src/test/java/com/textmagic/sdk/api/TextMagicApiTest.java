@@ -65,9 +65,7 @@ import com.textmagic.sdk.model.GetBalanceNotificationOptionsResponse;
 import com.textmagic.sdk.model.GetBalanceNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetBlockedContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCallbackSettingsResponse;
-import com.textmagic.sdk.model.GetCallsPricesResponse;
 import com.textmagic.sdk.model.GetChatMessagesPaginatedResponse;
-import com.textmagic.sdk.model.GetContactImportSessionProgressResponse;
 import com.textmagic.sdk.model.GetContactNotesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
 import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
@@ -1291,21 +1289,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Check pricing for a inbound/outbound call.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCallsPricesTest() throws ApiException {
-        GetCallsPricesResponse response = api.getCallsPrices();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Get a single chat
      *
      * 
@@ -1406,22 +1389,6 @@ public class TextMagicApiTest {
     public void getContactIfBlockedTest() throws ApiException {
         String phone = null;
         Contact response = api.getContactIfBlocked(phone);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get contact import session progress.
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getContactImportSessionProgressTest() throws ApiException {
-        Integer id = null;
-        GetContactImportSessionProgressResponse response = api.getContactImportSessionProgress(id);
 
         // TODO: test validations
     }
