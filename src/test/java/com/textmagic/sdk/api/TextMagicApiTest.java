@@ -92,7 +92,6 @@ import com.textmagic.sdk.model.GetPushTokensResponse;
 import com.textmagic.sdk.model.GetSenderIdsPaginatedResponse;
 import com.textmagic.sdk.model.GetSenderSettingsResponse;
 import com.textmagic.sdk.model.GetSpendingStatPaginatedResponse;
-import com.textmagic.sdk.model.GetStateResponse;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensInputObject;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensResponse;
 import com.textmagic.sdk.model.GetSurveyNodesResponse;
@@ -101,7 +100,6 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.GetVersionsResponse;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -114,7 +112,6 @@ import com.textmagic.sdk.model.MessagesIcs;
 import com.textmagic.sdk.model.MuteChatInputObject;
 import com.textmagic.sdk.model.MuteChatsBulkInputObject;
 import com.textmagic.sdk.model.NotFoundResponse;
-import com.textmagic.sdk.model.PingResponse;
 import com.textmagic.sdk.model.ReopenChatsBulkInputObject;
 import com.textmagic.sdk.model.RequestNewSubaccountTokenInputObject;
 import com.textmagic.sdk.model.RequestSenderIdInputObject;
@@ -2039,21 +2036,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get current entities state
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getStateTest() throws ApiException {
-        GetStateResponse response = api.getState();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Get sub-account information
      *
      * 
@@ -2268,21 +2250,6 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get minimal valid apps versions
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getVersionsTest() throws ApiException {
-        GetVersionsResponse response = api.getVersions();
-
-        // TODO: test validations
-    }
-    
-    /**
      * Invite a new sub-account
      *
      * 
@@ -2374,21 +2341,6 @@ public class TextMagicApiTest {
     public void muteChatsBulkTest() throws ApiException {
         MuteChatsBulkInputObject muteChatsBulkInputObject = null;
         api.muteChatsBulk(muteChatsBulkInputObject);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Ping
-     *
-     * Make a simple ping request
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void pingTest() throws ApiException {
-        PingResponse response = api.ping();
 
         // TODO: test validations
     }

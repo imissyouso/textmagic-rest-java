@@ -105,7 +105,6 @@ import com.textmagic.sdk.model.GetPushTokensResponse;
 import com.textmagic.sdk.model.GetSenderIdsPaginatedResponse;
 import com.textmagic.sdk.model.GetSenderSettingsResponse;
 import com.textmagic.sdk.model.GetSpendingStatPaginatedResponse;
-import com.textmagic.sdk.model.GetStateResponse;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensInputObject;
 import com.textmagic.sdk.model.GetSubaccountsWithTokensResponse;
 import com.textmagic.sdk.model.GetSurveyNodesResponse;
@@ -114,7 +113,6 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.GetVersionsResponse;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -127,7 +125,6 @@ import com.textmagic.sdk.model.MessagesIcs;
 import com.textmagic.sdk.model.MuteChatInputObject;
 import com.textmagic.sdk.model.MuteChatsBulkInputObject;
 import com.textmagic.sdk.model.NotFoundResponse;
-import com.textmagic.sdk.model.PingResponse;
 import com.textmagic.sdk.model.ReopenChatsBulkInputObject;
 import com.textmagic.sdk.model.RequestNewSubaccountTokenInputObject;
 import com.textmagic.sdk.model.RequestSenderIdInputObject;
@@ -14041,119 +14038,6 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for getState
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getStateCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/state";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getStateValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getStateCall(progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get current entities state
-     * 
-     * @return GetStateResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public GetStateResponse getState() throws ApiException {
-        ApiResponse<GetStateResponse> resp = getStateWithHttpInfo();
-        return resp.getData();
-    }
-
-    /**
-     * Get current entities state
-     * 
-     * @return ApiResponse&lt;GetStateResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<GetStateResponse> getStateWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getStateValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<GetStateResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get current entities state (asynchronously)
-     * 
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getStateAsync(final ApiCallback<GetStateResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getStateValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetStateResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for getSubaccount
      * @param id  (required)
      * @param progressListener Progress listener
@@ -15764,119 +15648,6 @@ public class TextMagicApi {
         return call;
     }
     /**
-     * Build call for getVersions
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getVersionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/versions";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getVersionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getVersionsCall(progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Get minimal valid apps versions
-     * 
-     * @return GetVersionsResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public GetVersionsResponse getVersions() throws ApiException {
-        ApiResponse<GetVersionsResponse> resp = getVersionsWithHttpInfo();
-        return resp.getData();
-    }
-
-    /**
-     * Get minimal valid apps versions
-     * 
-     * @return ApiResponse&lt;GetVersionsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<GetVersionsResponse> getVersionsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getVersionsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<GetVersionsResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Get minimal valid apps versions (asynchronously)
-     * 
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getVersionsAsync(final ApiCallback<GetVersionsResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getVersionsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetVersionsResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for inviteSubaccount
      * @param inviteSubaccountInputObject  (required)
      * @param progressListener Progress listener
@@ -16595,119 +16366,6 @@ public class TextMagicApi {
 
         com.squareup.okhttp.Call call = muteChatsBulkValidateBeforeCall(muteChatsBulkInputObject, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
-        return call;
-    }
-    /**
-     * Build call for ping
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call pingCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/api/v2/ping";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call pingValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = pingCall(progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Ping
-     * Make a simple ping request
-     * @return PingResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PingResponse ping() throws ApiException {
-        ApiResponse<PingResponse> resp = pingWithHttpInfo();
-        return resp.getData();
-    }
-
-    /**
-     * Ping
-     * Make a simple ping request
-     * @return ApiResponse&lt;PingResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PingResponse> pingWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = pingValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<PingResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Ping (asynchronously)
-     * Make a simple ping request
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call pingAsync(final ApiCallback<PingResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = pingValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PingResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
