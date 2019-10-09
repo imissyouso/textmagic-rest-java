@@ -66,10 +66,10 @@ public class GetAvailableDedicatedNumbersResponse {
   }
 
    /**
-   * Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/tag#User) currency.
+   * Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/#tag/User) currency.
    * @return price
   **/
-  @ApiModelProperty(example = "2.4", required = true, value = "Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/tag#User) currency.")
+  @ApiModelProperty(example = "2.4", required = true, value = "Dedicated number monthly fee for this country. Returned in current [account](http://docs.textmagictesting.com/#tag/User) currency.")
   public Float getPrice() {
     return price;
   }

@@ -161,10 +161,10 @@ public class CreateContactInputObject {
   }
 
    /**
-   * Contact [list](http://docs.textmagictesting.com/tag#Lists) ID. Each contact must be assigned to at least one list.
+   * Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.
    * @return lists
   **/
-  @ApiModelProperty(example = "10541,18599", required = true, value = "Contact [list](http://docs.textmagictesting.com/tag#Lists) ID. Each contact must be assigned to at least one list.")
+  @ApiModelProperty(example = "10541,18599", required = true, value = "Contact [list](http://docs.textmagictesting.com/#tag/Lists) ID. Each contact must be assigned to at least one list.")
   public String getLists() {
     return lists;
   }

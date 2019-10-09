@@ -254,10 +254,10 @@ public class Contact {
   }
 
    /**
-   * See [Custom Fields](http://docs.textmagictesting.com/tag#Custom-Fields) section.
+   * See [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields) section.
    * @return customFields
   **/
-  @ApiModelProperty(required = true, value = "See [Custom Fields](http://docs.textmagictesting.com/tag#Custom-Fields) section.")
+  @ApiModelProperty(required = true, value = "See [Custom Fields](http://docs.textmagictesting.com/#tag/Custom-Fields) section.")
   public List<ContactCustomField> getCustomFields() {
     return customFields;
   }

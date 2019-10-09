@@ -52,10 +52,10 @@ public class BadRequestResponseErrors {
   }
 
    /**
-   * Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](http://docs.textmagictesting.com/tag#Outbound-Messages). 
+   * Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](http://docs.textmagictesting.com/#tag/Outbound-Messages). 
    * @return common
   **/
-  @ApiModelProperty(example = "[\"Common error message 1\",\"Common error message 2\"]", value = "Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](http://docs.textmagictesting.com/tag#Outbound-Messages). ")
+  @ApiModelProperty(example = "[\"Common error message 1\",\"Common error message 2\"]", value = "Array of messages with errors related to the entire request. For example, you did not specify either the **text** or **templateId** when [sending the message](http://docs.textmagictesting.com/#tag/Outbound-Messages). ")
   public List<String> getCommon() {
     return common;
   }

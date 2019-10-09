@@ -123,10 +123,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/tag#User) currency. 
+   * Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/#tag/User) currency. 
    * @return costs
   **/
-  @ApiModelProperty(example = "30.15", required = true, value = "Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/tag#User) currency. ")
+  @ApiModelProperty(example = "30.15", required = true, value = "Cost for sent messages during this period. The costs are in the [Account](http://docs.textmagictesting.com/#tag/User) currency. ")
   public Float getCosts() {
     return costs;
   }
