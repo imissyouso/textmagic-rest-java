@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contacts** | **String** | Comma-separated array of [Contacts](/docs/api/contacts/) IDs. | 
+**contacts** | **String** | Comma-separated array of [Contacts](http://docs.textmagictesting.com/tag#Contacts) IDs. | 
 
 
 

@@ -96,10 +96,10 @@ public class MessageSession {
   }
 
    /**
-   * Session text. If a template was used for the session text (see [Messages: Send](#tag/Outbound-Messages) for details), it may contain template tags. 
+   * Session text. If a template was used for the session text (see [Messages: Send](http://docs.textmagictesting.com/tag#Outbound-Messages) for details), it may contain template tags. 
    * @return text
   **/
-  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Session text. If a template was used for the session text (see [Messages: Send](#tag/Outbound-Messages) for details), it may contain template tags. ")
+  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Session text. If a template was used for the session text (see [Messages: Send](http://docs.textmagictesting.com/tag#Outbound-Messages) for details), it may contain template tags. ")
   public String getText() {
     return text;
   }
@@ -114,10 +114,10 @@ public class MessageSession {
   }
 
    /**
-   * *   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](/docs/api/send-email-to-sms/) *   **X** for [Distribution lists](/docs/api/distribution-lists/) 
+   * *   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](http://docs.textmagictesting.com/tag#Send-Email-to-SMS) *   **X** for [Distribution lists](http://docs.textmagictesting.com/tag#Distribution-Lists) 
    * @return source
   **/
-  @ApiModelProperty(example = "O", required = true, value = "*   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](/docs/api/send-email-to-sms/) *   **X** for [Distribution lists](/docs/api/distribution-lists/) ")
+  @ApiModelProperty(example = "O", required = true, value = "*   **O** for TextMagic Online *   **A** for API *   **M** for TextMagic Messenger *   **E** for [Email to SMS](http://docs.textmagictesting.com/tag#Send-Email-to-SMS) *   **X** for [Distribution lists](http://docs.textmagictesting.com/tag#Distribution-Lists) ")
   public String getSource() {
     return source;
   }
@@ -132,10 +132,10 @@ public class MessageSession {
   }
 
    /**
-   * Custom reference ID (see [Messages: Send](/docs/api/send-sms/) for details). 
+   * Custom reference ID (see [Messages: Send](http://docs.textmagictesting.com/tag#Send-Email-to-SMS) for details). 
    * @return referenceId
   **/
-  @ApiModelProperty(example = "my_reference_id_4991", required = true, value = "Custom reference ID (see [Messages: Send](/docs/api/send-sms/) for details). ")
+  @ApiModelProperty(example = "my_reference_id_4991", required = true, value = "Custom reference ID (see [Messages: Send](http://docs.textmagictesting.com/tag#Send-Email-to-SMS) for details). ")
   public String getReferenceId() {
     return referenceId;
   }

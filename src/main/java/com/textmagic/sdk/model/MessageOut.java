@@ -405,10 +405,10 @@ public class MessageOut {
   }
 
    /**
-   * TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). 
+   * Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/tag#Contacts) (even if you submitted phone number instead of contact ID). 
    * @return firstName
   **/
-  @ApiModelProperty(example = "John", required = true, value = "TODO: Contact first name. Could be substituted from your [Contacts](/docs/api/contacts/) (even if you submitted phone number instead of contact ID). ")
+  @ApiModelProperty(example = "John", required = true, value = "Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/tag#Contacts) (even if you submitted phone number instead of contact ID). ")
   public String getFirstName() {
     return firstName;
   }

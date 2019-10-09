@@ -225,10 +225,10 @@ public class Conversation {
   }
 
    /**
-   * Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details.
+   * Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/section#Delivery-status-codes) for details.
    * @return status
   **/
-  @ApiModelProperty(example = "d", required = true, value = "Message status (for chats outbound only). See [message delivery statuses](/docs/api/sms-sessions/#message-delivery-statuses) for details.")
+  @ApiModelProperty(example = "d", required = true, value = "Message status (for chats outbound only). See [message delivery statuses](http://docs.textmagictesting.com/section#Delivery-status-codes) for details.")
   public String getStatus() {
     return status;
   }
