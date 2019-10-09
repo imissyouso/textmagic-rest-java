@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **entityId** | **Integer** |  | 
-**entityType** | [**EntityTypeEnum**](#EntityTypeEnum) |  | 
-**primaryLabel** | **String** | Contact first name/last name if entityType is \\&#39;contact\\&#39;, List name if entity type is \\&#39;list\\&#39; | 
-**secondaryLabel** | **String** | Phone number if entityType is \\&#39;contact\\&#39;, List contacts number if entity type is \\&#39;list\\&#39; | 
-**tertiaryLabel** | **String** | Contact country if entityType is \\&#39;contact\\&#39; else null | 
+**entityType** | [**EntityTypeEnum**](#EntityTypeEnum) | Entity type which should be marked as **favourite**. | 
+**primaryLabel** | **String** | Contact first name/last name if entityType is **contact**, List name if entity type is **list** | 
+**secondaryLabel** | **String** | Phone number if entityType is **contact**, List contacts number if entity type is **list** | 
+**tertiaryLabel** | **String** | Contact country if entityType is **contact** else null | 
 **avatar** | **String** |  | 
 
 

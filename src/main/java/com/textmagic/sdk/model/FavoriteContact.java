@@ -33,7 +33,7 @@ public class FavoriteContact {
   private Integer entityId = null;
 
   /**
-   * 
+   * Entity type which should be marked as **favourite**.
    */
   @JsonAdapter(EntityTypeEnum.Adapter.class)
   public enum EntityTypeEnum {
@@ -118,10 +118,10 @@ public class FavoriteContact {
   }
 
    /**
-   * 
+   * Entity type which should be marked as **favourite**.
    * @return entityType
   **/
-  @ApiModelProperty(example = "contact", required = true, value = "")
+  @ApiModelProperty(example = "contact", required = true, value = "Entity type which should be marked as **favourite**.")
   public EntityTypeEnum getEntityType() {
     return entityType;
   }
@@ -136,10 +136,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Contact first name/last name if entityType is \\&#39;contact\\&#39;, List name if entity type is \\&#39;list\\&#39;
+   * Contact first name/last name if entityType is **contact**, List name if entity type is **list**
    * @return primaryLabel
   **/
-  @ApiModelProperty(example = "Test list", required = true, value = "Contact first name/last name if entityType is \\'contact\\', List name if entity type is \\'list\\'")
+  @ApiModelProperty(example = "Test list", required = true, value = "Contact first name/last name if entityType is **contact**, List name if entity type is **list**")
   public String getPrimaryLabel() {
     return primaryLabel;
   }
@@ -154,10 +154,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Phone number if entityType is \\&#39;contact\\&#39;, List contacts number if entity type is \\&#39;list\\&#39;
+   * Phone number if entityType is **contact**, List contacts number if entity type is **list**
    * @return secondaryLabel
   **/
-  @ApiModelProperty(example = "45", required = true, value = "Phone number if entityType is \\'contact\\', List contacts number if entity type is \\'list\\'")
+  @ApiModelProperty(example = "45", required = true, value = "Phone number if entityType is **contact**, List contacts number if entity type is **list**")
   public String getSecondaryLabel() {
     return secondaryLabel;
   }
@@ -172,10 +172,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Contact country if entityType is \\&#39;contact\\&#39; else null
+   * Contact country if entityType is **contact** else null
    * @return tertiaryLabel
   **/
-  @ApiModelProperty(example = "Australia", required = true, value = "Contact country if entityType is \\'contact\\' else null")
+  @ApiModelProperty(example = "Australia", required = true, value = "Contact country if entityType is **contact** else null")
   public String getTertiaryLabel() {
     return tertiaryLabel;
   }

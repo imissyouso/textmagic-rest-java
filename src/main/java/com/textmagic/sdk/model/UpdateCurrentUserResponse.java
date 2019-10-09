@@ -131,7 +131,7 @@ public class UpdateCurrentUserResponse {
    * Get phone
    * @return phone
   **/
-  @ApiModelProperty(example = "79030011222", value = "")
+  @ApiModelProperty(example = "447860021130", value = "")
   public String getPhone() {
     return phone;
   }

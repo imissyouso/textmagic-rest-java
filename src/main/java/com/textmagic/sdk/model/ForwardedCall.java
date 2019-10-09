@@ -90,7 +90,7 @@ public class ForwardedCall {
    * Get caller
    * @return caller
   **/
-  @ApiModelProperty(example = "19998887766", required = true, value = "")
+  @ApiModelProperty(example = "447860021131", required = true, value = "")
   public String getCaller() {
     return caller;
   }
@@ -126,7 +126,7 @@ public class ForwardedCall {
    * Get receiver
    * @return receiver
   **/
-  @ApiModelProperty(example = "19998887765", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "")
   public String getReceiver() {
     return receiver;
   }

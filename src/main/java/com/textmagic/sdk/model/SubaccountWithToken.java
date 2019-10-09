@@ -48,8 +48,55 @@ public class SubaccountWithToken {
   @SerializedName("email")
   private String email = null;
 
+  /**
+   * Current account status: * **A** for Active * **T** for Trial. 
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    A("A"),
+    
+    T("T");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("status")
-  private String status = null;
+  private StatusEnum status = null;
 
   @SerializedName("balance")
   private Double balance = null;
@@ -69,8 +116,55 @@ public class SubaccountWithToken {
   @SerializedName("timezone")
   private Timezone timezone = null;
 
+  /**
+   * Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
+   */
+  @JsonAdapter(SubaccountTypeEnum.Adapter.class)
+  public enum SubaccountTypeEnum {
+    A("A"),
+    
+    U("U");
+
+    private String value;
+
+    SubaccountTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SubaccountTypeEnum fromValue(String text) {
+      for (SubaccountTypeEnum b : SubaccountTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<SubaccountTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SubaccountTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SubaccountTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return SubaccountTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("subaccountType")
-  private String subaccountType = null;
+  private SubaccountTypeEnum subaccountType = null;
 
   @SerializedName("emailAccepted")
   private Boolean emailAccepted = null;
@@ -90,10 +184,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get id
+   * Sub-account ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "Sub-account ID.")
   public Integer getId() {
     return id;
   }
@@ -108,10 +202,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get username
+   * Username.
    * @return username
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "charles.conway", required = true, value = "Username.")
   public String getUsername() {
     return username;
   }
@@ -126,10 +220,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get firstName
+   * Account first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "Charles", required = true, value = "Account first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -144,10 +238,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get lastName
+   * Account last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test", required = true, value = "")
+  @ApiModelProperty(example = "Conway", required = true, value = "Account last name.")
   public String getLastName() {
     return lastName;
   }
@@ -165,7 +259,7 @@ public class SubaccountWithToken {
    * Get email
    * @return email
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "")
+  @ApiModelProperty(example = "charles@example.com", required = true, value = "")
   public String getEmail() {
     return email;
   }
@@ -174,21 +268,21 @@ public class SubaccountWithToken {
     this.email = email;
   }
 
-  public SubaccountWithToken status(String status) {
+  public SubaccountWithToken status(StatusEnum status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Current account status: * **A** for Active * **T** for Trial. 
    * @return status
   **/
-  @ApiModelProperty(example = "A", required = true, value = "")
-  public String getStatus() {
+  @ApiModelProperty(required = true, value = "Current account status: * **A** for Active * **T** for Trial. ")
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 
@@ -198,10 +292,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get balance
+   * Account balance (in account currency).
    * @return balance
   **/
-  @ApiModelProperty(example = "1.0", required = true, value = "")
+  @ApiModelProperty(example = "208.64", required = true, value = "Account balance (in account currency).")
   public Double getBalance() {
     return balance;
   }
@@ -216,10 +310,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get phone
+   * Contact phone number.
    * @return phone
   **/
-  @ApiModelProperty(example = "79030011222", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Contact phone number.")
   public String getPhone() {
     return phone;
   }
@@ -234,10 +328,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get company
+   * Account company name.
    * @return company
   **/
-  @ApiModelProperty(example = "Dummy company", required = true, value = "")
+  @ApiModelProperty(example = "Example Ltd.", required = true, value = "Account company name.")
   public String getCompany() {
     return company;
   }
@@ -300,21 +394,21 @@ public class SubaccountWithToken {
     this.timezone = timezone;
   }
 
-  public SubaccountWithToken subaccountType(String subaccountType) {
+  public SubaccountWithToken subaccountType(SubaccountTypeEnum subaccountType) {
     this.subaccountType = subaccountType;
     return this;
   }
 
    /**
-   * Get subaccountType
+   * Type of account: *   **A** for Administrator sub-account *   **U** for Regular User 
    * @return subaccountType
   **/
-  @ApiModelProperty(example = "P", required = true, value = "")
-  public String getSubaccountType() {
+  @ApiModelProperty(example = "U", required = true, value = "Type of account: *   **A** for Administrator sub-account *   **U** for Regular User ")
+  public SubaccountTypeEnum getSubaccountType() {
     return subaccountType;
   }
 
-  public void setSubaccountType(String subaccountType) {
+  public void setSubaccountType(SubaccountTypeEnum subaccountType) {
     this.subaccountType = subaccountType;
   }
 
@@ -324,10 +418,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get emailAccepted
+   * Is account has confirmed Email.
    * @return emailAccepted
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is account has confirmed Email.")
   public Boolean isEmailAccepted() {
     return emailAccepted;
   }
@@ -342,10 +436,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get phoneAccepted
+   * Is account has confirmed Phone number.
    * @return phoneAccepted
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is account has confirmed Phone number.")
   public Boolean isPhoneAccepted() {
     return phoneAccepted;
   }
@@ -378,10 +472,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get token
+   * Access token of account.
    * @return token
   **/
-  @ApiModelProperty(example = "TokenOfSubaccountPlacedHere", required = true, value = "")
+  @ApiModelProperty(example = "RANDOM_TOKEN", required = true, value = "Access token of account.")
   public String getToken() {
     return token;
   }
