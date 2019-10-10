@@ -179,10 +179,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Is contact favorited
+   * Is contact marked as favorite.
    * @return favorited
   **/
-  @ApiModelProperty(example = "false", value = "Is contact favorited")
+  @ApiModelProperty(example = "false", value = "Is contact marked as favorite.")
   public Boolean isFavorited() {
     return favorited;
   }
@@ -197,10 +197,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Is contact blocked for outgoing and incoming messaging
+   * Is contact blocked for outgoing and incoming messaging.
    * @return blocked
   **/
-  @ApiModelProperty(example = "false", value = "Is contact blocked for outgoing and incoming messaging")
+  @ApiModelProperty(example = "false", value = "Is contact blocked for outgoing and incoming messaging.")
   public Boolean isBlocked() {
     return blocked;
   }
@@ -215,10 +215,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection)
+   * Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).
    * @return type
   **/
-  @ApiModelProperty(example = "1", value = "Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection)")
+  @ApiModelProperty(example = "1", value = "Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).")
   public Integer getType() {
     return type;
   }
@@ -251,10 +251,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * Treat phone number passed in request body as local
+   * Treat phone number passed in request body as **local**.
    * @return local
   **/
-  @ApiModelProperty(example = "0", value = "Treat phone number passed in request body as local")
+  @ApiModelProperty(example = "0", value = "Treat phone number passed in request body as **local**.")
   public Integer getLocal() {
     return local;
   }
@@ -269,10 +269,10 @@ public class UpdateContactInputObject {
   }
 
    /**
-   * 2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country
+   * 2-letter ISO country code for local phone numbers, used when **local** is set to true.
    * @return country
   **/
-  @ApiModelProperty(example = "US", value = "2-letter ISO country code for local phone numbers, used when local is  set to true. Default is account country")
+  @ApiModelProperty(example = "US", value = "2-letter ISO country code for local phone numbers, used when **local** is set to true.")
   public String getCountry() {
     return country;
   }

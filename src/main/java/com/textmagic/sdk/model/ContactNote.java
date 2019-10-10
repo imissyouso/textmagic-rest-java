@@ -49,10 +49,10 @@ public class ContactNote {
   }
 
    /**
-   * Get id
+   * Contact note ID.
    * @return id
   **/
-  @ApiModelProperty(example = "5", required = true, value = "")
+  @ApiModelProperty(example = "5", required = true, value = "Contact note ID.")
   public Integer getId() {
     return id;
   }
@@ -67,10 +67,10 @@ public class ContactNote {
   }
 
    /**
-   * Get createdAt
+   * Contact note creation time.
    * @return createdAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "Contact note creation time.")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -85,10 +85,10 @@ public class ContactNote {
   }
 
    /**
-   * Get note
+   * Contact note text.
    * @return note
   **/
-  @ApiModelProperty(example = "Test note", required = true, value = "")
+  @ApiModelProperty(example = "Test note", required = true, value = "Contact note text.")
   public String getNote() {
     return note;
   }

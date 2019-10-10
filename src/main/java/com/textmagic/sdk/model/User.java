@@ -37,8 +37,55 @@ public class User {
   @SerializedName("id")
   private Integer id = null;
 
+  /**
+   * User&#39;s prefered format of time display * *12h* - AM/PM format * *24h* - 24 hour clock format 
+   */
+  @JsonAdapter(DisplayTimeFormatEnum.Adapter.class)
+  public enum DisplayTimeFormatEnum {
+    _12H("12h"),
+    
+    _24H("24h");
+
+    private String value;
+
+    DisplayTimeFormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DisplayTimeFormatEnum fromValue(String text) {
+      for (DisplayTimeFormatEnum b : DisplayTimeFormatEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DisplayTimeFormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DisplayTimeFormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DisplayTimeFormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DisplayTimeFormatEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("displayTimeFormat")
-  private String displayTimeFormat = null;
+  private DisplayTimeFormatEnum displayTimeFormat = null;
 
   @SerializedName("username")
   private String username = null;
@@ -199,21 +246,21 @@ public class User {
     this.id = id;
   }
 
-  public User displayTimeFormat(String displayTimeFormat) {
+  public User displayTimeFormat(DisplayTimeFormatEnum displayTimeFormat) {
     this.displayTimeFormat = displayTimeFormat;
     return this;
   }
 
    /**
-   * Format for representation of time
+   * User&#39;s prefered format of time display * *12h* - AM/PM format * *24h* - 24 hour clock format 
    * @return displayTimeFormat
   **/
-  @ApiModelProperty(example = "24h", value = "Format for representation of time")
-  public String getDisplayTimeFormat() {
+  @ApiModelProperty(example = "24h", value = "User's prefered format of time display * *12h* - AM/PM format * *24h* - 24 hour clock format ")
+  public DisplayTimeFormatEnum getDisplayTimeFormat() {
     return displayTimeFormat;
   }
 
-  public void setDisplayTimeFormat(String displayTimeFormat) {
+  public void setDisplayTimeFormat(DisplayTimeFormatEnum displayTimeFormat) {
     this.displayTimeFormat = displayTimeFormat;
   }
 
@@ -331,10 +378,10 @@ public class User {
   }
 
    /**
-   * Get phone
+   * User phone number
    * @return phone
   **/
-  @ApiModelProperty(example = "79030011222", required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "User phone number")
   public String getPhone() {
     return phone;
   }
@@ -439,10 +486,10 @@ public class User {
   }
 
    /**
-   * Get emailAccepted
+   * Is account has confirmed Email.
    * @return emailAccepted
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is account has confirmed Email.")
   public Boolean isEmailAccepted() {
     return emailAccepted;
   }
@@ -457,10 +504,10 @@ public class User {
   }
 
    /**
-   * Get phoneAccepted
+   * Is account has confirmed Phone number.
    * @return phoneAccepted
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is account has confirmed Phone number.")
   public Boolean isPhoneAccepted() {
     return phoneAccepted;
   }

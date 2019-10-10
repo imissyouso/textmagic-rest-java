@@ -47,10 +47,10 @@ public class UpdateChatDesktopNotificationSettingsInputObject {
   }
 
    /**
-   * Notification sound is enable/disabled
+   * Enable notification sound?
    * @return playSound
   **/
-  @ApiModelProperty(example = "false", required = true, value = "Notification sound is enable/disabled")
+  @ApiModelProperty(example = "false", required = true, value = "Enable notification sound?")
   public Boolean isPlaySound() {
     return playSound;
   }
@@ -65,10 +65,10 @@ public class UpdateChatDesktopNotificationSettingsInputObject {
   }
 
    /**
-   * Show desktop notifications about new messages
+   * Show desktop notifications about new messages.
    * @return showNotifications
   **/
-  @ApiModelProperty(example = "false", required = true, value = "Show desktop notifications about new messages")
+  @ApiModelProperty(example = "false", required = true, value = "Show desktop notifications about new messages.")
   public Boolean isShowNotifications() {
     return showNotifications;
   }
@@ -101,10 +101,10 @@ public class UpdateChatDesktopNotificationSettingsInputObject {
   }
 
    /**
-   * Sound Id of a notification
+   * Sound Id of a notification.
    * @return soundId
   **/
-  @ApiModelProperty(example = "1", value = "Sound Id of a notification")
+  @ApiModelProperty(example = "23", value = "Sound Id of a notification.")
   public Integer getSoundId() {
     return soundId;
   }

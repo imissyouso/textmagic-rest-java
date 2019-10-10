@@ -38,10 +38,10 @@ public class GetUnreadMessagesTotalResponse {
   }
 
    /**
-   * Get total
+   * Amount of unread messages.
    * @return total
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "22", required = true, value = "Amount of unread messages.")
   public Integer getTotal() {
     return total;
   }

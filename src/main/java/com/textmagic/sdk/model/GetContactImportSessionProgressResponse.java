@@ -59,10 +59,10 @@ public class GetContactImportSessionProgressResponse {
   }
 
    /**
-   * How many contacts have been imported
+   * How many contacts have been imported.
    * @return processed
   **/
-  @ApiModelProperty(example = "67", required = true, value = "How many contacts have been imported")
+  @ApiModelProperty(example = "67", required = true, value = "How many contacts have been imported.")
   public Integer getProcessed() {
     return processed;
   }

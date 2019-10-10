@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**userId** | **Integer** | User statement ID. | 
+**id** | **Integer** | User statement ID. | 
+**userId** | **Integer** | User ID. | 
 **date** | [**OffsetDateTime**](OffsetDateTime.md) | User statement date. | 
 **balance** | **Double** |  | 
 **delta** | **Float** | Balance change amount. | 

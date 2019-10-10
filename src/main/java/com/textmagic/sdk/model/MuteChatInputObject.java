@@ -44,10 +44,10 @@ public class MuteChatInputObject {
   }
 
    /**
-   * Chat ID
+   * Chat ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Chat ID")
+  @ApiModelProperty(example = "542", required = true, value = "Chat ID.")
   public Integer getId() {
     return id;
   }
@@ -62,10 +62,10 @@ public class MuteChatInputObject {
   }
 
    /**
-   * Mute value
+   * Mute notifications sound.
    * @return mute
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Mute value")
+  @ApiModelProperty(example = "true", required = true, value = "Mute notifications sound.")
   public Boolean isMute() {
     return mute;
   }
@@ -80,10 +80,10 @@ public class MuteChatInputObject {
   }
 
    /**
-   * Mute for N hours
+   * Mute for N hours.
    * @return _for
   **/
-  @ApiModelProperty(example = "1", value = "Mute for N hours")
+  @ApiModelProperty(example = "5", value = "Mute for N hours.")
   public Integer getFor() {
     return _for;
   }

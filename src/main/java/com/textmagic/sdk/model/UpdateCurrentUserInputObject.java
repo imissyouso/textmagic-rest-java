@@ -164,10 +164,10 @@ public class UpdateCurrentUserInputObject {
   }
 
    /**
-   * The timezome internal id
+   * The timezome internal id. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).
    * @return timezone
   **/
-  @ApiModelProperty(example = "2", value = "The timezome internal id")
+  @ApiModelProperty(example = "2", value = "The timezome internal id. See [Get timezones](http://docs.textmagictesting.com/#operation/getTimezones).")
   public Integer getTimezone() {
     return timezone;
   }

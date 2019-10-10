@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**note** | **String** |  |  [optional]
+**note** | **String** | Contact Note text. |  [optional]
 
 
 

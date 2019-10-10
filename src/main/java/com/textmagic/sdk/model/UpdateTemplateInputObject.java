@@ -59,10 +59,10 @@ public class UpdateTemplateInputObject {
   }
 
    /**
-   * Template text. May contain tags inside braces
+   * Template text. May contain tags inside braces. See [Get timezones](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
    * @return content
   **/
-  @ApiModelProperty(example = "New template content", required = true, value = "Template text. May contain tags inside braces")
+  @ApiModelProperty(example = "New template content", required = true, value = "Template text. May contain tags inside braces. See [Get timezones](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).")
   public String getContent() {
     return content;
   }

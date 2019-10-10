@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **String** |  | 
+**href** | **String** | URI of a contact avatar. | 
 
 
 

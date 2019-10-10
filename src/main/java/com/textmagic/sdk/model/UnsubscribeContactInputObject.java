@@ -41,10 +41,10 @@ public class UnsubscribeContactInputObject {
   }
 
    /**
-   * Contact phone number
+   * Contact phone number.
    * @return phone
   **/
-  @ApiModelProperty(example = "447860021130", value = "Contact phone number")
+  @ApiModelProperty(example = "447860021130", value = "Contact phone number.")
   public String getPhone() {
     return phone;
   }
@@ -59,10 +59,10 @@ public class UnsubscribeContactInputObject {
   }
 
    /**
-   * Default is 0 (false). If set to 1 incoming messages from this number will be blocked.
+   * If set to 1 incoming messages from this number will be blocked.
    * @return blockIncoming
   **/
-  @ApiModelProperty(example = "0", value = "Default is 0 (false). If set to 1 incoming messages from this number will be blocked.")
+  @ApiModelProperty(example = "0", value = "If set to 1 incoming messages from this number will be blocked.")
   public Integer getBlockIncoming() {
     return blockIncoming;
   }

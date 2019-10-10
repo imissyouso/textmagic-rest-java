@@ -179,10 +179,10 @@ public class CreateContactInputObject {
   }
 
    /**
-   * Is contact favorited
+   * Is contact marked as favorite.
    * @return favorited
   **/
-  @ApiModelProperty(example = "false", value = "Is contact favorited")
+  @ApiModelProperty(example = "false", value = "Is contact marked as favorite.")
   public Boolean isFavorited() {
     return favorited;
   }
@@ -197,10 +197,10 @@ public class CreateContactInputObject {
   }
 
    /**
-   * Is contact blocked for outgoing and incoming messaging
+   * Is contact blocked for outgoing and incoming messaging.
    * @return blocked
   **/
-  @ApiModelProperty(example = "false", value = "Is contact blocked for outgoing and incoming messaging")
+  @ApiModelProperty(example = "false", value = "Is contact blocked for outgoing and incoming messaging.")
   public Boolean isBlocked() {
     return blocked;
   }
@@ -215,10 +215,10 @@ public class CreateContactInputObject {
   }
 
    /**
-   * Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection)
+   * Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).
    * @return type
   **/
-  @ApiModelProperty(example = "1", value = "Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection)")
+  @ApiModelProperty(example = "1", value = "Force type of phone. Possible values: 0 - landline, 1 - mobile. Default is -1 (auto detection).")
   public Integer getType() {
     return type;
   }

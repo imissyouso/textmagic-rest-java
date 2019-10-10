@@ -322,7 +322,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Create a new contact note.
+     * Create a new contact note
      *
      * 
      *
@@ -497,7 +497,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete a single contact note.
+     * Delete a contact note
      *
      * 
      *
@@ -513,7 +513,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Delete contact note by given ID(s) or delete all contact notes.
+     * Delete contact notes (bulk)
      *
      * 
      *
@@ -869,7 +869,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get all bulk sending sessions.
+     * Get all bulk sessions
      *
      * 
      *
@@ -1082,7 +1082,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get bulk message session status.
+     * Get bulk session status
      *
      * 
      *
@@ -1218,7 +1218,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Get a single contact note.
+     * Get a contact note
      *
      * 
      *
@@ -2472,7 +2472,7 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Update existing contact note.
+     * Update a contact note
      *
      * 
      *

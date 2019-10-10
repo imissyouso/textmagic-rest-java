@@ -45,10 +45,10 @@ public class GetMessagePriceResponse {
   }
 
    /**
-   * Get total
+   * Total price of the mesasge.
    * @return total
   **/
-  @ApiModelProperty(example = "0.08", required = true, value = "")
+  @ApiModelProperty(example = "0.08", required = true, value = "Total price of the mesasge.")
   public BigDecimal getTotal() {
     return total;
   }
@@ -63,10 +63,10 @@ public class GetMessagePriceResponse {
   }
 
    /**
-   * Get parts
+   * Message parts (multiples of 160 characters) count.
    * @return parts
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "6", required = true, value = "Message parts (multiples of 160 characters) count.")
   public Integer getParts() {
     return parts;
   }
@@ -81,10 +81,10 @@ public class GetMessagePriceResponse {
   }
 
    /**
-   * Get countries
+   * List of countries where message will be sent with pricing explanation.
    * @return countries
   **/
-  @ApiModelProperty(example = "{\"GB\":{\"country\":\"GB\",\"country_name\":\"United Kingdom\",\"allow_dedicated\":true,\"count\":2,\"max\":0.04,\"sum\":0.08,\"landline\":0}}", required = true, value = "")
+  @ApiModelProperty(example = "{\"GB\":{\"country\":\"GB\",\"country_name\":\"United Kingdom\",\"allow_dedicated\":true,\"count\":2,\"max\":0.04,\"sum\":0.08,\"landline\":0}}", required = true, value = "List of countries where message will be sent with pricing explanation.")
   public Object getCountries() {
     return countries;
   }

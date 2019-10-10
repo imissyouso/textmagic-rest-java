@@ -84,10 +84,10 @@ public class MessageTemplate {
   }
 
    /**
-   * Template text. May contain the tags listed below TODO.
+   * Template text. May contain the tags. See [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).
    * @return content
   **/
-  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Template text. May contain the tags listed below TODO.")
+  @ApiModelProperty(example = "Hello {First name}!", required = true, value = "Template text. May contain the tags. See [Custom fields list](http://docs.textmagictesting.com/#section/Custom-fields-list-(Merge-tags)).")
   public String getContent() {
     return content;
   }

@@ -42,10 +42,10 @@ public class MessagesIcsParameters {
   }
 
    /**
-   * Get text
+   * Scheduled message text.
    * @return text
   **/
-  @ApiModelProperty(example = "Sample text", required = true, value = "")
+  @ApiModelProperty(example = "I Love TextMagic!", required = true, value = "Scheduled message text.")
   public String getText() {
     return text;
   }

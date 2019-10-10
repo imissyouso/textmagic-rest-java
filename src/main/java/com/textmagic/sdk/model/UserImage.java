@@ -38,10 +38,10 @@ public class UserImage {
   }
 
    /**
-   * Get href
+   * URI of a user avatar.
    * @return href
   **/
-  @ApiModelProperty(example = "https://dummylogos.com/logo.png", required = true, value = "")
+  @ApiModelProperty(example = "avatars/lav5d8de21d89971646555094.png", required = true, value = "URI of a user avatar.")
   public String getHref() {
     return href;
   }

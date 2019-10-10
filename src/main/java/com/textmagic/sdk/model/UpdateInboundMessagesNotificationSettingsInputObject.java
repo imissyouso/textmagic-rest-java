@@ -53,10 +53,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * Should user receive notification about new incoming messages
+   * Should user receive notification about new incoming messages.
    * @return inboundMessageNotification
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Should user receive notification about new incoming messages")
+  @ApiModelProperty(example = "true", required = true, value = "Should user receive notification about new incoming messages.")
   public Boolean isInboundMessageNotification() {
     return inboundMessageNotification;
   }
@@ -71,10 +71,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * Include SMS history into notification Email
+   * Include SMS history into notification Email.
    * @return includeSmsHistory
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Include SMS history into notification Email")
+  @ApiModelProperty(example = "true", required = true, value = "Include SMS history into notification Email.")
   public Boolean isIncludeSmsHistory() {
     return includeSmsHistory;
   }
@@ -89,10 +89,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * Send Email notification in HTML format
+   * Send Email notification in HTML format.
    * @return sendInHtmlFormat
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Send Email notification in HTML format")
+  @ApiModelProperty(example = "true", required = true, value = "Send Email notification in HTML format.")
   public Boolean isSendInHtmlFormat() {
     return sendInHtmlFormat;
   }
@@ -107,10 +107,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * New message notification email 2
+   * New message notification email 2.
    * @return alertEmail1
   **/
-  @ApiModelProperty(example = "test@test.com", value = "New message notification email 2")
+  @ApiModelProperty(example = "test@test.com", value = "New message notification email 2.")
   public String getAlertEmail1() {
     return alertEmail1;
   }
@@ -125,10 +125,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * New message notification email 2
+   * New message notification email 2.
    * @return alertEmail2
   **/
-  @ApiModelProperty(example = "test@test.com", value = "New message notification email 2")
+  @ApiModelProperty(example = "test@test.com", value = "New message notification email 2.")
   public String getAlertEmail2() {
     return alertEmail2;
   }
@@ -143,10 +143,10 @@ public class UpdateInboundMessagesNotificationSettingsInputObject {
   }
 
    /**
-   * New message notification email 3
+   * New message notification email 3.
    * @return alertEmail3
   **/
-  @ApiModelProperty(example = "test@test.com", value = "New message notification email 3")
+  @ApiModelProperty(example = "test@test.com", value = "New message notification email 3.")
   public String getAlertEmail3() {
     return alertEmail3;
   }

@@ -279,10 +279,10 @@ public class Conversation {
   }
 
    /**
-   * Get sessionId
+   * Session ID of a message. See [message sessions](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions) for details.
    * @return sessionId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Session ID of a message. See [message sessions](http://docs.textmagictesting.com/#tag/Outbound-Message-Sessions) for details.")
   public Integer getSessionId() {
     return sessionId;
   }

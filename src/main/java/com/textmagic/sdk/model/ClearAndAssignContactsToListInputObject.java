@@ -38,10 +38,10 @@ public class ClearAndAssignContactsToListInputObject {
   }
 
    /**
-   * Get contacts
+   * Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user
    * @return contacts
   **/
-  @ApiModelProperty(example = "1,2", required = true, value = "")
+  @ApiModelProperty(example = "1,2", required = true, value = "Contact ID(s), separated by comma or 'all' to add all contacts belonging to the current user")
   public String getContacts() {
     return contacts;
   }

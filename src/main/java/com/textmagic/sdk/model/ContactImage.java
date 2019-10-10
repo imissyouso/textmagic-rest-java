@@ -38,10 +38,10 @@ public class ContactImage {
   }
 
    /**
-   * Get href
+   * URI of a contact avatar.
    * @return href
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "avatars/lav5d8de21d89971646555094.png", required = true, value = "URI of a contact avatar.")
   public String getHref() {
     return href;
   }

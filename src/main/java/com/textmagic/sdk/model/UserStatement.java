@@ -60,10 +60,10 @@ public class UserStatement {
   }
 
    /**
-   * Get id
+   * User statement ID.
    * @return id
   **/
-  @ApiModelProperty(example = "305", required = true, value = "")
+  @ApiModelProperty(example = "305", required = true, value = "User statement ID.")
   public Integer getId() {
     return id;
   }
@@ -78,10 +78,10 @@ public class UserStatement {
   }
 
    /**
-   * User statement ID.
+   * User ID.
    * @return userId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "User statement ID.")
+  @ApiModelProperty(example = "4627", required = true, value = "User ID.")
   public Integer getUserId() {
     return userId;
   }

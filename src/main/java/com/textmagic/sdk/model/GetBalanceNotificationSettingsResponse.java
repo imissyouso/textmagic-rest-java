@@ -53,10 +53,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * Should user receive low balance notification
+   * Should user receive low balance notification.
    * @return lowBalanceNotification
   **/
-  @ApiModelProperty(example = "true", required = true, value = "Should user receive low balance notification")
+  @ApiModelProperty(example = "true", required = true, value = "Should user receive low balance notification.")
   public Boolean isLowBalanceNotification() {
     return lowBalanceNotification;
   }
@@ -71,10 +71,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * If balance is below this value, user receive low balance notification
+   * If balance is below this value, user receive low balance notification.
    * @return alertBalance
   **/
-  @ApiModelProperty(example = "50", required = true, value = "If balance is below this value, user receive low balance notification")
+  @ApiModelProperty(example = "50", required = true, value = "If balance is below this value, user receive low balance notification.")
   public String getAlertBalance() {
     return alertBalance;
   }
@@ -89,10 +89,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * Low balance notification phone number
+   * Low balance notification phone number.
    * @return alertPhone
   **/
-  @ApiModelProperty(example = "15417543010", required = true, value = "Low balance notification phone number")
+  @ApiModelProperty(example = "447860021130", required = true, value = "Low balance notification phone number.")
   public String getAlertPhone() {
     return alertPhone;
   }
@@ -107,10 +107,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * Low balance notification email 1
+   * Low balance notification email 1.
    * @return alertEmail1
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 1")
+  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 1.")
   public String getAlertEmail1() {
     return alertEmail1;
   }
@@ -125,10 +125,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * Low balance notification email 2
+   * Low balance notification email 2.
    * @return alertEmail2
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 2")
+  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 2.")
   public String getAlertEmail2() {
     return alertEmail2;
   }
@@ -143,10 +143,10 @@ public class GetBalanceNotificationSettingsResponse {
   }
 
    /**
-   * Low balance notification email 3
+   * Low balance notification email 3.
    * @return alertEmail3
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 3")
+  @ApiModelProperty(example = "test@test.com", required = true, value = "Low balance notification email 3.")
   public String getAlertEmail3() {
     return alertEmail3;
   }

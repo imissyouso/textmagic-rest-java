@@ -54,7 +54,7 @@ public class SendMessageInputObject {
   private String phones = null;
 
   @SerializedName("cutExtra")
-  private Boolean cutExtra = null;
+  private Boolean cutExtra = false;
 
   @SerializedName("partsCount")
   private Integer partsCount = null;
@@ -69,13 +69,13 @@ public class SendMessageInputObject {
   private String rule = null;
 
   @SerializedName("createChat")
-  private Boolean createChat = null;
+  private Boolean createChat = false;
 
   @SerializedName("tts")
-  private Boolean tts = null;
+  private Boolean tts = false;
 
   @SerializedName("local")
-  private Boolean local = null;
+  private Boolean local = false;
 
   @SerializedName("localCountry")
   private String localCountry = null;
@@ -86,10 +86,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Message text. Required if template_id is not set
+   * Message text. Required if **template_id** is not set.
    * @return text
   **/
-  @ApiModelProperty(example = "Hello, how are you?", required = true, value = "Message text. Required if template_id is not set")
+  @ApiModelProperty(example = "Hello, how are you?", required = true, value = "Message text. Required if **template_id** is not set.")
   public String getText() {
     return text;
   }
@@ -104,10 +104,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Template used instead of message text. Required if text is not set
+   * Template used instead of message text. Required if **text** is not set.
    * @return templateId
   **/
-  @ApiModelProperty(example = "1", value = "Template used instead of message text. Required if text is not set")
+  @ApiModelProperty(example = "1", value = "Template used instead of message text. Required if **text** is not set.")
   public Integer getTemplateId() {
     return templateId;
   }
@@ -122,10 +122,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now
+   * DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.
    * @return sendingTime
   **/
-  @ApiModelProperty(example = "1565606455", value = "DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now")
+  @ApiModelProperty(example = "1565606455", value = "DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now.")
   public Integer getSendingTime() {
     return sendingTime;
   }
@@ -140,10 +140,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone
+   * Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to **sendingTimezone**.
    * @return sendingDateTime
   **/
-  @ApiModelProperty(example = "2020-05-27 13:02:33", value = "Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone")
+  @ApiModelProperty(example = "2020-05-27 13:02:33", value = "Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to **sendingTimezone**.")
   public String getSendingDateTime() {
     return sendingDateTime;
   }
@@ -158,10 +158,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone
+   * ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.
    * @return sendingTimezone
   **/
-  @ApiModelProperty(example = "America/Buenos_Aires", value = "ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone")
+  @ApiModelProperty(example = "America/Buenos_Aires", value = "ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime = \\\"2016-05-27 13:02:33\\\" and sendingTimezone = \\\"America/Buenos_Aires\\\", your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone.")
   public String getSendingTimezone() {
     return sendingTimezone;
   }
@@ -176,10 +176,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Comma separated array of contact resources id message will be sent to
+   * Comma separated array of contact resources id message will be sent to.
    * @return contacts
   **/
-  @ApiModelProperty(example = "1,2,3,4", value = "Comma separated array of contact resources id message will be sent to")
+  @ApiModelProperty(example = "1,2,3,4", value = "Comma separated array of contact resources id message will be sent to.")
   public String getContacts() {
     return contacts;
   }
@@ -194,10 +194,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Comma separated array of list resources id message will be sent to
+   * Comma separated array of list resources id message will be sent to.
    * @return lists
   **/
-  @ApiModelProperty(example = "1,2,3,4", value = "Comma separated array of list resources id message will be sent to")
+  @ApiModelProperty(example = "1,2,3,4", value = "Comma separated array of list resources id message will be sent to.")
   public String getLists() {
     return lists;
   }
@@ -212,10 +212,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Comma separated array of E.164 phone numbers message will be sent to
+   * Comma separated array of E.164 phone numbers message will be sent to.
    * @return phones
   **/
-  @ApiModelProperty(example = "447860021130,447860021131", required = true, value = "Comma separated array of E.164 phone numbers message will be sent to")
+  @ApiModelProperty(example = "447860021130,447860021131", required = true, value = "Comma separated array of E.164 phone numbers message will be sent to.")
   public String getPhones() {
     return phones;
   }
@@ -230,10 +230,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is false
+   * Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.
    * @return cutExtra
   **/
-  @ApiModelProperty(example = "true", value = "Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is false")
+  @ApiModelProperty(example = "true", value = "Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead.")
   public Boolean isCutExtra() {
     return cutExtra;
   }
@@ -248,10 +248,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6
+   * Maximum message parts count (TextMagic allows sending 1 to 6 message parts).
    * @return partsCount
   **/
-  @ApiModelProperty(example = "6", value = "Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6")
+  @ApiModelProperty(example = "6", value = "Maximum message parts count (TextMagic allows sending 1 to 6 message parts).")
   public Integer getPartsCount() {
     return partsCount;
   }
@@ -266,10 +266,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Custom message reference id which can be used in your application infrastructure
+   * Custom message reference id which can be used in your application infrastructure.
    * @return referenceId
   **/
-  @ApiModelProperty(example = "1", value = "Custom message reference id which can be used in your application infrastructure")
+  @ApiModelProperty(example = "1", value = "Custom message reference id which can be used in your application infrastructure.")
   public Integer getReferenceId() {
     return referenceId;
   }
@@ -284,10 +284,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery
+   * One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).
    * @return from
   **/
-  @ApiModelProperty(example = "Test sender id", value = "One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery")
+  @ApiModelProperty(example = "Test sender id", value = "One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs).")
   public String getFrom() {
     return from;
   }
@@ -302,10 +302,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details
+   * iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
    * @return rule
   **/
-  @ApiModelProperty(example = "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1", value = "iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details")
+  @ApiModelProperty(example = "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1", value = "iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.")
   public String getRule() {
     return rule;
   }
@@ -320,10 +320,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Should sending method try to create new Chat(if not exist) with specified recipients. Default is false
+   * Should sending method try to create new Chat(if not exist) with specified recipients.
    * @return createChat
   **/
-  @ApiModelProperty(example = "false", value = "Should sending method try to create new Chat(if not exist) with specified recipients. Default is false")
+  @ApiModelProperty(example = "false", value = "Should sending method try to create new Chat(if not exist) with specified recipients.")
   public Boolean isCreateChat() {
     return createChat;
   }
@@ -338,10 +338,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Send Text to Speech message. Default is false
+   * Send Text to Speech message.
    * @return tts
   **/
-  @ApiModelProperty(example = "false", value = "Send Text to Speech message. Default is false")
+  @ApiModelProperty(example = "false", value = "Send Text to Speech message.")
   public Boolean isTts() {
     return tts;
   }
@@ -356,10 +356,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is false
+   * Treat phone numbers passed in \\&#39;phones\\&#39; field as local.
    * @return local
   **/
-  @ApiModelProperty(example = "false", value = "Treat phone numbers passed in \\'phones\\' field as local. Default is false")
+  @ApiModelProperty(example = "false", value = "Treat phone numbers passed in \\'phones\\' field as local.")
   public Boolean isLocal() {
     return local;
   }
@@ -374,10 +374,10 @@ public class SendMessageInputObject {
   }
 
    /**
-   * 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country
+   * 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country.
    * @return localCountry
   **/
-  @ApiModelProperty(example = "US", value = "2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country")
+  @ApiModelProperty(example = "US", value = "2-letter ISO country code for local phone numbers, used when \\'local\\' is set to true. Default is account country.")
   public String getLocalCountry() {
     return localCountry;
   }

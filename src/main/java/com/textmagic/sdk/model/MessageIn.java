@@ -138,7 +138,7 @@ public class MessageIn {
    * The text from the received message.
    * @return text
   **/
-  @ApiModelProperty(example = "Test reply", required = true, value = "The text from the received message.")
+  @ApiModelProperty(example = "I Love TextMagic!", required = true, value = "The text from the received message.")
   public String getText() {
     return text;
   }
@@ -153,10 +153,10 @@ public class MessageIn {
   }
 
    /**
-   * Get contactId
+   * Sender contact ID.
    * @return contactId
   **/
-  @ApiModelProperty(example = "1", value = "")
+  @ApiModelProperty(example = "1", value = "Sender contact ID.")
   public Integer getContactId() {
     return contactId;
   }
@@ -171,10 +171,10 @@ public class MessageIn {
   }
 
    /**
-   * Get firstName
+   * Sender contact first name.
    * @return firstName
   **/
-  @ApiModelProperty(example = "Test first name", value = "")
+  @ApiModelProperty(example = "Charles", value = "Sender contact first name.")
   public String getFirstName() {
     return firstName;
   }
@@ -189,10 +189,10 @@ public class MessageIn {
   }
 
    /**
-   * Get lastName
+   * Sender contact last name.
    * @return lastName
   **/
-  @ApiModelProperty(example = "Test last name", value = "")
+  @ApiModelProperty(example = "Conway", value = "Sender contact last name.")
   public String getLastName() {
     return lastName;
   }

@@ -51,8 +51,57 @@ public class MessageSession {
   @SerializedName("numbersCount")
   private Integer numbersCount = null;
 
+  /**
+   * Destination type of a Message Session: * **t** - text SMS * **s** - text to speech * **v** - voice broadcast 
+   */
+  @JsonAdapter(DestinationEnum.Adapter.class)
+  public enum DestinationEnum {
+    T("t"),
+    
+    S("s"),
+    
+    V("v");
+
+    private String value;
+
+    DestinationEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DestinationEnum fromValue(String text) {
+      for (DestinationEnum b : DestinationEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DestinationEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DestinationEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DestinationEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DestinationEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("destination")
-  private String destination = null;
+  private DestinationEnum destination = null;
 
   public MessageSession id(Integer id) {
     this.id = id;
@@ -180,21 +229,21 @@ public class MessageSession {
     this.numbersCount = numbersCount;
   }
 
-  public MessageSession destination(String destination) {
+  public MessageSession destination(DestinationEnum destination) {
     this.destination = destination;
     return this;
   }
 
    /**
-   * Get destination
+   * Destination type of a Message Session: * **t** - text SMS * **s** - text to speech * **v** - voice broadcast 
    * @return destination
   **/
-  @ApiModelProperty(example = "t", required = true, value = "")
-  public String getDestination() {
+  @ApiModelProperty(example = "t", required = true, value = "Destination type of a Message Session: * **t** - text SMS * **s** - text to speech * **v** - voice broadcast ")
+  public DestinationEnum getDestination() {
     return destination;
   }
 
-  public void setDestination(String destination) {
+  public void setDestination(DestinationEnum destination) {
     this.destination = destination;
   }
 

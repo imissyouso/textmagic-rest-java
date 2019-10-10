@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**note** | **String** |  | 
+**id** | **Integer** | Contact note ID. | 
+**createdAt** | [**OffsetDateTime**](OffsetDateTime.md) | Contact note creation time. | 
+**note** | **String** | Contact note text. | 
 **user** | [**User**](User.md) |  | 
 
 

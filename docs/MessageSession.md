@@ -11,7 +11,16 @@ Name | Type | Description | Notes
 **referenceId** | **String** | Custom reference ID (see [Messages: Send](http://docs.textmagictesting.com/#tag/Send-Email-to-SMS) for details).  | 
 **price** | [**BigDecimal**](BigDecimal.md) | Session cost (in account currency). | 
 **numbersCount** | **Integer** | Session recipient count. | 
-**destination** | **String** |  | 
+**destination** | [**DestinationEnum**](#DestinationEnum) | Destination type of a Message Session: * **t** - text SMS * **s** - text to speech * **v** - voice broadcast  | 
+
+
+<a name="DestinationEnum"></a>
+## Enum: DestinationEnum
+Name | Value
+---- | -----
+T | &quot;t&quot;
+S | &quot;s&quot;
+V | &quot;v&quot;
 
 
 

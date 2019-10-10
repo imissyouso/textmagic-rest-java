@@ -38,10 +38,10 @@ public class UpdateContactNoteInputObject {
   }
 
    /**
-   * Get note
+   * Contact Note text.
    * @return note
   **/
-  @ApiModelProperty(example = "My new note", required = true, value = "")
+  @ApiModelProperty(example = "My new note", required = true, value = "Contact Note text.")
   public String getNote() {
     return note;
   }

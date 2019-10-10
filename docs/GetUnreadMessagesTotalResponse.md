@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **Integer** |  | 
+**total** | **Integer** | Amount of unread messages. | 
 
 
 

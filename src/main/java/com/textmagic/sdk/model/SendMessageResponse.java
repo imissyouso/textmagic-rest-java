@@ -59,10 +59,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get id
+   * Message ID.
    * @return id
   **/
-  @ApiModelProperty(example = "10489", required = true, value = "")
+  @ApiModelProperty(example = "10489", required = true, value = "Message ID.")
   public Integer getId() {
     return id;
   }
@@ -77,10 +77,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get href
+   * URI of message session.
    * @return href
   **/
-  @ApiModelProperty(example = "/api/v2/sessions/10489", required = true, value = "")
+  @ApiModelProperty(example = "/api/v2/sessions/10489", required = true, value = "URI of message session.")
   public String getHref() {
     return href;
   }
@@ -113,10 +113,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get sessionId
+   * Message session ID.
    * @return sessionId
   **/
-  @ApiModelProperty(example = "10489", required = true, value = "")
+  @ApiModelProperty(example = "10489", required = true, value = "Message session ID.")
   public Integer getSessionId() {
     return sessionId;
   }
@@ -131,10 +131,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get bulkId
+   * Bulk Session ID. See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).
    * @return bulkId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Bulk Session ID. See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session).")
   public Integer getBulkId() {
     return bulkId;
   }
@@ -167,10 +167,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get scheduleId
+   * Message Schedule ID.
    * @return scheduleId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Message Schedule ID.")
   public Integer getScheduleId() {
     return scheduleId;
   }
@@ -185,10 +185,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get chatId
+   * Message Chat ID.
    * @return chatId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Message Chat ID.")
   public Integer getChatId() {
     return chatId;
   }

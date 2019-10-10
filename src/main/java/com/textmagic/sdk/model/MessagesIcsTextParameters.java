@@ -41,8 +41,55 @@ public class MessagesIcsTextParameters {
   @SerializedName("chars")
   private Integer chars = null;
 
+  /**
+   * Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS 
+   */
+  @JsonAdapter(EncodingEnum.Adapter.class)
+  public enum EncodingEnum {
+    ISO_8859_1("ISO-8859-1"),
+    
+    UTF_16BE("UTF-16BE");
+
+    private String value;
+
+    EncodingEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EncodingEnum fromValue(String text) {
+      for (EncodingEnum b : EncodingEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<EncodingEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EncodingEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EncodingEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return EncodingEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("encoding")
-  private String encoding = null;
+  private EncodingEnum encoding = null;
 
   @SerializedName("countries")
   private List<String> countries = new ArrayList<String>();
@@ -56,10 +103,10 @@ public class MessagesIcsTextParameters {
   }
 
    /**
-   * Get cost
+   * Cost to check one number is constant – 0.04 in your account currency.
    * @return cost
   **/
-  @ApiModelProperty(example = "0.025", required = true, value = "")
+  @ApiModelProperty(example = "0.04", required = true, value = "Cost to check one number is constant – 0.04 in your account currency.")
   public BigDecimal getCost() {
     return cost;
   }
@@ -74,10 +121,10 @@ public class MessagesIcsTextParameters {
   }
 
    /**
-   * Get parts
+   * Message parts (multiples of 160 characters) count.
    * @return parts
   **/
-  @ApiModelProperty(example = "6", required = true, value = "")
+  @ApiModelProperty(example = "6", required = true, value = "Message parts (multiples of 160 characters) count.")
   public Integer getParts() {
     return parts;
   }
@@ -95,7 +142,7 @@ public class MessagesIcsTextParameters {
    * Get chars
    * @return chars
   **/
-  @ApiModelProperty(example = "5", required = true, value = "")
+  @ApiModelProperty(example = "125", required = true, value = "")
   public Integer getChars() {
     return chars;
   }
@@ -104,21 +151,21 @@ public class MessagesIcsTextParameters {
     this.chars = chars;
   }
 
-  public MessagesIcsTextParameters encoding(String encoding) {
+  public MessagesIcsTextParameters encoding(EncodingEnum encoding) {
     this.encoding = encoding;
     return this;
   }
 
    /**
-   * Get encoding
+   * Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS 
    * @return encoding
   **/
-  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "")
-  public String getEncoding() {
+  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "Message charset. Could be: * **ISO-8859-1** for plaintext SMS * **UTF-16BE** for Unicode SMS ")
+  public EncodingEnum getEncoding() {
     return encoding;
   }
 
-  public void setEncoding(String encoding) {
+  public void setEncoding(EncodingEnum encoding) {
     this.encoding = encoding;
   }
 

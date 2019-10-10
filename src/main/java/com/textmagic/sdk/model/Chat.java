@@ -53,8 +53,57 @@ public class Chat {
   @SerializedName("updatedAt")
   private OffsetDateTime updatedAt = null;
 
+  /**
+   * Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    A("a"),
+    
+    C("c"),
+    
+    D("d");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("status")
-  private String status = null;
+  private StatusEnum status = null;
 
   @SerializedName("mute")
   private Integer mute = null;
@@ -62,14 +111,65 @@ public class Chat {
   @SerializedName("lastMessage")
   private String lastMessage = null;
 
+  /**
+   * Last message type: * **ci** - incoming call * **co** - outgoing call * **i** - incoming message * **o** - outgoing message 
+   */
+  @JsonAdapter(DirectionEnum.Adapter.class)
+  public enum DirectionEnum {
+    CI("ci"),
+    
+    CO("co"),
+    
+    I("i"),
+    
+    O("o");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DirectionEnum fromValue(String text) {
+      for (DirectionEnum b : DirectionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DirectionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DirectionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DirectionEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DirectionEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("direction")
-  private String direction = null;
+  private DirectionEnum direction = null;
 
   @SerializedName("from")
   private String from = null;
 
   @SerializedName("mutedUntil")
-  private String mutedUntil = null;
+  private OffsetDateTime mutedUntil = null;
 
   @SerializedName("timeLeftMute")
   private Integer timeLeftMute = null;
@@ -104,7 +204,7 @@ public class Chat {
    * Get originalId
    * @return originalId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "43328", required = true, value = "")
   public Integer getOriginalId() {
     return originalId;
   }
@@ -155,10 +255,10 @@ public class Chat {
   }
 
    /**
-   * Get unsubscribedContactId
+   * If this field has a value then it means that chat phone number has been unsubscribed from you and this value is a ID of a Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).
    * @return unsubscribedContactId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "546", required = true, value = "If this field has a value then it means that chat phone number has been unsubscribed from you and this value is a ID of a Unsubscribed contact entity. See [Get all unsubscribed contacts](http://docs.textmagictesting.com/#operation/getUnsubscribers).")
   public Integer getUnsubscribedContactId() {
     return unsubscribedContactId;
   }
@@ -173,10 +273,10 @@ public class Chat {
   }
 
    /**
-   * Unread incoming messages count.
+   * Total unread incoming messages.
    * @return unread
   **/
-  @ApiModelProperty(example = "5", required = true, value = "Unread incoming messages count.")
+  @ApiModelProperty(example = "5", required = true, value = "Total unread incoming messages.")
   public Integer getUnread() {
     return unread;
   }
@@ -203,21 +303,21 @@ public class Chat {
     this.updatedAt = updatedAt;
   }
 
-  public Chat status(String status) {
+  public Chat status(StatusEnum status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
    * @return status
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getStatus() {
+  @ApiModelProperty(required = true, value = "Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted ")
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 
@@ -227,10 +327,10 @@ public class Chat {
   }
 
    /**
-   * Get mute
+   * Indicates when chat is muted.
    * @return mute
   **/
-  @ApiModelProperty(example = "0", required = true, value = "")
+  @ApiModelProperty(example = "0", required = true, value = "Indicates when chat is muted.")
   public Integer getMute() {
     return mute;
   }
@@ -245,10 +345,10 @@ public class Chat {
   }
 
    /**
-   * Get lastMessage
+   * The last message content of a chat.
    * @return lastMessage
   **/
-  @ApiModelProperty(example = "This is test message", required = true, value = "")
+  @ApiModelProperty(example = "Hello world!", required = true, value = "The last message content of a chat.")
   public String getLastMessage() {
     return lastMessage;
   }
@@ -257,21 +357,21 @@ public class Chat {
     this.lastMessage = lastMessage;
   }
 
-  public Chat direction(String direction) {
+  public Chat direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
 
    /**
-   * Get direction
+   * Last message type: * **ci** - incoming call * **co** - outgoing call * **i** - incoming message * **o** - outgoing message 
    * @return direction
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getDirection() {
+  @ApiModelProperty(required = true, value = "Last message type: * **ci** - incoming call * **co** - outgoing call * **i** - incoming message * **o** - outgoing message ")
+  public DirectionEnum getDirection() {
     return direction;
   }
 
-  public void setDirection(String direction) {
+  public void setDirection(DirectionEnum direction) {
     this.direction = direction;
   }
 
@@ -281,10 +381,10 @@ public class Chat {
   }
 
    /**
-   * Get from
+   * If filled then value will be used as a sender number for all outgoing messages of a chat.
    * @return from
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "447860021130", required = true, value = "If filled then value will be used as a sender number for all outgoing messages of a chat.")
   public String getFrom() {
     return from;
   }
@@ -293,21 +393,21 @@ public class Chat {
     this.from = from;
   }
 
-  public Chat mutedUntil(String mutedUntil) {
+  public Chat mutedUntil(OffsetDateTime mutedUntil) {
     this.mutedUntil = mutedUntil;
     return this;
   }
 
    /**
-   * Get mutedUntil
+   * Date and time until chat will be mutted.
    * @return mutedUntil
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getMutedUntil() {
+  @ApiModelProperty(example = "2019-10-10T14:44:00+0000", required = true, value = "Date and time until chat will be mutted.")
+  public OffsetDateTime getMutedUntil() {
     return mutedUntil;
   }
 
-  public void setMutedUntil(String mutedUntil) {
+  public void setMutedUntil(OffsetDateTime mutedUntil) {
     this.mutedUntil = mutedUntil;
   }
 
@@ -317,10 +417,10 @@ public class Chat {
   }
 
    /**
-   * Get timeLeftMute
+   * Time left till chat will be unmutted (seconds).
    * @return timeLeftMute
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "17988", required = true, value = "Time left till chat will be unmutted (seconds).")
   public Integer getTimeLeftMute() {
     return timeLeftMute;
   }

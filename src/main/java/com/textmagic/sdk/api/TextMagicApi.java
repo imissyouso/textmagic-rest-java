@@ -793,7 +793,7 @@ public class TextMagicApi {
     }
     /**
      * Build call for clearAndAssignContactsToList
-     * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * @param clearAndAssignContactsToListInputObject  (required)
      * @param id  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -864,7 +864,7 @@ public class TextMagicApi {
     /**
      * Reset list members to the specified contacts
      * 
-     * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * @param clearAndAssignContactsToListInputObject  (required)
      * @param id  (required)
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -877,7 +877,7 @@ public class TextMagicApi {
     /**
      * Reset list members to the specified contacts
      * 
-     * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * @param clearAndAssignContactsToListInputObject  (required)
      * @param id  (required)
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -891,7 +891,7 @@ public class TextMagicApi {
     /**
      * Reset list members to the specified contacts (asynchronously)
      * 
-     * @param clearAndAssignContactsToListInputObject Contact ID(s), separated by comma or &#39;all&#39; to add all contacts belonging to the current user (required)
+     * @param clearAndAssignContactsToListInputObject  (required)
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1462,7 +1462,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact note.
+     * Create a new contact note
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
@@ -1475,7 +1475,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact note.
+     * Create a new contact note
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
@@ -1489,7 +1489,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Create a new contact note. (asynchronously)
+     * Create a new contact note (asynchronously)
      * 
      * @param createContactNoteInputObject  (required)
      * @param id  (required)
@@ -2765,7 +2765,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact note.
+     * Delete a contact note
      * 
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2775,7 +2775,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact note.
+     * Delete a contact note
      * 
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
@@ -2787,7 +2787,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete a single contact note. (asynchronously)
+     * Delete a contact note (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -2890,7 +2890,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact note by given ID(s) or delete all contact notes.
+     * Delete contact notes (bulk)
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
@@ -2901,7 +2901,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact note by given ID(s) or delete all contact notes.
+     * Delete contact notes (bulk)
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
@@ -2914,7 +2914,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Delete contact note by given ID(s) or delete all contact notes. (asynchronously)
+     * Delete contact notes (bulk) (asynchronously)
      * 
      * @param id  (required)
      * @param deleteContactNotesBulkInputObject  (required)
@@ -5535,7 +5535,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all bulk sending sessions.
+     * Get all bulk sessions
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -5548,7 +5548,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all bulk sending sessions.
+     * Get all bulk sessions
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -5562,7 +5562,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get all bulk sending sessions. (asynchronously)
+     * Get all bulk sessions (asynchronously)
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
@@ -7095,7 +7095,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get bulk message session status.
+     * Get bulk session status
      * 
      * @param id  (required)
      * @return BulkSession
@@ -7107,7 +7107,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get bulk message session status.
+     * Get bulk session status
      * 
      * @param id  (required)
      * @return ApiResponse&lt;BulkSession&gt;
@@ -7120,7 +7120,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get bulk message session status. (asynchronously)
+     * Get bulk session status (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -8124,7 +8124,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact note.
+     * Get a contact note
      * 
      * @param id  (required)
      * @return ContactNote
@@ -8136,7 +8136,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact note.
+     * Get a contact note
      * 
      * @param id  (required)
      * @return ApiResponse&lt;ContactNote&gt;
@@ -8149,7 +8149,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Get a single contact note. (asynchronously)
+     * Get a contact note (asynchronously)
      * 
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -10477,23 +10477,23 @@ public class TextMagicApi {
     }
     /**
      * Build call for getMessagePreview
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -10586,23 +10586,23 @@ public class TextMagicApi {
     /**
      * Preview message
      * Get messages preview (with tags merged) up to 100 messages per session.
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @return GetMessagePreviewResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10614,23 +10614,23 @@ public class TextMagicApi {
     /**
      * Preview message
      * Get messages preview (with tags merged) up to 100 messages per session.
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @return ApiResponse&lt;GetMessagePreviewResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10643,23 +10643,23 @@ public class TextMagicApi {
     /**
      * Preview message (asynchronously)
      * Get messages preview (with tags merged) up to 100 messages per session.
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -10693,23 +10693,23 @@ public class TextMagicApi {
     /**
      * Build call for getMessagePrice
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -10805,23 +10805,23 @@ public class TextMagicApi {
      * Check message price
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @return GetMessagePriceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10834,23 +10834,23 @@ public class TextMagicApi {
      * Check message price
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @return ApiResponse&lt;GetMessagePriceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -10864,23 +10864,23 @@ public class TextMagicApi {
      * Check message price (asynchronously)
      * Check pricing for a new outbound message.
      * @param includeBlocked Should we show pricing for the blocked contacts. (optional, default to 0)
-     * @param text Message text. Required if template_id is not set (optional)
-     * @param templateId Template used instead of message text. Required if text is not set (optional)
-     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now (optional)
-     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone (optional)
-     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone (optional)
-     * @param contacts Comma separated array of contact resources id message will be sent to (optional)
-     * @param lists Comma separated array of list resources id message will be sent to (optional)
-     * @param phones Comma separated array of E.164 phone numbers message will be sent to (optional)
-     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. Default is 0 (optional, default to 0)
-     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). Default is 6 (optional, default to 6)
-     * @param referenceId Custom message reference id which can be used in your application infrastructure (optional)
-     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery (optional)
-     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details (optional)
-     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. Default is 0 (optional, default to 0)
-     * @param tts Send Text to Speech message. Default is 0 (optional, default to 0)
-     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. Default is 0 (optional, default to 0)
-     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country (optional)
+     * @param text Message text. Required if **template_id** is not set. (optional)
+     * @param templateId Template used instead of message text. Required if **text** is not set. (optional)
+     * @param sendingTime DEPRECATED, consider using sendingDateTime and sendingTimezone parameters instead: Optional (required with rrule set). Message sending time in unix timestamp format. Default is now. (optional)
+     * @param sendingDateTime Sending time in Y-m-d H:i:s format (e.g. 2016-05-27 13:02:33). This time is relative to sendingTimezone. (optional)
+     * @param sendingTimezone ID or ISO-name of timezone used for sending when sendingDateTime parameter is set. E.g. if you specify sendingDateTime &#x3D; \\\&quot;2016-05-27 13:02:33\\\&quot; and sendingTimezone &#x3D; \\\&quot;America/Buenos_Aires\\\&quot;, your message will be sent at May 27, 2016 13:02:33 Buenos Aires time, or 16:02:33 UTC. Default is account timezone. (optional)
+     * @param contacts Comma separated array of contact resources id message will be sent to. (optional)
+     * @param lists Comma separated array of list resources id message will be sent to. (optional)
+     * @param phones Comma separated array of E.164 phone numbers message will be sent to. (optional)
+     * @param cutExtra Should sending method cut extra characters which not fit supplied partsCount or return 400 Bad request response instead. (optional, default to 0)
+     * @param partsCount Maximum message parts count (TextMagic allows sending 1 to 6 message parts). (optional, default to 6)
+     * @param referenceId Custom message reference id which can be used in your application infrastructure. (optional)
+     * @param from One of allowed Sender ID (phone number or alphanumeric sender ID). If specified Sender ID is not allowed for some destinations, a fallback default Sender ID will be used to ensure delivery. See [Get timezones](http://docs.textmagictesting.com/#tag/Sender-IDs). (optional)
+     * @param rule iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details. (optional)
+     * @param createChat Should sending method try to create new Chat(if not exist) with specified recipients. (optional, default to 0)
+     * @param tts Send Text to Speech message. (optional, default to 0)
+     * @param local Treat phone numbers passed in \\&#39;phones\\&#39; field as local. (optional, default to 0)
+     * @param localCountry 2-letter ISO country code for local phone numbers, used when \\&#39;local\\&#39; is set to true. Default is account country. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -17384,7 +17384,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact note.
+     * Update a contact note
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
@@ -17397,7 +17397,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact note.
+     * Update a contact note
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)
@@ -17411,7 +17411,7 @@ public class TextMagicApi {
     }
 
     /**
-     * Update existing contact note. (asynchronously)
+     * Update a contact note (asynchronously)
      * 
      * @param updateContactNoteInputObject  (required)
      * @param id  (required)

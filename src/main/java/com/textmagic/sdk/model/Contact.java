@@ -105,10 +105,10 @@ public class Contact {
   }
 
    /**
-   * Get favorited
+   * Is the Contact favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites).
    * @return favorited
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is the Contact favourite? [Custom fields list](http://docs.textmagictesting.com/#operation/getFavourites).")
   public Boolean isFavorited() {
     return favorited;
   }
@@ -123,10 +123,10 @@ public class Contact {
   }
 
    /**
-   * Get blocked
+   * Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts).
    * @return blocked
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Is the Contact blocked? [Custom fields list](http://docs.textmagictesting.com/#operation/getBlockedContacts).")
   public Boolean isBlocked() {
     return blocked;
   }

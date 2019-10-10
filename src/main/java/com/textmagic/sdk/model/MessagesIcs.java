@@ -162,10 +162,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get lastSent
+   * Date and time when last message has been sent.
    * @return lastSent
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "Date and time when last message has been sent.")
   public OffsetDateTime getLastSent() {
     return lastSent;
   }
@@ -183,7 +183,7 @@ public class MessagesIcs {
    * Get contactName
    * @return contactName
   **/
-  @ApiModelProperty(example = "Test contact name", required = true, value = "")
+  @ApiModelProperty(example = "Test contact name TODO", required = true, value = "")
   public String getContactName() {
     return contactName;
   }
@@ -237,7 +237,7 @@ public class MessagesIcs {
    * Get summary
    * @return summary
   **/
-  @ApiModelProperty(example = "once", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getSummary() {
     return summary;
   }
@@ -273,7 +273,7 @@ public class MessagesIcs {
    * Get firstOccurrence
    * @return firstOccurrence
   **/
-  @ApiModelProperty(example = "2019-08-13T05:48:37.486Z", required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "")
   public OffsetDateTime getFirstOccurrence() {
     return firstOccurrence;
   }
@@ -291,7 +291,7 @@ public class MessagesIcs {
    * Get lastOccurrence
    * @return lastOccurrence
   **/
-  @ApiModelProperty(example = "2019-09-13T05:48:37.486Z", required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "")
   public OffsetDateTime getLastOccurrence() {
     return lastOccurrence;
   }
@@ -306,10 +306,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get recipientsCount
+   * Amount of actual recipients.
    * @return recipientsCount
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "2", required = true, value = "Amount of actual recipients.")
   public Integer getRecipientsCount() {
     return recipientsCount;
   }
@@ -324,10 +324,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get timezone
+   * User-friendly timezone name (with spaces replaced by underscores).
    * @return timezone
   **/
-  @ApiModelProperty(example = "Europe/Tallinn", required = true, value = "")
+  @ApiModelProperty(example = "Europe/Tallinn", required = true, value = "User-friendly timezone name (with spaces replaced by underscores).")
   public String getTimezone() {
     return timezone;
   }
@@ -342,10 +342,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get completed
+   * Indicates that schedling has been completed.
    * @return completed
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Indicates that schedling has been completed.")
   public Boolean isCompleted() {
     return completed;
   }
@@ -360,10 +360,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get avatar
+   * null
    * @return avatar
   **/
-  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "")
+  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "null")
   public String getAvatar() {
     return avatar;
   }
@@ -378,10 +378,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get createdAt
+   * Scheduling creation time.
    * @return createdAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "Scheduling creation time.")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }

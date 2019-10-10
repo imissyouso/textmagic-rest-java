@@ -47,10 +47,10 @@ public class UploadMessageAttachmentResponse {
   }
 
    /**
-   * Get chars
+   * &#x60;href&#x60; field characters count. 
    * @return chars
   **/
-  @ApiModelProperty(example = "10", required = true, value = "")
+  @ApiModelProperty(example = "10", required = true, value = "`href` field characters count. ")
   public Integer getChars() {
     return chars;
   }
@@ -65,10 +65,10 @@ public class UploadMessageAttachmentResponse {
   }
 
    /**
-   * Get href
+   * This is a relative link to your file. To construct a full link, just add “[https://my.textmagic.com/”](https://my.textmagic.com/%E2%80%9D) to the beginning (like this: [https://my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9)). For most modern devices, you can omit “https://” part and write just [my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9), it will save you 8 characters. 
    * @return href
   **/
-  @ApiModelProperty(example = "click/So4LP", required = true, value = "")
+  @ApiModelProperty(example = "click/Zwcj9", required = true, value = "This is a relative link to your file. To construct a full link, just add “[https://my.textmagic.com/”](https://my.textmagic.com/%E2%80%9D) to the beginning (like this: [https://my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9)). For most modern devices, you can omit “https://” part and write just [my.textmagic.com/click/Zwcj9](https://my.textmagic.com/click/Zwcj9), it will save you 8 characters. ")
   public String getHref() {
     return href;
   }
@@ -83,10 +83,10 @@ public class UploadMessageAttachmentResponse {
   }
 
    /**
-   * Get name
+   * File name of uploaded file. 
    * @return name
   **/
-  @ApiModelProperty(example = "test.pdf", required = true, value = "")
+  @ApiModelProperty(example = "test.pdf", required = true, value = "File name of uploaded file. ")
   public String getName() {
     return name;
   }
@@ -101,10 +101,10 @@ public class UploadMessageAttachmentResponse {
   }
 
    /**
-   * Get size
+   * Attachment size in bytes.
    * @return size
   **/
-  @ApiModelProperty(example = "32640", required = true, value = "")
+  @ApiModelProperty(example = "1094", required = true, value = "Attachment size in bytes.")
   public Integer getSize() {
     return size;
   }

@@ -48,10 +48,10 @@ public class GetAvailableDedicatedNumbersResponse {
   }
 
    /**
-   * Array of phone number strings.
+   * Array of phone numbers.
    * @return numbers
   **/
-  @ApiModelProperty(example = "[18887777773,18887777775]", required = true, value = "Array of phone number strings.")
+  @ApiModelProperty(example = "[447860021130,447860021131]", required = true, value = "Array of phone numbers.")
   public List<String> getNumbers() {
     return numbers;
   }

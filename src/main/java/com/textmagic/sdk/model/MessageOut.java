@@ -43,7 +43,7 @@ public class MessageOut {
   private String text = null;
 
   /**
-   * Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
+   * Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -261,10 +261,10 @@ public class MessageOut {
   }
 
    /**
-   * Delivery status of the message. TODO: Please see the table below to see different delivery statuses. 
+   * Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. 
    * @return status
   **/
-  @ApiModelProperty(example = "d", required = true, value = "Delivery status of the message. TODO: Please see the table below to see different delivery statuses. ")
+  @ApiModelProperty(example = "d", required = true, value = "Delivery status of the message. See [message delivery statuses](http://docs.textmagictesting.com/#section/Delivery-status-codes) for details. ")
   public StatusEnum getStatus() {
     return status;
   }
@@ -279,10 +279,10 @@ public class MessageOut {
   }
 
    /**
-   * Get contactId
+   * Recipient contact ID.
    * @return contactId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "2764", required = true, value = "Recipient contact ID.")
   public Integer getContactId() {
     return contactId;
   }
@@ -297,10 +297,10 @@ public class MessageOut {
   }
 
    /**
-   * Get sessionId
+   * Message Session ID of a Message.
    * @return sessionId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "3122", required = true, value = "Message Session ID of a Message.")
   public Integer getSessionId() {
     return sessionId;
   }
@@ -351,10 +351,10 @@ public class MessageOut {
   }
 
    /**
-   * Get deleted
+   * Indicates that message has been deleted.
    * @return deleted
   **/
-  @ApiModelProperty(example = "false", value = "")
+  @ApiModelProperty(example = "false", value = "Indicates that message has been deleted.")
   public Boolean isDeleted() {
     return deleted;
   }
@@ -459,10 +459,10 @@ public class MessageOut {
   }
 
    /**
-   * Get phone
+   * Receipent phone number.
    * @return phone
   **/
-  @ApiModelProperty(example = "447624800500", value = "")
+  @ApiModelProperty(example = "447624800500", value = "Receipent phone number.")
   public String getPhone() {
     return phone;
   }
@@ -477,10 +477,10 @@ public class MessageOut {
   }
 
    /**
-   * Get price
+   * Message price.
    * @return price
   **/
-  @ApiModelProperty(example = "0.025", value = "")
+  @ApiModelProperty(example = "0.025", value = "Message price.")
   public Float getPrice() {
     return price;
   }
@@ -498,7 +498,7 @@ public class MessageOut {
    * Message parts (multiples of 160 characters) count.
    * @return partsCount
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Message parts (multiples of 160 characters) count.")
+  @ApiModelProperty(example = "6", required = true, value = "Message parts (multiples of 160 characters) count.")
   public Integer getPartsCount() {
     return partsCount;
   }
@@ -531,10 +531,10 @@ public class MessageOut {
   }
 
    /**
-   * Get fromNumber
+   * Phone number which is used to send SMS.
    * @return fromNumber
   **/
-  @ApiModelProperty(example = "447624800500", value = "")
+  @ApiModelProperty(example = "447624800500", value = "Phone number which is used to send SMS.")
   public String getFromNumber() {
     return fromNumber;
   }
@@ -606,7 +606,7 @@ public class MessageOut {
    * Get deliveredCount
    * @return deliveredCount
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "6", value = "")
   public Integer getDeliveredCount() {
     return deliveredCount;
   }

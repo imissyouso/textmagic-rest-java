@@ -33,7 +33,7 @@ public class SetChatStatusInputObject {
   private Integer id = null;
 
   /**
-   * Status
+   * Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
@@ -90,10 +90,10 @@ public class SetChatStatusInputObject {
   }
 
    /**
-   * Chat ID
+   * Chat ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Chat ID")
+  @ApiModelProperty(example = "543", required = true, value = "Chat ID.")
   public Integer getId() {
     return id;
   }
@@ -108,10 +108,10 @@ public class SetChatStatusInputObject {
   }
 
    /**
-   * Status
+   * Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted 
    * @return status
   **/
-  @ApiModelProperty(example = "a", required = true, value = "Status")
+  @ApiModelProperty(required = true, value = "Chat status:   * **a** - Active   * **c** - Closed   * **d** - Deleted ")
   public StatusEnum getStatus() {
     return status;
   }

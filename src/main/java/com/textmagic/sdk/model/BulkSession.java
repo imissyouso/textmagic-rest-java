@@ -34,8 +34,61 @@ public class BulkSession {
   @SerializedName("id")
   private Integer id = null;
 
+  /**
+   * * **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    N("n"),
+    
+    W("w"),
+    
+    F("f"),
+    
+    C("c"),
+    
+    S("s");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return StatusEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("status")
-  private String status = null;
+  private StatusEnum status = null;
 
   @SerializedName("itemsProcessed")
   private Integer itemsProcessed = null;
@@ -58,10 +111,10 @@ public class BulkSession {
   }
 
    /**
-   * Get id
+   * Bulk Session ID.
    * @return id
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "599", required = true, value = "Bulk Session ID.")
   public Integer getId() {
     return id;
   }
@@ -70,21 +123,21 @@ public class BulkSession {
     this.id = id;
   }
 
-  public BulkSession status(String status) {
+  public BulkSession status(StatusEnum status) {
     this.status = status;
     return this;
   }
 
    /**
-   * Get status
+   * * **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended 
    * @return status
   **/
-  @ApiModelProperty(example = "n", required = true, value = "")
-  public String getStatus() {
+  @ApiModelProperty(example = "n", required = true, value = "* **n** - bulk session is just created * **w** - work in progress * **f** - failed * **c** - completed with success * **s** - suspended ")
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(StatusEnum status) {
     this.status = status;
   }
 
@@ -94,10 +147,10 @@ public class BulkSession {
   }
 
    /**
-   * Get itemsProcessed
+   * Amount of messages which is already processed.
    * @return itemsProcessed
   **/
-  @ApiModelProperty(example = "0", required = true, value = "")
+  @ApiModelProperty(example = "564", required = true, value = "Amount of messages which is already processed.")
   public Integer getItemsProcessed() {
     return itemsProcessed;
   }
@@ -112,10 +165,10 @@ public class BulkSession {
   }
 
    /**
-   * Get itemsTotal
+   * Total amount of messages to be processed.
    * @return itemsTotal
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "2", required = true, value = "Total amount of messages to be processed.")
   public Integer getItemsTotal() {
     return itemsTotal;
   }
@@ -130,10 +183,10 @@ public class BulkSession {
   }
 
    /**
-   * Get createdAt
+   * Creation date and time of a Bulk Session.
    * @return createdAt
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "2015-01-08T06:13:21+0000", required = true, value = "Creation date and time of a Bulk Session.")
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -166,10 +219,10 @@ public class BulkSession {
   }
 
    /**
-   * Get text
+   * Message text of a Bulk Session.
    * @return text
   **/
-  @ApiModelProperty(example = "Sample text", required = true, value = "")
+  @ApiModelProperty(example = "I Love TextMagic!", required = true, value = "Message text of a Bulk Session.")
   public String getText() {
     return text;
   }

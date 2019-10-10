@@ -68,10 +68,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _1
   **/
-  @ApiModelProperty(example = "£1.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£1.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get1() {
     return _1;
   }
@@ -86,10 +86,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _2
   **/
-  @ApiModelProperty(example = "£2.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£2.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get2() {
     return _2;
   }
@@ -104,10 +104,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _3
   **/
-  @ApiModelProperty(example = "£3.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£3.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get3() {
     return _3;
   }
@@ -122,10 +122,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _5
   **/
-  @ApiModelProperty(example = "£5.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£5.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get5() {
     return _5;
   }
@@ -140,10 +140,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _10
   **/
-  @ApiModelProperty(example = "£10.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£10.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get10() {
     return _10;
   }
@@ -158,10 +158,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _20
   **/
-  @ApiModelProperty(example = "£20.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£20.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get20() {
     return _20;
   }
@@ -176,10 +176,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _30
   **/
-  @ApiModelProperty(example = "£30.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£30.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get30() {
     return _30;
   }
@@ -194,10 +194,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _50
   **/
-  @ApiModelProperty(example = "£50.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£50.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get50() {
     return _50;
   }
@@ -212,10 +212,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _100
   **/
-  @ApiModelProperty(example = "£100.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£100.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get100() {
     return _100;
   }
@@ -230,10 +230,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _500
   **/
-  @ApiModelProperty(example = "£500.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£500.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get500() {
     return _500;
   }
@@ -248,10 +248,10 @@ public class GetBalanceNotificationOptionsResponse {
   }
 
    /**
-   * Contains sign of currency in Unicode hex code
+   * Contains sign of currency in Unicode hex code.
    * @return _1000
   **/
-  @ApiModelProperty(example = "£1,000.00", required = true, value = "Contains sign of currency in Unicode hex code")
+  @ApiModelProperty(example = "£1,000.00", required = true, value = "Contains sign of currency in Unicode hex code.")
   public String get1000() {
     return _1000;
   }

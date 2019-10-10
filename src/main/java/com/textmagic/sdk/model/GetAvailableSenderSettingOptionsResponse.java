@@ -57,7 +57,7 @@ public class GetAvailableSenderSettingOptionsResponse {
    * Array of dedicated numbers strings.
    * @return dedicated
   **/
-  @ApiModelProperty(example = "[123456780,987654321]", required = true, value = "Array of dedicated numbers strings.")
+  @ApiModelProperty(example = "[447860021136,447860021137]", required = true, value = "Array of dedicated numbers strings.")
   public List<String> getDedicated() {
     return dedicated;
   }
@@ -80,7 +80,7 @@ public class GetAvailableSenderSettingOptionsResponse {
    * Array of verified account phone numbers (currently only one).
    * @return user
   **/
-  @ApiModelProperty(example = "[123456780,987654321]", required = true, value = "Array of verified account phone numbers (currently only one).")
+  @ApiModelProperty(example = "[447860021134,447860021135]", required = true, value = "Array of verified account phone numbers (currently only one).")
   public List<String> getUser() {
     return user;
   }
@@ -103,7 +103,7 @@ public class GetAvailableSenderSettingOptionsResponse {
    * Array of shared numbers strings.
    * @return shared
   **/
-  @ApiModelProperty(example = "[123456780,987654321]", required = true, value = "Array of shared numbers strings.")
+  @ApiModelProperty(example = "[447860021130,447860021131]", required = true, value = "Array of shared numbers strings.")
   public List<String> getShared() {
     return shared;
   }
@@ -126,7 +126,7 @@ public class GetAvailableSenderSettingOptionsResponse {
    * Array of alphanumeric sender IDs.
    * @return senderIds
   **/
-  @ApiModelProperty(example = "[123456780,987654321]", required = true, value = "Array of alphanumeric sender IDs.")
+  @ApiModelProperty(example = "[447860021132,447860021133]", required = true, value = "Array of alphanumeric sender IDs.")
   public List<String> getSenderIds() {
     return senderIds;
   }

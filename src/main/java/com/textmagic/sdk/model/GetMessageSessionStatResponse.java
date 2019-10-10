@@ -56,10 +56,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get failed
+   * Amount of failed messages.
    * @return failed
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "12", required = true, value = "Amount of failed messages.")
   public Integer getFailed() {
     return failed;
   }
@@ -74,10 +74,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get delivered
+   * Amount of delivered messages.
    * @return delivered
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "99", required = true, value = "Amount of delivered messages.")
   public Integer getDelivered() {
     return delivered;
   }
@@ -92,10 +92,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get accepted
+   * Amount of accepted messages.
    * @return accepted
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "75", required = true, value = "Amount of accepted messages.")
   public Integer getAccepted() {
     return accepted;
   }
@@ -110,10 +110,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get rejected
+   * Amount of rejected messages.
    * @return rejected
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "12", required = true, value = "Amount of rejected messages.")
   public Integer getRejected() {
     return rejected;
   }
@@ -128,10 +128,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get scheduled
+   * Amount of schedules messages.
    * @return scheduled
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "0", required = true, value = "Amount of schedules messages.")
   public Integer getScheduled() {
     return scheduled;
   }
@@ -164,10 +164,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get sent
+   * Total sent messages.
    * @return sent
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "Total sent messages.")
   public Integer getSent() {
     return sent;
   }
