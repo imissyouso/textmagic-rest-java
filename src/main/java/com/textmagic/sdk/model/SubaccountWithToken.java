@@ -256,10 +256,10 @@ public class SubaccountWithToken {
   }
 
    /**
-   * Get email
+   * Account Email address.
    * @return email
   **/
-  @ApiModelProperty(example = "charles@example.com", required = true, value = "")
+  @ApiModelProperty(example = "charles@example.com", required = true, value = "Account Email address.")
   public String getEmail() {
     return email;
   }

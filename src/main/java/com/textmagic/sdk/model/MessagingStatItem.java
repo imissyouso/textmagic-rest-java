@@ -69,10 +69,10 @@ public class MessagingStatItem {
   }
 
    /**
-   * the number of incoming messages divided by the number of total messages.
+   * The number of incoming messages divided by the number of total messages.
    * @return replyRate
   **/
-  @ApiModelProperty(example = "0.32", required = true, value = "the number of incoming messages divided by the number of total messages.")
+  @ApiModelProperty(example = "0.32", required = true, value = "The number of incoming messages divided by the number of total messages.")
   public Float getReplyRate() {
     return replyRate;
   }

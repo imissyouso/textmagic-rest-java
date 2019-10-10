@@ -100,6 +100,7 @@ import com.textmagic.sdk.model.MessagesIcs;
 import com.textmagic.sdk.model.MuteChatInputObject;
 import com.textmagic.sdk.model.MuteChatsBulkInputObject;
 import com.textmagic.sdk.model.NotFoundResponse;
+import com.textmagic.sdk.model.PingResponse;
 import com.textmagic.sdk.model.ReopenChatsBulkInputObject;
 import com.textmagic.sdk.model.RequestNewSubaccountTokenInputObject;
 import com.textmagic.sdk.model.RequestSenderIdInputObject;
@@ -2035,6 +2036,21 @@ public class TextMagicApiTest {
     public void muteChatsBulkTest() throws ApiException {
         MuteChatsBulkInputObject muteChatsBulkInputObject = null;
         api.muteChatsBulk(muteChatsBulkInputObject);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Ping
+     *
+     * Make a simple ping request
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void pingTest() throws ApiException {
+        PingResponse response = api.ping();
 
         // TODO: test validations
     }

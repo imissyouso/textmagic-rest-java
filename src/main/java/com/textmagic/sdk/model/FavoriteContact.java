@@ -100,10 +100,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Get entityId
+   * List or Contact ID.
    * @return entityId
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "629", required = true, value = "List or Contact ID.")
   public Integer getEntityId() {
     return entityId;
   }
@@ -136,10 +136,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Contact first name/last name if entityType is **contact**, List name if entity type is **list**
+   * Contact first name/last name if entityType is **contact**, List name if entity type is **list**.
    * @return primaryLabel
   **/
-  @ApiModelProperty(example = "Test list", required = true, value = "Contact first name/last name if entityType is **contact**, List name if entity type is **list**")
+  @ApiModelProperty(example = "Favorite contact name.", required = true, value = "Contact first name/last name if entityType is **contact**, List name if entity type is **list**.")
   public String getPrimaryLabel() {
     return primaryLabel;
   }
@@ -154,10 +154,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Phone number if entityType is **contact**, List contacts number if entity type is **list**
+   * Phone number if entityType is **contact**, List contacts number if entity type is **list**.
    * @return secondaryLabel
   **/
-  @ApiModelProperty(example = "45", required = true, value = "Phone number if entityType is **contact**, List contacts number if entity type is **list**")
+  @ApiModelProperty(example = "45", required = true, value = "Phone number if entityType is **contact**, List contacts number if entity type is **list**.")
   public String getSecondaryLabel() {
     return secondaryLabel;
   }
@@ -172,10 +172,10 @@ public class FavoriteContact {
   }
 
    /**
-   * Contact country if entityType is **contact** else null
+   * Contact country if entityType is **contact** else null.
    * @return tertiaryLabel
   **/
-  @ApiModelProperty(example = "Australia", required = true, value = "Contact country if entityType is **contact** else null")
+  @ApiModelProperty(example = "Australia", required = true, value = "Contact country if entityType is **contact** else null.")
   public String getTertiaryLabel() {
     return tertiaryLabel;
   }

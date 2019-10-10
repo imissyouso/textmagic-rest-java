@@ -29,27 +29,76 @@ import java.io.IOException;
  */
 
 public class PushToken {
+  /**
+   * type of the token: * **GCM** — Google Cloud Messaging * **APN** — Apple Push Notification * **FCM** — Firebase Cloud Messaging 
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    A("a"),
+    
+    G("g"),
+    
+    F("f");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
 
   @SerializedName("token")
   private String token = null;
 
-  public PushToken type(String type) {
+  public PushToken type(TypeEnum type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Get type
+   * type of the token: * **GCM** — Google Cloud Messaging * **APN** — Apple Push Notification * **FCM** — Firebase Cloud Messaging 
    * @return type
   **/
-  @ApiModelProperty(example = "a", required = true, value = "")
-  public String getType() {
+  @ApiModelProperty(example = "a", required = true, value = "type of the token: * **GCM** — Google Cloud Messaging * **APN** — Apple Push Notification * **FCM** — Firebase Cloud Messaging ")
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
@@ -59,10 +108,10 @@ public class PushToken {
   }
 
    /**
-   * Get token
+   * Push token value.
    * @return token
   **/
-  @ApiModelProperty(example = "03df25c845d460bcdad7802d2vf6fc1dfde97283bf75cc993eb6dca835ea2e2", required = true, value = "")
+  @ApiModelProperty(example = "03df25c845d460bcdad7802d2vf6fc1dfde97283bf75cc993eb6dca835ea2e2", required = true, value = "Push token value.")
   public String getToken() {
     return token;
   }
