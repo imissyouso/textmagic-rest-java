@@ -17194,7 +17194,7 @@ public class TextMagicApi {
         Object localVarPostBody = updateContactInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/contact/{id}/normalized"
+        String localVarPath = "/api/v2/contacts/{id}/normalized"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
