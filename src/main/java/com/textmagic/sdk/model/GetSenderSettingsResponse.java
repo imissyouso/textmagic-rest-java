@@ -20,9 +20,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.textmagic.sdk.model.SenderSettingsItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * GetSenderSettingsResponse
@@ -30,16 +33,21 @@ import java.io.IOException;
 
 public class GetSenderSettingsResponse {
   @SerializedName("user")
-  private Object user = null;
+  private List<SenderSettingsItem> user = new ArrayList<SenderSettingsItem>();
 
   @SerializedName("special")
-  private Object special = null;
+  private List<SenderSettingsItem> special = new ArrayList<SenderSettingsItem>();
 
   @SerializedName("other")
-  private Object other = null;
+  private List<SenderSettingsItem> other = new ArrayList<SenderSettingsItem>();
 
-  public GetSenderSettingsResponse user(Object user) {
+  public GetSenderSettingsResponse user(List<SenderSettingsItem> user) {
     this.user = user;
+    return this;
+  }
+
+  public GetSenderSettingsResponse addUserItem(SenderSettingsItem userItem) {
+    this.user.add(userItem);
     return this;
   }
 
@@ -47,17 +55,22 @@ public class GetSenderSettingsResponse {
    * Get user
    * @return user
   **/
-  @ApiModelProperty(example = "{\"GB\":\"447520633183\"}", required = true, value = "")
-  public Object getUser() {
+  @ApiModelProperty(required = true, value = "")
+  public List<SenderSettingsItem> getUser() {
     return user;
   }
 
-  public void setUser(Object user) {
+  public void setUser(List<SenderSettingsItem> user) {
     this.user = user;
   }
 
-  public GetSenderSettingsResponse special(Object special) {
+  public GetSenderSettingsResponse special(List<SenderSettingsItem> special) {
     this.special = special;
+    return this;
+  }
+
+  public GetSenderSettingsResponse addSpecialItem(SenderSettingsItem specialItem) {
+    this.special.add(specialItem);
     return this;
   }
 
@@ -65,17 +78,22 @@ public class GetSenderSettingsResponse {
    * Get special
    * @return special
   **/
-  @ApiModelProperty(example = "{\"US\":null,\"CA\":null,\"FR\":\"Test sender id\"}", required = true, value = "")
-  public Object getSpecial() {
+  @ApiModelProperty(required = true, value = "")
+  public List<SenderSettingsItem> getSpecial() {
     return special;
   }
 
-  public void setSpecial(Object special) {
+  public void setSpecial(List<SenderSettingsItem> special) {
     this.special = special;
   }
 
-  public GetSenderSettingsResponse other(Object other) {
+  public GetSenderSettingsResponse other(List<SenderSettingsItem> other) {
     this.other = other;
+    return this;
+  }
+
+  public GetSenderSettingsResponse addOtherItem(SenderSettingsItem otherItem) {
+    this.other.add(otherItem);
     return this;
   }
 
@@ -83,12 +101,12 @@ public class GetSenderSettingsResponse {
    * Get other
    * @return other
   **/
-  @ApiModelProperty(example = "{\"AF\":\"447624800500\",\"AL\":\"447624800500\",\"AU\":\"61428102137\",\"AT\":\"447624800500\",\"BE\":\"447624800500\",\"CL\":\"447624800500\",\"CR\":\"447624800500\",\"HR\":\"447624800500\",\"CZ\":\"447624800500\",\"DK\":\"4592450490\",\"EE\":\"447624800500\",\"FI\":\"3584573950033\",\"DE\":\"491771781422\",\"HK\":\"447624800500\",\"HU\":\"447624800500\",\"ID\":\"447624800500\",\"IE\":\"447624800500\",\"IL\":\"447624800500\"}", required = true, value = "")
-  public Object getOther() {
+  @ApiModelProperty(required = true, value = "")
+  public List<SenderSettingsItem> getOther() {
     return other;
   }
 
-  public void setOther(Object other) {
+  public void setOther(List<SenderSettingsItem> other) {
     this.other = other;
   }
 

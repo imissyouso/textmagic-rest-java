@@ -20,9 +20,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.textmagic.sdk.model.CustomFieldListItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CreateContactInputObject
@@ -57,7 +60,7 @@ public class CreateContactInputObject {
   private Integer type = null;
 
   @SerializedName("customFieldValues")
-  private Object customFieldValues = null;
+  private List<CustomFieldListItem> customFieldValues = null;
 
   @SerializedName("local")
   private Integer local = null;
@@ -227,8 +230,16 @@ public class CreateContactInputObject {
     this.type = type;
   }
 
-  public CreateContactInputObject customFieldValues(Object customFieldValues) {
+  public CreateContactInputObject customFieldValues(List<CustomFieldListItem> customFieldValues) {
     this.customFieldValues = customFieldValues;
+    return this;
+  }
+
+  public CreateContactInputObject addCustomFieldValuesItem(CustomFieldListItem customFieldValuesItem) {
+    if (this.customFieldValues == null) {
+      this.customFieldValues = new ArrayList<CustomFieldListItem>();
+    }
+    this.customFieldValues.add(customFieldValuesItem);
     return this;
   }
 
@@ -236,12 +247,12 @@ public class CreateContactInputObject {
    * Get customFieldValues
    * @return customFieldValues
   **/
-  @ApiModelProperty(example = "{\"2\":\"My test custom value for custom field with id 2\",\"5\":\"My test custom value for custom field with id 5\"}", value = "")
-  public Object getCustomFieldValues() {
+  @ApiModelProperty(value = "")
+  public List<CustomFieldListItem> getCustomFieldValues() {
     return customFieldValues;
   }
 
-  public void setCustomFieldValues(Object customFieldValues) {
+  public void setCustomFieldValues(List<CustomFieldListItem> customFieldValues) {
     this.customFieldValues = customFieldValues;
   }
 

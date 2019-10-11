@@ -20,10 +20,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.textmagic.sdk.model.GetMessagePriceResponseCountriesItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * GetMessagePriceResponse
@@ -37,7 +40,7 @@ public class GetMessagePriceResponse {
   private Integer parts = null;
 
   @SerializedName("countries")
-  private Object countries = null;
+  private List<GetMessagePriceResponseCountriesItem> countries = new ArrayList<GetMessagePriceResponseCountriesItem>();
 
   public GetMessagePriceResponse total(BigDecimal total) {
     this.total = total;
@@ -75,21 +78,26 @@ public class GetMessagePriceResponse {
     this.parts = parts;
   }
 
-  public GetMessagePriceResponse countries(Object countries) {
+  public GetMessagePriceResponse countries(List<GetMessagePriceResponseCountriesItem> countries) {
     this.countries = countries;
     return this;
   }
 
+  public GetMessagePriceResponse addCountriesItem(GetMessagePriceResponseCountriesItem countriesItem) {
+    this.countries.add(countriesItem);
+    return this;
+  }
+
    /**
-   * List of countries where message will be sent with pricing explanation.
+   * Get countries
    * @return countries
   **/
-  @ApiModelProperty(example = "{\"GB\":{\"country\":\"GB\",\"country_name\":\"United Kingdom\",\"allow_dedicated\":true,\"count\":2,\"max\":0.04,\"sum\":0.08,\"landline\":0}}", required = true, value = "List of countries where message will be sent with pricing explanation.")
-  public Object getCountries() {
+  @ApiModelProperty(required = true, value = "")
+  public List<GetMessagePriceResponseCountriesItem> getCountries() {
     return countries;
   }
 
-  public void setCountries(Object countries) {
+  public void setCountries(List<GetMessagePriceResponseCountriesItem> countries) {
     this.countries = countries;
   }
 

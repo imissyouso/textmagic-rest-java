@@ -1281,7 +1281,7 @@ public class TextMagicApi {
         Object localVarPostBody = createContactInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/contacts";
+        String localVarPath = "/api/v2/contacts/normalized";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -3734,7 +3734,7 @@ public class TextMagicApi {
 
     /**
      * Delete a list
-     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
+     * This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
      * @param id  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -3744,7 +3744,7 @@ public class TextMagicApi {
 
     /**
      * Delete a list
-     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
+     * This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
      * @param id  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -3756,7 +3756,7 @@ public class TextMagicApi {
 
     /**
      * Delete a list (asynchronously)
-     * &gt; When you delete a list, the contacts in it are deleted as well unless they were saved in other list. 
+     * This command has no parameters. If successful, this command will return the standard delete response (204 No Content), otherwise a standard error response will be returned.  When you delete a list, the contacts in it are deleted as well unless they were saved in other list.
      * @param id  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -10719,7 +10719,7 @@ public class TextMagicApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v2/messages/price";
+        String localVarPath = "/api/v2/messages/price/normalized";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -12203,7 +12203,7 @@ public class TextMagicApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v2/sender/settings";
+        String localVarPath = "/api/v2/sender/settings/normalized";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -17194,7 +17194,7 @@ public class TextMagicApi {
         Object localVarPostBody = updateContactInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/contacts/{id}"
+        String localVarPath = "/api/v2/contact/{id}/normalized"
             .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -18088,7 +18088,7 @@ public class TextMagicApi {
         Object localVarPostBody = updateSenderSettingInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/sender/settings";
+        String localVarPath = "/api/v2/sender/settings/normalized";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

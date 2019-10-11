@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**user** | **Object** |  | 
-**special** | **Object** |  | 
-**other** | **Object** |  | 
+**user** | [**List&lt;SenderSettingsItem&gt;**](SenderSettingsItem.md) |  | 
+**special** | [**List&lt;SenderSettingsItem&gt;**](SenderSettingsItem.md) |  | 
+**other** | [**List&lt;SenderSettingsItem&gt;**](SenderSettingsItem.md) |  | 
 
 
 
