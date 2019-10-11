@@ -89,6 +89,7 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
+import com.textmagic.sdk.model.ImportContactsInputObject;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -1956,6 +1957,23 @@ public class TextMagicApiTest {
         Integer limit = null;
         Integer surveyId = null;
         GetUserDedicatedNumbersPaginatedResponse response = api.getUserDedicatedNumbers(page, limit, surveyId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Import contacts from the CSV, XLS or XLSX file.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void importContactsTest() throws ApiException {
+        ImportContactsInputObject importContactsInputObject = null;
+        File file = null;
+        api.importContacts(importContactsInputObject, file);
 
         // TODO: test validations
     }

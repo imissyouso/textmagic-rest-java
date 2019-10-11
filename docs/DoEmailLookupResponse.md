@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **isInWhiteList** | **Boolean** | &#x60;true&#x60; if the email address exists in TextMagic whitelist.  | 
 **isInBlackList** | **Boolean** | &#x60;true&#x60; if the email address exists in TextMagic blacklist.  | 
 **hasMx** | **Boolean** | &#x60;true&#x60; if the email address domain has an MX record.  | 
-**hasAa** | **Boolean** |  | 
+**hasAa** | **Boolean** | &#x60;true&#x60; if the email address domain has an A record (IPv4).  | 
 **hasAaaa** | **Boolean** | &#x60;true&#x60; if the email address domain has an AAAA record (IPv6).  | 
 
 

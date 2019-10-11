@@ -520,10 +520,10 @@ public class DoEmailLookupResponse {
   }
 
    /**
-   * Get hasAa
+   * &#x60;true&#x60; if the email address domain has an A record (IPv4). 
    * @return hasAa
   **/
-  @ApiModelProperty(example = "true", required = true, value = "")
+  @ApiModelProperty(example = "true", required = true, value = "`true` if the email address domain has an A record (IPv4). ")
   public Boolean isHasAa() {
     return hasAa;
   }
