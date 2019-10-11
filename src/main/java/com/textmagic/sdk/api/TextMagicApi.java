@@ -13577,7 +13577,7 @@ public class TextMagicApi {
         Object localVarPostBody = importContactsInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/contacts/import";
+        String localVarPath = "/api/v2/contacts/import/normalized";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
