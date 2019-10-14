@@ -110,6 +110,7 @@ Method | HTTP request | Description
 [**getUnsubscribedContact**](TextMagicApi.md#getUnsubscribedContact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
 [**getUnsubscribers**](TextMagicApi.md#getUnsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**getUserDedicatedNumbers**](TextMagicApi.md#getUserDedicatedNumbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
+[**importContacts**](TextMagicApi.md#importContacts) | **POST** /api/v2/contacts/import/normalized | Import contacts from the CSV, XLS or XLSX file.
 [**inviteSubaccount**](TextMagicApi.md#inviteSubaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**markChatsReadBulk**](TextMagicApi.md#markChatsReadBulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**markChatsUnreadBulk**](TextMagicApi.md#markChatsUnreadBulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
@@ -6023,6 +6024,61 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="importContacts"></a>
+# **importContacts**
+> importContacts(file, importContactsInputObject)
+
+Import contacts from the CSV, XLS or XLSX file.
+
+
+
+### Example
+```java
+// Import classes:
+//import com.textmagic.sdk.ApiClient;
+//import com.textmagic.sdk.ApiException;
+//import com.textmagic.sdk.Configuration;
+//import com.textmagic.sdk.auth.*;
+//import com.textmagic.sdk.api.TextMagicApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
+
+TextMagicApi apiInstance = new TextMagicApi();
+File file = new File("/path/to/file.txt"); // File | File containing contacts in csv or xls(x) formats
+ImportContactsInputObject importContactsInputObject = new ImportContactsInputObject(); // ImportContactsInputObject | 
+try {
+    apiInstance.importContacts(file, importContactsInputObject);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TextMagicApi#importContacts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| File containing contacts in csv or xls(x) formats |
+ **importContactsInputObject** | [**ImportContactsInputObject**](ImportContactsInputObject.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 <a name="inviteSubaccount"></a>
