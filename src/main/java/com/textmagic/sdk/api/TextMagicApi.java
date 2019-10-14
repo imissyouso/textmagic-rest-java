@@ -102,7 +102,7 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.ImportContactsInputObject;
+import com.textmagic.sdk.model.ImportColumnMappingItem;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -13567,14 +13567,14 @@ public class TextMagicApi {
     /**
      * Build call for importContacts
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param importContactsInputObject  (required)
+     * @param column  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importContactsCall(File file, ImportContactsInputObject importContactsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = importContactsInputObject;
+    public com.squareup.okhttp.Call importContactsCall(File file, List<ImportColumnMappingItem> column, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v2/contacts/import/normalized";
@@ -13587,6 +13587,8 @@ public class TextMagicApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (file != null)
         localVarFormParams.put("file", file);
+        if (column != null)
+        localVarFormParams.put("column", column);
 
         final String[] localVarAccepts = {
             "application/json"
@@ -13617,20 +13619,20 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, ImportContactsInputObject importContactsInputObject, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, List<ImportColumnMappingItem> column, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
             throw new ApiException("Missing the required parameter 'file' when calling importContacts(Async)");
         }
         
-        // verify the required parameter 'importContactsInputObject' is set
-        if (importContactsInputObject == null) {
-            throw new ApiException("Missing the required parameter 'importContactsInputObject' when calling importContacts(Async)");
+        // verify the required parameter 'column' is set
+        if (column == null) {
+            throw new ApiException("Missing the required parameter 'column' when calling importContacts(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = importContactsCall(file, importContactsInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = importContactsCall(file, column, progressListener, progressRequestListener);
         return call;
 
     }
@@ -13639,23 +13641,23 @@ public class TextMagicApi {
      * Import contacts from the CSV, XLS or XLSX file.
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param importContactsInputObject  (required)
+     * @param column  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void importContacts(File file, ImportContactsInputObject importContactsInputObject) throws ApiException {
-        importContactsWithHttpInfo(file, importContactsInputObject);
+    public void importContacts(File file, List<ImportColumnMappingItem> column) throws ApiException {
+        importContactsWithHttpInfo(file, column);
     }
 
     /**
      * Import contacts from the CSV, XLS or XLSX file.
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param importContactsInputObject  (required)
+     * @param column  (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> importContactsWithHttpInfo(File file, ImportContactsInputObject importContactsInputObject) throws ApiException {
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, importContactsInputObject, null, null);
+    public ApiResponse<Void> importContactsWithHttpInfo(File file, List<ImportColumnMappingItem> column) throws ApiException {
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, null, null);
         return apiClient.execute(call);
     }
 
@@ -13663,12 +13665,12 @@ public class TextMagicApi {
      * Import contacts from the CSV, XLS or XLSX file. (asynchronously)
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param importContactsInputObject  (required)
+     * @param column  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importContactsAsync(File file, ImportContactsInputObject importContactsInputObject, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call importContactsAsync(File file, List<ImportColumnMappingItem> column, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13689,7 +13691,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, importContactsInputObject, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

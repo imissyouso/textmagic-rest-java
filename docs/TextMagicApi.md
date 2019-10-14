@@ -6028,7 +6028,7 @@ Name | Type | Description  | Notes
 
 <a name="importContacts"></a>
 # **importContacts**
-> importContacts(file, importContactsInputObject)
+> importContacts(file, column)
 
 Import contacts from the CSV, XLS or XLSX file.
 
@@ -6052,9 +6052,9 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 File file = new File("/path/to/file.txt"); // File | File containing contacts in csv or xls(x) formats
-ImportContactsInputObject importContactsInputObject = new ImportContactsInputObject(); // ImportContactsInputObject | 
+List<ImportColumnMappingItem> column = Arrays.asList(new ImportColumnMappingItem()); // List<ImportColumnMappingItem> | 
 try {
-    apiInstance.importContacts(file, importContactsInputObject);
+    apiInstance.importContacts(file, column);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#importContacts");
     e.printStackTrace();
@@ -6066,7 +6066,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats |
- **importContactsInputObject** | [**ImportContactsInputObject**](ImportContactsInputObject.md)|  |
+ **column** | [**List&lt;ImportColumnMappingItem&gt;**](ImportColumnMappingItem.md)|  |
 
 ### Return type
 
