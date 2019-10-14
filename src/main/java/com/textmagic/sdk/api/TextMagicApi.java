@@ -13566,7 +13566,7 @@ public class TextMagicApi {
     /**
      * Build call for importContacts
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (required)
+     * @param column  (optional)
      * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
      * @param listId List ID contacts will be imported to. (optional)
      * @param progressListener Progress listener
@@ -13631,11 +13631,6 @@ public class TextMagicApi {
             throw new ApiException("Missing the required parameter 'file' when calling importContacts(Async)");
         }
         
-        // verify the required parameter 'column' is set
-        if (column == null) {
-            throw new ApiException("Missing the required parameter 'column' when calling importContacts(Async)");
-        }
-        
 
         com.squareup.okhttp.Call call = importContactsCall(file, column, listName, listId, progressListener, progressRequestListener);
         return call;
@@ -13646,7 +13641,7 @@ public class TextMagicApi {
      * Import contacts from the CSV, XLS or XLSX file.
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (required)
+     * @param column  (optional)
      * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
      * @param listId List ID contacts will be imported to. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -13659,7 +13654,7 @@ public class TextMagicApi {
      * Import contacts from the CSV, XLS or XLSX file.
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (required)
+     * @param column  (optional)
      * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
      * @param listId List ID contacts will be imported to. (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -13674,7 +13669,7 @@ public class TextMagicApi {
      * Import contacts from the CSV, XLS or XLSX file. (asynchronously)
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (required)
+     * @param column  (optional)
      * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
      * @param listId List ID contacts will be imported to. (optional)
      * @param callback The callback to be executed when the API call finishes

@@ -6068,7 +6068,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats |
- **column** | **String**|  |
+ **column** | **String**|  | [optional]
  **listName** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. | [optional]
  **listId** | **Integer**| List ID contacts will be imported to. | [optional]
 
