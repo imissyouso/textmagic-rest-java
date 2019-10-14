@@ -102,7 +102,6 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.ImportColumnMappingItem;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -13568,12 +13567,14 @@ public class TextMagicApi {
      * Build call for importContacts
      * @param file File containing contacts in csv or xls(x) formats (required)
      * @param column  (required)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
+     * @param listId List ID contacts will be imported to. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importContactsCall(File file, List<ImportColumnMappingItem> column, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call importContactsCall(File file, String column, String listName, Integer listId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -13581,14 +13582,18 @@ public class TextMagicApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (column != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("column", column));
+        if (listName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("listName", listName));
+        if (listId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("listId", listId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         if (file != null)
         localVarFormParams.put("file", file);
-        if (column != null)
-        localVarFormParams.put("column", column);
 
         final String[] localVarAccepts = {
             "application/json"
@@ -13619,7 +13624,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, List<ImportColumnMappingItem> column, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, String column, String listName, Integer listId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -13632,7 +13637,7 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = importContactsCall(file, column, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = importContactsCall(file, column, listName, listId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -13642,10 +13647,12 @@ public class TextMagicApi {
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
      * @param column  (required)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
+     * @param listId List ID contacts will be imported to. (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void importContacts(File file, List<ImportColumnMappingItem> column) throws ApiException {
-        importContactsWithHttpInfo(file, column);
+    public void importContacts(File file, String column, String listName, Integer listId) throws ApiException {
+        importContactsWithHttpInfo(file, column, listName, listId);
     }
 
     /**
@@ -13653,11 +13660,13 @@ public class TextMagicApi {
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
      * @param column  (required)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
+     * @param listId List ID contacts will be imported to. (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> importContactsWithHttpInfo(File file, List<ImportColumnMappingItem> column) throws ApiException {
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, null, null);
+    public ApiResponse<Void> importContactsWithHttpInfo(File file, String column, String listName, Integer listId) throws ApiException {
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listName, listId, null, null);
         return apiClient.execute(call);
     }
 
@@ -13666,11 +13675,13 @@ public class TextMagicApi {
      * 
      * @param file File containing contacts in csv or xls(x) formats (required)
      * @param column  (required)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
+     * @param listId List ID contacts will be imported to. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importContactsAsync(File file, List<ImportColumnMappingItem> column, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call importContactsAsync(File file, String column, String listName, Integer listId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13691,7 +13702,7 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listName, listId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

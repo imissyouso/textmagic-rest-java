@@ -6028,7 +6028,7 @@ Name | Type | Description  | Notes
 
 <a name="importContacts"></a>
 # **importContacts**
-> importContacts(file, column)
+> importContacts(file, column, listName, listId)
 
 Import contacts from the CSV, XLS or XLSX file.
 
@@ -6052,9 +6052,11 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 File file = new File("/path/to/file.txt"); // File | File containing contacts in csv or xls(x) formats
-List<ImportColumnMappingItem> column = Arrays.asList(new ImportColumnMappingItem()); // List<ImportColumnMappingItem> | 
+String column = "column_example"; // String | 
+String listName = "listName_example"; // String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
+Integer listId = 56; // Integer | List ID contacts will be imported to.
 try {
-    apiInstance.importContacts(file, column);
+    apiInstance.importContacts(file, column, listName, listId);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#importContacts");
     e.printStackTrace();
@@ -6066,7 +6068,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats |
- **column** | [**List&lt;ImportColumnMappingItem&gt;**](ImportColumnMappingItem.md)|  |
+ **column** | **String**|  |
+ **listName** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. | [optional]
+ **listId** | **Integer**| List ID contacts will be imported to. | [optional]
 
 ### Return type
 

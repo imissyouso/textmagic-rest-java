@@ -89,7 +89,6 @@ import com.textmagic.sdk.model.GetTimezonesResponse;
 import com.textmagic.sdk.model.GetUnreadMessagesTotalResponse;
 import com.textmagic.sdk.model.GetUnsubscribersPaginatedResponse;
 import com.textmagic.sdk.model.GetUserDedicatedNumbersPaginatedResponse;
-import com.textmagic.sdk.model.ImportColumnMappingItem;
 import com.textmagic.sdk.model.InviteSubaccountInputObject;
 import com.textmagic.sdk.model.MarkChatsReadBulkInputObject;
 import com.textmagic.sdk.model.MarkChatsUnreadBulkInputObject;
@@ -1972,8 +1971,10 @@ public class TextMagicApiTest {
     @Test
     public void importContactsTest() throws ApiException {
         File file = null;
-        List<ImportColumnMappingItem> column = null;
-        api.importContacts(file, column);
+        String column = null;
+        String listName = null;
+        Integer listId = null;
+        api.importContacts(file, column, listName, listId);
 
         // TODO: test validations
     }
