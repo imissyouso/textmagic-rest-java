@@ -73,6 +73,7 @@ import com.textmagic.sdk.model.GetBalanceNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetBlockedContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCallbackSettingsResponse;
 import com.textmagic.sdk.model.GetChatMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetContactImportSessionProgressResponse;
 import com.textmagic.sdk.model.GetContactNotesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
 import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
@@ -6409,7 +6410,7 @@ public class TextMagicApi {
     /**
      * Build call for getAvailableDedicatedNumbers
      * @param country Two-letter dedicated number country ISO code. (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional)
      * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -6481,7 +6482,7 @@ public class TextMagicApi {
      * Find dedicated numbers available for purchase
      * 
      * @param country Two-letter dedicated number country ISO code. (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional)
      * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @return GetAvailableDedicatedNumbersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6495,7 +6496,7 @@ public class TextMagicApi {
      * Find dedicated numbers available for purchase
      * 
      * @param country Two-letter dedicated number country ISO code. (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional)
      * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @return ApiResponse&lt;GetAvailableDedicatedNumbersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -6510,7 +6511,7 @@ public class TextMagicApi {
      * Find dedicated numbers available for purchase (asynchronously)
      * 
      * @param country Two-letter dedicated number country ISO code. (required)
-     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional, default to 1)
+     * @param prefix Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. (optional)
      * @param tollfree Should we show only tollfree numbers (tollfree available only for US). (optional, default to 0)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -8060,6 +8061,129 @@ public class TextMagicApi {
         return call;
     }
     /**
+     * Build call for getContactImportSessionProgress
+     * @param id  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getContactImportSessionProgressCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v2/contacts/import/progress/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getContactImportSessionProgressValidateBeforeCall(Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getContactImportSessionProgress(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getContactImportSessionProgressCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Check import progress
+     * Get contact import session progress.
+     * @param id  (required)
+     * @return GetContactImportSessionProgressResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetContactImportSessionProgressResponse getContactImportSessionProgress(Integer id) throws ApiException {
+        ApiResponse<GetContactImportSessionProgressResponse> resp = getContactImportSessionProgressWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * Check import progress
+     * Get contact import session progress.
+     * @param id  (required)
+     * @return ApiResponse&lt;GetContactImportSessionProgressResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetContactImportSessionProgressResponse> getContactImportSessionProgressWithHttpInfo(Integer id) throws ApiException {
+        com.squareup.okhttp.Call call = getContactImportSessionProgressValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<GetContactImportSessionProgressResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Check import progress (asynchronously)
+     * Get contact import session progress.
+     * @param id  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getContactImportSessionProgressAsync(Integer id, final ApiCallback<GetContactImportSessionProgressResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getContactImportSessionProgressValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetContactImportSessionProgressResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for getContactNote
      * @param id  (required)
      * @param progressListener Progress listener
@@ -9457,7 +9581,7 @@ public class TextMagicApi {
      * Build call for getFavourites
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
-     * @param query Find contacts or lists by specified search query (optional, default to A)
+     * @param query Find contacts or lists by specified search query (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -9524,7 +9648,7 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
-     * @param query Find contacts or lists by specified search query (optional, default to A)
+     * @param query Find contacts or lists by specified search query (optional)
      * @return GetFavouritesPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9538,7 +9662,7 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
-     * @param query Find contacts or lists by specified search query (optional, default to A)
+     * @param query Find contacts or lists by specified search query (optional)
      * @return ApiResponse&lt;GetFavouritesPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -9553,7 +9677,7 @@ public class TextMagicApi {
      * 
      * @param page Fetch specified results page. (optional, default to 1)
      * @param limit The number of results per page. (optional, default to 10)
-     * @param query Find contacts or lists by specified search query (optional, default to A)
+     * @param query Find contacts or lists by specified search query (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -11433,7 +11557,7 @@ public class TextMagicApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getMessagingStatCall(String by, Integer start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getMessagingStatCall(String by, Integer start, Integer end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -11481,7 +11605,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMessagingStatValidateBeforeCall(String by, Integer start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getMessagingStatValidateBeforeCall(String by, Integer start, Integer end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getMessagingStatCall(by, start, end, progressListener, progressRequestListener);
@@ -11498,7 +11622,7 @@ public class TextMagicApi {
      * @return GetMessagingStatResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetMessagingStatResponse getMessagingStat(String by, Integer start, String end) throws ApiException {
+    public GetMessagingStatResponse getMessagingStat(String by, Integer start, Integer end) throws ApiException {
         ApiResponse<GetMessagingStatResponse> resp = getMessagingStatWithHttpInfo(by, start, end);
         return resp.getData();
     }
@@ -11512,7 +11636,7 @@ public class TextMagicApi {
      * @return ApiResponse&lt;GetMessagingStatResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetMessagingStatResponse> getMessagingStatWithHttpInfo(String by, Integer start, String end) throws ApiException {
+    public ApiResponse<GetMessagingStatResponse> getMessagingStatWithHttpInfo(String by, Integer start, Integer end) throws ApiException {
         com.squareup.okhttp.Call call = getMessagingStatValidateBeforeCall(by, start, end, null, null);
         Type localVarReturnType = new TypeToken<GetMessagingStatResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -11528,7 +11652,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMessagingStatAsync(String by, Integer start, String end, final ApiCallback<GetMessagingStatResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getMessagingStatAsync(String by, Integer start, Integer end, final ApiCallback<GetMessagingStatResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -12321,7 +12445,7 @@ public class TextMagicApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSpendingStatCall(Integer page, Integer limit, Integer start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSpendingStatCall(Integer page, Integer limit, String start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -12371,7 +12495,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSpendingStatValidateBeforeCall(Integer page, Integer limit, Integer start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSpendingStatValidateBeforeCall(Integer page, Integer limit, String start, String end, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
         com.squareup.okhttp.Call call = getSpendingStatCall(page, limit, start, end, progressListener, progressRequestListener);
@@ -12389,7 +12513,7 @@ public class TextMagicApi {
      * @return GetSpendingStatPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetSpendingStatPaginatedResponse getSpendingStat(Integer page, Integer limit, Integer start, String end) throws ApiException {
+    public GetSpendingStatPaginatedResponse getSpendingStat(Integer page, Integer limit, String start, String end) throws ApiException {
         ApiResponse<GetSpendingStatPaginatedResponse> resp = getSpendingStatWithHttpInfo(page, limit, start, end);
         return resp.getData();
     }
@@ -12404,7 +12528,7 @@ public class TextMagicApi {
      * @return ApiResponse&lt;GetSpendingStatPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetSpendingStatPaginatedResponse> getSpendingStatWithHttpInfo(Integer page, Integer limit, Integer start, String end) throws ApiException {
+    public ApiResponse<GetSpendingStatPaginatedResponse> getSpendingStatWithHttpInfo(Integer page, Integer limit, String start, String end) throws ApiException {
         com.squareup.okhttp.Call call = getSpendingStatValidateBeforeCall(page, limit, start, end, null, null);
         Type localVarReturnType = new TypeToken<GetSpendingStatPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -12421,7 +12545,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSpendingStatAsync(Integer page, Integer limit, Integer start, String end, final ApiCallback<GetSpendingStatPaginatedResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSpendingStatAsync(Integer page, Integer limit, String start, String end, final ApiCallback<GetSpendingStatPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13566,15 +13690,15 @@ public class TextMagicApi {
     /**
      * Build call for importContacts
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (optional)
-     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
-     * @param listId List ID contacts will be imported to. (optional)
+     * @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  (optional)
+     * @param listId List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  (optional)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call importContactsCall(File file, String column, String listName, Integer listId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call importContactsCall(File file, String column, Integer listId, String listName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -13584,10 +13708,10 @@ public class TextMagicApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (column != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("column", column));
-        if (listName != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("listName", listName));
         if (listId != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("listId", listId));
+        if (listName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("listName", listName));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -13624,7 +13748,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, String column, String listName, Integer listId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call importContactsValidateBeforeCall(File file, String column, Integer listId, String listName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'file' is set
         if (file == null) {
@@ -13632,51 +13756,54 @@ public class TextMagicApi {
         }
         
 
-        com.squareup.okhttp.Call call = importContactsCall(file, column, listName, listId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = importContactsCall(file, column, listId, listName, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
+     * Import contacts
      * Import contacts from the CSV, XLS or XLSX file.
-     * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (optional)
-     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
-     * @param listId List ID contacts will be imported to. (optional)
+     * @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  (optional)
+     * @param listId List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  (optional)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  (optional)
+     * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void importContacts(File file, String column, String listName, Integer listId) throws ApiException {
-        importContactsWithHttpInfo(file, column, listName, listId);
+    public ResourceLinkResponse importContacts(File file, String column, Integer listId, String listName) throws ApiException {
+        ApiResponse<ResourceLinkResponse> resp = importContactsWithHttpInfo(file, column, listId, listName);
+        return resp.getData();
     }
 
     /**
+     * Import contacts
      * Import contacts from the CSV, XLS or XLSX file.
-     * 
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (optional)
-     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
-     * @param listId List ID contacts will be imported to. (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  (optional)
+     * @param listId List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  (optional)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  (optional)
+     * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> importContactsWithHttpInfo(File file, String column, String listName, Integer listId) throws ApiException {
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listName, listId, null, null);
-        return apiClient.execute(call);
+    public ApiResponse<ResourceLinkResponse> importContactsWithHttpInfo(File file, String column, Integer listId, String listName) throws ApiException {
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listId, listName, null, null);
+        Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Import contacts from the CSV, XLS or XLSX file. (asynchronously)
-     * 
+     * Import contacts (asynchronously)
+     * Import contacts from the CSV, XLS or XLSX file.
      * @param file File containing contacts in csv or xls(x) formats (required)
-     * @param column  (optional)
-     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. (optional)
-     * @param listId List ID contacts will be imported to. (optional)
+     * @param column Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  (optional)
+     * @param listId List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  (optional)
+     * @param listName List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call importContactsAsync(File file, String column, String listName, Integer listId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call importContactsAsync(File file, String column, Integer listId, String listName, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -13697,8 +13824,9 @@ public class TextMagicApi {
             };
         }
 
-        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listName, listId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        com.squareup.okhttp.Call call = importContactsValidateBeforeCall(file, column, listId, listName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
@@ -17846,7 +17974,7 @@ public class TextMagicApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldValueCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldValueCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = updateCustomFieldValueInputObject;
 
         // create path and map variables
@@ -17889,7 +18017,7 @@ public class TextMagicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCustomFieldValueValidateBeforeCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCustomFieldValueValidateBeforeCall(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, Integer id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'updateCustomFieldValueInputObject' is set
         if (updateCustomFieldValueInputObject == null) {
@@ -17915,7 +18043,7 @@ public class TextMagicApi {
      * @return ResourceLinkResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResourceLinkResponse updateCustomFieldValue(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id) throws ApiException {
+    public ResourceLinkResponse updateCustomFieldValue(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, Integer id) throws ApiException {
         ApiResponse<ResourceLinkResponse> resp = updateCustomFieldValueWithHttpInfo(updateCustomFieldValueInputObject, id);
         return resp.getData();
     }
@@ -17928,7 +18056,7 @@ public class TextMagicApi {
      * @return ApiResponse&lt;ResourceLinkResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResourceLinkResponse> updateCustomFieldValueWithHttpInfo(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id) throws ApiException {
+    public ApiResponse<ResourceLinkResponse> updateCustomFieldValueWithHttpInfo(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, Integer id) throws ApiException {
         com.squareup.okhttp.Call call = updateCustomFieldValueValidateBeforeCall(updateCustomFieldValueInputObject, id, null, null);
         Type localVarReturnType = new TypeToken<ResourceLinkResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -17943,7 +18071,7 @@ public class TextMagicApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCustomFieldValueAsync(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, String id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCustomFieldValueAsync(UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject, Integer id, final ApiCallback<ResourceLinkResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

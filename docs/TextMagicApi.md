@@ -68,6 +68,7 @@ Method | HTTP request | Description
 [**getContact**](TextMagicApi.md#getContact) | **GET** /api/v2/contacts/{id} | Get the details of a specific contact
 [**getContactByPhone**](TextMagicApi.md#getContactByPhone) | **GET** /api/v2/contacts/phone/{phone} | Get the details of a specific contact by phone number
 [**getContactIfBlocked**](TextMagicApi.md#getContactIfBlocked) | **GET** /api/v2/contacts/block/phone | Check is that phone number blocked
+[**getContactImportSessionProgress**](TextMagicApi.md#getContactImportSessionProgress) | **GET** /api/v2/contacts/import/progress/{id} | Check import progress
 [**getContactNote**](TextMagicApi.md#getContactNote) | **GET** /api/v2/notes/{id} | Get a contact note
 [**getContactNotes**](TextMagicApi.md#getContactNotes) | **GET** /api/v2/contacts/{id}/notes | Fetch notes assigned to the given contact.
 [**getContacts**](TextMagicApi.md#getContacts) | **GET** /api/v2/contacts | Get all contacts
@@ -110,7 +111,7 @@ Method | HTTP request | Description
 [**getUnsubscribedContact**](TextMagicApi.md#getUnsubscribedContact) | **GET** /api/v2/unsubscribers/{id} | Get the details of a specific unsubscribed contact
 [**getUnsubscribers**](TextMagicApi.md#getUnsubscribers) | **GET** /api/v2/unsubscribers | Get all unsubscribed contacts
 [**getUserDedicatedNumbers**](TextMagicApi.md#getUserDedicatedNumbers) | **GET** /api/v2/numbers | Get all your dedicated numbers
-[**importContacts**](TextMagicApi.md#importContacts) | **POST** /api/v2/contacts/import/normalized | Import contacts from the CSV, XLS or XLSX file.
+[**importContacts**](TextMagicApi.md#importContacts) | **POST** /api/v2/contacts/import/normalized | Import contacts
 [**inviteSubaccount**](TextMagicApi.md#inviteSubaccount) | **POST** /api/v2/subaccounts | Invite a new sub-account
 [**markChatsReadBulk**](TextMagicApi.md#markChatsReadBulk) | **POST** /api/v2/chats/read/bulk | Mark chats as read (bulk)
 [**markChatsUnreadBulk**](TextMagicApi.md#markChatsUnreadBulk) | **POST** /api/v2/chats/unread/bulk | Mark chats as unread (bulk)
@@ -714,7 +715,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 CreateContactNoteInputObject createContactNoteInputObject = new CreateContactNoteInputObject(); // CreateContactNoteInputObject | 
-Integer id = 56; // Integer | 
+Integer id = 1; // Integer | 
 try {
     ResourceLinkResponse result = apiInstance.createContactNote(createContactNoteInputObject, id);
     System.out.println(result);
@@ -1239,7 +1240,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 56; // Integer | 
+Integer id = 1; // Integer | 
 try {
     apiInstance.deleteContactAvatar(id);
 } catch (ApiException e) {
@@ -2934,7 +2935,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 String country = "\"GB\""; // String | Two-letter dedicated number country ISO code.
-Integer prefix = 1; // Integer | Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
+Integer prefix = 447155; // Integer | Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country.
 Integer tollfree = 0; // Integer | Should we show only tollfree numbers (tollfree available only for US).
 try {
     GetAvailableDedicatedNumbersResponse result = apiInstance.getAvailableDedicatedNumbers(country, prefix, tollfree);
@@ -2950,7 +2951,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **country** | **String**| Two-letter dedicated number country ISO code. |
- **prefix** | **Integer**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional] [default to 1]
+ **prefix** | **Integer**| Desired number prefix. Should include country code (i.e. 447 for UK phone number format). Leave blank to get all the available numbers for the specified country. | [optional]
  **tollfree** | **Integer**| Should we show only tollfree numbers (tollfree available only for US). | [optional] [default to 0]
 
 ### Return type
@@ -3365,7 +3366,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-String phone = "phone_example"; // String | 
+String phone = "\"447860021130\""; // String | 
 Integer upsert = 0; // Integer | Create a new chat if not found
 Integer reopen = 0; // Integer | Reopen chat if found or do not change status
 try {
@@ -3545,7 +3546,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-String phone = "phone_example"; // String | 
+String phone = "\"447860021130\""; // String | 
 try {
     Contact result = apiInstance.getContactByPhone(phone);
     System.out.println(result);
@@ -3599,7 +3600,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-String phone = "447860021130"; // String | Phone number to check
+String phone = "\"447860021130\""; // String | Phone number to check
 try {
     Contact result = apiInstance.getContactIfBlocked(phone);
     System.out.println(result);
@@ -3618,6 +3619,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Contact**](Contact.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getContactImportSessionProgress"></a>
+# **getContactImportSessionProgress**
+> GetContactImportSessionProgressResponse getContactImportSessionProgress(id)
+
+Check import progress
+
+Get contact import session progress.
+
+### Example
+```java
+// Import classes:
+//import com.textmagic.sdk.ApiClient;
+//import com.textmagic.sdk.ApiException;
+//import com.textmagic.sdk.Configuration;
+//import com.textmagic.sdk.auth.*;
+//import com.textmagic.sdk.api.TextMagicApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
+
+TextMagicApi apiInstance = new TextMagicApi();
+Integer id = 1; // Integer | 
+try {
+    GetContactImportSessionProgressResponse result = apiInstance.getContactImportSessionProgress(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TextMagicApi#getContactImportSessionProgress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**|  |
+
+### Return type
+
+[**GetContactImportSessionProgressResponse**](GetContactImportSessionProgressResponse.md)
 
 ### Authorization
 
@@ -3653,7 +3708,7 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
-Integer id = 56; // Integer | 
+Integer id = 1; // Integer | 
 try {
     ContactNote result = apiInstance.getContactNote(id);
     System.out.println(result);
@@ -4263,7 +4318,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page.
 Integer limit = 10; // Integer | The number of results per page.
-String query = "A"; // String | Find contacts or lists by specified search query
+String query = "\"A\""; // String | Find contacts or lists by specified search query
 try {
     GetFavouritesPaginatedResponse result = apiInstance.getFavourites(page, limit, query);
     System.out.println(result);
@@ -4279,7 +4334,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **query** | **String**| Find contacts or lists by specified search query | [optional] [default to A]
+ **query** | **String**| Find contacts or lists by specified search query | [optional]
 
 ### Return type
 
@@ -5107,7 +5162,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 String by = "off"; // String | *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year 
 Integer start = 1430438400; // Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
-String end = "1431648000"; // String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
+Integer end = 1431648000; // Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 try {
     GetMessagingStatResponse result = apiInstance.getMessagingStat(by, start, end);
     System.out.println(result);
@@ -5123,7 +5178,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **by** | **String**| *   **off** to get total values per specified time interval *   **day** to show values grouped by day *   **month** to show values grouped by month *   **year** to show values grouped by year  | [optional] [default to off] [enum: off, day, month, year]
  **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional]
- **end** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional]
+ **end** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional]
 
 ### Return type
 
@@ -5499,7 +5554,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 TextMagicApi apiInstance = new TextMagicApi();
 Integer page = 1; // Integer | Fetch specified results page.
 Integer limit = 10; // Integer | The number of results per page.
-Integer start = "2018-11-11 11:11"; // Integer | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
+String start = "\"2018-11-11 11:11\""; // String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior. 
 String end = "\"2019-11-11 11:11\""; // String | Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today. 
 try {
     GetSpendingStatPaginatedResponse result = apiInstance.getSpendingStat(page, limit, start, end);
@@ -5516,7 +5571,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Integer**| Fetch specified results page. | [optional] [default to 1]
  **limit** | **Integer**| The number of results per page. | [optional] [default to 10]
- **start** | **Integer**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional]
+ **start** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is 7 days prior.  | [optional]
  **end** | **String**| Time period start in [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) format. The default is today.  | [optional]
 
 ### Return type
@@ -6028,11 +6083,11 @@ Name | Type | Description  | Notes
 
 <a name="importContacts"></a>
 # **importContacts**
-> importContacts(file, column, listName, listId)
+> ResourceLinkResponse importContacts(file, column, listId, listName)
+
+Import contacts
 
 Import contacts from the CSV, XLS or XLSX file.
-
-
 
 ### Example
 ```java
@@ -6052,11 +6107,12 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 File file = new File("/path/to/file.txt"); // File | File containing contacts in csv or xls(x) formats
-String column = "column_example"; // String | 
-String listName = "listName_example"; // String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end.
-Integer listId = 56; // Integer | List ID contacts will be imported to.
+String column = "\"0:firstName;1:lastName;3:phone;4:email\""; // String | Import file column mapping. String must contain substrings of mapping in format `columnNumber:field` glued by `;`. For example: `0:firstName;1:lastName;3:phone;4:email` where value before `:` is a number of column in file, value after `:` is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: `firstName`, `lastName`, `phone`, `email`. Existing of `phone` mapping is required. 
+Integer listId = 364; // Integer | List ID contacts will be imported to. Ignored if `listName` is specified. 
+String listName = "\"A new list\""; // String | List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if `listId` is specified. 
 try {
-    apiInstance.importContacts(file, column, listName, listId);
+    ResourceLinkResponse result = apiInstance.importContacts(file, column, listId, listName);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TextMagicApi#importContacts");
     e.printStackTrace();
@@ -6068,13 +6124,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **File**| File containing contacts in csv or xls(x) formats |
- **column** | **String**|  | [optional]
- **listName** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. | [optional]
- **listId** | **Integer**| List ID contacts will be imported to. | [optional]
+ **column** | **String**| Import file column mapping. String must contain substrings of mapping in format &#x60;columnNumber:field&#x60; glued by &#x60;;&#x60;. For example: &#x60;0:firstName;1:lastName;3:phone;4:email&#x60; where value before &#x60;:&#x60; is a number of column in file, value after &#x60;:&#x60; is a field of newly created contact or ID of custom field. Numbers of columns begins from zero. Allowed built-in contact fields: &#x60;firstName&#x60;, &#x60;lastName&#x60;, &#x60;phone&#x60;, &#x60;email&#x60;. Existing of &#x60;phone&#x60; mapping is required.  | [optional]
+ **listId** | **Integer**| List ID contacts will be imported to. Ignored if &#x60;listName&#x60; is specified.  | [optional]
+ **listName** | **String**| List name. This list will be created during import. If such name is already taken, an ordinal (1, 2, ...) will be added to the end. Ignored if &#x60;listId&#x60; is specified.  | [optional]
 
 ### Return type
 
-null (empty response body)
+[**ResourceLinkResponse**](ResourceLinkResponse.md)
 
 ### Authorization
 
@@ -7924,7 +7980,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject = new UpdateCustomFieldValueInputObject(); // UpdateCustomFieldValueInputObject | 
-String id = "id_example"; // String | 
+Integer id = 554; // Integer | 
 try {
     ResourceLinkResponse result = apiInstance.updateCustomFieldValue(updateCustomFieldValueInputObject, id);
     System.out.println(result);
@@ -7939,7 +7995,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **updateCustomFieldValueInputObject** | [**UpdateCustomFieldValueInputObject**](UpdateCustomFieldValueInputObject.md)|  |
- **id** | **String**|  |
+ **id** | **Integer**|  |
 
 ### Return type
 
@@ -8251,7 +8307,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 TextMagicApi apiInstance = new TextMagicApi();
 File image = new File("/path/to/file.txt"); // File | Contact avatar. Should be PNG or JPG file not more than 10 MB
-Integer id = 56; // Integer | 
+Integer id = 1; // Integer | 
 try {
     ResourceLinkResponse result = apiInstance.uploadContactAvatar(image, id);
     System.out.println(result);

@@ -60,6 +60,7 @@ import com.textmagic.sdk.model.GetBalanceNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetBlockedContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCallbackSettingsResponse;
 import com.textmagic.sdk.model.GetChatMessagesPaginatedResponse;
+import com.textmagic.sdk.model.GetContactImportSessionProgressResponse;
 import com.textmagic.sdk.model.GetContactNotesPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsAutocompleteResponse;
 import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
@@ -1218,6 +1219,22 @@ public class TextMagicApiTest {
     }
     
     /**
+     * Check import progress
+     *
+     * Get contact import session progress.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getContactImportSessionProgressTest() throws ApiException {
+        Integer id = null;
+        GetContactImportSessionProgressResponse response = api.getContactImportSessionProgress(id);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get a contact note
      *
      * 
@@ -1685,7 +1702,7 @@ public class TextMagicApiTest {
     public void getMessagingStatTest() throws ApiException {
         String by = null;
         Integer start = null;
-        String end = null;
+        Integer end = null;
         GetMessagingStatResponse response = api.getMessagingStat(by, start, end);
 
         // TODO: test validations
@@ -1804,7 +1821,7 @@ public class TextMagicApiTest {
     public void getSpendingStatTest() throws ApiException {
         Integer page = null;
         Integer limit = null;
-        Integer start = null;
+        String start = null;
         String end = null;
         GetSpendingStatPaginatedResponse response = api.getSpendingStat(page, limit, start, end);
 
@@ -1961,9 +1978,9 @@ public class TextMagicApiTest {
     }
     
     /**
-     * Import contacts from the CSV, XLS or XLSX file.
+     * Import contacts
      *
-     * 
+     * Import contacts from the CSV, XLS or XLSX file.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -1972,9 +1989,9 @@ public class TextMagicApiTest {
     public void importContactsTest() throws ApiException {
         File file = null;
         String column = null;
-        String listName = null;
         Integer listId = null;
-        api.importContacts(file, column, listName, listId);
+        String listName = null;
+        ResourceLinkResponse response = api.importContacts(file, column, listId, listName);
 
         // TODO: test validations
     }
@@ -2551,7 +2568,7 @@ public class TextMagicApiTest {
     @Test
     public void updateCustomFieldValueTest() throws ApiException {
         UpdateCustomFieldValueInputObject updateCustomFieldValueInputObject = null;
-        String id = null;
+        Integer id = null;
         ResourceLinkResponse response = api.updateCustomFieldValue(updateCustomFieldValueInputObject, id);
 
         // TODO: test validations

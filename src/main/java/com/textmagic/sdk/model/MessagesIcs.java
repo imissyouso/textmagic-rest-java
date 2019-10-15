@@ -360,10 +360,10 @@ public class MessagesIcs {
   }
 
    /**
-   * null
+   * TODO
    * @return avatar
   **/
-  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "null")
+  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "TODO")
   public String getAvatar() {
     return avatar;
   }

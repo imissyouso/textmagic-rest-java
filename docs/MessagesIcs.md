@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **recipientsCount** | **Integer** | Amount of actual recipients. | 
 **timezone** | **String** | User-friendly timezone name (with spaces replaced by underscores). | 
 **completed** | **Boolean** | Indicates that schedling has been completed. | 
-**avatar** | **String** | null | 
+**avatar** | **String** | TODO | 
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) | Scheduling creation time. | 
 
 
