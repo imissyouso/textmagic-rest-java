@@ -18359,7 +18359,7 @@ public class TextMagicApi {
         Object localVarPostBody = updateSenderSettingInputObject;
 
         // create path and map variables
-        String localVarPath = "/api/v2/sender/settings/normalized";
+        String localVarPath = "/api/v2/sender/settings";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

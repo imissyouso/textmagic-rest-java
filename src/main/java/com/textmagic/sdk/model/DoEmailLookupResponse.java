@@ -97,7 +97,9 @@ public class DoEmailLookupResponse {
     
     MEDIUM("medium"),
     
-    LOW("low");
+    LOW("low"),
+    
+    UNKNOWN("unknown");
 
     private String value;
 

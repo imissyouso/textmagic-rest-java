@@ -39,6 +39,7 @@ Name | Value
 HIGH | &quot;high&quot;
 MEDIUM | &quot;medium&quot;
 LOW | &quot;low&quot;
+UNKNOWN | &quot;unknown&quot;
 
 
 <a name="AddressTypeEnum"></a>
