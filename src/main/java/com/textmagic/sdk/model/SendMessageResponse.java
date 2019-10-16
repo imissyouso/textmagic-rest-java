@@ -35,8 +35,59 @@ public class SendMessageResponse {
   @SerializedName("href")
   private String href = null;
 
+  /**
+   * Message response type: * **message** when message sent to a single recipient * **session** when message sent to multiple recipients * **schedule** when message has been scheduled for sending * **bulk** when message sent to multiple recipient and the number of recipients requires asynchronous processiong See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session). 
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    MESSAGE("message"),
+    
+    SESSION("session"),
+    
+    SCHEDULE("schedule"),
+    
+    BULK("bulk");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
 
   @SerializedName("sessionId")
   private Integer sessionId = null;
@@ -89,21 +140,21 @@ public class SendMessageResponse {
     this.href = href;
   }
 
-  public SendMessageResponse type(String type) {
+  public SendMessageResponse type(TypeEnum type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Get type
+   * Message response type: * **message** when message sent to a single recipient * **session** when message sent to multiple recipients * **schedule** when message has been scheduled for sending * **bulk** when message sent to multiple recipient and the number of recipients requires asynchronous processiong See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session). 
    * @return type
   **/
-  @ApiModelProperty(example = "session", required = true, value = "")
-  public String getType() {
+  @ApiModelProperty(example = "session", required = true, value = "Message response type: * **message** when message sent to a single recipient * **session** when message sent to multiple recipients * **schedule** when message has been scheduled for sending * **bulk** when message sent to multiple recipient and the number of recipients requires asynchronous processiong See [Sending more than 1,000 messages in one session](http://docs.textmagictesting.com/#section/Tutorials/Sending-more-than-1000-messages-in-one-session). ")
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
@@ -149,10 +200,10 @@ public class SendMessageResponse {
   }
 
    /**
-   * Get messageId
+   * Message ID.
    * @return messageId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Message ID.")
   public Integer getMessageId() {
     return messageId;
   }

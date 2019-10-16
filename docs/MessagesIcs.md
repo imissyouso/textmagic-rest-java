@@ -9,18 +9,30 @@ Name | Type | Description | Notes
 **rrule** | **String** | [iCal RRULE](http://www.kanzaki.com/docs/ical/rrule.html) string.  | 
 **session** | [**MessageSession**](MessageSession.md) |  | 
 **lastSent** | [**OffsetDateTime**](OffsetDateTime.md) | Date and time when last message has been sent. | 
-**contactName** | **String** |  | 
+**contactName** | **String** | Aggregated contact information. If the message scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount contacts will be returned. | 
 **parameters** | [**MessagesIcsParameters**](MessagesIcsParameters.md) |  | 
-**type** | **String** |  | 
-**summary** | **String** |  | 
+**type** | [**TypeEnum**](#TypeEnum) |  | 
+**summary** | **String** | A human-readable summary of the sending schedule. | 
 **textParameters** | [**MessagesIcsTextParameters**](MessagesIcsTextParameters.md) |  | 
-**firstOccurrence** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
-**lastOccurrence** | [**OffsetDateTime**](OffsetDateTime.md) |  | 
+**firstOccurrence** | [**OffsetDateTime**](OffsetDateTime.md) | First occurence date. | 
+**lastOccurrence** | [**OffsetDateTime**](OffsetDateTime.md) | Last occurence date (could be &#x60;null&#x60; if the schedule is endless). | 
 **recipientsCount** | **Integer** | Amount of actual recipients. | 
 **timezone** | **String** | User-friendly timezone name (with spaces replaced by underscores). | 
 **completed** | **Boolean** | Indicates that schedling has been completed. | 
-**avatar** | **String** | TODO | 
+**avatar** | **String** | A relative link to the contact avatar. | 
 **createdAt** | [**OffsetDateTime**](OffsetDateTime.md) | Scheduling creation time. | 
+
+
+<a name="TypeEnum"></a>
+## Enum: TypeEnum
+Name | Value
+---- | -----
+ONCE | &quot;Once&quot;
+HOURLY | &quot;Hourly&quot;
+DAILY | &quot;Daily&quot;
+WEEKLY | &quot;Weekly&quot;
+MONTHLY | &quot;Monthly&quot;
+YEARLY | &quot;Yearly&quot;
 
 
 

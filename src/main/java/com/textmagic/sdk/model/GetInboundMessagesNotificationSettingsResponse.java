@@ -128,10 +128,10 @@ public class GetInboundMessagesNotificationSettingsResponse {
   }
 
    /**
-   * New message notification email 2.
+   * New message notification email 1.
    * @return alertEmail1
   **/
-  @ApiModelProperty(example = "test@test.com", required = true, value = "New message notification email 2.")
+  @ApiModelProperty(example = "test@test.com", required = true, value = "New message notification email 1.")
   public String getAlertEmail1() {
     return alertEmail1;
   }

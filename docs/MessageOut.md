@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **avatar** | **String** |  | 
 **deleted** | **Boolean** | Indicates that message has been deleted. |  [optional]
 **charset** | **String** | Message charset. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS  | 
-**charsetLabel** | **String** |  | 
+**charsetLabel** | **String** | Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages  | 
 **firstName** | **String** | Contact first name. Could be substituted from your [Contacts](http://docs.textmagictesting.com/#tag/Contacts) (even if you submitted phone number instead of contact ID).  | 
 **lastName** | **String** | Contact last name. | 
 **country** | **String** | Two-letter ISO country code of the recipient phone number.  | 
 **phone** | **String** | Receipent phone number. |  [optional]
 **price** | **Float** | Message price. |  [optional]
 **partsCount** | **Integer** | Message parts (multiples of 160 characters) count. | 
-**fromEmail** | **String** |  |  [optional]
+**fromEmail** | **String** | User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address. |  [optional]
 **fromNumber** | **String** | Phone number which is used to send SMS. |  [optional]
 **smscId** | **String** |  |  [optional]
 **contact** | **String** |  |  [optional]

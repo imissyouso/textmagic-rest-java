@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **delivered** | **Integer** | Amount of delivered messages. | 
 **accepted** | **Integer** | Amount of accepted messages. | 
 **rejected** | **Integer** | Amount of rejected messages. | 
-**scheduled** | **Integer** | Amount of schedules messages. | 
-**all** | **Integer** |  | 
-**sent** | **Integer** | Total sent messages. | 
+**scheduled** | **Integer** | Amount of scheduled messages. | 
+**all** | **Integer** | Total amount of messages. | 
+**sent** | **Integer** | Amount of sent but not yet delivered messages. | 
 
 
 

@@ -387,10 +387,10 @@ public class MessageOut {
   }
 
    /**
-   * Get charsetLabel
+   * Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
    * @return charsetLabel
   **/
-  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "")
+  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages ")
   public String getCharsetLabel() {
     return charsetLabel;
   }
@@ -513,10 +513,10 @@ public class MessageOut {
   }
 
    /**
-   * Get fromEmail
+   * User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address.
    * @return fromEmail
   **/
-  @ApiModelProperty(example = "test@email.com", value = "")
+  @ApiModelProperty(example = "test@email.com", value = "User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address.")
   public String getFromEmail() {
     return fromEmail;
   }

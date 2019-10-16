@@ -139,10 +139,10 @@ public class MessagesIcsTextParameters {
   }
 
    /**
-   * Get chars
+   * Characters count.
    * @return chars
   **/
-  @ApiModelProperty(example = "125", required = true, value = "")
+  @ApiModelProperty(example = "125", required = true, value = "Characters count.")
   public Integer getChars() {
     return chars;
   }
@@ -198,10 +198,10 @@ public class MessagesIcsTextParameters {
   }
 
    /**
-   * Get charsetLabel
+   * Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages 
    * @return charsetLabel
   **/
-  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "")
+  @ApiModelProperty(example = "ISO-8859-1", required = true, value = "Human-readable message charset label. Could be: *   **ISO-8859-1** for plaintext SMS *   **UTF-16BE** for Unicode SMS *   **Voice** for voice services (Text-to-Speech or Voice Broadcast) messages ")
   public String getCharsetLabel() {
     return charsetLabel;
   }

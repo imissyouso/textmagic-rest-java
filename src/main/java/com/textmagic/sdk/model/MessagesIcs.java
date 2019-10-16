@@ -54,8 +54,63 @@ public class MessagesIcs {
   @SerializedName("parameters")
   private MessagesIcsParameters parameters = null;
 
+  /**
+   * Gets or Sets type
+   */
+  @JsonAdapter(TypeEnum.Adapter.class)
+  public enum TypeEnum {
+    ONCE("Once"),
+    
+    HOURLY("Hourly"),
+    
+    DAILY("Daily"),
+    
+    WEEKLY("Weekly"),
+    
+    MONTHLY("Monthly"),
+    
+    YEARLY("Yearly");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TypeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("type")
-  private String type = null;
+  private TypeEnum type = null;
 
   @SerializedName("summary")
   private String summary = null;
@@ -180,10 +235,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get contactName
+   * Aggregated contact information. If the message scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount contacts will be returned.
    * @return contactName
   **/
-  @ApiModelProperty(example = "Test contact name TODO", required = true, value = "")
+  @ApiModelProperty(example = "15 recipients", required = true, value = "Aggregated contact information. If the message scheduled to be sent to a single contact, a full name will be returned here. Otherwise, a total amount contacts will be returned.")
   public String getContactName() {
     return contactName;
   }
@@ -210,7 +265,7 @@ public class MessagesIcs {
     this.parameters = parameters;
   }
 
-  public MessagesIcs type(String type) {
+  public MessagesIcs type(TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -220,11 +275,11 @@ public class MessagesIcs {
    * @return type
   **/
   @ApiModelProperty(example = "once", required = true, value = "")
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
@@ -234,10 +289,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get summary
+   * A human-readable summary of the sending schedule.
    * @return summary
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "Every 2 weeks on Monday, Tuesday, Thursday at 10:30 (UTC+03:00)", required = true, value = "A human-readable summary of the sending schedule.")
   public String getSummary() {
     return summary;
   }
@@ -270,10 +325,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get firstOccurrence
+   * First occurence date.
    * @return firstOccurrence
   **/
-  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "First occurence date.")
   public OffsetDateTime getFirstOccurrence() {
     return firstOccurrence;
   }
@@ -288,10 +343,10 @@ public class MessagesIcs {
   }
 
    /**
-   * Get lastOccurrence
+   * Last occurence date (could be &#x60;null&#x60; if the schedule is endless).
    * @return lastOccurrence
   **/
-  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "")
+  @ApiModelProperty(example = "2015-06-19T09:48:24+0000", required = true, value = "Last occurence date (could be `null` if the schedule is endless).")
   public OffsetDateTime getLastOccurrence() {
     return lastOccurrence;
   }
@@ -360,10 +415,10 @@ public class MessagesIcs {
   }
 
    /**
-   * TODO
+   * A relative link to the contact avatar.
    * @return avatar
   **/
-  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "TODO")
+  @ApiModelProperty(example = "avatars/dummy_avatar.png", required = true, value = "A relative link to the contact avatar.")
   public String getAvatar() {
     return avatar;
   }

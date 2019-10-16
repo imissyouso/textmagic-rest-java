@@ -128,10 +128,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Amount of schedules messages.
+   * Amount of scheduled messages.
    * @return scheduled
   **/
-  @ApiModelProperty(example = "0", required = true, value = "Amount of schedules messages.")
+  @ApiModelProperty(example = "0", required = true, value = "Amount of scheduled messages.")
   public Integer getScheduled() {
     return scheduled;
   }
@@ -146,10 +146,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Get all
+   * Total amount of messages.
    * @return all
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "Total amount of messages.")
   public Integer getAll() {
     return all;
   }
@@ -164,10 +164,10 @@ public class GetMessageSessionStatResponse {
   }
 
    /**
-   * Total sent messages.
+   * Amount of sent but not yet delivered messages.
    * @return sent
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Total sent messages.")
+  @ApiModelProperty(example = "1", required = true, value = "Amount of sent but not yet delivered messages.")
   public Integer getSent() {
     return sent;
   }
