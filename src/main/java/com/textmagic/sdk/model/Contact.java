@@ -72,75 +72,8 @@ public class Contact {
   @SerializedName("lists")
   private List<List> lists = new ArrayList<List>();
 
-  /**
-   * Phone number type: * **0** if it is fixed-line; * **1** if it is mobile; * **2** if it is mobile or fixed-line (in case we cannot distingush between fixed-line or mobile); * **3** if it is toll-free; * **4** if it is a premium rate phone; * **5** if it is a shared cost phone; * **6** if it is a VoIP; * **7** if it is a [Personal Number](); * **8** if it is a pager; * **9** if it is an Universal Access Number; * **10** if the phone type is unknown; * **-1** if the phone type is not yet processed or cannot be determined. 
-   */
-  @JsonAdapter(PhoneTypeEnum.Adapter.class)
-  public enum PhoneTypeEnum {
-    _1("-1"),
-    
-    _0("0"),
-    
-    _1("1"),
-    
-    _2("2"),
-    
-    _3("3"),
-    
-    _4("4"),
-    
-    _5("5"),
-    
-    _6("6"),
-    
-    _7("7"),
-    
-    _8("8"),
-    
-    _9("9"),
-    
-    _10("10");
-
-    private String value;
-
-    PhoneTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PhoneTypeEnum fromValue(String text) {
-      for (PhoneTypeEnum b : PhoneTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<PhoneTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PhoneTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PhoneTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return PhoneTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("phoneType")
-  private PhoneTypeEnum phoneType = null;
+  private String phoneType = null;
 
   @SerializedName("avatar")
   private ContactImage avatar = null;
@@ -374,7 +307,7 @@ public class Contact {
     this.lists = lists;
   }
 
-  public Contact phoneType(PhoneTypeEnum phoneType) {
+  public Contact phoneType(String phoneType) {
     this.phoneType = phoneType;
     return this;
   }
@@ -384,11 +317,11 @@ public class Contact {
    * @return phoneType
   **/
   @ApiModelProperty(required = true, value = "Phone number type: * **0** if it is fixed-line; * **1** if it is mobile; * **2** if it is mobile or fixed-line (in case we cannot distingush between fixed-line or mobile); * **3** if it is toll-free; * **4** if it is a premium rate phone; * **5** if it is a shared cost phone; * **6** if it is a VoIP; * **7** if it is a [Personal Number](); * **8** if it is a pager; * **9** if it is an Universal Access Number; * **10** if the phone type is unknown; * **-1** if the phone type is not yet processed or cannot be determined. ")
-  public PhoneTypeEnum getPhoneType() {
+  public String getPhoneType() {
     return phoneType;
   }
 
-  public void setPhoneType(PhoneTypeEnum phoneType) {
+  public void setPhoneType(String phoneType) {
     this.phoneType = phoneType;
   }
 
