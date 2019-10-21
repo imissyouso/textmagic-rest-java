@@ -26,9 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Returned when the form has errors
+ * Returned when input data validation process has been failed.
  */
-@ApiModel(description = "Returned when the form has errors")
+@ApiModel(description = "Returned when input data validation process has been failed.")
 
 public class BadRequestResponse {
   @SerializedName("code")
@@ -46,10 +46,10 @@ public class BadRequestResponse {
   }
 
    /**
-   * HTTP error code.
+   * Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
    * @return code
   **/
-  @ApiModelProperty(example = "400", value = "HTTP error code.")
+  @ApiModelProperty(example = "400", value = "Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).")
   public Integer getCode() {
     return code;
   }

@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * UnauthorizedResponse
+ * Returned when request has been denied in reason of access problems.
  */
+@ApiModel(description = "Returned when request has been denied in reason of access problems.")
 
 public class UnauthorizedResponse {
   @SerializedName("code")
@@ -41,10 +42,10 @@ public class UnauthorizedResponse {
   }
 
    /**
-   * Get code
+   * Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
    * @return code
   **/
-  @ApiModelProperty(example = "401", value = "")
+  @ApiModelProperty(example = "401", value = "Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).")
   public Integer getCode() {
     return code;
   }
@@ -59,10 +60,10 @@ public class UnauthorizedResponse {
   }
 
    /**
-   * Get message
+   * Brief error message. You could display this message to your user or save it in a log.
    * @return message
   **/
-  @ApiModelProperty(example = "Wrong username and token combination", value = "")
+  @ApiModelProperty(example = "Wrong username and token combination.", value = "Brief error message. You could display this message to your user or save it in a log.")
   public String getMessage() {
     return message;
   }

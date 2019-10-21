@@ -67,7 +67,6 @@ import com.textmagic.sdk.model.GetContactsByListIdPaginatedResponse;
 import com.textmagic.sdk.model.GetContactsPaginatedResponse;
 import com.textmagic.sdk.model.GetCountriesResponse;
 import com.textmagic.sdk.model.GetCustomFieldsPaginatedResponse;
-import com.textmagic.sdk.model.GetDisallowedRulesResponse;
 import com.textmagic.sdk.model.GetFavouritesPaginatedResponse;
 import com.textmagic.sdk.model.GetInboundMessagesNotificationSettingsResponse;
 import com.textmagic.sdk.model.GetInvoicesPaginatedResponse;
@@ -1401,21 +1400,6 @@ public class TextMagicApiTest {
     public void getDedicatedNumberTest() throws ApiException {
         Integer id = null;
         UsersInbound response = api.getDedicatedNumber(id);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Get disallowed permissions
-     *
-     * Get an array of all rules that are disallowed to the current account.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getDisallowedRulesTest() throws ApiException {
-        GetDisallowedRulesResponse response = api.getDisallowedRules();
 
         // TODO: test validations
     }

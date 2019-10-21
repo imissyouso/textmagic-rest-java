@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ResourceLinkResponse
+ * Response contains paginated list of data items.
  */
+@ApiModel(description = "Response contains paginated list of data items.")
 
 public class ResourceLinkResponse {
   @SerializedName("id")

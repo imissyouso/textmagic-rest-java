@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **Integer** | HTTP error code. |  [optional]
+**code** | **Integer** | Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). |  [optional]
 **message** | **String** | Brief error message. You could display this message to your user or save it in a log. |  [optional]
 **errors** | [**BadRequestResponseErrors**](BadRequestResponseErrors.md) |  |  [optional]
 

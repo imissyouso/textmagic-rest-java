@@ -159,30 +159,6 @@ public class MessageOut {
   @SerializedName("fromNumber")
   private String fromNumber = null;
 
-  @SerializedName("smscId")
-  private String smscId = null;
-
-  @SerializedName("contact")
-  private String contact = null;
-
-  @SerializedName("source")
-  private String source = null;
-
-  @SerializedName("deliveredCount")
-  private Integer deliveredCount = null;
-
-  @SerializedName("numbersCount")
-  private Integer numbersCount = null;
-
-  @SerializedName("userId")
-  private Integer userId = null;
-
-  @SerializedName("creditsPrice")
-  private String creditsPrice = null;
-
-  @SerializedName("chars")
-  private Integer chars = null;
-
   public MessageOut id(Integer id) {
     this.id = id;
     return this;
@@ -543,150 +519,6 @@ public class MessageOut {
     this.fromNumber = fromNumber;
   }
 
-  public MessageOut smscId(String smscId) {
-    this.smscId = smscId;
-    return this;
-  }
-
-   /**
-   * Get smscId
-   * @return smscId
-  **/
-  @ApiModelProperty(example = "1", value = "")
-  public String getSmscId() {
-    return smscId;
-  }
-
-  public void setSmscId(String smscId) {
-    this.smscId = smscId;
-  }
-
-  public MessageOut contact(String contact) {
-    this.contact = contact;
-    return this;
-  }
-
-   /**
-   * Get contact
-   * @return contact
-  **/
-  @ApiModelProperty(value = "")
-  public String getContact() {
-    return contact;
-  }
-
-  public void setContact(String contact) {
-    this.contact = contact;
-  }
-
-  public MessageOut source(String source) {
-    this.source = source;
-    return this;
-  }
-
-   /**
-   * Get source
-   * @return source
-  **/
-  @ApiModelProperty(example = "1", value = "")
-  public String getSource() {
-    return source;
-  }
-
-  public void setSource(String source) {
-    this.source = source;
-  }
-
-  public MessageOut deliveredCount(Integer deliveredCount) {
-    this.deliveredCount = deliveredCount;
-    return this;
-  }
-
-   /**
-   * Get deliveredCount
-   * @return deliveredCount
-  **/
-  @ApiModelProperty(example = "6", value = "")
-  public Integer getDeliveredCount() {
-    return deliveredCount;
-  }
-
-  public void setDeliveredCount(Integer deliveredCount) {
-    this.deliveredCount = deliveredCount;
-  }
-
-  public MessageOut numbersCount(Integer numbersCount) {
-    this.numbersCount = numbersCount;
-    return this;
-  }
-
-   /**
-   * Get numbersCount
-   * @return numbersCount
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getNumbersCount() {
-    return numbersCount;
-  }
-
-  public void setNumbersCount(Integer numbersCount) {
-    this.numbersCount = numbersCount;
-  }
-
-  public MessageOut userId(Integer userId) {
-    this.userId = userId;
-    return this;
-  }
-
-   /**
-   * Get userId
-   * @return userId
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
-
-  public MessageOut creditsPrice(String creditsPrice) {
-    this.creditsPrice = creditsPrice;
-    return this;
-  }
-
-   /**
-   * Get creditsPrice
-   * @return creditsPrice
-  **/
-  @ApiModelProperty(value = "")
-  public String getCreditsPrice() {
-    return creditsPrice;
-  }
-
-  public void setCreditsPrice(String creditsPrice) {
-    this.creditsPrice = creditsPrice;
-  }
-
-  public MessageOut chars(Integer chars) {
-    this.chars = chars;
-    return this;
-  }
-
-   /**
-   * Get chars
-   * @return chars
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getChars() {
-    return chars;
-  }
-
-  public void setChars(Integer chars) {
-    this.chars = chars;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -716,20 +548,12 @@ public class MessageOut {
         Objects.equals(this.price, messageOut.price) &&
         Objects.equals(this.partsCount, messageOut.partsCount) &&
         Objects.equals(this.fromEmail, messageOut.fromEmail) &&
-        Objects.equals(this.fromNumber, messageOut.fromNumber) &&
-        Objects.equals(this.smscId, messageOut.smscId) &&
-        Objects.equals(this.contact, messageOut.contact) &&
-        Objects.equals(this.source, messageOut.source) &&
-        Objects.equals(this.deliveredCount, messageOut.deliveredCount) &&
-        Objects.equals(this.numbersCount, messageOut.numbersCount) &&
-        Objects.equals(this.userId, messageOut.userId) &&
-        Objects.equals(this.creditsPrice, messageOut.creditsPrice) &&
-        Objects.equals(this.chars, messageOut.chars);
+        Objects.equals(this.fromNumber, messageOut.fromNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, sender, receiver, text, status, contactId, sessionId, messageTime, avatar, deleted, charset, charsetLabel, firstName, lastName, country, phone, price, partsCount, fromEmail, fromNumber, smscId, contact, source, deliveredCount, numbersCount, userId, creditsPrice, chars);
+    return Objects.hash(id, sender, receiver, text, status, contactId, sessionId, messageTime, avatar, deleted, charset, charsetLabel, firstName, lastName, country, phone, price, partsCount, fromEmail, fromNumber);
   }
 
 
@@ -758,14 +582,6 @@ public class MessageOut {
     sb.append("    partsCount: ").append(toIndentedString(partsCount)).append("\n");
     sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
     sb.append("    fromNumber: ").append(toIndentedString(fromNumber)).append("\n");
-    sb.append("    smscId: ").append(toIndentedString(smscId)).append("\n");
-    sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    deliveredCount: ").append(toIndentedString(deliveredCount)).append("\n");
-    sb.append("    numbersCount: ").append(toIndentedString(numbersCount)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    creditsPrice: ").append(toIndentedString(creditsPrice)).append("\n");
-    sb.append("    chars: ").append(toIndentedString(chars)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * NotFoundResponse
+ * Returned when requested entity was not found.
  */
+@ApiModel(description = "Returned when requested entity was not found.")
 
 public class NotFoundResponse {
   @SerializedName("code")
@@ -41,10 +42,10 @@ public class NotFoundResponse {
   }
 
    /**
-   * Get code
+   * Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
    * @return code
   **/
-  @ApiModelProperty(example = "404", value = "")
+  @ApiModelProperty(example = "404", value = "Error code. Meanings of error codes are similar to [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).")
   public Integer getCode() {
     return code;
   }
@@ -59,10 +60,10 @@ public class NotFoundResponse {
   }
 
    /**
-   * Get message
+   * Brief error message. You could display this message to your user or save it in a log.
    * @return message
   **/
-  @ApiModelProperty(example = "Resource does not exist", value = "")
+  @ApiModelProperty(example = "Resource does not exist.", value = "Brief error message. You could display this message to your user or save it in a log.")
   public String getMessage() {
     return message;
   }

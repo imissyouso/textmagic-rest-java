@@ -65,8 +65,8 @@ public class SendMessageInputObject {
   @SerializedName("from")
   private String from = null;
 
-  @SerializedName("rule")
-  private String rule = null;
+  @SerializedName("rrule")
+  private String rrule = null;
 
   @SerializedName("createChat")
   private Boolean createChat = false;
@@ -296,22 +296,22 @@ public class SendMessageInputObject {
     this.from = from;
   }
 
-  public SendMessageInputObject rule(String rule) {
-    this.rule = rule;
+  public SendMessageInputObject rrule(String rrule) {
+    this.rrule = rrule;
     return this;
   }
 
    /**
    * iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.
-   * @return rule
+   * @return rrule
   **/
   @ApiModelProperty(example = "FREQ=YEARLY;BYMONTH=1;BYMONTHDAY=1;COUNT=1", value = "iCal RRULE parameter to create recurrent scheduled messages. When used, sendingTime is mandatory as start point of sending. See https://www.textmagic.com/free-tools/rrule-generator for format details.")
-  public String getRule() {
-    return rule;
+  public String getRrule() {
+    return rrule;
   }
 
-  public void setRule(String rule) {
-    this.rule = rule;
+  public void setRrule(String rrule) {
+    this.rrule = rrule;
   }
 
   public SendMessageInputObject createChat(Boolean createChat) {
@@ -408,7 +408,7 @@ public class SendMessageInputObject {
         Objects.equals(this.partsCount, sendMessageInputObject.partsCount) &&
         Objects.equals(this.referenceId, sendMessageInputObject.referenceId) &&
         Objects.equals(this.from, sendMessageInputObject.from) &&
-        Objects.equals(this.rule, sendMessageInputObject.rule) &&
+        Objects.equals(this.rrule, sendMessageInputObject.rrule) &&
         Objects.equals(this.createChat, sendMessageInputObject.createChat) &&
         Objects.equals(this.tts, sendMessageInputObject.tts) &&
         Objects.equals(this.local, sendMessageInputObject.local) &&
@@ -417,7 +417,7 @@ public class SendMessageInputObject {
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, templateId, sendingTime, sendingDateTime, sendingTimezone, contacts, lists, phones, cutExtra, partsCount, referenceId, from, rule, createChat, tts, local, localCountry);
+    return Objects.hash(text, templateId, sendingTime, sendingDateTime, sendingTimezone, contacts, lists, phones, cutExtra, partsCount, referenceId, from, rrule, createChat, tts, local, localCountry);
   }
 
 
@@ -438,7 +438,7 @@ public class SendMessageInputObject {
     sb.append("    partsCount: ").append(toIndentedString(partsCount)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
-    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+    sb.append("    rrule: ").append(toIndentedString(rrule)).append("\n");
     sb.append("    createChat: ").append(toIndentedString(createChat)).append("\n");
     sb.append("    tts: ").append(toIndentedString(tts)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");

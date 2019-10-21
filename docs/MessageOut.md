@@ -24,14 +24,6 @@ Name | Type | Description | Notes
 **partsCount** | **Integer** | Message parts (multiples of 160 characters) count. | 
 **fromEmail** | **String** | User email which this message came from. For Email2SMS and Distribution Lists messages it will be an original email address, in other cases it is an account email address. |  [optional]
 **fromNumber** | **String** | Phone number which is used to send SMS. |  [optional]
-**smscId** | **String** |  |  [optional]
-**contact** | **String** |  |  [optional]
-**source** | **String** |  |  [optional]
-**deliveredCount** | **Integer** |  |  [optional]
-**numbersCount** | **Integer** |  |  [optional]
-**userId** | **Integer** |  |  [optional]
-**creditsPrice** | **String** |  |  [optional]
-**chars** | **Integer** |  |  [optional]
 
 
 <a name="StatusEnum"></a>
